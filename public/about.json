@@ -1,0 +1,84 @@
+{
+  "work_experience": [
+    {
+      "position": "Graduate Research Assistant",
+      "company": "Precision Agriculture Lab, Auburn University",
+      "duration": "2023 - Present",
+      "description": "Conducting research on AI-driven agricultural automation and precision farming technologies.",
+      "logo": "/logos/auburn-university.png"
+    },
+    {
+      "position": "Software Engineer",
+      "company": "XYZ Tech Solutions",
+      "duration": "2021 - 2023",
+      "description": "Developed machine learning models for data analytics in the healthcare industry.",
+      "logo": "/logos/xyz-tech.png"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Precision Agriculture",
+      "institution": "Auburn University",
+      "year": "2023 - Present",
+      "logo": "/logos/auburn-university.png"
+    },
+    {
+      "degree": "M.S. in Computer Science",
+      "institution": "University of XYZ",
+      "year": "2021 - 2023",
+      "logo": "/logos/university-xyz.png"
+    }
+  ],
+  "skills": {
+    "Programming Languages": [
+      { "name": "Python" },
+      { "name": "JavaScript" },
+      { "name": "C++" }
+    ],
+    "Machine Learning": [
+      { "name": "TensorFlow" },
+      { "name": "PyTorch" },
+      { "name": "Scikit-learn" }
+    ],
+    "Web Development": [
+      { "name": "React.js" },
+      { "name": "Next.js" },
+      { "name": "Node.js" }
+    ]
+  },
+  "certifications": [
+    {
+      "title": "Certified TensorFlow Developer",
+      "issuer": "Google",
+      "year": "2022",
+      "logo": "/logos/google.png"
+    },
+    {
+      "title": "AWS Certified Machine Learning - Specialty",
+      "issuer": "Amazon AWS",
+      "year": "2023",
+      "logo": "/logos/aws.png"
+    }
+  ],
+  "cv": {
+    "link": "/cv.pdf",
+    "last_updated": "March 2025"
+  },
+  "leadership_experience": [
+    {
+      "role": "President",
+      "organization": "AI & Robotics Club, Auburn University",
+      "year": "2024 - Present"
+    },
+    {
+      "role": "Mentor",
+      "organization": "Data Science Bootcamp",
+      "year": "2022 - 2023"
+    }
+  ],
+  "professional_associations": [
+    "IEEE (Institute of Electrical and Electronics Engineers)",
+    "ACM (Association for Computing Machinery)",
+    "American Society of Agricultural and Biological Engineers (ASABE)"
+  ]
+}

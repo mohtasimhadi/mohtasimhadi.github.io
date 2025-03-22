@@ -1,10 +1,113 @@
-export default function About() {
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FileText, Briefcase, Award, GraduationCap } from "lucide-react";
+
+export default function AboutPage() {
+  const [aboutData, setAboutData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/about.json")
+      .then((res) => res.json())
+      .then((data) => setAboutData(data))
+      .catch((err) => console.error("Error fetching about data:", err));
+  }, []);
+
+  if (!aboutData) return <p className="text-center mt-10">Loading...</p>;
+
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6">
-      <h1 className="text-3xl font-bold">About Me</h1>
-      <p className="mt-4 text-lg">
-        Welcome to Moho Blog! This is an academic website sharing research and thoughts.
-      </p>
+    <div className="container mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold text-[#E87722] mb-8 text-center">About Me</h1>
+
+      {/* Two-Column Layout for Work & Education */}
+      <div className="grid md:grid-cols-2 gap-12">
+        {/* Work Experience */}
+        <Section title="Work Experience">
+          {aboutData.work_experience.map((job: any, index: number) => (
+            <Card key={index} title={job.position} subtitle={job.company} duration={job.duration} logo={job.logo}>
+              <p>{job.description}</p>
+            </Card>
+          ))}
+        </Section>
+
+        {/* Education */}
+        <Section title="Education">
+          {aboutData.education.map((edu: any, index: number) => (
+            <Card key={index} title={edu.degree} subtitle={edu.institution} duration={edu.year} logo={edu.logo} />
+          ))}
+        </Section>
+      </div>
+
+      {/* Skills */}
+      <Section title="Skills">
+        <div className="grid md:grid-cols-3 gap-6">
+          {Object.entries(aboutData.skills).map(([category, skills]: [string, any]) => (
+            <div key={category} className="bg-white shadow-md p-4 rounded-lg border-l-4 border-[#E87722]">
+              <h3 className="text-lg font-semibold">{category}</h3>
+              <div className="flex flex-wrap gap-3 mt-2">
+                {skills.map((skill: any, index: number) => (
+                  <SkillBadge key={index} name={skill.name} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Certifications */}
+      <Section title="Certifications">
+        <div className="grid md:grid-cols-2 gap-4">
+          {aboutData.certifications.map((cert: any, index: number) => (
+            <Card key={index} title={cert.title} subtitle={cert.issuer} duration={cert.year} logo={cert.logo} />
+          ))}
+        </div>
+      </Section>
+
+      {/* CV */}
+      <Section title="CV">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-md flex justify-between items-center">
+          <p className="text-lg">Last updated: {aboutData.cv.last_updated}</p>
+          <Link href={aboutData.cv.link} target="_blank" className="flex items-center bg-[#E87722] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d76c1a] transition">
+            <FileText className="w-5 h-5 mr-2" /> Download CV
+          </Link>
+        </div>
+      </Section>
     </div>
   );
-};
+}
+
+// Reusable Section Component
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="mb-12">
+      <h2 className="text-2xl font-bold text-[#E87722] mb-4">{title}</h2>
+      {children}
+    </div>
+  );
+}
+
+// Reusable Card Component
+function Card({ title, subtitle, duration, logo, children }: any) {
+  return (
+    <div className="bg-white shadow-md rounded-lg p-6 flex gap-4 border-l-4 border-[#E87722]">
+      {logo && <Image src={logo} alt={title} width={60} height={60} className="rounded-md object-cover" />}
+      <div>
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <p className="text-sm text-[#0C2340]">{subtitle}</p>
+        <p className="text-sm text-gray-600">{duration}</p>
+        {children && <div className="mt-2 text-sm">{children}</div>}
+      </div>
+    </div>
+  );
+}
+
+// Skill Badge Component (No Logos)
+function SkillBadge({ name }: { name: string }) {
+  return (
+    <div className="bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold">
+      {name}
+    </div>
+  );
+}
