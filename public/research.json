@@ -1,0 +1,55 @@
+{
+    "publications": {
+      "Conference Proceedings": [
+        {
+          "title": "Deep Learning in Precision Agriculture",
+          "description": "Presented at IEEE ICML 2023, discussing applications of CNNs in agricultural automation.",
+          "image": "/images/conference-agriculture.jpg",
+          "link": "https://example.com/paper1"
+        }
+      ],
+      "Journal Articles": [
+        {
+          "title": "AI-Driven Crop Disease Detection",
+          "description": "Published in the Journal of Precision Agriculture, covering machine learning techniques for early disease detection.",
+          "image": "/images/journal-ai.jpg",
+          "link": "https://example.com/journal1"
+        }
+      ],
+      "In Review": [
+        {
+          "title": "Robotics in Smart Farming",
+          "description": "Currently under review at the International Journal of Agricultural Robotics.",
+          "image": "/images/review-robotics.jpg",
+          "link": "#"
+        }
+      ],
+      "In Submission": [
+        {
+          "title": "Remote Sensing for Soil Health",
+          "description": "Submitted to Nature Communications, exploring satellite imagery for soil analysis.",
+          "image": "/images/submission-soil.jpg",
+          "link": "#"
+        }
+      ]
+    },
+    "presentations": {
+      "Oral Presentations": [
+        {
+          "title": "Advances in AI for Agriculture",
+          "description": "Oral presentation at the IEEE VIS 2024 conference.",
+          "image": "/images/oral-presentation.jpg",
+          "link": "#"
+        }
+      ],
+      "Poster Presentations": [
+        {
+          "title": "Using Hyperspectral Imaging in Crop Monitoring",
+          "description": "Presented at the International Plant Science Symposium.",
+          "image": "/images/poster-presentation.jpg",
+          "link": "#"
+        }
+      ]
+    }
+  }
+  

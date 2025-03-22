@@ -1,84 +1,49 @@
 {
-  "work_experience": [
-    {
-      "position": "Graduate Research Assistant",
-      "company": "Precision Agriculture Lab, Auburn University",
-      "duration": "2023 - Present",
-      "description": "Conducting research on AI-driven agricultural automation and precision farming technologies.",
-      "logo": "/logos/auburn-university.png"
-    },
-    {
-      "position": "Software Engineer",
-      "company": "XYZ Tech Solutions",
-      "duration": "2021 - 2023",
-      "description": "Developed machine learning models for data analytics in the healthcare industry.",
-      "logo": "/logos/xyz-tech.png"
-    }
-  ],
-  "education": [
-    {
-      "degree": "Ph.D. in Precision Agriculture",
-      "institution": "Auburn University",
-      "year": "2023 - Present",
-      "logo": "/logos/auburn-university.png"
-    },
-    {
-      "degree": "M.S. in Computer Science",
-      "institution": "University of XYZ",
-      "year": "2021 - 2023",
-      "logo": "/logos/university-xyz.png"
-    }
-  ],
-  "skills": {
-    "Programming Languages": [
-      { "name": "Python" },
-      { "name": "JavaScript" },
-      { "name": "C++" }
+  "publications": {
+    "Conference Proceedings": [
+      {
+        "title": "Deep Learning in Precision Agriculture",
+        "description": "Presented at IEEE ICML 2023, discussing applications of CNNs in agricultural automation.",
+        "image": "/images/conference-agriculture.jpg",
+        "link": "https://example.com/paper1"
+      }
     ],
-    "Machine Learning": [
-      { "name": "TensorFlow" },
-      { "name": "PyTorch" },
-      { "name": "Scikit-learn" }
+    "Journal Articles": [
+      {
+        "title": "AI-Driven Crop Disease Detection",
+        "description": "Published in the Journal of Precision Agriculture, covering machine learning techniques for early disease detection.",
+        "image": "/images/journal-ai.jpg"
+      }
     ],
-    "Web Development": [
-      { "name": "React.js" },
-      { "name": "Next.js" },
-      { "name": "Node.js" }
+    "In Review": [
+      {
+        "title": "Robotics in Smart Farming",
+        "description": "Currently under review at the International Journal of Agricultural Robotics.",
+        "image": "/images/review-robotics.jpg"
+      }
+    ],
+    "In Submission": [
+      {
+        "title": "Remote Sensing for Soil Health",
+        "description": "Submitted to Nature Communications, exploring satellite imagery for soil analysis.",
+        "image": "/images/submission-soil.jpg"
+      }
     ]
   },
-  "certifications": [
-    {
-      "title": "Certified TensorFlow Developer",
-      "issuer": "Google",
-      "year": "2022",
-      "logo": "/logos/google.png"
-    },
-    {
-      "title": "AWS Certified Machine Learning - Specialty",
-      "issuer": "Amazon AWS",
-      "year": "2023",
-      "logo": "/logos/aws.png"
-    }
-  ],
-  "cv": {
-    "link": "/cv.pdf",
-    "last_updated": "March 2025"
-  },
-  "leadership_experience": [
-    {
-      "role": "President",
-      "organization": "AI & Robotics Club, Auburn University",
-      "year": "2024 - Present"
-    },
-    {
-      "role": "Mentor",
-      "organization": "Data Science Bootcamp",
-      "year": "2022 - 2023"
-    }
-  ],
-  "professional_associations": [
-    "IEEE (Institute of Electrical and Electronics Engineers)",
-    "ACM (Association for Computing Machinery)",
-    "American Society of Agricultural and Biological Engineers (ASABE)"
-  ]
+  "presentations": {
+    "Oral Presentations": [
+      {
+        "title": "Advances in AI for Agriculture",
+        "description": "Oral presentation at the IEEE VIS 2024 conference.",
+        "image": "/images/oral-presentation.jpg"
+      }
+    ],
+    "Poster Presentations": [
+      {
+        "title": "Using Hyperspectral Imaging in Crop Monitoring",
+        "description": "Presented at the International Plant Science Symposium.",
+        "image": "/images/poster-presentation.jpg"
+      }
+    ]
+  }
 }
