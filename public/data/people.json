@@ -51,6 +51,14 @@
       "link": "https://www.linkedin.com/in/waseemsofficial/"
     },
     {
+      "name": "Carter Freeman",
+      "designation": "Undergraduate Research Fellow",
+      "affiliation": "Precision Agriculture Lab, Auburn University",
+      "duration": "Fall, 24 - Present",
+      "photo": "/imgs/people/cf.jpeg",
+      "link": "https://www.linkedin.com/in/carter-freeman-biosystem-engineering/"
+    },
+    {
       "name": "Mesbahul Maruf",
       "designation": "Graduate Research Assistant",
       "affiliation": "Precision Agriculture Lab, Auburn University",
@@ -107,7 +115,7 @@
     },
     {
       "name": "Mohammad Ratul Mahjabin",
-      "designation": "PhD Student",
+      "designation": "Computer Science PhD Student",
       "affiliation": "University of South Florida",
       "duration": "Dec, 2021 - May, 2023",
       "photo": "/imgs/people/rm.jpg",
