@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     unoptimized: true, // Disable default image optimization
   },
   assetPrefix: isProd ? 'mohtasimhadi.github.io' : '',
-  basePath: isProd ? 'mohtasimhadi.github.io' : '',
+  basePath: isProd ? '/mohtasimhadi.github.io' : '',
   output: 'export'
 };
 
