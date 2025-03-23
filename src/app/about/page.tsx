@@ -154,7 +154,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 // Reusable Card Component
 function Card({ title, subtitle, duration, logo, children }: any) {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 m-6 flex gap-4 border-l-4 border-[#E87722]">
+    <div className="bg-white shadow-md rounded-lg p-6 m-2 flex gap-4 border-l-4 border-[#E87722]">
       {logo && <Image src={logo} alt={title} width={60} height={60} className="rounded-md object-contain" />}
       <div>
         <h3 className="text-lg font-semibold">{title}</h3>
