@@ -172,7 +172,7 @@ export default function ResearchPage() {
 // Reusable Research Card
 function ResearchCard({ text, doi }: { text: string; doi?: string }) {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-6">
+    <div className="bg-white shadow-md rounded-lg p-6 mb-6 border-l-4 border-[#E87722]">
       {doi ? (
         <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer" className="block hover:text-[#E87722] transition">
           {parse(text)}
