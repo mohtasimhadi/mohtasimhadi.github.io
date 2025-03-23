@@ -35,11 +35,11 @@ export default function BlogPage() {
   if (!blogData) return <p className="text-center mt-10 text-lg">Loading...</p>;
 
   return (
-    <div className="container mx-auto px-6 py-12 pt-0 flex">
+    <div className="container mx-auto px-6 py-12 flex">
       {/* Sidebar Navigation */}
-      <aside className="w-1/4 sticky top-0 h-screen p-4 bg-gray-100 shadow-md">
+      <aside className="hidden sm:block sm:w-1/4 sticky top-20 h-screen p-4 bg-gray-100 rounded-lg shadow-md">
         <ul className="space-y-2">
-          {/* On Writing Section */}
+          {/* Books Section */}
           <li>
             <a
               href="#On-Writing"
@@ -103,9 +103,9 @@ export default function BlogPage() {
 
       {/* Main Content */}
       <div className="w-3/4 px-6">
-        {/* On Writing Section */}
+        {/* Books Section */}
         <section id="On-Writing" className="blog-section mb-12">
-          <h1 className="text-4xl font-bold text-[#E87722] pt-6 mb-6 text-center">
+          <h1 className="text-4xl font-bold text-[#E87722] mb-6 text-center">
             Books
           </h1>
 
@@ -154,19 +154,13 @@ export default function BlogPage() {
                 </h3>
                 <ul className="space-y-4">
                   {posts.map((post: any, index: number) => (
-                    <li
-                      key={index}
-                      className="p-4 border-l-4 border-[#E87722] rounded-lg shadow-md bg-white"
-                    >
+                    <Link
+                    href={post.notion_link}
+                    target="_blank"
+                    className="text-[#0C2340] font-semibold hover:underline m-2 inline-block p-4 border-l-4 border-[#E87722] rounded-lg shadow-md bg-white"
+                  >
                       <h3 className="text-lg font-semibold">{post.title}</h3>
-                      <Link
-                        href={post.notion_link}
-                        target="_blank"
-                        className="text-[#0C2340] font-semibold hover:underline mt-2 inline-block"
-                      >
-                        View Post
-                      </Link>
-                    </li>
+                    </Link>
                   ))}
                 </ul>
               </div>
@@ -178,34 +172,36 @@ export default function BlogPage() {
   );
 }
 
-// Horizontal Book Card for "Originals" (Includes Synopsis)
 function OriginalBookCard({ book }: { book: any }) {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 flex gap-6 items-center mb-6 border-l-4 border-[#E87722]">
-      <div className="w-1/3">
+    <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start mb-6 border-l-4 border-[#E87722] w-full">
+      {/* Image and Basic Info */}
+      <div className="w-full sm:w-1/3 flex flex-col items-center sm:items-start">
         <Image
           src={book.cover}
           alt={book.title}
           width={180}
           height={260}
-          className="rounded-md object-cover"
+          className="rounded-md object-cover w-full max-w-[180px]"
         />
-        <p className="text-sm text-gray-500">📅 Published: {book.year}</p>
+        <p className="text-sm text-gray-500 mt-2">📅 Published: {book.year}</p>
         <p className="text-sm text-gray-500">🏢 Publisher: {book.publisher}</p>
         {book.goodreads && (
           <Link
             href={book.goodreads}
             target="_blank"
-            className="mt-3 inline-block text-[#0C2340] font-semibold hover:underline"
+            className="mt-2 text-[#0C2340] font-semibold hover:underline"
           >
             📖 View on Goodreads
           </Link>
         )}
       </div>
-      <div className="w-2/3">
+
+      {/* Book Title & Synopsis */}
+      <div className="w-full sm:w-2/3 text-center sm:text-left">
         <h3 className="text-lg font-semibold">{book.title}</h3>
         <p
-          className="text-sm text-gray-600 mb-3"
+          className="text-sm text-gray-600 mt-2"
           dangerouslySetInnerHTML={{
             __html: book.synopsis.replace(/\n/g, "<br/>"),
           }}
