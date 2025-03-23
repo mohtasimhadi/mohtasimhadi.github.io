@@ -1,33 +1,61 @@
 [
-    {
-      "title": "AI-Powered Plant Monitoring",
-      "description": "A machine learning-based system to monitor plant growth and detect anomalies.",
-      "affiliation": "University of Utah - Scientific Computing and Imaging Institute",
-      "mediaType": "video",
-      "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "links": [
-        {
-          "title": "GitHub Repository",
-          "url": "https://github.com/example/project"
-        },
-        {
-          "title": "Research Paper",
-          "url": "https://arxiv.org/abs/2301.12345"
-        }
-      ]
-    },
-    {
-      "title": "Hyperspectral Imaging for Drought Analysis",
-      "description": "Developing deep learning models to analyze hyperspectral data and detect plant stress.",
-      "affiliation": "Auburn University - Precision Agriculture Lab",
-      "mediaType": "image",
-      "media": "/images/hyperspectral-project.jpg",
-      "links": [
-        {
-          "title": "Presentation Slides",
-          "url": "https://example.com/slides"
-        }
-      ]
-    }
-  ]
-  
+  {
+    "title": "FloraBot/NurseryBot",
+    "description": "An autonomous unmanned ground vehicle specifically built for navigating through nursery beds. Uses computer vision algorithm and sensor fusion. Was awarded as the Excellency in productivity in 2024 FIRA USA Farm Robotics Challenge.",
+    "affiliation": "Auburn University - Precision Agriculture Lab",
+    "date": "2024",
+    "mediaType": "video",
+    "media": "https://www.youtube.com/embed/ureWGHHNJK4?si=VWeDpJx7kKzTc0Vr",
+    "links": [
+      {
+        "title": "Website",
+        "url": "https://florabot-smart-systems-au.github.io/"
+      }
+    ]
+  },
+  {
+    "title": "Ornamental Plant Nursery Inventory Management",
+    "description": "Developing a multi-object tracking (MOT) algorithm to count ornamental plants in nursery efficiently. The system uses an unmanned ground vehicle equipped with multiple cameras. An ensemble model is being used as the backbone for the MOT algorithm.",
+    "affiliation": "Auburn University - Precision Agriculture Lab",
+    "date": "2023",
+    "mediaType": "image",
+    "media": "/images/hyperspectral-project.jpg",
+    "links": []
+  },
+  {
+    "title": "Biponon: Tracking point-of-sale merchandise at 800,000 outlets",
+    "description": "Bangladesh’s leading mobile financial service provider, bKash, has been using our trade marketing AI product, Biponon, since August 2018. Using four object detection models, bKash tracks the executions and retentions of POS materials, monitors brand campaigns, manages inventory, accurately calculates field force salary—and maintains overall market superiority in this competitive landscape. Using AI, bKash has gained a staggering 320% increase in productivity—serving 585 outlets by a merchandiser, up from 139.",
+    "affiliation": "Intelligent Machines Limited",
+    "date": "2018 - Present",
+    "mediaType": "video",
+    "media": "https://youtu.be/VLqqCBdCnIs?si=Ujo2tFsPdFAEofu1",
+    "links": []
+  },
+  {
+    "title": "Dharapat: CIB report and bank statement analyzers",
+    "description": "IDLC Finance has been using CIB report module of our financial statement analyzer AI, Dharapat, since February 2022. The team has also been using the bank statements module since July 2023. IDLC Finance has shortened the statement processing time from three working days to less than 30 minutes. Prime Bank has signed up for the CIB report analyzer—deployment is currently in progress.",
+    "affiliation": "Intelligent Machines Limited",
+    "date": "2022 - Present",
+    "mediaType": "video",
+    "media": "https://youtu.be/vPbyAlnJKm4?si=YPxjYDHu4Zz_tCxR",
+    "links": []
+  },
+  {
+    "title": "Sheba.XYZ Database Normalisation",
+    "description": "Revamped Sheba.XYZ's database for faster query execution by documenting entity relationships, designing optimized structures, and enhancing overall efficiency.",
+    "affiliation": "Intelligent Machines Limited",
+    "date": "2021",
+    "mediaType": "image",
+    "media": "/sheba.jpg",
+    "links": []
+  },
+  {
+    "title": "Fordo: Precision marketing to convert millions of consumers",
+    "description": "Unilever has been using our precision marketing AI product, Fordo, since July 2019. Built with repeat purchase data of 2.3 million unique consumers, Fordo recommends personalized product bundling and offers. Unilever team has achieved successful conversion rates of 6% and above (often as high as 13%), up from 1% before using AI.",
+    "affiliation": "Intelligent Machines Limited",
+    "date": "2019 - Present",
+    "mediaType": "video",
+    "media": "https://youtu.be/Cbyyw6e-448?si=AIYYJBSlx-ThId_M",
+    "links": []
+  }
+]

@@ -7,7 +7,7 @@ export default function ProjectsPage() {
   const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch("/data/projects.json") // ✅ Fetch JSON dynamically
+    fetch("/data/projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects:", err));

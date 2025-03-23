@@ -36,14 +36,11 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, affiliation, 
 
       {links && (
         <div className="mt-4">
-          <h3 className="text-lg font-semibold">Project Links:</h3>
           <ul className="list-disc pl-5">
             {links.map((link, index) => (
-              <li key={index}>
                 <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">
                   {link.title}
                 </a>
-              </li>
             ))}
           </ul>
         </div>
