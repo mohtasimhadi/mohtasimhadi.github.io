@@ -50,9 +50,9 @@ export default function Home() {
       {/* Two-Column Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
         {/* Left: Profile & Contact inside a card (1/3 width) */}
-        <div className="bg-white shadow-lg rounded-lg p-8 border border-gray-200 md:col-span-1">
+        <div className="bg-white shadow-lg rounded-lg p-8 md:col-span-1 border-l-4 border-[#E87722]" >
           <div className="flex flex-col items-center text-center">
-            <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-[#E87722] shadow-lg">
+            <div className="w-48 h-48 relative rounded-full overflow-hidden shadow-lg">
               <Image
                 src={data.profile.profile_image}
                 alt={data.profile.name}
