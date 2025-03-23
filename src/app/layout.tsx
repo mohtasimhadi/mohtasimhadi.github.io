@@ -4,7 +4,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Mohtasim Hadi Rafi",
-  description: "",
+  description: "moho.blog",
+  icons: {
+    icon: "/imgs/people/dp.jpg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
