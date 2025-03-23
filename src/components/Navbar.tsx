@@ -19,8 +19,8 @@ export default function Navbar() {
           <NavItem href="/about" label="About" />
           <NavItem href="/on-writing" label="On Writing" />
           <NavItem href="/research" label="Research" />
+          <NavItem href="/projects" label="Projects" />
           <NavItem href="/people" label="People" />
-          <NavItem href="/contact" label="Contact" />
         </ul>
 
         {/* Mobile Menu Button */}
@@ -37,11 +37,10 @@ export default function Navbar() {
         <div className="md:hidden bg-[#0C2340] text-white text-lg flex flex-col items-center space-y-4 py-4">
           <NavItem href="/" label="Home" />
           <NavItem href="/about" label="About" />
+          <NavItem href="/on-writing" label="On Writing" />
           <NavItem href="/research" label="Research" />
-          <NavItem href="/achievements" label="Achievements" />
-          <NavItem href="/writing" label="On Writing" />
-          <NavItem href="/blog" label="Blog" />
-          <NavItem href="/contact" label="Contact" />
+          <NavItem href="/projects" label="Projects" />
+          <NavItem href="/people" label="People" />
         </div>
       )}
     </nav>
