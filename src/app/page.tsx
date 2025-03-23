@@ -17,7 +17,7 @@ import {
 export default function Home() {
   const [data, setData] = useState<any>(null);
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
-  const [visibleNews, setVisibleNews] = useState(12);
+  const [visibleNews, setVisibleNews] = useState(6); // Start with 6 news
   const [searchQuery, setSearchQuery] = useState("");
 
   // Fetch profile and contact data
@@ -115,11 +115,11 @@ export default function Home() {
           )}
         </div>
 
-        {/* View More Button */}
+        {/* View More Button After Every 6 News Items */}
         {visibleNews < filteredNews.length && (
           <div className="mt-6 flex justify-center">
             <button
-              onClick={() => setVisibleNews(visibleNews + 9)}
+              onClick={() => setVisibleNews(visibleNews + 6)} // Load 6 more each time
               className="bg-[#E87722] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d76c1a] transition"
             >
               View More News
@@ -155,7 +155,8 @@ function NewsCard({ date, news }: { date: string; news: string }) {
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-[#E87722]">
       <p className="text-sm text-gray-500">{date}</p>
-      <p className="text-lg font-semibold mt-2">{news}</p>
+      {/* Render HTML inside the news */}
+      <p className="text-lg mt-2 news-content" dangerouslySetInnerHTML={{ __html: news }} />
     </div>
   );
 }

@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.news-content a {
+  text-decoration: underline;
+  color: #0C2340;
+  font-weight: 600;
+}
+
+.news-content a:hover {
+  color: #E87722;
+}

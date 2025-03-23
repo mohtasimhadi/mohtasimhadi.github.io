@@ -1,16 +1,44 @@
 {
   "news": [
     {
-      "date": "March 10, 2025",
-      "news": "Published a new research paper on AI-driven plant inventory management in Computers & Electronics in Agriculture."
+      "date": "April 02, 2025",
+      "news": "Presented at the <b>AI in Agriculture and Natural Resources Conference</b> at <a href='https://www.msstate.edu'>Mississippi State University</a>."
     },
     {
-      "date": "February 25, 2025",
-      "news": "Presented at the AI in Agriculture and Natural Resources Conference at Mississippi State University."
+      "date": "March 26, 2025",
+      "news": "Presented at the <b>Auburn Research Symposium 2025</b> at <a href='https://www.auburn.edu'>Auburn University</a>, AL, USA."
     },
     {
-      "date": "January 5, 2025",
-      "news": "Started a new research project on hyperspectral imaging for early disease detection in crops."
+      "date": "February 21, 2025",
+      "news": "Received <b>GSC Travel Fellowship of $400</b> for presenting work in AI in Agriculture and Natural Resources Conference at <a href='https://www.msstate.edu'>Mississippi State University</a> from <b>Graduate Student Council, Auburn University</b>."
+    },
+    {
+      "date": "October 05, 2024",
+      "news": "Got <b>Excellency in Productivity ($5,000)</b> award in <a href='https://www.fira-agtech.com'>FIRA USA Farm Robotics Challenge 2025</a>."
+    },
+    {
+      "date": "May 16, 2024",
+      "news": "Joined <b>Auburn University</b> as a Graduate Research Assistant in the <b>Precision Agriculture Lab</b>."
+    },
+    {
+      "date": "May 16, 2024",
+      "news": "Started <b>MS in Biosystems Engineering</b> at <a href='https://www.auburn.edu'>Auburn University</a>, AL, USA."
+    },
+    {
+      "date": "March 31, 2024",
+      "news": "Left <b>Intelligent Machines Limited</b>."
+    },
+    {
+      "date": "May 24, 2023",
+      "news": "Graduated with <b>First Class</b> from <a href='https://www.iutoic-dhaka.edu/'>Islamic University of Technology</a> with a BSc degree in Software Engineering."
+    },
+    {
+      "date": "April 01, 2022",
+      "news": "Joined <b>Intelligent Machines Limited</b> as an Analytics Engineer."
+    },
+    {
+      "date": "January 07, 2019",
+      "news": "Started <b>BSc in Software Engineering</b> at <a href='https://www.iutoic-dhaka.edu/'>Islamic University of Technology</a>, Gazipur, Bangladesh."
     }
   ]
 }
