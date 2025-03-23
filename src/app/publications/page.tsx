@@ -8,6 +8,7 @@ export default function ResearchPage() {
   const [researchData, setResearchData] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState(""); // Search input
   const [activeSection, setActiveSection] = useState(""); // Tracks active section
+  const [activeSubsection, setActiveSubsection] = useState(""); // Tracks active subsection
 
   useEffect(() => {
     fetch("/data/research.json")
@@ -16,18 +17,30 @@ export default function ResearchPage() {
       .catch((err) => console.error("Error fetching research data:", err));
   }, []);
 
-  // Detect active section during scrolling
+  // Detect active section and subsection during scrolling
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll(".research-section");
       let currentSection = "";
+      let currentSubsection = "";
+
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 150 && rect.bottom >= 150) {
           currentSection = section.id;
         }
       });
+
+      const subsections = document.querySelectorAll(".research-subsection");
+      subsections.forEach((subsection) => {
+        const rect = subsection.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          currentSubsection = subsection.id;
+        }
+      });
+
       setActiveSection(currentSection);
+      setActiveSubsection(currentSubsection);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -52,7 +65,7 @@ export default function ResearchPage() {
 
   return (
     <div className="container mx-auto px-6 py-12 flex">
-      {/* Sidebar */}
+      {/* Sidebar (Hidden in Mobile View) */}
       <aside className="hidden md:flex md:w-1/4 h-screen sticky top-0 left-0 flex-col pr-8 space-y-6 bg-gray-100 p-6">
         {/* Search Bar */}
         <input
@@ -65,31 +78,57 @@ export default function ResearchPage() {
 
         {/* Sidebar Navigation */}
         <ul className="space-y-2">
+          {/* Publications Section */}
           <li>
-            <a href="#Publications" className={`nav-link ${activeSection === "Publications" ? "active" : ""}`}>
+            <a
+              href="#Publications"
+              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${
+                activeSection === "Publications" ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+              }`}
+            >
               Publications
             </a>
+            <ul className="pl-4 space-y-1">
+              {Object.keys(researchData.publications).map((category) => (
+                <li key={category}>
+                  <a
+                    href={`#${category.replace(/\s+/g, "-")}`}
+                    className={`block w-full text-left px-3 py-1 rounded-md ${
+                      activeSubsection === category.replace(/\s+/g, "-") ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+                    }`}
+                  >
+                    {category}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </li>
-          {Object.keys(researchData.publications).map((category) => (
-            <li key={category}>
-              <a href={`#${category.replace(/\s+/g, "-")}`} className={`nav-link ${activeSection === category.replace(/\s+/g, "-") ? "active" : ""}`}>
-                {category}
-              </a>
-            </li>
-          ))}
 
+          {/* Presentations Section */}
           <li>
-            <a href="#Presentations" className={`nav-link ${activeSection === "Presentations" ? "active" : ""}`}>
+            <a
+              href="#Presentations"
+              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${
+                activeSection === "Presentations" ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+              }`}
+            >
               Presentations
             </a>
+            <ul className="pl-4 space-y-1">
+              {Object.keys(researchData.presentations).map((category) => (
+                <li key={category}>
+                  <a
+                    href={`#${category.replace(/\s+/g, "-")}`}
+                    className={`block w-full text-left px-3 py-1 rounded-md ${
+                      activeSubsection === category.replace(/\s+/g, "-") ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+                    }`}
+                  >
+                    {category}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </li>
-          {Object.keys(researchData.presentations).map((category) => (
-            <li key={category}>
-              <a href={`#${category.replace(/\s+/g, "-")}`} className={`nav-link ${activeSection === category.replace(/\s+/g, "-") ? "active" : ""}`}>
-                {category}
-              </a>
-            </li>
-          ))}
         </ul>
       </aside>
 
@@ -98,7 +137,7 @@ export default function ResearchPage() {
         {/* Publications Section */}
         <Section title="Publications" id="Publications">
           {Object.entries(filteredPublications).map(([category, publications]: [string, any]) => (
-            <div key={category} id={category.replace(/\s+/g, "-")} className="mb-10 research-section">
+            <div key={category} id={category.replace(/\s+/g, "-")} className="mb-10 research-section research-subsection">
               <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">{category}</h3>
               {publications.length > 0 ? (
                 publications.map((pub: any, index: number) => (
@@ -114,7 +153,7 @@ export default function ResearchPage() {
         {/* Presentations Section */}
         <Section title="Presentations" id="Presentations">
           {Object.entries(filteredPresentations).map(([category, presentations]: [string, any]) => (
-            <div key={category} id={category.replace(/\s+/g, "-")} className="mb-10 research-section">
+            <div key={category} id={category.replace(/\s+/g, "-")} className="mb-10 research-section research-subsection">
               <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">{category}</h3>
               {presentations.length > 0 ? (
                 presentations.map((pres: any, index: number) => (
@@ -145,6 +184,7 @@ function ResearchCard({ text, doi }: { text: string; doi?: string }) {
     </div>
   );
 }
+
 // Reusable Section Component
 function Section({ title, id, children }: { title: string; id: string; children: React.ReactNode }) {
   return (
