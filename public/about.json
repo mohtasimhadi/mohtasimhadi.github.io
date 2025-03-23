@@ -143,5 +143,55 @@
       "name": "Institute of Electrical and Electronics Engineers",
       "logo": "/ieee.jpg"
     }
+  ],
+  "achievements": [
+    {
+      "category": "Honors and Awards",
+      "items": [
+        {
+          "title": "FIRA USA Farm Robotics Challenge",
+          "details": "Excellency in Productivity (USD 5,000), CA, USA",
+          "date": "Oct, 2024",
+          "image": "/fira.jpeg",
+          "link": "https://www.farmroboticschallenge.ai/2024"
+        },
+        {
+          "title": "European Rover Challenge",
+          "details": "10th in the world, Remote",
+          "date": "Sep, 2021",
+          "image": "/images.jpeg",
+          "link": "https://roverchallenge.eu/full-erc2021-scoreboard/"
+        },
+        {
+          "title": "10th ICT Fest, IUT",
+          "details": "Second Runner’s up in Hackathon (BDT 10,000), Gazipur, Bangladesh",
+          "date": "Apr, 2019",
+          "image": "/if.jpeg"
+        },
+        {
+          "title": "National High School Programming Contest",
+          "details": "Regional Winner, Mymensingh, Bangladesh",
+          "date": "Jun, 2016",
+          "image": "/nhspc.jpeg"
+        }
+      ]
+    },
+    {
+      "category": "Grants & Fellowships",
+      "items": [
+        {
+          "title": "GSC Travel Fellowship",
+          "details": "Received $400 to present at AI in Agriculture and Natural Resources Conference, Mississippi",
+          "date": "2024",
+          "image": "/au.jpg"
+        },
+        {
+          "title": "India Bangladesh Maitree Muktijoddha Sontan Scholarship",
+          "details": "BDT 50,000 (USD equivalent 600) during junior year of undergrad",
+          "date": "2019",
+          "image": "/ib.jpeg"
+        }
+      ]
+    }
   ]
 }

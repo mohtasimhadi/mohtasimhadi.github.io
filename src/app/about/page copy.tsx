@@ -36,9 +36,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-12">
           <Section title="Work Experience">
             {aboutData.work_experience.map((job: any, index: number) => (
-              <Card key={index} title={job.position} subtitle={job.company} duration={job.duration} logo={job.logo}>
-                <p>{job.description}</p>
-              </Card>
+              <Card key={index} title={job.position} subtitle={job.company} duration={job.duration} logo={job.logo} />
             ))}
           </Section>
 
@@ -51,6 +49,7 @@ export default function AboutPage() {
       ) : (
         <p className="text-center text-gray-600">No data available.</p>
       )}
+
       {/* Achievements Section (NEW) */}
       {aboutData.achievements && (
         <Section title="Achievements">
@@ -66,62 +65,10 @@ export default function AboutPage() {
           ))}
         </Section>
       )}
-      
-
-      {/* Professional Associations */}
-{aboutData.professional_associations && (
-  <Section title="Professional Associations">
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {aboutData.professional_associations.map((assoc: any, index: number) => (
-        <div key={index} className="bg-white shadow-md p-4 rounded-lg flex flex-col items-center gap-3 border-l-4 border-[#E87722]">
-          <div className="w-full flex justify-center">
-            <Image 
-              src={assoc.logo} 
-              alt={assoc.name} 
-              width={150} 
-              height={50} 
-              className="h-auto object-contain max-w-[120px] md:max-w-[140px] lg:max-w-[160px]" 
-            />
-          </div>
-          <h3 className="text-md text-center font-semibold">{assoc.name}</h3>
-        </div>
-      ))}
-    </div>
-  </Section>
-)}
-
-
-      {/* Certifications */}
-      {aboutData.certifications && (
-        <Section title="Certifications">
-          <div className="grid md:grid-cols-2 gap-4">
-            {aboutData.certifications.map((cert: any, index: number) => (
-              <Card key={index} title={cert.title} subtitle={cert.issuer} duration={cert.year} logo={cert.logo} />
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {/* Skills */}
-      {aboutData.skills && (
-        <Section title="Skills">
-          <div className="grid md:grid-cols-3 gap-6">
-            {Object.entries(aboutData.skills).map(([category, skills]: [string, any]) => (
-              <div key={category} className="bg-white shadow-md p-4 rounded-lg border-l-4 border-[#E87722]">
-                <h3 className="text-lg font-semibold">{category}</h3>
-                <div className="flex flex-wrap gap-3 mt-2">
-                  {skills.map((skill: any, index: number) => (
-                    <SkillBadge key={index} name={skill.name} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-      )}
     </div>
   );
 }
+
 // Achievement Card Component
 function AchievementCard({ data }: { data: any }) {
   return (
@@ -162,15 +109,6 @@ function Card({ title, subtitle, duration, logo, children }: any) {
         <p className="text-sm text-gray-600">{duration}</p>
         {children && <div className="mt-2 text-sm">{children}</div>}
       </div>
-    </div>
-  );
-}
-
-// Skill Badge Component
-function SkillBadge({ name }: { name: string }) {
-  return (
-    <div className="bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold">
-      {name}
     </div>
   );
 }
