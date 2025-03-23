@@ -3,12 +3,21 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin, Github, Facebook, Instagram, Search } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Github,
+  Facebook,
+  Instagram,
+  Search,
+} from "lucide-react";
 
 export default function Home() {
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
-  const [visibleNews, setVisibleNews] = useState(12); // Pagination limit
-  const [searchQuery, setSearchQuery] = useState(""); // Search query
+  const [visibleNews, setVisibleNews] = useState(12);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Fetch news from JSON file
   useEffect(() => {
@@ -19,8 +28,10 @@ export default function Home() {
   }, []);
 
   // Filter news based on search query
-  const filteredNews = news.filter((item) =>
-    item.news.toLowerCase().includes(searchQuery.toLowerCase()) || item.date.includes(searchQuery)
+  const filteredNews = news.filter(
+    (item) =>
+      item.news.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.date.includes(searchQuery)
   );
 
   return (
@@ -30,33 +41,68 @@ export default function Home() {
         {/* Left: Profile & Contact */}
         <div className="flex flex-col items-center text-center md:text-left">
           <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-[#E87722] shadow-lg">
-            <Image src="/dp.jpg" alt="Mohtasim Hadi Rafi" width={192} height={192} className="object-cover" priority />
+            <Image
+              src="/dp.jpg"
+              alt="Mohtasim Hadi Rafi"
+              width={192}
+              height={192}
+              className="object-cover"
+              priority
+            />
           </div>
 
           <h1 className="text-3xl font-bold mt-4">Mohtasim Hadi Rafi</h1>
-          <h2 className="text-lg text-[#0C2340] font-semibold">Graduate Research Assistant</h2>
+          <h2 className="text-lg text-[#0C2340] font-semibold">
+            Graduate Research Assistant
+          </h2>
 
           {/* Contact Information */}
           <div className="flex flex-col items-center md:items-start mt-6 space-y-2">
-            <ContactItem Icon={Mail} text="mohtasim@example.com" />
-            <ContactItem Icon={Phone} text="+1 (XXX) XXX-XXXX" />
+            <ContactItem Icon={Mail} text="mzr0167@auburn.edu" />
+            <ContactItem Icon={Mail} text="mohtasimhadi@gmail.com" />
+            <ContactItem Icon={Phone} text="+1 (334) 559-9369" />
             <ContactItem Icon={MapPin} text="Auburn University, AL, USA" />
           </div>
 
           {/* Social Media Links */}
           <div className="flex space-x-4 mt-6">
-            <SocialIcon href="https://linkedin.com/in/your-profile" Icon={Linkedin} />
-            <SocialIcon href="https://github.com/your-github" Icon={Github} />
-            <SocialIcon href="https://www.facebook.com/mohtasimhadi" Icon={Facebook} />
-            <SocialIcon href="https://instagram.com/your-profile" Icon={Instagram} />
+            <SocialIcon
+              href="https://www.linkedin.com/in/mohtasimhadi/"
+              Icon={Linkedin}
+            />
+            <SocialIcon href="https://github.com/mohtasimhadi" Icon={Github} />
+            <SocialIcon
+              href="https://www.facebook.com/mohtasimhadi"
+              Icon={Facebook}
+            />
+            <SocialIcon
+              href="https://instagram.com/moho__________"
+              Icon={Instagram}
+            />
           </div>
         </div>
 
         {/* Right: About Section */}
         <div className="max-w-xl">
-          <h2 className="text-2xl font-bold text-[#E87722]">About Me</h2>
           <p className="text-lg mt-4 leading-relaxed">
-            I am a graduate research assistant at the Precision Agriculture Lab in the Biosystems Engineering Department at Auburn University. My research focuses on advanced agricultural technologies to optimize crop management and sustainability.
+            I’m a researcher and engineer currently pursuing my Master’s in
+            Biosystems Engineering at Auburn University. My work focuses on the
+            intersection of AI, machine learning, and computer vision, with an
+            emphasis on applying these technologies to biosystems. My current
+            research involves developing smart systems for plant inventory
+            management using drones and rovers, aiming to automate tasks like
+            plant detection, counting, and quality assessment.
+            <br />
+            Previously, I worked as an Analytics Engineer at Intelligent
+            Machines Ltd., where I contributed to AI-based retail products and
+            data pipelines for the banking industry. I have hands-on experience
+            with deep learning, computer vision, and data science tools, and I
+            thrive in interdisciplinary environments where innovation and
+            technology come together to solve real-world problems.
+            <br />
+            Feel free to connect if you’d like to discuss collaborative
+            opportunities or share insights on AI applications in agriculture
+            and beyond.
           </p>
         </div>
       </div>
@@ -80,7 +126,11 @@ export default function Home() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredNews.length > 0 ? (
-            filteredNews.slice(0, visibleNews).map((item, index) => <NewsCard key={index} date={item.date} news={item.news} />)
+            filteredNews
+              .slice(0, visibleNews)
+              .map((item, index) => (
+                <NewsCard key={index} date={item.date} news={item.news} />
+              ))
           ) : (
             <p>No news found.</p>
           )}
