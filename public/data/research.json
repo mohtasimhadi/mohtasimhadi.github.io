@@ -1,102 +1,65 @@
 {
   "publications": {
+    "Journal Articles": [],
     "Conference Proceedings": [
       {
-        "title": "A Critical Analysis of Deep Learning Applications in Crop Pest Classification: Promising Pathways and Limitations",
-        "description": "Presented at the 2023 26th International Conference on Computer and Information Technology (ICCIT).",
-        "image": "/images/conference-agriculture.jpg",
-        "link": "https://doi.org/10.1109/ICCIT60459.2023.10441417",
-        "date": "Dec 2023",
-        "category": "C"
+        "text": "<b>Rafi, M. H.</b>, Mahjabin, M. R., Rahman, M. S., Kabir, M. H., & Ahmed, S. (2023, December). <b>A Critical Analysis of Deep Learning Applications in Crop Pest Classification: Promising Pathways and Limitations.</b> In <i>2023 26th International Conference on Computer and Information Technology (ICCIT)</i>, (pp. 1-6). IEEE. 13 Dec, 2023, Cox’s Bazar, Bangladesh. DOI: 10.1109/ICCIT60459.2023.10441417",
+        "doi": "10.1109/ICCIT60459.2023.10441417"
       }
     ],
-    "Journal Articles": [],
     "In Submission": [
       {
-        "title": "KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management",
-        "description": "Submitted to Computers and Electronics in Agriculture.",
-        "image": "/images/submission-kbtrack.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "S"
+        "text": "<b>Rafi, M. H.</b>, Ahmed, F., Syed, H., & Rehman, T. U. (2025). <b>KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management.</b> In Computers and Electronics in Agriculture."
       },
       {
-        "title": "Automated in-field inventory management and quality assessment system using end-to-end deep learning for ornamental nursery crops",
-        "description": "Submitted to Computers and Electronics in Agriculture.",
-        "image": "/images/submission-inventory.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "S"
+        "text": "Syed, H., Ahmed, F., <b>Rafi, M. H.</b>, Pickens, J. & Rehman, T. U. (2025). <b>Automated in-field inventory management and quality assessment system using end-to-end deep learning for ornamental nursery crops.<b/> In Computers and Electronics in Agriculture."
       },
       {
-        "title": "Autonomous Robotic Navigation in Ornamental Crop Production Using Vision and Sensor Fusion",
-        "description": "Submitted to Smart Agricultural Technology.",
-        "image": "/images/submission-robotics.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "S"
+        "text": "Ahmed, F., Syed, H., <b>Rafi, M. H.</b>, Pickens, J. & Rehman, T. U. (2025). <b>Autonomous Robotic Navigation in Ornamental Crop Production Using Vision and Sensor Fusion.</b> In Smart Agricultural Technology."
       }
     ],
     "In Preparation": [
       {
-        "title": "Edge-Optimized High-Throughput Phenotyping Lightweight Deep Learning Model for Real-time Automated Plant Counting and Quality Assessments in Ornamental Nurseries",
-        "description": "Under preparation.",
-        "image": "/images/prep-phenotyping.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "P"
+        "text": "<b>Rafi, M. H.</b>, Syed, H., Ahmed, F., & Rehman, T. U. (2025). <b>Edge-Optimized High-Throughput Phenotyping Lightweight Deep Learning Model for Real-time Automated Plant Counting and Quality Assessments in Ornamental Nurseries.</b> Manuscript in preparation."
       },
       {
-        "title": "A label-free deep learning approach to count and assess ornamental plants",
-        "description": "Under preparation.",
-        "image": "/images/prep-label-free.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "P"
+        "text": "Syed, H., <b>Rafi, M. H.</b>, Ahmed, F., Pickens, J., Bao, Y., & Rehman, T. U. (2025). <b>A label-free deep learning approach to count and assess ornamental plants.</b> Manuscript in preparation."
       },
       {
-        "title": "Enhancing the Ornamental Inventory and Quality Assessment Across Diverse Growth Stages using Unsupervised Domain Adaptation",
-        "description": "Under preparation.",
-        "image": "/images/prep-growth-stages.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "P"
+        "text": "Syed, H. H., Ahmed, F., <b>Rafi, M. H.</b>, Pickens, J., & Rehman, T. U. (2025). <b>Enhancing the Ornamental Inventory and Quality Assessment Across Diverse Growth Stages using Unsupervised Domain Adaptation.</b> Manuscript in preparation."
       },
       {
-        "title": "Unmanned Systems and Deep Learning for Automation in Ornamental Crop Monitoring",
-        "description": "Under preparation.",
-        "image": "/images/prep-unmanned-systems.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "P"
+        "text": "Syed, H., <b>Rafi, M. H.</b>, Ahmed, F., Pickens, J., Bao, Y., & Rehman, T. U. (2025). <b>Unmanned Systems and Deep Learning for Automation in Ornamental Crop Monitoring.</b> Manuscript in preparation."
       },
       {
-        "title": "Integrating Hyperspectral Imaging in Pest Detection: A Systematic Review and Meta-Analysis",
-        "description": "Under preparation.",
-        "image": "/images/prep-hyperspectral.jpg",
-        "link": "#",
-        "date": "2025",
-        "category": "P"
+        "text": "<b>Rafi, M. H.</b>, Rahman, M. H., Pickens, J., Ahmed, F., & Rehman, T. U. (2025). <b>Integrating Hyperspectral Imaging in Pest Detection: A Systematic Review and Meta-Analysis.</b> Manuscript in preparation."
       }
     ]
   },
   "presentations": {
     "Oral Presentations": [
       {
-        "title": "Advances in AI for Agriculture",
-        "description": "Oral presentation at the IEEE VIS 2024 conference.",
-        "image": "/images/oral-presentation.jpg",
-        "link": "#",
-        "date": "2024"
+        "text": "<b>Rafi, M. H.</b>, Ahmed, F., Syed, H., & Rehman, T. U. (2025). <b>KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management.</b> In <i>2025 American Society for Horticultural Science Conference</i>, Jul 28 - Aug 01, Hyatt Regency, New Orleans, LA, USA."
+      },
+      {
+        "text": "<b>Rafi, M. H.</b>, Ahmed, F., Syed, H., & Rehman, T. U. (2025). <b>Cloud-Enabled Plant Segmentation and Tracking Framework for Ornamental Nursery Inventory Management.</b> In <i>2025 Annual International Meeting of American Society of Agricultural and Biological Engineers</i>, Jul 13 - Jul 16, Sheraton Centre Toronto Hotel, Toronto, Ontario, Canada."
+      },
+      {
+        "text": "<b>Rafi, M. H.</b>, Ahmed, F., Syed, H., & Rehman, T. U. (2025). <b>Cloud-Enabled Plant Segmentation and Tracking Framework for Ornamental Nursery Inventory Management.</b> In <i>AI in Agriculture and Natural Resources Conference</i>, March 31 - April 02, The Mill, Starkville, MS, USA."
+      },
+      {
+        "text": "Ahmed, F., Syed, H. H., <b>Rafi, M. H.</b>, & Rehman, T. U. (2025). <b>Autonomous Robotic Navigation in Ornamental Crop Production Using Vision and Sensor Fusion.</b> In <i>AI in Agriculture and Natural Resources Conference</i>, March 31 - April 02, The Mill, Starkville, MS, USA."
+      },
+      {
+        "text": "Syed, H. H., Ahmed, F., <b>Rafi, M. H.</b>, Pickens, J., & Rehman, T. U. (2025). <b>Expanding Capabilities of AI-Driven Robotic Inventory Management and Quality Evaluation of Ornamental Nursery Crops.</b> In <i>AI in Agriculture and Natural Resources Conference</i>, March 31 - April 02, The Mill, Starkville, MS, USA."
       }
     ],
     "Poster Presentations": [
       {
-        "title": "Using Hyperspectral Imaging in Crop Monitoring",
-        "description": "Presented at the International Plant Science Symposium.",
-        "image": "/images/poster-presentation.jpg",
-        "link": "#",
-        "date": "2024"
+        "text": "<b>Rafi, M. H.</b>, Ahmed, F., Syed, H., & Rehman, T. U. (2025). <b>AI Enabled Cloud-based Inventory Management System for Ornamental Nurseries.</b> In <i>Harnessing Data Science for Collaborative Advances in Production Agriculture</i>, April 21, The Hotel at Auburn University, Auburn, AL, USA."
+      },
+      {
+        "text": "<b>Rafi, M. H.</b>, Ahmed, F., Syed, H., & Rehman, T. U. (2025). <b>Long-term Association with Ensemble Backbone for Accurate Plant Counting.</b> In <i>Auburn’s 2025 Research Symposium</i>, March 26, Auburn University, Auburn, AL, USA."
       }
     ]
   }
