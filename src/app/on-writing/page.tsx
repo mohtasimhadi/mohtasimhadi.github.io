@@ -156,7 +156,7 @@ export default function BlogPage() {
                   {posts.map((post: any, index: number) => (
                     <li
                       key={index}
-                      className="p-4 border rounded-lg shadow-md bg-white"
+                      className="p-4 border-l-4 border-[#E87722] rounded-lg shadow-md bg-white"
                     >
                       <h3 className="text-lg font-semibold">{post.title}</h3>
                       <Link
