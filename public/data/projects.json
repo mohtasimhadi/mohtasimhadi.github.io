@@ -1,11 +1,11 @@
 [
   {
     "title": "FloraBot/NurseryBot",
-    "description": "An autonomous unmanned ground vehicle specifically built for navigating through nursery beds. Uses computer vision algorithm and sensor fusion. Was awarded as the Excellency in productivity in 2024 FIRA USA Farm Robotics Challenge.",
+    "description": "Ornamental nurseries contain hundreds of thousands of plants across various varieties, making their counting, quality assessment and continuous management challenging. Florabot offers a solution to address these issues by tackling labor shortages, optimizing costs, and ensuring high-quality standards in nurseries",
     "affiliation": "Auburn University - Precision Agriculture Lab",
     "date": "2024",
     "mediaType": "video",
-    "media": "https://www.youtube.com/embed/ureWGHHNJK4?si=VWeDpJx7kKzTc0Vr",
+    "media": "https://youtu.be/ureWGHHNJK4?si=XQlKHtXNfTQLeKYi",
     "links": [
       {
         "title": "Website",
@@ -46,7 +46,7 @@
     "affiliation": "Intelligent Machines Limited",
     "date": "2021",
     "mediaType": "image",
-    "media": "/sheba.jpg",
+    "media": "/imgs/projects/sheba.jpg",
     "links": []
   },
   {
