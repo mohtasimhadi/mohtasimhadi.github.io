@@ -38,7 +38,6 @@ export default function BlogPage() {
     <div className="container mx-auto px-6 py-12 pt-0 flex">
       {/* Sidebar Navigation */}
       <aside className="w-1/4 sticky top-0 h-screen p-4 bg-gray-100 shadow-md">
-        <h2 className="text-2xl font-bold text-[#E87722] mb-4">Sections</h2>
         <ul className="space-y-2">
           {/* On Writing Section */}
           <li>

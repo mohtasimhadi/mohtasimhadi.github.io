@@ -8,8 +8,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#E87722] shadow-md text-white">
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+    <nav className="bg-[#E87722] shadow-md text-white fixed top-0 left-0 w-full z-50 h-[72px] flex items-center">
+      <div className="container mx-auto flex justify-between items-center px-6">
         {/* Logo */}
         <h1 className="text-2xl font-bold tracking-wide">Mohtasim Hadi Rafi</h1>
 
@@ -34,7 +34,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0C2340] text-white text-lg flex flex-col items-center space-y-4 py-4">
+        <div className="md:hidden bg-[#0C2340] text-white text-lg flex flex-col items-center space-y-4 py-4 w-full absolute top-full left-0">
           <NavItem href="/" label="Home" />
           <NavItem href="/about" label="About" />
           <NavItem href="/on-writing" label="On Writing" />
@@ -46,7 +46,6 @@ export default function Navbar() {
     </nav>
   );
 }
-
 
 function NavItem({ href, label }: { href: string; label: string }) {
   return (
