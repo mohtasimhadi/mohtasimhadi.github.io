@@ -18,14 +18,14 @@ export default function MentorshipPage() {
 
   return (
     <div className="container mx-auto px-6 py-12">
+      {/* Students Section */}
+      <Section title="Students" data={mentorshipData.students} />
+      
       {/* Advisors Section */}
       <Section title="Advisors" data={mentorshipData.advisors} />
 
       {/* Collaborators Section */}
       <Section title="Collaborators" data={mentorshipData.collaborators} />
-
-      {/* Students Section */}
-      <Section title="Students" data={mentorshipData.students} />
 
       {/* Past Collaborators & Mentors Section */}
       <Section title="Past Collaborators & Mentors" data={mentorshipData.past_collaborators_mentors} />
