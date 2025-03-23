@@ -19,8 +19,8 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6 text-lg font-semibold">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
-          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/publications" label="Publications" pathname={pathname} />
+          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/people" label="People" pathname={pathname} />
         </ul>
@@ -39,8 +39,8 @@ export default function Navbar() {
         <div className="md:hidden bg-[#0C2340] text-white text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
-          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/publications" label="Publications" pathname={pathname} />
+          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/people" label="People" pathname={pathname} />
         </div>
