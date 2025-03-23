@@ -5,14 +5,14 @@
       "company": "Precision Agriculture Lab, Auburn University",
       "duration": "May, 2024 - Present",
       "description": "",
-      "logo": "/au.jpg"
+      "logo": "/logo/au.jpg"
     },
     {
       "position": "Analytics Engineer",
       "company": "Intelligent Machines Limited",
       "duration": "Apr, 2022 - Mar, 2024",
       "description": "",
-      "logo": "/im.png"
+      "logo": "/logo/im.png"
     }
   ],
   "education": [
@@ -20,13 +20,13 @@
       "degree": "M.S. in Biosystems Engineering",
       "institution": "Auburn University",
       "year": "May, 2024 - Present",
-      "logo": "/au.jpg"
+      "logo": "/logo/au.jpg"
     },
     {
       "degree": "BSc. Engg. in Software Engineering",
       "institution": "Islamic University of Technology",
       "year": "Jan, 2019 - May, 2023",
-      "logo": "/iut.png"
+      "logo": "/logo/iut.png"
     }
   ],
   "skills": {
@@ -101,25 +101,25 @@
       "title": "Data Analytics Professional Certificate",
       "issuer": "Google",
       "year": "2022",
-      "logo": "/google.webp"
+      "logo": "/logo/google.webp"
     },
     {
       "title": "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",
       "issuer": "DeepLearning.AI",
       "year": "2022",
-      "logo": "/dlai.png"
+      "logo": "/logo/dlai.png"
     },
     {
       "title": "Building Web Applications in Django",
       "issuer": "University of Michigan",
       "year": "2022",
-      "logo": "/um.png"
+      "logo": "/logo/um.png"
     },
     {
       "title": "Neural Networks and Deep Learning",
       "issuer": "DeepLearning.AI",
       "year": "2021",
-      "logo": "/dlai.png"
+      "logo": "/logo/dlai.png"
     }
   ],
   "cv": {
@@ -129,19 +129,19 @@
   "professional_associations": [
     {
       "name": "American Society of Agricultural and Biological Engineers",
-      "logo": "/asabe.svg"
+      "logo": "/logo/asabe.svg"
     },
     {
       "name": "International Society of Precision Agriculture",
-      "logo": "/ispa.png"
+      "logo": "/logo/ispa.png"
     },
     {
       "name": "American Society for Horticultural Science",
-      "logo": "/ahs.jpg"
+      "logo": "/logo/ahs.jpg"
     },
     {
       "name": "Institute of Electrical and Electronics Engineers",
-      "logo": "/ieee.jpg"
+      "logo": "/logo/ieee.jpg"
     }
   ],
   "achievements": [
@@ -152,27 +152,27 @@
           "title": "FIRA USA Farm Robotics Challenge",
           "details": "Excellency in Productivity (USD 5,000), CA, USA",
           "date": "Oct, 2024",
-          "image": "/fira.jpeg",
+          "image": "/logo/fira.jpeg",
           "link": "https://www.farmroboticschallenge.ai/2024"
         },
         {
           "title": "European Rover Challenge",
           "details": "10th in the world, Remote",
           "date": "Sep, 2021",
-          "image": "/images.jpeg",
+          "image": "/logo/erc.jpeg",
           "link": "https://roverchallenge.eu/full-erc2021-scoreboard/"
         },
         {
           "title": "10th ICT Fest, IUT",
           "details": "Second Runner’s up in Hackathon (BDT 10,000), Gazipur, Bangladesh",
           "date": "Apr, 2019",
-          "image": "/if.jpeg"
+          "image": "/logo/if.jpeg"
         },
         {
           "title": "National High School Programming Contest",
           "details": "Regional Winner, Mymensingh, Bangladesh",
           "date": "Jun, 2016",
-          "image": "/nhspc.jpeg"
+          "image": "/logo/nhspc.jpeg"
         }
       ]
     },
@@ -183,13 +183,13 @@
           "title": "GSC Travel Fellowship",
           "details": "Received $400 to present at AI in Agriculture and Natural Resources Conference, Mississippi",
           "date": "2024",
-          "image": "/au.jpg"
+          "image": "/logo/au.jpg"
         },
         {
           "title": "India Bangladesh Maitree Muktijoddha Sontan Scholarship",
           "details": "BDT 50,000 (USD equivalent 600) during junior year of undergrad",
           "date": "2019",
-          "image": "/ib.jpeg"
+          "image": "/logo/ib.jpeg"
         }
       ]
     }

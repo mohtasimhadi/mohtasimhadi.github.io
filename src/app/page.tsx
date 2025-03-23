@@ -15,17 +15,28 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const [data, setData] = useState<any>(null);
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
   const [visibleNews, setVisibleNews] = useState(12);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Fetch news from JSON file
+  // Fetch profile and contact data
+  useEffect(() => {
+    fetch("/data/home.json")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.error("Error fetching home data:", err));
+  }, []);
+
+  // Fetch news data separately
   useEffect(() => {
     fetch("/data/news.json")
       .then((res) => res.json())
-      .then((data) => setNews(data))
+      .then((data) => setNews(data.news))
       .catch((err) => console.error("Error fetching news:", err));
   }, []);
+
+  if (!data) return <p className="text-center mt-10 text-lg">Loading...</p>;
 
   // Filter news based on search query
   const filteredNews = news.filter(
@@ -42,8 +53,8 @@ export default function Home() {
         <div className="flex flex-col items-center text-center md:text-left">
           <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-[#E87722] shadow-lg">
             <Image
-              src="/dp.jpg"
-              alt="Mohtasim Hadi Rafi"
+              src={data.profile.profile_image}
+              alt={data.profile.name}
               width={192}
               height={192}
               className="object-cover"
@@ -51,59 +62,29 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="text-3xl font-bold mt-4">Mohtasim Hadi Rafi</h1>
-          <h2 className="text-lg text-[#0C2340] font-semibold">
-            Graduate Research Assistant
-          </h2>
+          <h1 className="text-3xl font-bold mt-4">{data.profile.name}</h1>
+          <h2 className="text-lg text-[#0C2340] font-semibold">{data.profile.title}</h2>
 
           {/* Contact Information */}
           <div className="flex flex-col items-center md:items-start mt-6 space-y-2">
-            <ContactItem Icon={Mail} text="mzr0167@auburn.edu" />
-            <ContactItem Icon={Mail} text="mohtasimhadi@gmail.com" />
-            <ContactItem Icon={Phone} text="+1 (334) 559-9369" />
-            <ContactItem Icon={MapPin} text="Auburn University, AL, USA" />
+            <ContactItem Icon={Mail} text={data.contact.email1} />
+            <ContactItem Icon={Mail} text={data.contact.email2} />
+            <ContactItem Icon={Phone} text={data.contact.phone} />
+            <ContactItem Icon={MapPin} text={data.contact.address} />
           </div>
 
           {/* Social Media Links */}
           <div className="flex space-x-4 mt-6">
-            <SocialIcon
-              href="https://www.linkedin.com/in/mohtasimhadi/"
-              Icon={Linkedin}
-            />
-            <SocialIcon href="https://github.com/mohtasimhadi" Icon={Github} />
-            <SocialIcon
-              href="https://www.facebook.com/mohtasimhadi"
-              Icon={Facebook}
-            />
-            <SocialIcon
-              href="https://instagram.com/moho__________"
-              Icon={Instagram}
-            />
+            <SocialIcon href={data.contact.linkedin} Icon={Linkedin} />
+            <SocialIcon href={data.contact.github} Icon={Github} />
+            <SocialIcon href={data.contact.facebook} Icon={Facebook} />
+            <SocialIcon href={data.contact.instagram} Icon={Instagram} />
           </div>
         </div>
 
         {/* Right: About Section */}
         <div className="max-w-xl">
-          <p className="text-lg mt-4 leading-relaxed">
-            I’m a researcher and engineer currently pursuing my Master’s in
-            Biosystems Engineering at Auburn University. My work focuses on the
-            intersection of AI, machine learning, and computer vision, with an
-            emphasis on applying these technologies to biosystems. My current
-            research involves developing smart systems for plant inventory
-            management using drones and rovers, aiming to automate tasks like
-            plant detection, counting, and quality assessment.
-            <br />
-            Previously, I worked as an Analytics Engineer at Intelligent
-            Machines Ltd., where I contributed to AI-based retail products and
-            data pipelines for the banking industry. I have hands-on experience
-            with deep learning, computer vision, and data science tools, and I
-            thrive in interdisciplinary environments where innovation and
-            technology come together to solve real-world problems.
-            <br />
-            Feel free to connect if you’d like to discuss collaborative
-            opportunities or share insights on AI applications in agriculture
-            and beyond.
-          </p>
+          <p className="text-lg mt-4 leading-relaxed whitespace-pre-line">{data.profile.bio}</p>
         </div>
       </div>
 
@@ -126,11 +107,9 @@ export default function Home() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredNews.length > 0 ? (
-            filteredNews
-              .slice(0, visibleNews)
-              .map((item, index) => (
-                <NewsCard key={index} date={item.date} news={item.news} />
-              ))
+            filteredNews.slice(0, visibleNews).map((item, index) => (
+              <NewsCard key={index} date={item.date} news={item.news} />
+            ))
           ) : (
             <p>No news found.</p>
           )}
