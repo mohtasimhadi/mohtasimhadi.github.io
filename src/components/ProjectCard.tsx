@@ -12,18 +12,18 @@ interface ProjectProps {
 
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, affiliation, date, mediaType, media, links }) => {
   return (
-    <div className="bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6 flex flex-col md:flex-row w-full h-[300px] gap-6 relative border-l-4 border-[#E87722]">
+    <div className="bg-white dark:bg-gray-900 shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row w-full gap-6 relative border-l-4 border-[#E87722]">
       
       {/* Affiliation Sticker (Top Right Corner) */}
-      <div className="absolute top-4 right-4 bg-[#E87722] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+      <div className="absolute top-0 right-0 md:top-0 md:right-0 bg-[#E87722] text-white text-xs font-semibold px-2 py-2">
         {affiliation}
       </div>
 
-      {/* Media Section (Left Side) */}
-      <div className="w-full md:w-[45%] h-full flex items-center justify-center">
+      {/* Media Section */}
+      <div className="w-full md:w-[45%] flex items-center justify-center">
         {mediaType === "video" ? (
           <iframe
-            className="w-full h-full rounded-lg"
+            className="w-full aspect-video rounded-lg"
             src={media.replace("youtu.be/", "www.youtube.com/embed/")}
             title={title}
             allowFullScreen
@@ -34,30 +34,30 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, affiliation, 
             alt={title}
             width={600}
             height={400}
-            className="rounded-lg w-full h-full object-cover"
+            className="rounded-lg w-full h-auto max-h-[250px] object-cover"
           />
         )}
       </div>
 
-      {/* Text Content (Right Side) */}
-      <div className="flex-1 flex flex-col justify-between p-6">
+      {/* Text Content */}
+      <div className="flex-1 flex flex-col justify-between p-2 md:p-6">
         <div>
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400">{date}</p>
-          <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">{description}</p>
+          <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
+          <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{date}</p>
+          <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base mt-2">{description}</p>
         </div>
 
         {/* Links (Only Show if Present) */}
         {links && links.length > 0 && (
           <div className="mt-4">
-            <ul className="list-none flex space-x-3">
+            <ul className="list-none flex flex-wrap gap-3">
               {links.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline dark:text-blue-400 text-sm font-semibold"
+                    className="text-blue-600 hover:underline dark:text-blue-400 text-sm md:text-base font-semibold"
                   >
                     {link.title}
                   </a>
