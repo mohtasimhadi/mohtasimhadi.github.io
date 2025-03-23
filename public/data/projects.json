@@ -1,0 +1,33 @@
+[
+    {
+      "title": "AI-Powered Plant Monitoring",
+      "description": "A machine learning-based system to monitor plant growth and detect anomalies.",
+      "affiliation": "University of Utah - Scientific Computing and Imaging Institute",
+      "mediaType": "video",
+      "media": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "links": [
+        {
+          "title": "GitHub Repository",
+          "url": "https://github.com/example/project"
+        },
+        {
+          "title": "Research Paper",
+          "url": "https://arxiv.org/abs/2301.12345"
+        }
+      ]
+    },
+    {
+      "title": "Hyperspectral Imaging for Drought Analysis",
+      "description": "Developing deep learning models to analyze hyperspectral data and detect plant stress.",
+      "affiliation": "Auburn University - Precision Agriculture Lab",
+      "mediaType": "image",
+      "media": "/images/hyperspectral-project.jpg",
+      "links": [
+        {
+          "title": "Presentation Slides",
+          "url": "https://example.com/slides"
+        }
+      ]
+    }
+  ]
+  
