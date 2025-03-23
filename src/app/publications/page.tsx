@@ -233,7 +233,7 @@ function ResearchCard({
   return (
     <div className="bg-white shadow-md rounded-lg mb-6 border-l-4 border-[#E87722] flex flex-col relative">
       {/* Main Content and Image Side-by-Side */}
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row">
         {/* Content Section */}
         <div className="p-6 flex-1">
           {doi ? (
@@ -282,9 +282,9 @@ function ResearchCard({
           </div>
         </div>
 
-        {/* Image Section (Optional, Right-Aligned) */}
+        {/* Image Section (Hidden on Phone, Visible on sm and above) */}
         {image && (
-          <div className="w-1/4 flex items-center justify-center">
+          <div className="w-1/4 flex items-center justify-center hidden sm:flex">
             <Image
               src={image}
               alt="Research Image"
