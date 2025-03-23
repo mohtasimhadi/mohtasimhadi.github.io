@@ -17,7 +17,7 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6 text-lg font-semibold">
           <NavItem href="/" label="Home" />
           <NavItem href="/about" label="About" />
-          <NavItem href="/blog" label="Blog" />
+          <NavItem href="/on-writing" label="On Writing" />
           <NavItem href="/research" label="Research" />
           <NavItem href="/writing" label="On Writing" />
           <NavItem href="/people" label="People" />
