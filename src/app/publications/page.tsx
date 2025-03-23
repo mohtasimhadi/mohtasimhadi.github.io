@@ -309,7 +309,9 @@ function ResearchCard({
           {showBibTex && bibTex && (
             <div>
               <h3 className="text-sm font-semibold text-gray-900">BibTeX:</h3>
-              <pre className="text-xs text-gray-700 mt-1 overflow-auto">{bibTex}</pre>
+              <pre className="text-xs text-gray-700 mt-1 overflow-auto">
+                {bibTex}
+              </pre>
             </div>
           )}
         </div>
