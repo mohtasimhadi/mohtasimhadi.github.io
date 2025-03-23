@@ -35,9 +35,9 @@ export default function BlogPage() {
   if (!blogData) return <p className="text-center mt-10 text-lg">Loading...</p>;
 
   return (
-    <div className="container mx-auto px-6 py-12 flex">
+    <div className="container mx-auto px-6 py-12 pt-0 flex">
       {/* Sidebar Navigation */}
-      <aside className="w-1/4 sticky top-20 h-screen p-4 bg-gray-100 rounded-lg shadow-md">
+      <aside className="w-1/4 sticky top-0 h-screen p-4 bg-gray-100 shadow-md">
         <h2 className="text-2xl font-bold text-[#E87722] mb-4">Sections</h2>
         <ul className="space-y-2">
           {/* On Writing Section */}
@@ -50,7 +50,7 @@ export default function BlogPage() {
                   : "hover:bg-gray-300"
               }`}
             >
-              On Writing
+              Books
             </a>
             <ul className="pl-4 space-y-1">
               {Object.keys(blogData.on_writing).map((subCategory) => (
@@ -80,7 +80,7 @@ export default function BlogPage() {
                   : "hover:bg-gray-300"
               }`}
             >
-              Blog
+              The Typist
             </a>
             <ul className="pl-4 space-y-1">
               {Object.keys(blogData.blog).map((category) => (
@@ -106,8 +106,8 @@ export default function BlogPage() {
       <div className="w-3/4 px-6">
         {/* On Writing Section */}
         <section id="On-Writing" className="blog-section mb-12">
-          <h1 className="text-4xl font-bold text-[#E87722] mb-6 text-center">
-            On Writing
+          <h1 className="text-4xl font-bold text-[#E87722] pt-6 mb-6 text-center">
+            Books
           </h1>
 
           {Object.entries(blogData.on_writing).map(
@@ -141,7 +141,7 @@ export default function BlogPage() {
         {/* Blog Section */}
         <section id="Blog" className="blog-section">
           <h2 className="text-4xl font-bold text-[#E87722] mb-6 text-center">
-            Blog
+            The Typist
           </h2>
           {Object.entries(blogData.blog).map(
             ([category, posts]: [string, any]) => (

@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import parse from "html-react-parser";
 
 export default function ResearchPage() {
   const [researchData, setResearchData] = useState<any>(null);
-  const [searchQuery, setSearchQuery] = useState(""); // Search input
-  const [activeSection, setActiveSection] = useState(""); // Tracks active section
-  const [activeSubsection, setActiveSubsection] = useState(""); // Tracks active subsection
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeSection, setActiveSection] = useState("");
+  const [activeSubsection, setActiveSubsection] = useState("");
 
   useEffect(() => {
     fetch("/data/research.json")
@@ -64,7 +63,7 @@ export default function ResearchPage() {
   const filteredPresentations = filterResearch(researchData.presentations);
 
   return (
-    <div className="container mx-auto px-6 py-12 flex">
+    <div className="container mx-auto px-6 py-12 pt-0 flex">
       {/* Sidebar (Hidden in Mobile View) */}
       <aside className="hidden md:flex md:w-1/4 h-screen sticky top-0 left-0 flex-col pr-8 space-y-6 bg-gray-100 p-6">
         {/* Search Bar */}
@@ -188,7 +187,7 @@ function ResearchCard({ text, doi }: { text: string; doi?: string }) {
 // Reusable Section Component
 function Section({ title, id, children }: { title: string; id: string; children: React.ReactNode }) {
   return (
-    <div className="mb-12 research-section" id={id}>
+    <div className="mb-12 research-section pt-6" id={id}>
       <h2 className="text-3xl font-bold text-[#E87722] mb-6">{title}</h2>
       {children}
     </div>
