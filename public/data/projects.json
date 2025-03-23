@@ -3,7 +3,7 @@
     "title": "FloraBot/NurseryBot",
     "description": "Ornamental nurseries contain hundreds of thousands of plants across various varieties, making their counting, quality assessment and continuous management challenging. Florabot offers a solution to address these issues by tackling labor shortages, optimizing costs, and ensuring high-quality standards in nurseries",
     "affiliation": "Auburn University - Precision Agriculture Lab",
-    "date": "2024",
+    "date": "May, 2024 - Present",
     "mediaType": "video",
     "media": "https://youtu.be/ureWGHHNJK4?si=XQlKHtXNfTQLeKYi",
     "links": [
@@ -17,16 +17,16 @@
     "title": "Ornamental Plant Nursery Inventory Management",
     "description": "Developing a multi-object tracking (MOT) algorithm to count ornamental plants in nursery efficiently. The system uses an unmanned ground vehicle equipped with multiple cameras. An ensemble model is being used as the backbone for the MOT algorithm.",
     "affiliation": "Auburn University - Precision Agriculture Lab",
-    "date": "2023",
+    "date": "May, 2024 - Present",
     "mediaType": "image",
-    "media": "/images/hyperspectral-project.jpg",
+    "media": "/imgs/projects/oim.png",
     "links": []
   },
   {
     "title": "Biponon: Tracking point-of-sale merchandise at 800,000 outlets",
     "description": "Bangladesh’s leading mobile financial service provider, bKash, has been using our trade marketing AI product, Biponon, since August 2018. Using four object detection models, bKash tracks the executions and retentions of POS materials, monitors brand campaigns, manages inventory, accurately calculates field force salary—and maintains overall market superiority in this competitive landscape. Using AI, bKash has gained a staggering 320% increase in productivity—serving 585 outlets by a merchandiser, up from 139.",
     "affiliation": "Intelligent Machines Limited",
-    "date": "2018 - Present",
+    "date": "May, 2023 - March, 2024",
     "mediaType": "video",
     "media": "https://youtu.be/VLqqCBdCnIs?si=Ujo2tFsPdFAEofu1",
     "links": []
@@ -35,7 +35,7 @@
     "title": "Dharapat: CIB report and bank statement analyzers",
     "description": "IDLC Finance has been using CIB report module of our financial statement analyzer AI, Dharapat, since February 2022. The team has also been using the bank statements module since July 2023. IDLC Finance has shortened the statement processing time from three working days to less than 30 minutes. Prime Bank has signed up for the CIB report analyzer—deployment is currently in progress.",
     "affiliation": "Intelligent Machines Limited",
-    "date": "2022 - Present",
+    "date": "April, 2022 - February, 2024",
     "mediaType": "video",
     "media": "https://youtu.be/vPbyAlnJKm4?si=YPxjYDHu4Zz_tCxR",
     "links": []
@@ -44,7 +44,7 @@
     "title": "Sheba.XYZ Database Normalisation",
     "description": "Revamped Sheba.XYZ's database for faster query execution by documenting entity relationships, designing optimized structures, and enhancing overall efficiency.",
     "affiliation": "Intelligent Machines Limited",
-    "date": "2021",
+    "date": "December, 2023 - January, 2024",
     "mediaType": "image",
     "media": "/imgs/projects/sheba.jpg",
     "links": []
@@ -53,7 +53,7 @@
     "title": "Fordo: Precision marketing to convert millions of consumers",
     "description": "Unilever has been using our precision marketing AI product, Fordo, since July 2019. Built with repeat purchase data of 2.3 million unique consumers, Fordo recommends personalized product bundling and offers. Unilever team has achieved successful conversion rates of 6% and above (often as high as 13%), up from 1% before using AI.",
     "affiliation": "Intelligent Machines Limited",
-    "date": "2019 - Present",
+    "date": "April, 2022 - February, 2023",
     "mediaType": "video",
     "media": "https://youtu.be/Cbyyw6e-448?si=AIYYJBSlx-ThId_M",
     "links": []
