@@ -241,12 +241,12 @@ function ResearchCard({
               href={`https://doi.org/${doi}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:text-[#E87722] transition font-semibold"
+              className="block hover:text-[#E87722] transition"
             >
               {parse(text)}
             </a>
           ) : (
-            <p className="text-sm text-gray-700 font-semibold">{parse(text)}</p>
+            <p className="text-sm text-gray-700">{parse(text)}</p>
           )}
 
           {/* Buttons */}
