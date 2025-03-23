@@ -25,7 +25,7 @@ export default function MentorshipPage() {
       <Section title="Advisors" data={mentorshipData.advisors} />
 
       {/* Collaborators Section */}
-      <Section title="Collaborators" data={mentorshipData.collaborators} />
+      <Section title="Current Lab" data={mentorshipData.collaborators} />
 
       {/* Past Collaborators & Mentors Section */}
       <Section title="Past Collaborators & Mentors" data={mentorshipData.past_collaborators_mentors} />
