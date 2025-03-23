@@ -4,7 +4,11 @@
     "Conference Proceedings": [
       {
         "text": "<b>Rafi, M. H.</b>, Mahjabin, M. R., Rahman, M. S., Kabir, M. H., & Ahmed, S. (2023, December). <b>A Critical Analysis of Deep Learning Applications in Crop Pest Classification: Promising Pathways and Limitations.</b> In <i>2023 26th International Conference on Computer and Information Technology (ICCIT)</i>, (pp. 1-6). IEEE. 13 Dec, 2023, Cox’s Bazar, Bangladesh. DOI: 10.1109/ICCIT60459.2023.10441417",
-        "doi": "10.1109/ICCIT60459.2023.10441417"
+        "doi": "10.1109/ICCIT60459.2023.10441417",
+        "code": "https://www.kaggle.com/code/sapnadewari/ip102-pestdetection",
+        "abstract": "Deep Learning (DL) has recently emerged as a pivotal tool in a wide variety of agricultural end-level applications. While promising outcomes have been achieved in crop disease identification, the performance often falls short while accurately classifying crop pests. This study investigates the challenges of crop pest classification that are affecting the design and efficacy of Deep Neural Networks. The investigation involves a meticulous analysis of fundamental factors that influence the effectiveness of DL-based models. The literature utilizes a carefully chosen dataset, IP102, to reflect real-world challenges like class imbalance, complex backgrounds, multiple pest infestations, interclass similarity of pests, high intra-class variance, etc. This study unfolds the impact of the critical factors, ranging from dataset characteristics to the challenge of covariate shift, along with providing pathways to tackle them. Combining literature insights and practical experimentation, this study provides valuable perspectives on enhancing DL-based models for effective crop pest classification in real-world agricultural settings.",
+        "bibTex": "@inproceedings{rafi2023critical,\n\ttitle={A critical analysis of deep learning applications in crop pest classification: Promising pathways and limitations},\n\tauthor={Rafi, Mohtasim Hadi and Mahjabin, Mohammad Ratul and Rahman, Md Sabbir and Kabir, Md Hasanul and Ahmed, Sabbir},\n\tbooktitle={2023 26th International Conference on Computer and Information Technology (ICCIT)},\n\tpages={1--6},\n\tyear={2023},\n\torganization={IEEE}\n}",
+        "image": "/imgs/projects/ip102.gif"
       }
     ],
     "In Submission": [

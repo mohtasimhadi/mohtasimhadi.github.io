@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import parse from "html-react-parser";
+import Image from "next/image";
 
 export default function ResearchPage() {
   const [researchData, setResearchData] = useState<any>(null);
@@ -82,7 +83,9 @@ export default function ResearchPage() {
             <a
               href="#Publications"
               className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${
-                activeSection === "Publications" ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+                activeSection === "Publications"
+                  ? "bg-[#E87722] text-white"
+                  : "hover:bg-gray-300"
               }`}
             >
               Publications
@@ -93,7 +96,9 @@ export default function ResearchPage() {
                   <a
                     href={`#${category.replace(/\s+/g, "-")}`}
                     className={`block w-full text-left px-3 py-1 rounded-md ${
-                      activeSubsection === category.replace(/\s+/g, "-") ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+                      activeSubsection === category.replace(/\s+/g, "-")
+                        ? "bg-[#E87722] text-white"
+                        : "hover:bg-gray-300"
                     }`}
                   >
                     {category}
@@ -108,7 +113,9 @@ export default function ResearchPage() {
             <a
               href="#Presentations"
               className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${
-                activeSection === "Presentations" ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+                activeSection === "Presentations"
+                  ? "bg-[#E87722] text-white"
+                  : "hover:bg-gray-300"
               }`}
             >
               Presentations
@@ -119,7 +126,9 @@ export default function ResearchPage() {
                   <a
                     href={`#${category.replace(/\s+/g, "-")}`}
                     className={`block w-full text-left px-3 py-1 rounded-md ${
-                      activeSubsection === category.replace(/\s+/g, "-") ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+                      activeSubsection === category.replace(/\s+/g, "-")
+                        ? "bg-[#E87722] text-white"
+                        : "hover:bg-gray-300"
                     }`}
                   >
                     {category}
@@ -135,61 +144,176 @@ export default function ResearchPage() {
       <div className="w-full md:w-3/4 pl-6">
         {/* Publications Section */}
         <Section title="Publications" id="Publications">
-          {Object.entries(filteredPublications).map(([category, publications]: [string, any]) => (
-            <div key={category} id={category.replace(/\s+/g, "-")} className="mb-10 research-section research-subsection">
-              <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">{category}</h3>
-              {publications.length > 0 ? (
-                publications.map((pub: any, index: number) => (
-                  <ResearchCard key={index} {...pub} />
-                ))
-              ) : (
-                <p className="text-center">No results found.</p>
-              )}
-            </div>
-          ))}
+          {Object.entries(filteredPublications).map(
+            ([category, publications]: [string, any]) => (
+              <div
+                key={category}
+                id={category.replace(/\s+/g, "-")}
+                className="mb-10 research-section research-subsection"
+              >
+                <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">
+                  {category}
+                </h3>
+                {publications.length > 0 ? (
+                  publications.map((pub: any, index: number) => (
+                    <ResearchCard key={index} {...pub} />
+                  ))
+                ) : (
+                  <p className="text-center">No results found.</p>
+                )}
+              </div>
+            )
+          )}
         </Section>
 
         {/* Presentations Section */}
         <Section title="Presentations" id="Presentations">
-          {Object.entries(filteredPresentations).map(([category, presentations]: [string, any]) => (
-            <div key={category} id={category.replace(/\s+/g, "-")} className="mb-10 research-section research-subsection">
-              <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">{category}</h3>
-              {presentations.length > 0 ? (
-                presentations.map((pres: any, index: number) => (
-                  <ResearchCard key={index} {...pres} />
-                ))
-              ) : (
-                <p className="text-center">No results found.</p>
-              )}
-            </div>
-          ))}
+          {Object.entries(filteredPresentations).map(
+            ([category, presentations]: [string, any]) => (
+              <div
+                key={category}
+                id={category.replace(/\s+/g, "-")}
+                className="mb-10 research-section research-subsection"
+              >
+                <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">
+                  {category}
+                </h3>
+                {presentations.length > 0 ? (
+                  presentations.map((pres: any, index: number) => (
+                    <ResearchCard key={index} {...pres} />
+                  ))
+                ) : (
+                  <p className="text-center">No results found.</p>
+                )}
+              </div>
+            )
+          )}
         </Section>
       </div>
     </div>
   );
 }
 
-// Reusable Research Card
-function ResearchCard({ text, doi }: { text: string; doi?: string }) {
-  return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-6 border-l-4 border-[#E87722]">
-      {doi ? (
-        <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer" className="block hover:text-[#E87722] transition">
-          {parse(text)}
-        </a>
-      ) : (
-        <p className="text-sm text-gray-700">{parse(text)}</p>
-      )}
-    </div>
-  );
-}
-
 // Reusable Section Component
-function Section({ title, id, children }: { title: string; id: string; children: React.ReactNode }) {
+function Section({
+  title,
+  id,
+  children,
+}: {
+  title: string;
+  id: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="mb-12 research-section pt-6" id={id}>
       <h2 className="text-3xl font-bold text-[#E87722] mb-6">{title}</h2>
       {children}
+    </div>
+  );
+}
+
+function ResearchCard({
+  text,
+  doi,
+  bibTex,
+  code,
+  abstract,
+  image,
+}: {
+  text: string;
+  doi?: string;
+  bibTex?: string;
+  code?: string;
+  abstract?: string;
+  image?: string;
+}) {
+  const [showBibTex, setShowBibTex] = useState(false);
+  const [showAbstract, setShowAbstract] = useState(false);
+
+  return (
+    <div className="bg-white shadow-md rounded-lg mb-6 border-l-4 border-[#E87722] flex flex-col relative">
+      {/* Main Content and Image Side-by-Side */}
+      <div className="flex">
+        {/* Content Section */}
+        <div className="p-6 flex-1">
+          {doi ? (
+            <a
+              href={`https://doi.org/${doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-[#E87722] transition font-semibold"
+            >
+              {parse(text)}
+            </a>
+          ) : (
+            <p className="text-sm text-gray-700 font-semibold">{parse(text)}</p>
+          )}
+
+          {/* Buttons */}
+          <div className="mt-4 flex space-x-3">
+            {abstract && (
+              <button
+                onClick={() => setShowAbstract(!showAbstract)}
+                className="px-3 py-1 text-sm font-semibold text-white bg-gray-800 rounded-md hover:bg-gray-700 transition"
+              >
+                Abstract
+              </button>
+            )}
+
+            {bibTex && (
+              <button
+                onClick={() => setShowBibTex(!showBibTex)}
+                className="px-3 py-1 text-sm font-semibold text-white bg-[#E87722] rounded-md hover:bg-[#d4661f] transition"
+              >
+                BibTex
+              </button>
+            )}
+
+            {code && (
+              <a
+                href={code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 text-sm font-semibold text-white bg-slate-500 rounded-md hover:bg-slate-400 transition"
+              >
+                Code
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Image Section (Optional, Right-Aligned) */}
+        {image && (
+          <div className="w-1/4 flex items-center justify-center">
+            <Image
+              src={image}
+              alt="Research Image"
+              width={200}
+              height={200}
+              className="h-full w-full object-cover rounded-r-lg"
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Expandable Sections - Full Width */}
+      {(showAbstract || showBibTex) && (
+        <div className="w-full bg-gray-100 p-4 rounded-b-lg">
+          {showAbstract && abstract && (
+            <div className="mb-3">
+              <h3 className="text-sm font-semibold text-gray-900">Abstract:</h3>
+              <p className="text-xs text-gray-700 mt-1">{abstract}</p>
+            </div>
+          )}
+
+          {showBibTex && bibTex && (
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">BibTeX:</h3>
+              <pre className="text-xs text-gray-700 mt-1 overflow-auto">{bibTex}</pre>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
