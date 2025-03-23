@@ -18,7 +18,7 @@ export default function Navbar() {
           <NavItem href="/" label="Home" />
           <NavItem href="/about" label="About" />
           <NavItem href="/on-writing" label="On Writing" />
-          <NavItem href="/research" label="Research" />
+          <NavItem href="/publications" label="Publications" />
           <NavItem href="/projects" label="Projects" />
           <NavItem href="/people" label="People" />
         </ul>
@@ -38,7 +38,7 @@ export default function Navbar() {
           <NavItem href="/" label="Home" />
           <NavItem href="/about" label="About" />
           <NavItem href="/on-writing" label="On Writing" />
-          <NavItem href="/research" label="Research" />
+          <NavItem href="/publications" label="Publications" />
           <NavItem href="/projects" label="Projects" />
           <NavItem href="/people" label="People" />
         </div>
