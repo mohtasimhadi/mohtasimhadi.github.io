@@ -1,49 +1,147 @@
 {
-  "publications": {
-    "Conference Proceedings": [
-      {
-        "title": "Deep Learning in Precision Agriculture",
-        "description": "Presented at IEEE ICML 2023, discussing applications of CNNs in agricultural automation.",
-        "image": "/images/conference-agriculture.jpg",
-        "link": "https://example.com/paper1"
-      }
+  "work_experience": [
+    {
+      "position": "Graduate Research Assistant",
+      "company": "Precision Agriculture Lab, Auburn University",
+      "duration": "May, 2024 - Present",
+      "description": "",
+      "logo": "/au.jpg"
+    },
+    {
+      "position": "Analytics Engineer",
+      "company": "Intelligent Machines Limited",
+      "duration": "Apr, 2022 - Mar, 2024",
+      "description": "",
+      "logo": "/im.png"
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. in Biosystems Engineering",
+      "institution": "Auburn University",
+      "year": "May, 2024 - Present",
+      "logo": "/au.jpg"
+    },
+    {
+      "degree": "BSc. Engg. in Software Engineering",
+      "institution": "Islamic University of Technology",
+      "year": "Jan, 2019 - May, 2023",
+      "logo": "/iut.png"
+    }
+  ],
+  "skills": {
+    "Programming Languages": [
+      { "name": "Python" },
+      { "name": "JavaScript" },
+      { "name": "TypeScript" },
+      { "name": "R" },
+      { "name": "Java" },
+      { "name": "Bash" },
+      { "name": "C/C++" },
+      { "name": "SQL" }
     ],
-    "Journal Articles": [
-      {
-        "title": "AI-Driven Crop Disease Detection",
-        "description": "Published in the Journal of Precision Agriculture, covering machine learning techniques for early disease detection.",
-        "image": "/images/journal-ai.jpg"
-      }
+    "Data Science & Machine Learning": [
+      { "name": "NumPy" },
+      { "name": "Pandas" },
+      { "name": "Matplotlib" },
+      { "name": "PyTorch" },
+      { "name": "Tensorflow" },
+      { "name": "Tensorboard" },
+      { "name": "Keras" },
+      { "name": "OpenCV" },
+      { "name": "Textract" },
+      { "name": "Scikit-learn" },
+      { "name": "Tableau" },
+      { "name": "Google Big Query" },
+      { "name": "Microsoft Power BI" }
     ],
-    "In Review": [
-      {
-        "title": "Robotics in Smart Farming",
-        "description": "Currently under review at the International Journal of Agricultural Robotics.",
-        "image": "/images/review-robotics.jpg"
-      }
+    "Web Technologies": [
+      { "name": "FastAPI" },
+      { "name": "Flask" },
+      { "name": "Django" },
+      { "name": "Selenium" },
+      { "name": "React" },
+      { "name": "Node" },
+      { "name": "Express" }
     ],
-    "In Submission": [
-      {
-        "title": "Remote Sensing for Soil Health",
-        "description": "Submitted to Nature Communications, exploring satellite imagery for soil analysis.",
-        "image": "/images/submission-soil.jpg"
-      }
+    "Database": [
+      { "name": "MySQL" },
+      { "name": "MongoDB" },
+      { "name": "Firebase" },
+      { "name": "Oracle" }
+    ],
+    "Cloud Technologies": [
+      { "name": "Azure" },
+      { "name": "AWS" },
+      { "name": "RabbitMQ" }
+    ],
+    "DevOps & Version Control": [
+      { "name": "Git" },
+      { "name": "GitHub" },
+      { "name": "Docker" },
+      { "name": "Kubernetes" }
+    ],
+    "Embedded Systems": [
+      { "name": "Nvidia Jetson Modules" },
+      { "name": "Raspberry Pi" },
+      { "name": "Arduino" }
+    ],
+    "Other": [
+      { "name": "ArcGIS" },
+      { "name": "Pixd4Mapper" },
+      { "name": "Markdown" },
+      { "name": "Latex" },
+      { "name": "MS Office" },
+      { "name": "Adobe Photoshop" },
+      { "name": "Figma" }
     ]
   },
-  "presentations": {
-    "Oral Presentations": [
-      {
-        "title": "Advances in AI for Agriculture",
-        "description": "Oral presentation at the IEEE VIS 2024 conference.",
-        "image": "/images/oral-presentation.jpg"
-      }
-    ],
-    "Poster Presentations": [
-      {
-        "title": "Using Hyperspectral Imaging in Crop Monitoring",
-        "description": "Presented at the International Plant Science Symposium.",
-        "image": "/images/poster-presentation.jpg"
-      }
-    ]
-  }
+  "certifications": [
+    {
+      "title": "Data Analytics Professional Certificate",
+      "issuer": "Google",
+      "year": "2022",
+      "logo": "/google.webp"
+    },
+    {
+      "title": "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",
+      "issuer": "DeepLearning.AI",
+      "year": "2022",
+      "logo": "/dlai.png"
+    },
+    {
+      "title": "Building Web Applications in Django",
+      "issuer": "University of Michigan",
+      "year": "2022",
+      "logo": "/um.png"
+    },
+    {
+      "title": "Neural Networks and Deep Learning",
+      "issuer": "DeepLearning.AI",
+      "year": "2021",
+      "logo": "/dlai.png"
+    }
+  ],
+  "cv": {
+    "link": "/cv.pdf",
+    "last_updated": "March 2025"
+  },
+  "professional_associations": [
+    {
+      "name": "American Society of Agricultural and Biological Engineers",
+      "logo": "/asabe.svg"
+    },
+    {
+      "name": "International Society of Precision Agriculture",
+      "logo": "/ispa.png"
+    },
+    {
+      "name": "American Society for Horticultural Science",
+      "logo": "/ahs.jpg"
+    },
+    {
+      "name": "Institute of Electrical and Electronics Engineers",
+      "logo": "/ieee.jpg"
+    }
+  ]
 }

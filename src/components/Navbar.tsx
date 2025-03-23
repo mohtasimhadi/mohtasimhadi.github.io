@@ -19,6 +19,7 @@ export default function Navbar() {
           <NavItem href="/about" label="About" />
           <NavItem href="/research" label="Research" />
           <NavItem href="/achievements" label="Achievements" />
+          <NavItem href="/people" label="People" />
           <NavItem href="/writing" label="On Writing" />
           <NavItem href="/blog" label="Blog" />
           <NavItem href="/contact" label="Contact" />

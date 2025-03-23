@@ -1,0 +1,31 @@
+{
+  "students": [
+    {
+      "name": "Shanta Maria",
+      "degree": "Software Engineering",
+      "university": "Islamic University of Technology",
+      "duration": "Sep, 2023 - Jan, 2024",
+      "photo": "/sm.jpg",
+      "current_affiliation": "Intern at Intelligent Machines Limited",
+      "link": "https://www.linkedin.com/in/shanta-maria/"
+    },
+    {
+      "name": "Ayesha Afroza Mohsin",
+      "degree": "Software Engineering",
+      "university": "Islamic University of Technology",
+      "duration": "Sep, 2023 - Jan, 2024",
+      "photo": "/aam.jpeg",
+      "current_affiliation": "Intern at Streams Tech Ltd.",
+      "link": "https://www.linkedin.com/in/ayesha-afroza-mohsin/"
+    },
+    {
+      "name": "Nafisa Maliat",
+      "degree": "Software Engineering",
+      "university": "Islamic University of Technology",
+      "duration": "Sep, 2023 - Jan, 2024",
+      "photo": "/nm.jpg",
+      "current_affiliation": "Intern at Intelligent Machines Limited",
+      "link": "https://www.linkedin.com/in/nafisa-maliyat133/"
+    }
+  ]
+}
