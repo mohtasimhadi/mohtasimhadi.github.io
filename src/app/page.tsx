@@ -48,42 +48,44 @@ export default function Home() {
   return (
     <div className="container mx-auto px-6 py-12">
       {/* Two-Column Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Profile & Contact */}
-        <div className="flex flex-col items-center text-center md:text-left">
-          <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-[#E87722] shadow-lg">
-            <Image
-              src={data.profile.profile_image}
-              alt={data.profile.name}
-              width={192}
-              height={192}
-              className="object-cover"
-              priority
-            />
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+        {/* Left: Profile & Contact inside a card (1/3 width) */}
+        <div className="bg-white shadow-lg rounded-lg p-8 border border-gray-200 md:col-span-1">
+          <div className="flex flex-col items-center text-center">
+            <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-[#E87722] shadow-lg">
+              <Image
+                src={data.profile.profile_image}
+                alt={data.profile.name}
+                width={192}
+                height={192}
+                className="object-cover"
+                priority
+              />
+            </div>
 
-          <h1 className="text-3xl font-bold mt-4">{data.profile.name}</h1>
-          <h2 className="text-lg text-[#0C2340] font-semibold">{data.profile.title}</h2>
+            <h1 className="text-3xl font-bold mt-4">{data.profile.name}</h1>
+            <h2 className="text-lg text-[#0C2340] font-semibold">{data.profile.title}</h2>
 
-          {/* Contact Information */}
-          <div className="flex flex-col items-center md:items-start mt-6 space-y-2">
-            <ContactItem Icon={Mail} text={data.contact.email1} />
-            <ContactItem Icon={Mail} text={data.contact.email2} />
-            <ContactItem Icon={Phone} text={data.contact.phone} />
-            <ContactItem Icon={MapPin} text={data.contact.address} />
-          </div>
+            {/* Contact Information */}
+            <div className="flex flex-col items-center mt-6 space-y-2">
+              <ContactItem Icon={Mail} text={data.contact.email1} />
+              <ContactItem Icon={Mail} text={data.contact.email2} />
+              <ContactItem Icon={Phone} text={data.contact.phone} />
+              <ContactItem Icon={MapPin} text={data.contact.address} />
+            </div>
 
-          {/* Social Media Links */}
-          <div className="flex space-x-4 mt-6">
-            <SocialIcon href={data.contact.linkedin} Icon={Linkedin} />
-            <SocialIcon href={data.contact.github} Icon={Github} />
-            <SocialIcon href={data.contact.facebook} Icon={Facebook} />
-            <SocialIcon href={data.contact.instagram} Icon={Instagram} />
+            {/* Social Media Links */}
+            <div className="flex space-x-4 mt-6">
+              <SocialIcon href={data.contact.linkedin} Icon={Linkedin} />
+              <SocialIcon href={data.contact.github} Icon={Github} />
+              <SocialIcon href={data.contact.facebook} Icon={Facebook} />
+              <SocialIcon href={data.contact.instagram} Icon={Instagram} />
+            </div>
           </div>
         </div>
 
-        {/* Right: About Section */}
-        <div className="max-w-xl">
+        {/* Right: About Section (2/3 width) */}
+        <div className="max-w-xl md:col-span-2">
           <p className="text-lg mt-4 leading-relaxed whitespace-pre-line">{data.profile.bio}</p>
         </div>
       </div>
@@ -155,7 +157,6 @@ function NewsCard({ date, news }: { date: string; news: string }) {
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-[#E87722]">
       <p className="text-sm text-gray-500">{date}</p>
-      {/* Render HTML inside the news */}
       <p className="text-lg mt-2 news-content" dangerouslySetInnerHTML={{ __html: news }} />
     </div>
   );
