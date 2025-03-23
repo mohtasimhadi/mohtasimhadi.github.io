@@ -9,7 +9,7 @@ export default function BlogPage() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/blog.json")
+    fetch("/data/writing.json")
       .then((res) => res.json())
       .then((data) => setBlogData(data))
       .catch((err) => console.error("Error fetching blog data:", err));

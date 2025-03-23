@@ -10,7 +10,7 @@ export default function ResearchPage() {
   const [activeSection, setActiveSection] = useState(""); // Tracks active section
 
   useEffect(() => {
-    fetch("/research.json")
+    fetch("/data/research.json")
       .then((res) => res.json())
       .then((data) => setResearchData(data))
       .catch((err) => console.error("Error fetching research data:", err));

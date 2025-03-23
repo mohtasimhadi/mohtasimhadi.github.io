@@ -21,7 +21,7 @@ export default function Home() {
 
   // Fetch news from JSON file
   useEffect(() => {
-    fetch("/news.json")
+    fetch("/data/news.json")
       .then((res) => res.json())
       .then((data) => setNews(data))
       .catch((err) => console.error("Error fetching news:", err));

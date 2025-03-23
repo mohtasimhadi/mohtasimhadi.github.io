@@ -9,7 +9,7 @@ export default function AboutPage() {
   const [aboutData, setAboutData] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/about.json")
+    fetch("/data/about.json")
       .then((res) => res.json())
       .then((data) => setAboutData(data))
       .catch((err) => console.error("Error fetching about data:", err));

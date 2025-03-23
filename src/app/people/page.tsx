@@ -8,7 +8,7 @@ export default function MentorshipPage() {
   const [mentorshipData, setMentorshipData] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/mentorship.json")
+    fetch("/data/people.json")
       .then((res) => res.json())
       .then((data) => setMentorshipData(data))
       .catch((err) => console.error("Error fetching mentorship data:", err));
