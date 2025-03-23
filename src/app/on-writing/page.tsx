@@ -34,6 +34,23 @@ export default function BlogPage() {
 
   if (!blogData) return <p className="text-center mt-10 text-lg">Loading...</p>;
 
+  const getTagColor = (tag: string) => {
+    const colors = [
+      "bg-red-500",
+      "bg-blue-500",
+      "bg-green-500",
+      "bg-yellow-500",
+      "bg-purple-500",
+      "bg-pink-500",
+      "bg-indigo-500",
+      "bg-teal-500",
+    ];
+    const hash = tag
+      .split("")
+      .reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return colors[hash % colors.length]; // Assigns consistent colors to the same tag
+  };
+
   return (
     <div className="container mx-auto px-6 py-12 flex">
       {/* Sidebar Navigation */}
@@ -152,15 +169,43 @@ export default function BlogPage() {
                 <h3 className="text-2xl font-bold text-[#0C2340] mb-4">
                   {category}
                 </h3>
-                <ul className="space-y-4">
+
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {posts.map((post: any, index: number) => (
-                    <Link
-                    href={post.notion_link}
-                    target="_blank"
-                    className="text-[#0C2340] font-semibold hover:underline m-2 inline-block p-4 border-l-4 border-[#E87722] rounded-lg shadow-md bg-white"
-                  >
-                      <h3 className="text-lg font-semibold">{post.title}</h3>
-                    </Link>
+                    <li
+                      key={index}
+                      className="p-5 border-l-4 border-[#E87722] rounded-lg shadow-lg bg-white transition-transform transform hover:-translate-y-2 hover:shadow-xl"
+                    >
+                      {/* Post Link */}
+                      <Link
+                        href={post.notion_link}
+                        target="_blank"
+                        className="block text-[#0C2340] font-semibold hover:text-[#E87722] transition"
+                      >
+                        <h3 className="text-lg font-semibold">{post.title}</h3>
+                      </Link>
+
+                      {/* Post Date */}
+                      <p className="text-sm text-gray-500 mt-2">
+                        📅 {post.date || "Unknown Date"}
+                      </p>
+
+                      {/* Tags */}
+                      {post.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          {post.tags.map((tag: string, tagIndex: number) => (
+                            <span
+                              key={tagIndex}
+                              className={`text-xs text-white px-2 py-1 rounded-md ${getTagColor(
+                                tag
+                              )} shadow-sm`}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </li>
                   ))}
                 </ul>
               </div>
