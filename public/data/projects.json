@@ -57,5 +57,47 @@
     "mediaType": "video",
     "media": "https://youtu.be/Cbyyw6e-448?si=AIYYJBSlx-ThId_M",
     "links": []
+  },
+  {
+    "title": "Tesla Stock Price Prediction using Facebook Prophet",
+    "description": "Built a Facebook Prophet Model & Forecast the stock price of Tesla 30 days into the future. Visualized data using Plotly express & Evaluate Forecast using Google Finance in Google Sheets Automated the stock forecasting process in order to get the forecast of any stock within seconds.",
+    "affiliation": "Coursera Project Network",
+    "date": "May 16, 2022",
+    "mediaType": "image",
+    "media": "/imgs/projects/cpn.png",
+    "links": [
+      {
+        "title": "Certificate",
+        "url": "https://coursera.org/verify/YM95RS8HYKYW"
+      }
+    ]
+  },
+  {
+    "title": "Exploratory Data Analysis with Seaborn",
+    "description": "Wrote Queries to analyze big data. Visualized query results with data studio. Saved, created report and shared work",
+    "affiliation": "Coursera Project Network",
+    "date": "April 28, 2022",
+    "mediaType": "image",
+    "media": "/imgs/projects/cpn.png",
+    "links": [
+      {
+        "title": "Certificate",
+        "url": "https://coursera.org/verify/5M2WY7X4XYZ9"
+      }
+    ]
+  },
+  {
+    "title": "HaateKhori",
+    "description": "This is a project that is intended to help the child and their parents in their education. There are mainly three types of features: learn to write, know your surroundings, and know you. Learn to write by helping in writing Bangla and English characters and numbers. In knowing your surroundings, the child will learn and identify different shapes and objects. Know your feature is to help a child in learning and identifying relatives and body parts.",
+    "affiliation": "Islamic University of Technology",
+    "date": "Winter 2021",
+    "mediaType": "video",
+    "media": "https://youtu.be/bgcJx5GE2dc?si=0ROI8rmIsksXJKbs",
+    "links": [
+      {
+        "title": "GitHub",
+        "url": "https://github.com/mohtasimhadirafi/HaateKhori.git"
+      }
+    ]
   }
 ]
