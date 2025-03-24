@@ -13,10 +13,8 @@ export default function Navbar() {
     <nav className="bg-[#E87722] shadow-md text-white fixed top-0 left-0 w-full z-50 h-[72px] flex items-center">
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Logo */}
-        <a href="/">
-          <h1 className="text-2xl font-bold tracking-wide">
-            Mohtasim Hadi Rafi
-          </h1>
+        <a href="/" className="text-2xl font-bold tracking-wide">
+          <h1>Mohtasim Hadi Rafi</h1>
         </a>
 
         {/* Desktop Navigation */}
