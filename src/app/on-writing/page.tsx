@@ -122,7 +122,7 @@ export default function BlogPage() {
       <div className="w-3/4 px-6">
         {/* Books Section */}
         <section id="On-Writing" className="blog-section mb-12">
-          <h1 className="text-4xl font-bold text-[#E87722] mb-6 text-center">
+          <h1 className="text-4xl font-bold text-[#E87722] mb-6">
             Books
           </h1>
 
@@ -156,7 +156,7 @@ export default function BlogPage() {
 
         {/* Blog Section */}
         <section id="Blog" className="blog-section">
-          <h2 className="text-4xl font-bold text-[#E87722] mb-6 text-center">
+          <h2 className="text-4xl font-bold text-[#E87722] mb-6">
             The Typist
           </h2>
           {Object.entries(blogData.blog).map(
