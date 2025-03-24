@@ -142,8 +142,8 @@ export default function ResearchPage() {
 
       {/* Main Content */}
       <div className="w-full md:w-3/4 pl-6">
-      {/* Publications Section */}
-              <ResearchProfiles/>
+        {/* Publications Section */}
+        <ResearchProfiles />
 
         {/* Publications Section */}
         <Section title="Publications" id="Publications">
@@ -339,7 +339,13 @@ function ProfileCard({
       rel="noopener noreferrer"
       className="flex items-center p-4 bg-white shadow-md rounded-lg border-l-4 border-[#E87722] transition hover:shadow-lg hover:bg-gray-50"
     >
-      <img src={logo} alt={`${platform} Logo`} className="w-12 h-12 mr-4" />
+      <Image
+        src={logo}
+        alt={`${platform} Logo`}
+        width={48}
+        height={48}
+        className="mr-4"
+      />
       <div>
         <h3 className="text-lg font-semibold text-gray-900">{platform}</h3>
         <p className="text-sm text-gray-600">View Profile</p>
