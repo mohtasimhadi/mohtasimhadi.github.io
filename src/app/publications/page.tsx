@@ -302,14 +302,14 @@ function ResearchCard({
           {showAbstract && abstract && (
             <div className="mb-3">
               <h3 className="text-sm font-semibold text-gray-900">Abstract:</h3>
-              <p className="text-xs text-gray-700 mt-1">{abstract}</p>
+              <p className="text-sm text-gray-700 mt-1">{abstract}</p>
             </div>
           )}
 
           {showBibTex && bibTex && (
             <div>
               <h3 className="text-sm font-semibold text-gray-900">BibTeX:</h3>
-              <pre className="text-xs text-gray-700 mt-1 overflow-auto">
+              <pre className="text-xs text-gray-700 mt-1 p-2 overflow-auto bg-white rounded-sm">
                 {bibTex}
               </pre>
             </div>

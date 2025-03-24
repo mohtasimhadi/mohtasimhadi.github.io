@@ -85,8 +85,8 @@ export default function Home() {
         </div>
 
         {/* Right: About Section (2/3 width) */}
-        <div className="max-w-xl md:col-span-2">
-          <p className="text-lg mt-4 leading-relaxed whitespace-pre-line">{data.profile.bio}</p>
+        <div className="md:col-span-2">
+          <p className="text-lg mt-1 leading-relaxed whitespace-pre-line">{data.profile.bio}</p>
         </div>
       </div>
 
@@ -95,7 +95,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-[#E87722] mb-6">Latest News</h2>
 
         {/* Search Bar */}
-        <div className="relative mb-6 w-full max-w-md">
+        <div className="relative mb-6 w-full">
           <input
             type="text"
             placeholder="Search news..."
