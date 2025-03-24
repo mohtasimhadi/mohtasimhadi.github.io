@@ -13,13 +13,21 @@ export default function Navbar() {
     <nav className="bg-[#E87722] shadow-md text-white fixed top-0 left-0 w-full z-50 h-[72px] flex items-center">
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Logo */}
-        <h1 className="text-2xl font-bold tracking-wide">Mohtasim Hadi Rafi</h1>
+        <a href="/">
+          <h1 className="text-2xl font-bold tracking-wide">
+            Mohtasim Hadi Rafi
+          </h1>
+        </a>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-6 text-lg font-semibold">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
-          <NavItem href="/publications" label="Publications" pathname={pathname} />
+          <NavItem
+            href="/publications"
+            label="Publications"
+            pathname={pathname}
+          />
           <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/people" label="People" pathname={pathname} />
@@ -39,7 +47,11 @@ export default function Navbar() {
         <div className="md:hidden bg-[#0C2340] text-white text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
-          <NavItem href="/publications" label="Publications" pathname={pathname} />
+          <NavItem
+            href="/publications"
+            label="Publications"
+            pathname={pathname}
+          />
           <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/people" label="People" pathname={pathname} />
@@ -49,7 +61,15 @@ export default function Navbar() {
   );
 }
 
-function NavItem({ href, label, pathname }: { href: string; label: string; pathname: string }) {
+function NavItem({
+  href,
+  label,
+  pathname,
+}: {
+  href: string;
+  label: string;
+  pathname: string;
+}) {
   const isActive = pathname === href;
 
   return (
@@ -57,7 +77,7 @@ function NavItem({ href, label, pathname }: { href: string; label: string; pathn
       <Link
         href={href}
         className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 hover:before:w-full ${
-          isActive ? "font-bold underline" : "hover:text-gray-200"
+          isActive ? "before:w-full" : "hover:before:w-full"
         }`}
       >
         {label}
