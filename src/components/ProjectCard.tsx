@@ -12,7 +12,7 @@ interface ProjectProps {
 
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, affiliation, date, mediaType, media, links }) => {
   return (
-    <div className="bg-white dark:bg-gray-900 shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row w-full gap-6 relative border-l-4 border-[#E87722]">
+    <div className="bg-white shadow-lg rounded-lg p-4 md:p-6 flex flex-col md:flex-row w-full gap-6 relative border-l-4 border-[#E87722]">
       
       {/* Affiliation Sticker (Top Right Corner) */}
       <div className="absolute top-0 right-0 md:top-0 md:right-0 bg-[#E87722] text-white text-xs font-semibold px-2 py-2">
