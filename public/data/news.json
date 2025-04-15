@@ -1,6 +1,10 @@
 {
   "news": [
     {
+      "date": "April 21, 2025",
+      "news": "Presented poster titled KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management at the <a href='https://aaes.auburn.edu/data-ai-forum/'> Harnessing Data Science and AI for Collaborative Advances in Production Agriculture</a> at <a href='https://www.auburn.edu/'>Auburn University</a>."
+    },
+    {
       "date": "April 02, 2025",
       "news": "Presented at the <b>AI in Agriculture and Natural Resources Conference</b> at <a href='https://www.msstate.edu'>Mississippi State University</a>."
     },
