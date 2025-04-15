@@ -42,9 +42,9 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, affiliation, 
       {/* Text Content */}
       <div className="flex-1 flex flex-col justify-between p-2 md:p-6">
         <div>
-          <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
-          <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{date}</p>
-          <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base mt-2">{description}</p>
+          <h2 className="text-lg md:text-xl font-bold text-gray-900">{title}</h2>
+          <p className="text-xs md:text-sm text-gray-500">{date}</p>
+          <p className="text-gray-700 text-sm md:text-base mt-2">{description}</p>
         </div>
 
         {/* Links (Only Show if Present) */}
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, affiliation, 
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline dark:text-blue-400 text-sm md:text-base font-semibold"
+                    className="text-blue-600 hover:underline text-sm md:text-base font-semibold"
                   >
                     {link.title}
                   </a>
