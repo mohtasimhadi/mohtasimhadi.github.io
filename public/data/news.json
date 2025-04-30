@@ -2,6 +2,10 @@
   "news": [
     {
       "date": "April 21, 2025",
+      "news": "Became winner of the poster presentation at <a href='https://aaes.auburn.edu/data-ai-forum/'> Harnessing Data Science and AI for Collaborative Advances in Production Agriculture</a> at <a href='https://www.auburn.edu/'>Auburn University</a>."
+    },
+    {
+      "date": "April 21, 2025",
       "news": "Presented poster titled KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management at the <a href='https://aaes.auburn.edu/data-ai-forum/'> Harnessing Data Science and AI for Collaborative Advances in Production Agriculture</a> at <a href='https://www.auburn.edu/'>Auburn University</a>."
     },
     {
