@@ -149,10 +149,17 @@
       "category": "Honors and Awards",
       "items": [
         {
+          "title": "Harnessing Data Science and AI for Collaborative Advances Forum in Production Agriculture Forum",
+          "details": "Winner of Poster Competition, AL, USA",
+          "date": "Apr, 2025",
+          "image": "/imgs/logo/aaes.jpeg",
+          "link": "https://aaes.auburn.edu/data-ai-forum/"
+        },
+        {
           "title": "FIRA USA Farm Robotics Challenge",
           "details": "Excellency in Productivity (USD 5,000), CA, USA",
           "date": "Oct, 2024",
-          "image": "/imgs/logo/fira.jpeg",
+          "image": "/imgs/logo/aaes.jpeg",
           "link": "https://www.farmroboticschallenge.ai/2024"
         },
         {
