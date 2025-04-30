@@ -124,7 +124,7 @@
   ],
   "cv": {
     "link": "/data/CV_Mohtasim_Hadi_Rafi.pdf",
-    "last_updated": "March 2025"
+    "last_updated": "April 2025"
   },
   "professional_associations": [
     {
@@ -152,14 +152,14 @@
           "title": "Harnessing Data Science and AI for Collaborative Advances Forum in Production Agriculture Forum",
           "details": "Winner of Poster Competition, AL, USA",
           "date": "Apr, 2025",
-          "image": "/imgs/logo/aaes.jpeg",
+          "image": "/imgs/logo/aaes.png",
           "link": "https://aaes.auburn.edu/data-ai-forum/"
         },
         {
           "title": "FIRA USA Farm Robotics Challenge",
           "details": "Excellency in Productivity (USD 5,000), CA, USA",
           "date": "Oct, 2024",
-          "image": "/imgs/logo/aaes.jpeg",
+          "image": "/imgs/logo/fira.jpeg",
           "link": "https://www.farmroboticschallenge.ai/2024"
         },
         {
