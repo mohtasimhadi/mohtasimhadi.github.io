@@ -62,6 +62,7 @@ export default function ResearchPage() {
 
   const filteredPublications = filterResearch(researchData.publications);
   const filteredPresentations = filterResearch(researchData.presentations);
+  const filteredPatents = filterResearch(researchData.patents);
 
   return (
     <div className="container mx-auto px-6 py-12 pt-0 flex">
@@ -78,15 +79,42 @@ export default function ResearchPage() {
 
         {/* Sidebar Navigation */}
         <ul className="space-y-2">
+          {/* Patents Section */}
+          <li>
+            <a
+              href="#Patents"
+              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${activeSection === "Patents"
+                  ? "bg-[#E87722] text-white"
+                  : "hover:bg-gray-300"
+                }`}
+            >
+              Patents
+            </a>
+            <ul className="pl-4 space-y-1">
+              {Object.keys(researchData.patents).map((category) => (
+                <li key={category}>
+                  <a
+                    href={`#${category.replace(/\s+/g, "-")}`}
+                    className={`block w-full text-left px-3 py-1 rounded-md ${activeSubsection === category.replace(/\s+/g, "-")
+                        ? "bg-[#E87722] text-white"
+                        : "hover:bg-gray-300"
+                      }`}
+                  >
+                    {category}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+
           {/* Publications Section */}
           <li>
             <a
               href="#Publications"
-              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${
-                activeSection === "Publications"
+              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${activeSection === "Publications"
                   ? "bg-[#E87722] text-white"
                   : "hover:bg-gray-300"
-              }`}
+                }`}
             >
               Publications
             </a>
@@ -95,11 +123,10 @@ export default function ResearchPage() {
                 <li key={category}>
                   <a
                     href={`#${category.replace(/\s+/g, "-")}`}
-                    className={`block w-full text-left px-3 py-1 rounded-md ${
-                      activeSubsection === category.replace(/\s+/g, "-")
+                    className={`block w-full text-left px-3 py-1 rounded-md ${activeSubsection === category.replace(/\s+/g, "-")
                         ? "bg-[#E87722] text-white"
                         : "hover:bg-gray-300"
-                    }`}
+                      }`}
                   >
                     {category}
                   </a>
@@ -112,11 +139,10 @@ export default function ResearchPage() {
           <li>
             <a
               href="#Presentations"
-              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${
-                activeSection === "Presentations"
+              className={`block w-full text-left px-3 py-2 rounded-md text-xl font-bold ${activeSection === "Presentations"
                   ? "bg-[#E87722] text-white"
                   : "hover:bg-gray-300"
-              }`}
+                }`}
             >
               Presentations
             </a>
@@ -125,11 +151,10 @@ export default function ResearchPage() {
                 <li key={category}>
                   <a
                     href={`#${category.replace(/\s+/g, "-")}`}
-                    className={`block w-full text-left px-3 py-1 rounded-md ${
-                      activeSubsection === category.replace(/\s+/g, "-")
+                    className={`block w-full text-left px-3 py-1 rounded-md ${activeSubsection === category.replace(/\s+/g, "-")
                         ? "bg-[#E87722] text-white"
                         : "hover:bg-gray-300"
-                    }`}
+                      }`}
                   >
                     {category}
                   </a>
@@ -144,6 +169,30 @@ export default function ResearchPage() {
       <div className="w-full md:w-3/4 pl-6">
         {/* Publications Section */}
         <ResearchProfiles />
+
+        {/* Patents Section */}
+        <Section title="Patents" id="Patents">
+          {Object.entries(filteredPatents).map(
+            ([category, patents]: [string, any]) => (
+              <div
+                key={category}
+                id={category.replace(/\s+/g, "-")}
+                className="mb-10 research-section research-subsection"
+              >
+                <h3 className="text-2xl font-semibold text-[#0C2340] mb-4">
+                  {category}
+                </h3>
+                {patents.length > 0 ? (
+                  patents.map((pub: any, index: number) => (
+                    <ResearchCard key={index} {...pub} />
+                  ))
+                ) : (
+                  <p className="text-center">No results found.</p>
+                )}
+              </div>
+            )
+          )}
+        </Section>
 
         {/* Publications Section */}
         <Section title="Publications" id="Publications">

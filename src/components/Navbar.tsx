@@ -24,8 +24,8 @@ export default function Navbar() {
             label="Publications"
             pathname={pathname}
           />
-          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
+          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/people" label="People" pathname={pathname} />
         </ul>
 
@@ -72,9 +72,8 @@ function NavItem({
     <li>
       <Link
         href={href}
-        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 hover:before:w-full ${
-          isActive ? "before:w-full" : "hover:before:w-full"
-        }`}
+        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 hover:before:w-full ${isActive ? "before:w-full" : "hover:before:w-full"
+          }`}
       >
         {label}
       </Link>
