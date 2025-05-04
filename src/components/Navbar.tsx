@@ -82,8 +82,8 @@ function NavItem({
     <li>
       <Link
         href={href}
-        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-gray-900 before:transition-all before:duration-300 hover:before:w-full ${
-          isActive ? "before:w-full" : "hover:before:w-full"
+        className={`relative px-4 py-2 transition duration-300 text-gray-900 hover:text-gray-500 ${
+          isActive ? "text-gray-500" : "text-gray-900"
         }`}
       >
         {label}
