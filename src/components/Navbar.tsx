@@ -10,20 +10,30 @@ export default function Navbar() {
   const pathname = usePathname(); // Get current path
 
   return (
-    <nav className="bg-[#E87722] shadow-md text-white fixed top-0 left-0 w-full z-50 h-[72px] flex items-center">
+    <nav className="bg-white border-b-1 text-gray-900 fixed top-0 left-0 w-full z-50 h-[100px] flex items-center">
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-wide">Mohtasim Hadi Rafi</Link>
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-2xl font-bold tracking-wide"
+        >
+          <span
+            className="text-4xl p-1 border-r-2 text-right leading-tight"
+            style={{ fontFamily: "'Special Elite', cursive" }}
+          >
+            The<br />Moho Blog
+          </span>
+          <span className="text-sm">
+            Mohtasim
+            <br />Hadi Rafi
+          </span>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-6 text-lg font-semibold">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
-          <NavItem
-            href="/research"
-            label="Research"
-            pathname={pathname}
-          />
+          <NavItem href="/research" label="Research" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/people" label="People" pathname={pathname} />
@@ -31,7 +41,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 rounded-full bg-white/20 hover:bg-white/30 transition"
+          className="md:hidden p-2 rounded-full bg-gray/20 hover:bg-gray/30 transition"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -72,8 +82,9 @@ function NavItem({
     <li>
       <Link
         href={href}
-        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-white before:transition-all before:duration-300 hover:before:w-full ${isActive ? "before:w-full" : "hover:before:w-full"
-          }`}
+        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-gray before:transition-all before:duration-300 hover:before:w-full ${
+          isActive ? "before:w-full" : "hover:before:w-full"
+        }`}
       >
         {label}
       </Link>

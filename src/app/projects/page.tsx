@@ -7,7 +7,9 @@ import ProjectCard from "@/components/ProjectCard";
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedAffiliations, setSelectedAffiliations] = useState<string[]>([]);
+  const [selectedAffiliations, setSelectedAffiliations] = useState<string[]>(
+    []
+  );
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
@@ -34,11 +36,15 @@ export default function ProjectsPage() {
   };
 
   const filteredProjects = projects.filter((p) => {
-    const matchesSearch = p.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = p.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     const matchesAffiliation =
-      selectedAffiliations.length === 0 || selectedAffiliations.includes(p.affiliation);
+      selectedAffiliations.length === 0 ||
+      selectedAffiliations.includes(p.affiliation);
     const matchesKeywords =
-      selectedKeywords.length === 0 || (p.keywords || []).some((kw: string) => selectedKeywords.includes(kw));
+      selectedKeywords.length === 0 ||
+      (p.keywords || []).some((kw: string) => selectedKeywords.includes(kw));
     return matchesSearch && matchesAffiliation && matchesKeywords;
   });
 
@@ -72,7 +78,9 @@ export default function ProjectsPage() {
         {/* Project Grid */}
         <div className="flex-1">
           {filteredProjects.length === 0 ? (
-            <p className="text-center text-lg mt-10 text-gray-500">No matching projects found.</p>
+            <p className="text-center text-lg mt-10 text-gray-500">
+              No matching projects found.
+            </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProjects.map((project, index) => (
@@ -85,7 +93,11 @@ export default function ProjectsPage() {
 
       {/* Mobile Drawer */}
       <Transition show={isMobileFilterOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50 md:hidden" onClose={setIsMobileFilterOpen}>
+        <Dialog
+          as="div"
+          className="relative z-50 md:hidden"
+          onClose={setIsMobileFilterOpen}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-200"
@@ -110,8 +122,15 @@ export default function ProjectsPage() {
             >
               <Dialog.Panel className="w-full max-w-sm bg-white rounded-2xl p-6 shadow-xl">
                 <div className="flex justify-between items-center mb-4">
-                  <Dialog.Title className="text-lg font-bold">Filter Projects</Dialog.Title>
-                  <button onClick={() => setIsMobileFilterOpen(false)} className="text-gray-500">✕</button>
+                  <Dialog.Title className="text-lg font-bold">
+                    Filter Projects
+                  </Dialog.Title>
+                  <button
+                    onClick={() => setIsMobileFilterOpen(false)}
+                    className="text-gray-500"
+                  >
+                    ✕
+                  </button>
                 </div>
 
                 <FiltersUI
@@ -166,7 +185,10 @@ function FiltersUI({
       <div className="space-y-2 mb-6">
         <h3 className="font-medium text-gray-700">🎓 Affiliation</h3>
         {affiliations.map((aff, idx) => (
-          <label key={idx} className="flex items-center gap-2 px-2 py-1 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+          <label
+            key={idx}
+            className="flex items-center gap-2 px-2 py-1 rounded-lg cursor-pointer hover:bg-gray-100 transition"
+          >
             <input
               type="checkbox"
               checked={selected.includes(aff)}
@@ -180,29 +202,30 @@ function FiltersUI({
 
       {/* Keyword Filter */}
       {/* Keyword Filter */}
-<div className="space-y-2">
-  <h3 className="font-medium text-gray-700">🏷️ Keywords</h3>
-  <div className="flex flex-wrap gap-2">
-    {keywords.map((kw, idx) => (
-      <label
-        key={idx}
-        className={`flex items-center gap-2 px-3 py-1 border rounded-full cursor-pointer text-sm transition 
-          ${selectedKeywords.includes(kw)
-            ? "bg-orange-100 border-orange-400 text-orange-700"
-            : "bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"}`}
-      >
-        <input
-          type="checkbox"
-          checked={selectedKeywords.includes(kw)}
-          onChange={() => toggleKeyword(kw)}
-          className="hidden"
-        />
-        {kw}
-      </label>
-    ))}
-  </div>
-</div>
-
+      <div className="space-y-2">
+        <h3 className="font-medium text-gray-700">🏷️ Keywords</h3>
+        <div className="flex flex-wrap gap-2">
+          {keywords.map((kw, idx) => (
+            <label
+              key={idx}
+              className={`flex items-center gap-2 px-3 py-1 border rounded-full cursor-pointer text-sm transition 
+          ${
+            selectedKeywords.includes(kw)
+              ? "bg-orange-100 border-orange-400 text-orange-700"
+              : "bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
+          }`}
+            >
+              <input
+                type="checkbox"
+                checked={selectedKeywords.includes(kw)}
+                onChange={() => toggleKeyword(kw)}
+                className="hidden"
+              />
+              {kw}
+            </label>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
