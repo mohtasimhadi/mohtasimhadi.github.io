@@ -28,7 +28,7 @@ export default function AboutPage() {
             <Link
               href={aboutData.cv.link}
               target="_blank"
-              className="flex items-center bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-[#d76c1a] transition"
+              className="flex items-center bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-gray-500 transition"
             >
               <FileText className="w-5 h-5 mr-2" /> Download CV
             </Link>

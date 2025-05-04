@@ -138,7 +138,7 @@ export default function Home() {
           <div className="mt-6 flex justify-center">
             <button
               onClick={() => setVisibleNews(visibleNews + 6)} // Load 6 more each time
-              className="bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-[#d76c1a] transition"
+              className="bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-gray-500 transition"
             >
               View More News
             </button>
