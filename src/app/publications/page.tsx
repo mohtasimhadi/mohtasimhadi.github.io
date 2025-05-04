@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import parse from "html-react-parser";
-import Image from "next/image";
 import ResearchProfiles from "@/components/ResearchProfileCard";
+import PublicationCard from "@/components/PublicationCard";
 
 export default function ResearchPage() {
   const [researchData, setResearchData] = useState<any>(null);
@@ -185,7 +184,7 @@ export default function ResearchPage() {
                 </h3>
                 {patents.length > 0 ? (
                   patents.map((pub: any, index: number) => (
-                    <ResearchCard key={index} {...pub} />
+                    <PublicationCard key={index} {...pub} />
                   ))
                 ) : (
                   <p className="text-center">No results found.</p>
@@ -209,7 +208,7 @@ export default function ResearchPage() {
                 </h3>
                 {publications.length > 0 ? (
                   publications.map((pub: any, index: number) => (
-                    <ResearchCard key={index} {...pub} />
+                    <PublicationCard key={index} {...pub} />
                   ))
                 ) : (
                   <p className="text-center">No results found.</p>
@@ -233,7 +232,7 @@ export default function ResearchPage() {
                 </h3>
                 {presentations.length > 0 ? (
                   presentations.map((pres: any, index: number) => (
-                    <ResearchCard key={index} {...pres} />
+                    <PublicationCard key={index} {...pres} />
                   ))
                 ) : (
                   <p className="text-center">No results found.</p>
@@ -261,114 +260,6 @@ function Section({
     <div className="mb-12 research-section pt-6" id={id}>
       <h2 className="text-3xl font-bold text-[#E87722] mb-6">{title}</h2>
       {children}
-    </div>
-  );
-}
-
-function ResearchCard({
-  text,
-  doi,
-  bibTex,
-  code,
-  abstract,
-  image,
-}: {
-  text: string;
-  doi?: string;
-  bibTex?: string;
-  code?: string;
-  abstract?: string;
-  image?: string;
-}) {
-  const [showBibTex, setShowBibTex] = useState(false);
-  const [showAbstract, setShowAbstract] = useState(false);
-
-  return (
-    <div className="bg-white shadow-md rounded-lg mb-6 border-l-4 border-[#E87722] flex flex-col relative">
-      {/* Main Content and Image Side-by-Side */}
-      <div className="flex flex-col sm:flex-row">
-        {/* Content Section */}
-        <div className="p-6 flex-1">
-          {doi ? (
-            <a
-              href={`https://doi.org/${doi}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:text-[#E87722] transition"
-            >
-              {parse(text)}
-            </a>
-          ) : (
-            <p className="text-sm text-gray-700">{parse(text)}</p>
-          )}
-
-          {/* Buttons */}
-          <div className="mt-4 flex space-x-3">
-            {abstract && (
-              <button
-                onClick={() => setShowAbstract(!showAbstract)}
-                className="px-3 py-1 text-sm font-semibold text-white bg-gray-800 rounded-md hover:bg-gray-700 transition"
-              >
-                Abstract
-              </button>
-            )}
-
-            {bibTex && (
-              <button
-                onClick={() => setShowBibTex(!showBibTex)}
-                className="px-3 py-1 text-sm font-semibold text-white bg-[#E87722] rounded-md hover:bg-[#d4661f] transition"
-              >
-                BibTex
-              </button>
-            )}
-
-            {code && (
-              <a
-                href={code}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1 text-sm font-semibold text-white bg-slate-500 rounded-md hover:bg-slate-400 transition"
-              >
-                Code
-              </a>
-            )}
-          </div>
-        </div>
-
-        {/* Image Section (Hidden on Phone, Visible on sm and above) */}
-        {image && (
-          <div className="w-1/4 flex items-center justify-center hidden sm:flex">
-            <Image
-              src={image}
-              alt="Research Image"
-              width={200}
-              height={200}
-              className="h-full w-full object-cover rounded-r-lg"
-            />
-          </div>
-        )}
-      </div>
-
-      {/* Expandable Sections - Full Width */}
-      {(showAbstract || showBibTex) && (
-        <div className="w-full bg-gray-100 p-4 rounded-b-lg">
-          {showAbstract && abstract && (
-            <div className="mb-3">
-              <h3 className="text-sm font-semibold text-gray-900">Abstract:</h3>
-              <p className="text-sm text-gray-700 mt-1">{abstract}</p>
-            </div>
-          )}
-
-          {showBibTex && bibTex && (
-            <div>
-              <h3 className="text-sm font-semibold text-gray-900">BibTeX:</h3>
-              <pre className="text-xs text-gray-700 mt-1 p-2 overflow-auto bg-white rounded-sm">
-                {bibTex}
-              </pre>
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 }
