@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ResearchProfiles from "@/components/ResearchProfileCard";
+import NewsCard from "@/components/NewsCard";
+
 import {
   Mail,
   Phone,
@@ -86,6 +89,9 @@ export default function Home() {
 
         {/* Right: About Section (2/3 width) */}
         <div className="md:col-span-2">
+          <div className="md: row-span-2 mb-9 p-5">
+          <ResearchProfiles/>
+          </div>
           <p className="text-lg mt-1 leading-relaxed whitespace-pre-line">{data.profile.bio}</p>
         </div>
       </div>
@@ -107,7 +113,7 @@ export default function Home() {
         </div>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
           {filteredNews.length > 0 ? (
             filteredNews.slice(0, visibleNews).map((item, index) => (
               <NewsCard key={index} date={item.date} news={item.news} />
@@ -149,15 +155,5 @@ function SocialIcon({ href, Icon }: { href: string; Icon: any }) {
     <Link href={href} target="_blank" rel="noopener noreferrer">
       <Icon className="w-8 h-8 text-[#0C2340] hover:text-[#E87722] transition" />
     </Link>
-  );
-}
-
-// News Card Component
-function NewsCard({ date, news }: { date: string; news: string }) {
-  return (
-    <div className="bg-white shadow-lg rounded-lg p-6 border-l-4 border-[#E87722]">
-      <p className="text-sm text-gray-500">{date}</p>
-      <p className="text-lg mt-2 news-content" dangerouslySetInnerHTML={{ __html: news }} />
-    </div>
   );
 }
