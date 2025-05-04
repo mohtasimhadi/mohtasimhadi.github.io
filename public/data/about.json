@@ -188,9 +188,21 @@
       "items": [
         {
           "title": "GSC Travel Fellowship",
+          "details": "Received $400 to present at American Society of Horticultural Science Conference at New Orleans, LA, USA",
+          "date": "July, 2024",
+          "image": "/imgs/logo/gsc.jpeg"
+        },
+        {
+          "title": "International Conference Travel Support, College of Agriculture, Auburn University",
+          "details": "Received $1000 to present at  ASABE Annual International Meeting in Torronto, Canada",
+          "date": "July, 2024",
+          "image": "/imgs/logo/aua.png"
+        },
+        {
+          "title": "GSC Travel Fellowship",
           "details": "Received $400 to present at AI in Agriculture and Natural Resources Conference, Mississippi",
           "date": "March, 2024",
-          "image": "/imgs/logo/au.jpg"
+          "image": "/imgs/logo/gsc.jpeg"
         },
         {
           "title": "India Bangladesh Maitree Muktijoddha Sontan Scholarship",
