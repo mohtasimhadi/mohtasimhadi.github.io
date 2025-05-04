@@ -22,6 +22,7 @@
       {
         "title": "সেভেন ইয়ার্স ইন টিবেট",
         "details": "হেইনরিখ হারের",
+        "synopsis": "",
         "cover": "/imgs/books/syit.jpg",
         "year": "May 2022",
         "goodreads": "https://www.goodreads.com/book/show/60725294",
@@ -30,6 +31,7 @@
       {
         "title": "ডেথ নোট: এনাদার নোট - দ্য লস এঞ্জেলস বিবি মার্ডার কেসেস",
         "details": "নিসিওইসিন",
+        "synopsis": "",
         "cover": "/imgs/books/dn.jpg",
         "year": "May 2022",
         "goodreads": "https://www.goodreads.com/book/show/57516595",
@@ -38,6 +40,7 @@
       {
         "title": "ডেথ মাস্কস (দ্য ড্রেসডেন ফাইলস #৫)",
         "details": "জিম বুচার",
+        "synopsis": "",
         "cover": "/imgs/books/dm.jpg",
         "year": "Mar 2021",
         "goodreads": "https://www.goodreads.com/book/show/57515920",
@@ -46,6 +49,7 @@
       {
         "title": "সামার নাইট (দ্য ড্রেসডেন ফাইলস #৪)",
         "details": "জিম বুচার",
+        "synopsis": "",
         "cover": "/imgs/books/snn.jpg",
         "year": "Nov 2020",
         "goodreads": "https://www.goodreads.com/book/show/55691550",
@@ -54,6 +58,7 @@
       {
         "title": "দ্য মিস্ট",
         "details": "স্টিফেন কিং",
+        "synopsis": "",
         "cover": "/imgs/books/tm.jpg",
         "year": "Feb 2018",
         "goodreads": "https://www.goodreads.com/book/show/38890510",
@@ -62,6 +67,7 @@
       {
         "title": "গ্রেভ পেরিল (দ্য ড্রেসডেন ফাইলস #৩)",
         "details": "জিম বুচার",
+        "synopsis": "",
         "cover": "/imgs/books/gp.jpg",
         "year": "Feb 2018",
         "goodreads": "https://www.goodreads.com/book/show/38890496",
@@ -70,6 +76,7 @@
       {
         "title": "ফুল মুন (দ্য ড্রেসডেন ফাইলস #২)",
         "details": "জিম বুচার",
+        "synopsis": "",
         "cover": "/imgs/books/fm.jpg",
         "year": "Feb 2017",
         "goodreads": "https://www.goodreads.com/book/show/38890574",
@@ -80,6 +87,7 @@
       {
         "title": "১ - রক্তে লেখা বিপ্লব",
         "details": "উপন্যাসিকা: ফিরব বললে ফেরা যায় নাকি?",
+        "synopsis": "",
         "cover": "/imgs/books/rlb.jpg",
         "year": "Dec, 2024",
         "goodreads": "https://www.goodreads.com/book/show/222179984--",
@@ -88,6 +96,7 @@
       {
         "title": "নিশুতি ৩",
         "details": "ছোটগল্প: কোয়াট",
+        "synopsis": "",
         "cover": "/imgs/books/n3.jpg",
         "year": "Aug, 2021",
         "goodreads": "https://www.goodreads.com/book/show/57288276",
@@ -96,6 +105,7 @@
       {
         "title": "অন্য ভুবনের গল্প",
         "details": "অনুবাদ গল্প: সাফার দ্য লিটল চিলড্রেন - স্টিফেন কিং",
+        "synopsis": "",
         "cover": "/imgs/books/obg.jpg",
         "year": "Feb, 2019",
         "goodreads": "https://www.goodreads.com/book/show/44549903",
@@ -104,190 +114,11 @@
       {
         "title": "কল্পলোক ফ্যান্টাসি সংকলন",
         "details": "অনুবাদ গল্প: দ্য লিটল টেরর- উইল এফ জেংকিনস",
+        "synopsis": "",
         "cover": "/imgs/books/cl.jpg",
         "year": "Feb, 2018",
         "goodreads": "https://www.goodreads.com/book/show/38770384",
         "publisher": "নালন্দা"
-      }
-    ]
-  },
-  "blog": {
-    "Writings": [
-      {
-        "title": "My Year In Review: 2024",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Year-In-Review-2024-13610be21a4180189f49d637664029b8?pvs=4",
-        "tags": ["Review"],
-        "date": "December 14, 2024"
-      },
-      {
-        "title": "My Year In Review: 2023",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Year-In-Review-2023-918322e5033f4d31baab140373cc36f0?pvs=4",
-        "tags": ["Review"],
-        "date": "December 19, 2024"
-      },
-      {
-        "title": "Comfortably Numb",
-        "notion_link": "https://mohtasimhadi.notion.site/Comfortably-Numb-9ec6268bdc5f414896ac295268632f50?pvs=4",
-        "tags": ["Self Subotage"],
-        "date": "June 08, 2023"
-      },
-      {
-        "title": "ওই যে ঝড়ের মেঘে",
-        "notion_link": "https://mohtasimhadi.notion.site/a6d986822bf14988ad8c82e544551f26?pvs=4",
-        "tags": ["Memoir"],
-        "date": "March 15, 2023"
-      },
-      {
-        "title": "একজন বিবাগী",
-        "notion_link": "https://mohtasimhadi.notion.site/b60ddd8b684e4dea84660414f776ba1c?pvs=4",
-        "tags": ["Self Subotage", "Memoir"],
-        "date": "March 19, 2023"
-      },
-      {
-        "title": "My Year In Review: 2022",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Year-In-Review-2022-50b83b48b72d4419ac7ab958c5ec5684?pvs=4",
-        "tags": ["Review"],
-        "date": "December 30, 2022"
-      },
-      {
-        "title": "Alohomora",
-        "notion_link": "https://mohtasimhadi.notion.site/Alohomora-f1d34f82f201430ab9fcc432c7c302e7?pvs=4",
-        "tags": ["Self Subotage", "Memoir", "Random Thought"],
-        "date": "July 21, 2022"
-      },
-      {
-        "title": "Longing",
-        "notion_link": "https://mohtasimhadi.notion.site/Longing-700aa59bf3244a7f82477dc33beea25b?pvs=4",
-        "tags": ["Random Thought"],
-        "date": "August 24, 2022"
-      },
-      {
-        "title": "My Year In Review: 2021",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Year-In-Review-2021-1180897eb9564fa4a326374d1df60e77?pvs=4",
-        "tags": ["Review"],
-        "date": "December 14, 2021"
-      },
-      {
-        "title": "My Year In Review: 2020",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Year-In-Review-2020-4fcc7000c54e42daa2b9de4964d980b2?pvs=4",
-        "tags": ["Review"],
-        "date": "December 31, 2020"
-      },
-      {
-        "title": "My Year In Review: 2019",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Year-In-Review-2019-bfb6e26e275040a8b2872d29541d2a39?pvs=4",
-        "tags": ["Review"],
-        "date": "December 31, 2019"
-      },
-      {
-        "title": "প্রথম প্রেম",
-        "notion_link": "https://mohtasimhadi.notion.site/98e16215b0544432a52308a440f3354c?pvs=4",
-        "tags": ["Memoir"],
-        "date": "July 11, 2019"
-      }
-    ],
-    "Poetries": [
-      {
-        "title": "তোমার সাথে নিয়তি",
-        "notion_link": "https://mohtasimhadi.notion.site/15910be21a4180fbab7cf93d3bd0f75d",
-        "tags": ["Daremi"],
-        "date": "December 11, 2024"
-      },
-      {
-        "title": "হিমফুল",
-        "notion_link": "https://mohtasimhadi.notion.site/14110be21a4180deb611de4ea9eb39e9?pvs=4",
-        "tags": ["Self Sabotage", "Translation", "Mehdi Akhavan"],
-        "date": "November 16, 2024"
-      },
-      {
-        "title": "যারা মরে গ্যাছে",
-        "notion_link": "https://mohtasimhadi.notion.site/a4483a76ce8747888e5f64270cc86635?pvs=4",
-        "tags": ["Translation", "Charles Bukowski"],
-        "date": "September 04, 2024"
-      },
-      {
-        "title": "প্রমিথিউস",
-        "notion_link": "https://mohtasimhadi.notion.site/10205d8295e045f0b6375ca634cf5f3b?pvs=4",
-        "tags": [],
-        "date": "July 28, 2024"
-      },
-      {
-        "title": "ওম",
-        "notion_link": "https://mohtasimhadi.notion.site/0ea58914a5284a3cbb5b6290b2aed239?pvs=4",
-        "tags": ["Self Sabotage"],
-        "date": "July 01, 2024"
-      },
-      {
-        "title": "বার শূন্য ছয় চব্বিশ",
-        "notion_link": "https://mohtasimhadi.notion.site/91997630944546af920175afba5ba07e?pvs=4",
-        "tags": ["Daremi"],
-        "date": "July 12, 2024"
-      },
-      {
-        "title": "দেশান্তর",
-        "notion_link": "https://mohtasimhadi.notion.site/83184e2f7f93456ba8a4ecc74eed7644?pvs=4",
-        "tags": ["Daremi"],
-        "date": "June 11, 2024"
-      },
-      {
-        "title": "Autobiography",
-        "notion_link": "https://mohtasimhadi.notion.site/Autobiography-2ff61b9b515f47959649874add7828d7?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "My Reflection",
-        "notion_link": "https://mohtasimhadi.notion.site/My-Reflection-32147b7bd587460fadd6b6e68b5a7787?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "The Audacity of Festival",
-        "notion_link": "https://mohtasimhadi.notion.site/The-Audacity-of-the-Festival-05afb678c8634337b763c2e6c88b983a?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "স্ট্যাটিস্টিক্স",
-        "notion_link": "https://mohtasimhadi.notion.site/c9a13d91a10744c9b761b56c690e5af1?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "আমারে শুইনা যাও",
-        "notion_link": "https://mohtasimhadi.notion.site/250527f1d5874f789146d79d320f8c01?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "Sailor",
-        "notion_link": "https://mohtasimhadi.notion.site/Sailor-28b7674723f342ec811fce4b74399903?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "মিলেনা - কাফকা",
-        "notion_link": "https://mohtasimhadi.notion.site/c001626b40bc45db95a3d2c1eb9f1c91?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "ইস্রাফিলের বাঁশির পর",
-        "notion_link": "https://mohtasimhadi.notion.site/576feadd7b9c4bc48ce6dfc3ce72965f?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "চিহ্ন রেখে যাব না",
-        "notion_link": "https://mohtasimhadi.notion.site/e1ef856f109348cab734845a88cb4dc2?pvs=4",
-        "tags": [],
-        "date": ""
-      },
-      {
-        "title": "ভেটেরান!",
-        "notion_link": "https://mohtasimhadi.notion.site/8f61e361b8184239a6f7f76d1924c939?pvs=4",
-        "tags": [],
-        "date": ""
       }
     ]
   }
