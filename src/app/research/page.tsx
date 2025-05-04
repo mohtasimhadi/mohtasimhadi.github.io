@@ -87,8 +87,8 @@ export default function ResearchPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto pt-1 px-4 md:px-6">
-      <div className="md:hidden text-right mt-4">
+    <div className="max-w-7xl mx-auto pt-5 px-4 md:px-6">
+      <div className="md:hidden text-right">
         <button
           onClick={() => setIsMobileMenuOpen(true)}
           className="px-4 py-2 rounded bg-gray-900 text-white font-medium"

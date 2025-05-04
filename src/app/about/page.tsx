@@ -19,7 +19,7 @@ export default function AboutPage() {
     return <p className="text-center mt-10 text-lg">Loading...</p>;
 
   return (
-    <div className="container mx-auto pt-1 px-6 py-12">
+    <div className="container mx-auto pt-5 px-6 py-12">
       {/* CV Section */}
       {aboutData.cv && (
         <Section title="">
