@@ -7,7 +7,8 @@
         "cover": "/imgs/books/k.jpg",
         "year": "To be published...",
         "goodreads": "",
-        "publisher": "বুকস্ট্রিট"
+        "publisher": "বুকস্ট্রিট",
+        "tags": ["Magic Realism", "Contemporary"]
       },
       {
         "title": "মাটিতে ফুটে আছে ক্লাস্টার ফুল",
@@ -15,7 +16,8 @@
         "cover": "/imgs/books/cp.jpg",
         "year": "February, 2022",
         "goodreads": "https://www.goodreads.com/book/show/57382920",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Magic Realism", "Contemporary", "History"]
       }
     ],
     "Translations": [
@@ -26,7 +28,8 @@
         "cover": "/imgs/books/syit.jpg",
         "year": "May 2022",
         "goodreads": "https://www.goodreads.com/book/show/60725294",
-        "publisher": "বুকস্ট্রিট"
+        "publisher": "বুকস্ট্রিট",
+        "tags": ["Autobiography", "Translation"]
       },
       {
         "title": "ডেথ নোট: এনাদার নোট - দ্য লস এঞ্জেলস বিবি মার্ডার কেসেস",
@@ -35,7 +38,8 @@
         "cover": "/imgs/books/dn.jpg",
         "year": "September 2021",
         "goodreads": "https://www.goodreads.com/book/show/57516595",
-        "publisher": "বুকস্ট্রিট"
+        "publisher": "বুকস্ট্রিট",
+        "tags": ["Fantasy", "Japanese", "Urban Fantasy", "Mystery", "Translation"]
       },
       {
         "title": "ডেথ মাস্কস (দ্য ড্রেসডেন ফাইলস #৫)",
@@ -44,7 +48,8 @@
         "cover": "/imgs/books/dm.jpg",
         "year": "Mar 2021",
         "goodreads": "https://www.goodreads.com/book/show/57515920",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Fantasy", "Urban Fantasy", "Mystery", "Translation", "Dresden Files"]
       },
       {
         "title": "সামার নাইট (দ্য ড্রেসডেন ফাইলস #৪)",
@@ -53,7 +58,8 @@
         "cover": "/imgs/books/snn.jpg",
         "year": "Nov 2020",
         "goodreads": "https://www.goodreads.com/book/show/55691550",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Fantasy", "Urban Fantasy", "Mystery", "Translation", "Dresden Files"]
       },
       {
         "title": "দ্য মিস্ট",
@@ -62,7 +68,8 @@
         "cover": "/imgs/books/tm.jpg",
         "year": "Feb 2018",
         "goodreads": "https://www.goodreads.com/book/show/38890510",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Horror", "Psychological", "Mystery", "Translation"]
       },
       {
         "title": "গ্রেভ পেরিল (দ্য ড্রেসডেন ফাইলস #৩)",
@@ -71,7 +78,8 @@
         "cover": "/imgs/books/gp.jpg",
         "year": "Feb 2018",
         "goodreads": "https://www.goodreads.com/book/show/38890496",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Fantasy", "Urban Fantasy", "Mystery", "Translation", "Dresden Files"]
       },
       {
         "title": "ফুল মুন (দ্য ড্রেসডেন ফাইলস #২)",
@@ -80,7 +88,8 @@
         "cover": "/imgs/books/fm.jpg",
         "year": "Feb 2017",
         "goodreads": "https://www.goodreads.com/book/show/38890574",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Fantasy", "Urban Fantasy", "Mystery", "Translation", "Dresden Files"]
       }
     ],
     "Collections": [
@@ -91,7 +100,8 @@
         "cover": "/imgs/books/rlb.jpg",
         "year": "Dec, 2024",
         "goodreads": "https://www.goodreads.com/book/show/222179984--",
-        "publisher": "বুকস্ট্রিট"
+        "publisher": "বুকস্ট্রিট",
+        "tags": ["Anthology", "Revolution", "History", "Novelette"]
       },
       {
         "title": "নিশুতি ৩",
@@ -100,7 +110,8 @@
         "cover": "/imgs/books/n3.jpg",
         "year": "Aug, 2021",
         "goodreads": "https://www.goodreads.com/book/show/57288276",
-        "publisher": "আদি প্রকাশনী"
+        "publisher": "আদি প্রকাশনী",
+        "tags": ["Anthology", "Horror", "Supernatural", "Short Story"]
       },
       {
         "title": "অন্য ভুবনের গল্প",
@@ -109,7 +120,8 @@
         "cover": "/imgs/books/obg.jpg",
         "year": "Feb, 2019",
         "goodreads": "https://www.goodreads.com/book/show/44549903",
-        "publisher": "বাতিঘর প্রকাশনী"
+        "publisher": "বাতিঘর প্রকাশনী",
+        "tags": ["Anthology", "Horror", "Supernatural", "Short Story"]
       },
       {
         "title": "কল্পলোক ফ্যান্টাসি সংকলন",
@@ -118,7 +130,8 @@
         "cover": "/imgs/books/cl.jpg",
         "year": "Feb, 2018",
         "goodreads": "https://www.goodreads.com/book/show/38770384",
-        "publisher": "নালন্দা"
+        "publisher": "নালন্দা",
+        "tags": ["Anthology", "Sci-Fi", "Supernatural", "Short Story"]
       }
     ]
   }

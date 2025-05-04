@@ -1,12 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function OnWriting() {
   const [writingData, setWritingData] = useState<any>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     fetch("/data/writing.json")
@@ -32,84 +36,225 @@ export default function OnWriting() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!writingData) return <p className="text-center mt-10 text-lg">Loading...</p>;
-
-  const getTagColor = (tag: string) => {
-    const colors = [
-      "bg-red-500",
-      "bg-blue-500",
-      "bg-green-500",
-      "bg-yellow-500",
-      "bg-purple-500",
-      "bg-pink-500",
-      "bg-indigo-500",
-      "bg-teal-500",
-    ];
-    const hash = tag
-      .split("")
-      .reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    return colors[hash % colors.length]; // Assigns consistent colors to the same tag
+  const getAllTags = () => {
+    const tags = new Set<string>();
+    Object.values(writingData?.on_writing || {}).forEach((group: any) => {
+      if (Array.isArray(group)) {
+        group.forEach((book: any) => {
+          (book.tags || []).forEach((tag: string) => tags.add(tag));
+        });
+      }
+    });
+    return Array.from(tags);
   };
 
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    );
+  };
+
+  const filterBooks = (books: any[]) => {
+    return books.filter((book) => {
+      const matchesSearch = book.title
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      const matchesTags =
+        selectedTags.length === 0 ||
+        (book.tags || []).some((tag: string) => selectedTags.includes(tag));
+      return matchesSearch && matchesTags;
+    });
+  };
+
+  if (!writingData)
+    return <p className="text-center mt-10 text-lg">Loading...</p>;
+
+  const allTags = getAllTags();
+
   return (
-    <div className="container mx-auto px-6 py-12 flex">
-      {/* Sidebar Navigation */}
-      <aside className="hidden sm:block sm:w-1/4 sticky top-20 h-screen p-4 bg-gray-100 rounded-lg shadow-md">
-        <ul className="space-y-2">
-          {/* Books Section */}
-          <li>
-            <ul className="pl-4 space-y-1">
-              {Object.keys(writingData.on_writing).map((subCategory) => (
-                <li key={subCategory}>
-                  <a
-                    href={`#${subCategory.replace(/\s+/g, "-")}`}
-                    className={`block px-3 py-1 rounded-md ${
-                      activeSection === subCategory.replace(/\s+/g, "-")
-                        ? "bg-[#E87722] text-white"
-                        : "hover:bg-gray-300"
-                    }`}
-                  >
-                    {subCategory}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
-        </ul>
-      </aside>
+    <div className="max-w-7xl mx-auto px-4 md:px-6">
+      {/* Mobile Filter Button */}
+      <div className="md:hidden text-right mt-4">
+        <button
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="px-4 py-2 rounded-md bg-[#E87722] text-white font-medium"
+        >
+          Open Navigation
+        </button>
+      </div>
 
-      {/* Main Content */}
-      <div className="w-3/4 px-6">
-        {/* Books Section */}
-        <section id="On-Writing" className="blog-section mb-12">
+      <div className="flex flex-col md:flex-row gap-6 mt-6">
+        {/* Sidebar (Desktop) */}
+        <aside className="hidden md:block w-72 bg-white border border-gray-200 rounded-2xl p-5 shadow-md sticky top-6 h-fit">
+          <SidebarContent
+            data={writingData}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            allTags={allTags}
+            selectedTags={selectedTags}
+            toggleTag={toggleTag}
+            activeSection={activeSection}
+          />
+        </aside>
 
-          {Object.entries(writingData.on_writing).map(
-            ([category, books]: [string, any]) => (
-              <div
-                key={category}
-                id={category.replace(/\s+/g, "-")}
-                className="blog-section mb-8"
+        {/* Sidebar (Mobile Drawer) */}
+        <Transition show={isMobileMenuOpen} as={Fragment}>
+          <Dialog
+            as="div"
+            className="relative z-50 md:hidden"
+            onClose={setIsMobileMenuOpen}
+          >
+            <Transition.Child
+              as={Fragment}
+              enter="transition-opacity ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="transition-opacity ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-30" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 flex justify-center items-start p-4">
+              <Transition.Child
+                as={Fragment}
+                enter="transition-transform ease-out duration-300"
+                enterFrom="translate-y-10 opacity-0"
+                enterTo="translate-y-0 opacity-100"
+                leave="transition-transform ease-in duration-200"
+                leaveFrom="translate-y-0 opacity-100"
+                leaveTo="translate-y-10 opacity-0"
               >
-                <h2 className="text-2xl font-bold text-[#0C2340] mb-4">
-                  {category}
-                </h2>
+                <Dialog.Panel className="w-full max-w-sm bg-white p-6 rounded-2xl shadow-xl">
+                  <div className="flex justify-between items-center mb-4">
+                    <Dialog.Title className="text-lg font-bold">
+                      Jump to Section
+                    </Dialog.Title>
+                    <button
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-gray-500 text-xl"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <SidebarContent
+                    data={writingData}
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                    allTags={allTags}
+                    selectedTags={selectedTags}
+                    toggleTag={toggleTag}
+                    activeSection={activeSection}
+                  />
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </Dialog>
+        </Transition>
 
-                {/* Originals: Horizontal Layout */}
+        {/* Main Content */}
+        <div className="w-full md:w-3/4">
+          {Object.entries(writingData.on_writing).map(
+            ([category, books]: [string, any]) => {
+              const filtered = filterBooks(books);
+              if (filtered.length === 0) return null;
+
+              return (
+                <div
+                  key={category}
+                  id={category.replace(/\s+/g, "-")}
+                  className="blog-section mb-12"
+                >
+                  <h2 className="text-2xl font-bold text-[#0C2340] mb-4">
+                    {category}
+                  </h2>
                   <div className="grid md:grid-cols-3 gap-6">
-                    {books.map((book: any, index: number) => (
+                    {filtered.map((book: any, index: number) => (
                       <BookCard key={index} book={book} />
                     ))}
                   </div>
-              </div>
-            )
+                </div>
+              );
+            }
           )}
-        </section>
+        </div>
       </div>
     </div>
   );
 }
 
-// Grid Book Card
+function SidebarContent({
+  data,
+  searchTerm,
+  setSearchTerm,
+  allTags,
+  selectedTags,
+  toggleTag,
+  activeSection,
+}: {
+  data: any;
+  searchTerm: string;
+  setSearchTerm: (val: string) => void;
+  allTags: string[];
+  selectedTags: string[];
+  toggleTag: (tag: string) => void;
+  activeSection: string | null;
+}) {
+  return (
+    <>
+      <input
+        type="text"
+        placeholder="Search by title..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full mb-6 px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
+      />
+
+      <ul className="space-y-2 mb-6">
+        {Object.keys(data.on_writing).map((subCategory) => (
+          <li key={subCategory}>
+            <a
+              href={`#${subCategory.replace(/\s+/g, "-")}`}
+              className={`block px-3 py-2 rounded-md text-base font-bold ${
+                activeSection === subCategory.replace(/\s+/g, "-")
+                  ? "bg-[#E87722] text-white"
+                  : "hover:bg-gray-300"
+              }`}
+            >
+              {subCategory}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="space-y-2">
+        <h3 className="font-medium text-gray-700">🏷️ Tags</h3>
+        <div className="flex flex-wrap gap-2">
+          {allTags.map((tag, idx) => (
+            <label
+              key={idx}
+              className={`px-3 py-1 border rounded-full text-sm cursor-pointer transition ${
+                selectedTags.includes(tag)
+                  ? "bg-orange-100 border-orange-400 text-orange-700"
+                  : "bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={selectedTags.includes(tag)}
+                onChange={() => toggleTag(tag)}
+                className="hidden"
+              />
+              {tag}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
 function BookCard({ book }: { book: any }) {
   return (
     <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center border-l-4 border-[#E87722]">
