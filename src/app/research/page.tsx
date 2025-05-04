@@ -87,18 +87,18 @@ export default function ResearchPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <div className="max-w-7xl mx-auto pt-1 px-4 md:px-6">
       <div className="md:hidden text-right mt-4">
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="px-4 py-2 rounded-md bg-[#E87722] text-white font-medium"
+          className="px-4 py-2 rounded bg-gray-900 text-white font-medium"
         >
           Open Navigation
         </button>
       </div>
 
       <div className="flex flex-col md:flex-row gap-6 mt-6">
-        <aside className="hidden md:block w-72 bg-white border border-gray-200 rounded-2xl p-5 shadow-md sticky top-6 h-fit">
+        <aside className="hidden md:block w-72 bg-white border border-gray-200 rounded p-5 border-1 sticky top-6 h-fit">
           <SidebarContent
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
@@ -135,7 +135,7 @@ export default function ResearchPage() {
                 leaveFrom="translate-y-0 opacity-100"
                 leaveTo="translate-y-10 opacity-0"
               >
-                <Dialog.Panel className="w-full max-w-sm bg-white p-6 rounded-2xl shadow-xl">
+                <Dialog.Panel className="w-full max-w-sm bg-white p-6 rounded border-1">
                   <div className="flex justify-between items-center mb-4">
                     <Dialog.Title className="text-lg font-bold">Jump to Section</Dialog.Title>
                     <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-500 text-xl">×</button>
@@ -156,7 +156,7 @@ export default function ResearchPage() {
           </Dialog>
         </Transition>
 
-        <div className="w-full md:w-3/4">
+        <div className="w-full md:w-3/4 pt-0 mt-0">
           <ResearchProfiles />
 
           <Section title="Patents" id="Patents">
@@ -245,7 +245,7 @@ function SidebarContent({
       <input
         type="text"
         placeholder="Search research (text, abstract)..."
-        className="w-full p-3 pl-4 border rounded-lg focus:ring-2 focus:ring-[#E87722] focus:outline-none mb-4"
+        className="w-full p-3 pl-4 border rounded focus:ring-2 focus:ring-gray-900 focus:outline-none mb-4"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
@@ -257,9 +257,9 @@ function SidebarContent({
             <button
               key={kw}
               onClick={() => toggleKeyword(kw)}
-              className={`px-3 py-1 rounded-full text-xs border ${
+              className={`px-3 py-1 rounded text-xs border ${
                 selectedKeywords.includes(kw)
-                  ? "bg-[#E87722] text-white border-[#E87722]"
+                  ? "bg-gray-900 text-white border-gray-900"
                   : "text-gray-700 border-gray-300"
               }`}
             >
@@ -274,8 +274,8 @@ function SidebarContent({
           <li key={type}>
             <a
               href={`#${type}`}
-              className={`block px-3 py-2 rounded-md text-base font-bold ${
-                activeSection === type ? "bg-[#E87722] text-white" : "hover:bg-gray-300"
+              className={`block px-3 py-2 rounded text-base font-bold ${
+                activeSection === type ? "bg-gray-900 text-white" : "hover:bg-gray-300"
               }`}
             >
               {type}
@@ -285,9 +285,9 @@ function SidebarContent({
                 <li key={category}>
                   <a
                     href={`#${category.replace(/\s+/g, "-")}`}
-                    className={`block px-3 py-1 rounded-md ${
+                    className={`block px-3 py-1 rounded ${
                       activeSubsection === category.replace(/\s+/g, "-")
-                        ? "bg-[#E87722] text-white"
+                        ? "bg-gray-900 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -307,7 +307,7 @@ function SidebarContent({
 function Section({ title, id, children }: { title: string; id: string; children: React.ReactNode }) {
   return (
     <div className="mb-12 research-section pt-6" id={id}>
-      <h2 className="text-3xl font-bold text-[#E87722] mb-6">{title}</h2>
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{title}</h2>
       {children}
     </div>
   );

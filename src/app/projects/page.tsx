@@ -49,12 +49,12 @@ export default function ProjectsPage() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto mt-10 px-4 md:px-6">
+    <div className="max-w-7xl mx-auto pt-10 px-4 md:px-6">
       {/* Mobile Filter Button */}
       <div className="mb-4 md:hidden flex justify-end">
         <button
           onClick={() => setIsMobileFilterOpen(true)}
-          className="px-4 py-2 text-sm rounded-md bg-orange-500 text-white"
+          className="px-4 py-2 text-sm rounded bg-orange-500 text-white"
         >
           Filter Projects
         </button>
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
 
       <div className="flex flex-col md:flex-row gap-6">
         {/* Desktop Sidebar */}
-        <aside className="hidden md:block w-72 bg-white border border-gray-200 rounded-2xl p-5 shadow-md h-fit sticky top-6">
+        <aside className="hidden md:block w-72 bg-white border border-gray-200 rounded p-5 border-1 h-fit sticky top-6">
           <FiltersUI
             affiliations={allAffiliations}
             selected={selectedAffiliations}
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
               leaveFrom="translate-y-0 opacity-100"
               leaveTo="translate-y-10 opacity-0"
             >
-              <Dialog.Panel className="w-full max-w-sm bg-white rounded-2xl p-6 shadow-xl">
+              <Dialog.Panel className="w-full max-w-sm bg-white rounded p-6 border-1">
                 <div className="flex justify-between items-center mb-4">
                   <Dialog.Title className="text-lg font-bold">
                     Filter Projects
@@ -178,7 +178,7 @@ function FiltersUI({
         placeholder="Search by title..."
         value={searchTerm}
         onChange={(e) => onSearch(e.target.value)}
-        className="w-full mb-6 px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
+        className="w-full mb-6 px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
       />
 
       {/* Affiliation Filter */}
@@ -187,7 +187,7 @@ function FiltersUI({
         {affiliations.map((aff, idx) => (
           <label
             key={idx}
-            className="flex items-center gap-2 px-2 py-1 rounded-lg cursor-pointer hover:bg-gray-100 transition"
+            className="flex items-center gap-2 px-2 py-1 rounded cursor-pointer hover:bg-gray-100 transition"
           >
             <input
               type="checkbox"
@@ -208,7 +208,7 @@ function FiltersUI({
           {keywords.map((kw, idx) => (
             <label
               key={idx}
-              className={`flex items-center gap-2 px-3 py-1 border rounded-full cursor-pointer text-sm transition 
+              className={`flex items-center gap-2 px-3 py-1 border rounded cursor-pointer text-sm transition 
           ${
             selectedKeywords.includes(kw)
               ? "bg-orange-100 border-orange-400 text-orange-700"

@@ -16,7 +16,7 @@ const ProfileCard: React.FC<ProfileProps> = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center p-4 bg-white shadow-md rounded-lg border-l-4 border-[#E87722] transition hover:shadow-lg hover:bg-gray-50"
+        className="flex items-center p-4 bg-white border-1 rounded border-l-4 border-gray-900 transition hover:border-1 hover:bg-gray-50"
       >
         <Image
           src={logo}
@@ -35,7 +35,7 @@ const ProfileCard: React.FC<ProfileProps> = ({
   
 const ResearchProfiles = ({}) => {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         <ProfileCard
           platform="Google Scholar"
           url="https://scholar.google.com/citations?user=ih7NQy8AAAAJ&hl=en"

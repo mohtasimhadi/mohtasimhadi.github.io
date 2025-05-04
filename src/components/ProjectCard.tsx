@@ -27,12 +27,12 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
   return (
     <>
-      <div className="bg-white shadow-lg rounded-lg p-2 md:p-3 flex flex-col w-full gap-1 relative border-l-4 border-[#E87722]">
+      <div className="bg-white border-1 rounded p-2 md:p-3 flex flex-col w-full gap-1 relativeborder-gray-900">
         {/* Media Section (Fixed Size) */}
         <div className="w-full h-[300px] md:h-[200px] flex items-center justify-center mb-4">
           {mediaType === "video" ? (
             <iframe
-              className="w-full h-full rounded-lg"
+              className="w-full h-full rounded"
               src={media.replace("youtu.be/", "www.youtube.com/embed/")}
               title={title}
               allowFullScreen
@@ -43,7 +43,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
               alt={title}
               width={600}
               height={400}
-              className="rounded-lg w-full h-full object-cover"
+              className="rounded w-full h-full object-cover"
             />
           )}
         </div>
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           onClick={closeModal}
         >
           <div
-            className="border-5 bg-gray-50 rounded-lg w-full md:w-[600px] p-6 relative max-h-[90vh] overflow-y-auto"
+            className="border-5 bg-gray-50 rounded w-full md:w-[600px] p-6 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside
           >
             {/* Modal Header with Close Button */}
@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
               <h2 className="text-xl font-bold text-gray-900">{title}</h2>
               <button
                 onClick={closeModal}
-                className="text-gray-600 hover:text-gray-900 bg-transparent border-0 rounded-full p-2 focus:outline-none"
+                className="text-gray-600 hover:text-gray-900 bg-transparent border-0 rounded p-2 focus:outline-none"
               >
                 {/* Close Button using SVG */}
                 <svg
@@ -97,7 +97,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             <div className="w-full h-[300px] md:h-[400px] flex items-center justify-center mb-4">
               {mediaType === "video" ? (
                 <iframe
-                  className="w-full h-full rounded-lg"
+                  className="w-full h-full rounded"
                   src={media.replace("youtu.be/", "www.youtube.com/embed/")}
                   title={title}
                   allowFullScreen
@@ -108,7 +108,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
                   alt={title}
                   width={600}
                   height={400}
-                  className="rounded-lg w-full h-full object-cover"
+                  className="rounded w-full h-full object-cover"
                 />
               )}
             </div>

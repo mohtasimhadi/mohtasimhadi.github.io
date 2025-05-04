@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import ResearchProfiles from "@/components/ResearchProfileCard";
 import NewsCard from "@/components/NewsCard";
@@ -49,67 +48,72 @@ export default function Home() {
   );
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      {/* Two-Column Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-        {/* Left: Profile & Contact inside a card (1/3 width) */}
-        <div className="bg-white shadow-lg rounded-lg p-8 md:col-span-1 border-l-4 border-[#E87722]">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-48 h-48 relative rounded-full overflow-hidden shadow-lg">
-              <Image
-                src={data.profile.profile_image}
-                alt={data.profile.name}
-                width={192}
-                height={192}
-                className="object-cover"
-                priority
-              />
+    <>
+      <div className="relative w-full bg-[#F2F0EF] overflow-hidden">
+        {/* Background Image - Desktop only */}
+        <div className="hidden md:flex absolute inset-0 z-0 justify-center items-center pointer-events-none">
+          <img
+            src={data.profile.profile_image}
+            alt={data.profile.name}
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+
+        {/* Visible Image - Mobile only */}
+        <div className="block md:hidden w-full flex justify-center pt-8">
+          <img
+            src={data.profile.profile_image}
+            alt={data.profile.name}
+            className="w-[80%] object-contain"
+          />
+        </div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-36 items-start">
+          {/* Left Column */}
+          <div className="space-y-6 md:mr-10 order-2 md:order-none">
+            <div className="flex flex-col space-y-2">
+              <h1 className="text-5xl md:text-8xl font-bold">
+                {data.profile.name}
+              </h1>
+              <h2 className="text-xl md:text-3xl text-[#0C2340] font-semibold">
+                {data.profile.title}
+              </h2>
             </div>
-
-            <h1 className="text-3xl font-bold mt-4">{data.profile.name}</h1>
-            <h2 className="text-lg text-[#0C2340] font-semibold">
-              {data.profile.title}
-            </h2>
-
-            {/* Contact Information */}
-            <div className="flex flex-col items-center mt-6 space-y-2">
+            <div className="flex flex-col space-y-2">
               <ContactItem Icon={Mail} text={data.contact.email1} />
               <ContactItem Icon={Mail} text={data.contact.email2} />
               <ContactItem Icon={Phone} text={data.contact.phone} />
               <ContactItem Icon={MapPin} text={data.contact.address} />
             </div>
-
-            {/* Social Media Links */}
-            <div className="flex space-x-4 mt-6">
+            <div className="flex space-x-4">
               <SocialIcon href={data.contact.linkedin} Icon={Linkedin} />
               <SocialIcon href={data.contact.github} Icon={Github} />
               <SocialIcon href={data.contact.facebook} Icon={Facebook} />
               <SocialIcon href={data.contact.instagram} Icon={Instagram} />
             </div>
           </div>
-        </div>
 
-        {/* Right: About Section (2/3 width) */}
-        <div className="md:col-span-2">
-          <div className="md: row-span-2 mb-9 p-5">
-            <ResearchProfiles />
+          {/* Right Column */}
+          <div className="order-3 md:order-none">
+            <p className="text-base md:text-xl leading-relaxed whitespace-pre-line md:pl-16 md:pt-10">
+              {data.profile.bio}
+            </p>
+            <ResearchProfiles/>
           </div>
-          <p className="text-lg mt-1 leading-relaxed whitespace-pre-line">
-            {data.profile.bio}
-          </p>
         </div>
       </div>
 
       {/* News Section */}
-      <div className="mt-12">
-        <h2 className="text-2xl font-bold text-[#E87722] mb-6">Latest News</h2>
+      <div className="m-42 mt-5 mb-0">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Latest News</h2>
 
         {/* Search Bar */}
         <div className="relative mb-6 w-full">
           <input
             type="text"
             placeholder="Search news..."
-            className="w-full p-3 pl-10 border rounded-lg focus:ring-2 focus:ring-[#E87722] focus:outline-none"
+            className="w-full p-3 pl-10 border rounded focus:ring-2 focus:ring-gray-900 focus:outline-none"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -134,22 +138,22 @@ export default function Home() {
           <div className="mt-6 flex justify-center">
             <button
               onClick={() => setVisibleNews(visibleNews + 6)} // Load 6 more each time
-              className="bg-[#E87722] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d76c1a] transition"
+              className="bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-[#d76c1a] transition"
             >
               View More News
             </button>
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
 // Contact Information Component
 function ContactItem({ Icon, text }: { Icon: any; text: string }) {
   return (
-    <div className="flex items-center space-x-2">
-      <Icon className="w-5 h-5 text-[#E87722]" />
+    <div className="flex items-center space-x-2 text-xl">
+      <Icon className="w-5 h-5 text-gray-900" />
       <p>{text}</p>
     </div>
   );
@@ -159,7 +163,7 @@ function ContactItem({ Icon, text }: { Icon: any; text: string }) {
 function SocialIcon({ href, Icon }: { href: string; Icon: any }) {
   return (
     <Link href={href} target="_blank" rel="noopener noreferrer">
-      <Icon className="w-8 h-8 text-[#0C2340] hover:text-[#E87722] transition" />
+      <Icon className="w-8 h-8 text-gray-900 hover:text-gray-700 transition" />
     </Link>
   );
 }

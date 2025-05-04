@@ -16,7 +16,7 @@ export default function PeoplePage() {
   if (!peopleData) return <p className="mt-10 text-lg">Loading...</p>;
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="container mx-auto pt-1 px-6 py-12">
       {/* Students Section */}
       <Section title="Students" data={peopleData.students} />
       
@@ -38,7 +38,7 @@ function Section({ title, data }: { title: string; data: any[] }) {
 
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-semibold text-[#E87722] mb-6">{title}</h2>
+      <h2 className="text-2xl font-semibold text-gray-900 mb-6">{title}</h2>
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
         {data.map((person, index) => (
           <PeopleCard key={index} person={person} />

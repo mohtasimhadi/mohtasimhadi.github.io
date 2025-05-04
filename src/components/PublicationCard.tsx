@@ -23,7 +23,7 @@ const PublicationCard: React.FC<ResearchProps> = ({
     const [showAbstract, setShowAbstract] = useState(false);
   
     return (
-      <div className="bg-white shadow-md rounded-lg mb-6 border-l-4 border-[#E87722] flex flex-col relative">
+      <div className="bg-white border-1 rounded mb-6 border-l-4 border-gray-900 flex flex-col relative">
         {/* Main Content and Image Side-by-Side */}
         <div className="flex flex-col sm:flex-row">
           {/* Content Section */}
@@ -33,7 +33,7 @@ const PublicationCard: React.FC<ResearchProps> = ({
                 href={`https://doi.org/${doi}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block hover:text-[#E87722] transition"
+                className="block hover:text-gray-900 transition"
               >
                 {parse(text)}
               </a>
@@ -46,7 +46,7 @@ const PublicationCard: React.FC<ResearchProps> = ({
               {abstract && (
                 <button
                   onClick={() => setShowAbstract(!showAbstract)}
-                  className="px-3 py-1 text-sm font-semibold text-white bg-gray-800 rounded-md hover:bg-gray-700 transition"
+                  className="px-3 py-1 text-sm font-semibold text-white bg-gray-800 rounded hover:bg-gray-700 transition"
                 >
                   Abstract
                 </button>
@@ -55,7 +55,7 @@ const PublicationCard: React.FC<ResearchProps> = ({
               {bibTex && (
                 <button
                   onClick={() => setShowBibTex(!showBibTex)}
-                  className="px-3 py-1 text-sm font-semibold text-white bg-[#E87722] rounded-md hover:bg-[#d4661f] transition"
+                  className="px-3 py-1 text-sm font-semibold text-white bg-gray-900 rounded hover:bg-[#d4661f] transition"
                 >
                   BibTex
                 </button>
@@ -66,7 +66,7 @@ const PublicationCard: React.FC<ResearchProps> = ({
                   href={code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1 text-sm font-semibold text-white bg-slate-500 rounded-md hover:bg-slate-400 transition"
+                  className="px-3 py-1 text-sm font-semibold text-white bg-slate-500 rounded hover:bg-slate-400 transition"
                 >
                   Code
                 </a>

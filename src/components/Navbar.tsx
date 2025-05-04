@@ -10,7 +10,7 @@ export default function Navbar() {
   const pathname = usePathname(); // Get current path
 
   return (
-    <nav className="bg-white border-b-1 text-gray-900 fixed top-0 left-0 w-full z-50 h-[100px] flex items-center">
+    <nav className="bg-white border-b-1 text-gray-900 fixed top-0 left-0 w-full z-50 h-[120px] flex items-center">
       <div className="container mx-auto flex justify-between items-center px-6">
         {/* Logo */}
         <Link
@@ -41,7 +41,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 rounded-full bg-gray/20 hover:bg-gray/30 transition"
+          className="md:hidden p-2 rounded bg-gray/20 hover:bg-gray/30 transition"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
