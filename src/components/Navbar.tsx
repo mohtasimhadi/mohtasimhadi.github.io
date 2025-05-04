@@ -50,7 +50,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0C2340] text-white text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
+        <div className="md:hidden bg-gray-500 text-white text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
           <NavItem
@@ -82,7 +82,7 @@ function NavItem({
     <li>
       <Link
         href={href}
-        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-gray before:transition-all before:duration-300 hover:before:w-full ${
+        className={`relative px-4 py-2 transition duration-300 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-gray-900 before:transition-all before:duration-300 hover:before:w-full ${
           isActive ? "before:w-full" : "hover:before:w-full"
         }`}
       >
