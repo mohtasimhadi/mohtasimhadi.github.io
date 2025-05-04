@@ -17,7 +17,8 @@ export default function ProjectsPage() {
 
   return (
     <div className="max-w-5xl mx-auto mt-10 p-6">
-      <div className="flex flex-col gap-8">
+      {/* Responsive Grid Layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
