@@ -6,6 +6,7 @@
     "date": "May, 2024 - Present",
     "mediaType": "video",
     "media": "https://youtu.be/ureWGHHNJK4?si=XQlKHtXNfTQLeKYi",
+    "keywords": ["Unmanned Ground Vehicle", "Navigation", "Data Collection", "Nursery", "Deep Learning", "Autonomous"],
     "links": [
       {
         "title": "Website",
@@ -20,6 +21,7 @@
     "date": "May, 2024 - Present",
     "mediaType": "image",
     "media": "/imgs/projects/oim.png",
+    "keywords": ["Deep Learning", "Counting", "MOT", "Multi-object Tracking", "Tracking", "Ensemble Model", "YOLO"],
     "links": []
   },
   {
@@ -29,6 +31,7 @@
     "date": "May, 2023 - March, 2024",
     "mediaType": "video",
     "media": "https://youtu.be/VLqqCBdCnIs?si=Ujo2tFsPdFAEofu1",
+    "keywords": ["Retail", "Deep Learning", "Software", "Microservice", "DevOps", "Big Data", "Visualization"],
     "links": []
   },
   {
@@ -38,6 +41,7 @@
     "date": "April, 2022 - February, 2024",
     "mediaType": "video",
     "media": "https://youtu.be/vPbyAlnJKm4?si=YPxjYDHu4Zz_tCxR",
+    "keywords": ["FinTech", "OCR", "Analytics", "Deep Learning", "Software", "Microservice", "DevOps"],
     "links": []
   },
   {
@@ -47,6 +51,7 @@
     "date": "December, 2023 - January, 2024",
     "mediaType": "image",
     "media": "/imgs/projects/sheba.jpg",
+    "keywords": ["SQL", "Database", "Software", "DevOps", "Big Data", "Visualization"],
     "links": []
   },
   {
@@ -56,6 +61,7 @@
     "date": "April, 2022 - February, 2023",
     "mediaType": "video",
     "media": "https://youtu.be/Cbyyw6e-448?si=AIYYJBSlx-ThId_M",
+    "keywords": ["OCR", "Retail", "Big Data", "Analytics", "Deep Learning"],
     "links": []
   },
   {
@@ -65,6 +71,7 @@
     "date": "May 16, 2022",
     "mediaType": "image",
     "media": "/imgs/projects/cpn.png",
+    "keywords": ["Big Data", "Predictive Model"],
     "links": [
       {
         "title": "Certificate",
@@ -79,6 +86,7 @@
     "date": "April 28, 2022",
     "mediaType": "image",
     "media": "/imgs/projects/cpn.png",
+    "keywords": ["Big Data", "Predictive Model", "Visualization"],
     "links": [
       {
         "title": "Certificate",
@@ -93,6 +101,7 @@
     "date": "Winter 2021",
     "mediaType": "video",
     "media": "https://youtu.be/bgcJx5GE2dc?si=0ROI8rmIsksXJKbs",
+    "keywords": ["Deep Learning", "Software", "YOLO", "Classification"],
     "links": [
       {
         "title": "GitHub",

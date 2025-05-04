@@ -20,8 +20,8 @@ export default function Navbar() {
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
           <NavItem
-            href="/publications"
-            label="Publications"
+            href="/research"
+            label="Research"
             pathname={pathname}
           />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
