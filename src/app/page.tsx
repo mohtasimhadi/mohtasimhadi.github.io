@@ -53,7 +53,7 @@ export default function Home() {
       {/* Two-Column Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
         {/* Left: Profile & Contact inside a card (1/3 width) */}
-        <div className="bg-white shadow-lg rounded-lg p-8 md:col-span-1 border-l-4 border-[#E87722]" >
+        <div className="bg-white shadow-lg rounded-lg p-8 md:col-span-1 border-l-4 border-[#E87722]">
           <div className="flex flex-col items-center text-center">
             <div className="w-48 h-48 relative rounded-full overflow-hidden shadow-lg">
               <Image
@@ -67,7 +67,9 @@ export default function Home() {
             </div>
 
             <h1 className="text-3xl font-bold mt-4">{data.profile.name}</h1>
-            <h2 className="text-lg text-[#0C2340] font-semibold">{data.profile.title}</h2>
+            <h2 className="text-lg text-[#0C2340] font-semibold">
+              {data.profile.title}
+            </h2>
 
             {/* Contact Information */}
             <div className="flex flex-col items-center mt-6 space-y-2">
@@ -90,9 +92,11 @@ export default function Home() {
         {/* Right: About Section (2/3 width) */}
         <div className="md:col-span-2">
           <div className="md: row-span-2 mb-9 p-5">
-          <ResearchProfiles/>
+            <ResearchProfiles />
           </div>
-          <p className="text-lg mt-1 leading-relaxed whitespace-pre-line">{data.profile.bio}</p>
+          <p className="text-lg mt-1 leading-relaxed whitespace-pre-line">
+            {data.profile.bio}
+          </p>
         </div>
       </div>
 
@@ -115,9 +119,11 @@ export default function Home() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
           {filteredNews.length > 0 ? (
-            filteredNews.slice(0, visibleNews).map((item, index) => (
-              <NewsCard key={index} date={item.date} news={item.news} />
-            ))
+            filteredNews
+              .slice(0, visibleNews)
+              .map((item, index) => (
+                <NewsCard key={index} date={item.date} news={item.news} />
+              ))
           ) : (
             <p>No news found.</p>
           )}
