@@ -45,6 +45,25 @@
     "links": []
   },
   {
+    "title": "Burnout Sentinel",
+    "description": "This project incorporates a machine learning model that generates a stress score ranging from 0 to 10. By developing a web-based system enabling users to input their physiological data, it facilitates the monitoring and management of stress levels, providing personalized suggestions. Aimed at addressing student stress in the academic environment, the project offers a comprehensive approach to stress management.",
+    "affiliation": "Islamic University of Technology",
+    "date": "Winter 2023",
+    "mediaType": "image",
+    "media": "/imgs/projects/bs.png",
+    "keywords": ["Stress", "Machine Learning", "Analytics", "Random Forest"],
+    "links": [
+      {
+        "title": "Website",
+        "url": "https://burnout-sentinels.netlify.app/"
+      },
+      {
+        "title": "Code",
+        "url": "https://github.com/iut-swe-20-dp-1/machine-learning-model.git"
+      }
+    ]
+  },
+  {
     "title": "Sheba.XYZ Database Normalisation",
     "description": "Revamped Sheba.XYZ's database for faster query execution by documenting entity relationships, designing optimized structures, and enhancing overall efficiency.",
     "affiliation": "Intelligent Machines Limited",

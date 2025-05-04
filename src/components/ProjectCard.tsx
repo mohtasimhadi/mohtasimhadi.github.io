@@ -61,11 +61,11 @@ const ProjectCard: React.FC<ProjectProps> = ({
       {/* Modal (Full Content) */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 flex justify-center items-center z-50"
+          className="fixed inset-0 flex justify-center items-center z-50 bg-orange-50 bg-opacity-10"
           onClick={closeModal}
         >
           <div
-            className="bg-gray-50 rounded-lg w-full md:w-[600px] p-6 relative max-h-[90vh] overflow-y-auto"
+            className="border-5 bg-gray-50 rounded-lg w-full md:w-[600px] p-6 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside
           >
             {/* Modal Header with Close Button */}
