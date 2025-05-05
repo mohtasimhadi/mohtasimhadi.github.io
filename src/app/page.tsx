@@ -27,13 +27,14 @@ export default function Home() {
         {/* Left Column */}
         <div className="col-span-1 border-r-1">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Current Projects
+            Selected Projects
           </h3>
           <div className="space-y-4 pr-4">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
           </div>
+          <a href="/projects" className="font-semibold">View More</a>
         </div>
 
         {/* Center Column */}
