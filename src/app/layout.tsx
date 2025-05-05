@@ -4,10 +4,10 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Mohtasim Hadi Rafi",
-  description: "moho.blog",
+  title: "the Moho Blog",
+  description: "Journal of Mohtasim Hadi Rafi",
   icons: {
-    icon: "/imgs/people/dp.jpg",
+    icon: "/imgs/people/self.png",
   },
 };
 
