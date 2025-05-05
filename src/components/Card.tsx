@@ -22,16 +22,6 @@ const Card: FC<CardProps> = ({ title, description, authors, media, type, notion,
                     </p>
                 )}
                 <p className="text-gray-700 mt-2">{description}</p>
-                <div className="mt-3">
-                    <a
-                        href={notion}
-                        className="text-blue-600 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Read More
-                    </a>
-                </div>
                 {type !== 'blog' && links && links.length > 0 && (
                     <div className="mt-3">
                         {links.map((link, index) => (
@@ -42,11 +32,21 @@ const Card: FC<CardProps> = ({ title, description, authors, media, type, notion,
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                {link.title}
+                                | {link.title} |
                             </a>
                         ))}
                     </div>
                 )}
+                <div className="mt-3">
+                    <a
+                        href={notion}
+                        className="text-blue-600 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Read More
+                    </a>
+                </div>
             </div>
         </div>
     );

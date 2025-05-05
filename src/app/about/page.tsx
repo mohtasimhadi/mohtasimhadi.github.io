@@ -50,7 +50,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <div className="relative w-full bg-[#F2F0EF] overflow-hidden">
+      <div className="relative w-full bg-yellow-50 overflow-hidden">
         {/* Background Image - Desktop only */}
         <div className="hidden md:flex absolute inset-0 z-0 justify-center items-center pointer-events-none">
           <img
