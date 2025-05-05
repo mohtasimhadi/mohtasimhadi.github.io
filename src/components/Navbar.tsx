@@ -83,7 +83,7 @@ function NavItem({
       <Link
         href={href}
         className={`relative px-4 py-2 transition duration-300 text-gray-900 hover:text-gray-500 ${
-          isActive ? "text-gray-500" : "text-gray-900"
+          isActive ? "text-stone-500" : "text-gray-500"
         }`}
       >
         {label}
