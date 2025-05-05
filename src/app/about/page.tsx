@@ -36,7 +36,6 @@ export default function AboutPage() {
       .catch((err) => console.error("Error fetching home data:", err));
   }, []);
 
-
   useEffect(() => {
     fetch("/data/about.json")
       .then((res) => res.json())
@@ -51,7 +50,7 @@ export default function AboutPage() {
 
   return (
     <>
-    <div className="relative w-full bg-[#F2F0EF] overflow-hidden">
+      <div className="relative w-full bg-[#F2F0EF] overflow-hidden">
         {/* Background Image - Desktop only */}
         <div className="hidden md:flex absolute inset-0 z-0 justify-center items-center pointer-events-none">
           <img
@@ -101,168 +100,170 @@ export default function AboutPage() {
             <p className="text-base md:text-xl leading-relaxed whitespace-pre-line md:pl-16 md:pt-10">
               {data.profile.bio}
             </p>
-            <ResearchProfiles/>
+            <ResearchProfiles />
           </div>
         </div>
       </div>
-    
 
-
-    <div className="container mx-auto pt-5 px-6 py-12">
-      {/* CV Section */}
-      {aboutData.cv && (
-        <Section title="">
-          <div className="bg-gray-100 p-6 rounded border-1 flex justify-between items-center">
-            <p className="text-lg">Last updated: {aboutData.cv.last_updated}</p>
-            <Link
-              href={aboutData.cv.link}
-              target="_blank"
-              className="flex items-center bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-gray-500 transition"
-            >
-              <FileText className="w-5 h-5 mr-2" /> Download CV
-            </Link>
-          </div>
-        </Section>
-      )}
-
-      {/* Work & Education Section */}
-      {aboutData.work_experience && aboutData.education ? (
-        <div className="grid md:grid-cols-2 gap-12">
-          <Section title="Work Experience">
-            {aboutData.work_experience.map((job: any, index: number) => (
-              <Card
-                key={index}
-                title={job.position}
-                subtitle={job.company}
-                duration={job.duration}
-                logo={job.logo}
+      <div className="container mx-auto pt-5 px-6 py-12">
+        {/* CV Section */}
+        {aboutData.cv && (
+          <Section title="">
+            <div className="bg-gray-100 p-6 rounded border-1 flex justify-between items-center">
+              <p className="text-lg">
+                Last updated: {aboutData.cv.last_updated}
+              </p>
+              <Link
+                href={aboutData.cv.link}
+                target="_blank"
+                className="flex items-center bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-gray-500 transition"
               >
-                <p>{job.description}</p>
-              </Card>
-            ))}
+                <FileText className="w-5 h-5 mr-2" /> Download CV
+              </Link>
+            </div>
           </Section>
+        )}
 
-          <Section title="Education">
-            {aboutData.education.map((edu: any, index: number) => (
-              <Card
-                key={index}
-                title={edu.degree}
-                subtitle={edu.institution}
-                duration={edu.year}
-                logo={edu.logo}
-              />
-            ))}
-          </Section>
-        </div>
-      ) : (
-        <p className="text-center text-gray-600">No data available.</p>
-      )}
-      {/* Achievements Section (NEW) */}
-      {aboutData.achievements && (
-        <Section title="Achievements">
-          {aboutData.achievements.map(
-            (achievementCategory: any, categoryIndex: number) => (
-              <div key={categoryIndex} className="mb-8">
-                <h3 className="text-2xl font-bold text-[#0C2340] mb-4">
-                  {achievementCategory.category}
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-                  {achievementCategory.items.map(
-                    (item: any, itemIndex: number) => (
-                      <AchievementCard key={itemIndex} data={item} />
-                    )
-                  )}
-                </div>
-              </div>
-            )
-          )}
-        </Section>
-      )}
-
-      {/* Professional Associations */}
-      {aboutData.professional_associations && (
-        <Section title="Professional Associations">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aboutData.professional_associations.map(
-              (assoc: any, index: number) => (
-                <div
+        {/* Work & Education Section */}
+        {aboutData.work_experience && aboutData.education ? (
+          <div className="grid md:grid-cols-2 gap-12">
+            <Section title="Work Experience">
+              {aboutData.work_experience.map((job: any, index: number) => (
+                <Card
                   key={index}
-                  className="bg-white border-1 p-4 rounded flex flex-col items-center gap-3 border-l-4 border-gray-900"
+                  title={job.position}
+                  subtitle={job.company}
+                  duration={job.duration}
+                  logo={job.logo}
                 >
-                  <div className="w-full flex justify-center">
-                    <Image
-                      src={assoc.logo}
-                      alt={assoc.name}
-                      width={150}
-                      height={50}
-                      className="h-auto object-contain max-w-[120px] md:max-w-[140px] lg:max-w-[160px]"
-                    />
-                  </div>
-                  <h3 className="text-md text-center font-semibold">
-                    {assoc.name}
+                  <p>{job.description}</p>
+                </Card>
+              ))}
+            </Section>
+
+            <Section title="Education">
+              {aboutData.education.map((edu: any, index: number) => (
+                <Card
+                  key={index}
+                  title={edu.degree}
+                  subtitle={edu.institution}
+                  duration={edu.year}
+                  logo={edu.logo}
+                />
+              ))}
+            </Section>
+          </div>
+        ) : (
+          <p className="text-center text-gray-600">No data available.</p>
+        )}
+        {/* Achievements Section (NEW) */}
+        {aboutData.achievements && (
+          <Section title="Achievements">
+            {aboutData.achievements.map(
+              (achievementCategory: any, categoryIndex: number) => (
+                <div key={categoryIndex} className="mb-8">
+                  <h3 className="text-2xl font-bold text-[#0C2340] mb-4">
+                    {achievementCategory.category}
                   </h3>
-                </div>
-              )
-            )}
-          </div>
-        </Section>
-      )}
-
-      {/* Certifications */}
-      {aboutData.certifications && (
-        <Section title="Certifications">
-          <div className="grid md:grid-cols-2 gap-4">
-            {aboutData.certifications.map((cert: any, index: number) => (
-              <Card
-                key={index}
-                title={cert.title}
-                subtitle={cert.issuer}
-                duration={cert.year}
-                logo={cert.logo}
-              />
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {/* Skills */}
-      {aboutData.skills && (
-        <Section title="Skills">
-          <div className="grid md:grid-cols-3 gap-6">
-            {Object.entries(aboutData.skills).map(
-              ([category, skills]: [string, any]) => (
-                <div
-                  key={category}
-                  className="bg-white border-1 p-4 rounded border-l-4 border-gray-900"
-                >
-                  <h3 className="text-lg font-semibold">{category}</h3>
-                  <div className="flex flex-wrap gap-3 mt-2">
-                    {skills.map((skill: any, index: number) => (
-                      <SkillBadge key={index} name={skill.name} />
-                    ))}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    {achievementCategory.items.map(
+                      (item: any, itemIndex: number) => (
+                        <AchievementCard key={itemIndex} data={item} />
+                      )
+                    )}
                   </div>
                 </div>
               )
             )}
-          </div>
-        </Section>
-      )}
-    </div>
+          </Section>
+        )}
 
-    <div className="container mx-auto pt-1 px-6 py-12">
-      {/* Students Section */}
-      <PeopleSection title="Students" data={peopleData.students} />
-      
-      {/* Advisors Section */}
-      <PeopleSection title="Advisors" data={peopleData.advisors} />
+        {/* Professional Associations */}
+        {aboutData.professional_associations && (
+          <Section title="Professional Associations">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {aboutData.professional_associations.map(
+                (assoc: any, index: number) => (
+                  <div
+                    key={index}
+                    className="bg-white border-1 p-4 rounded flex flex-col items-center gap-3 border-l-4 border-gray-900"
+                  >
+                    <div className="w-full flex justify-center">
+                      <Image
+                        src={assoc.logo}
+                        alt={assoc.name}
+                        width={150}
+                        height={50}
+                        className="h-auto object-contain max-w-[120px] md:max-w-[140px] lg:max-w-[160px]"
+                      />
+                    </div>
+                    <h3 className="text-md text-center font-semibold">
+                      {assoc.name}
+                    </h3>
+                  </div>
+                )
+              )}
+            </div>
+          </Section>
+        )}
 
-      {/* Collaborators Section */}
-      <PeopleSection title="Current Lab" data={peopleData.collaborators} />
+        {/* Certifications */}
+        {aboutData.certifications && (
+          <Section title="Certifications">
+            <div className="grid md:grid-cols-2 gap-4">
+              {aboutData.certifications.map((cert: any, index: number) => (
+                <Card
+                  key={index}
+                  title={cert.title}
+                  subtitle={cert.issuer}
+                  duration={cert.year}
+                  logo={cert.logo}
+                />
+              ))}
+            </div>
+          </Section>
+        )}
 
-      {/* Past Collaborators & Mentors Section */}
-      <PeopleSection title="Past Collaborators & Mentors" data={peopleData.past_collaborators_mentors} />
-    </div>
-    
+        {/* Skills */}
+        {aboutData.skills && (
+          <Section title="Skills">
+            <div className="grid md:grid-cols-3 gap-6">
+              {Object.entries(aboutData.skills).map(
+                ([category, skills]: [string, any]) => (
+                  <div
+                    key={category}
+                    className="bg-white border-1 p-4 rounded border-l-4 border-gray-900"
+                  >
+                    <h3 className="text-lg font-semibold">{category}</h3>
+                    <div className="flex flex-wrap gap-3 mt-2">
+                      {skills.map((skill: any, index: number) => (
+                        <SkillBadge key={index} name={skill.name} />
+                      ))}
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </Section>
+        )}
+      </div>
+
+      <div className="container mx-auto pt-1 px-6 py-12">
+        {/* Students Section */}
+        <PeopleSection title="Students" data={peopleData.students} />
+
+        {/* Advisors Section */}
+        <PeopleSection title="Advisors" data={peopleData.advisors} />
+
+        {/* Collaborators Section */}
+        <PeopleSection title="Current Lab" data={peopleData.collaborators} />
+
+        {/* Past Collaborators & Mentors Section */}
+        <PeopleSection
+          title="Past Collaborators & Mentors"
+          data={peopleData.past_collaborators_mentors}
+        />
+      </div>
     </>
   );
 }
