@@ -17,7 +17,7 @@ export default function Home() {
 
     fetch("/data/projects.json")
       .then((res) => res.json())
-      .then((data) => setProjects(data.slice(0, 4))) // Only first 4
+      .then((data) => setProjects(data.slice(0, 3))) // Only first 4
       .catch((err) => console.error("Error fetching projects:", err));
   }, []);
 
