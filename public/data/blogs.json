@@ -1,14 +1,51 @@
 [
     {
-        "title": "Understanding RAG Architecture",
-        "image": "/imgs/projects/fb.png",
-        "description": "How Retrieval-Augmented Generation improves LLM responses.",
-        "notionUrl": "https://mohtasimhadi.notion.site/ebd/13610be21a4180189f49d637664029b8"
+        "title": "Review: Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
+        "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
+        "authors": [
+            "Mohtasim Hadi Rafi",
+            "Calvin Hirschler"
+        ],
+        "media": "/imgs/blog/smei.png",
+        "keywords": [
+            "Explainable AI",
+            "LLM",
+            "Review"
+        ],
+        "type": "blog",
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4"
     },
     {
-        "title": "Understanding RAG Architecture",
-        "image": "/imgs/projects/fb.png",
-        "description": "How Retrieval-Augmented Generation improves LLM responses.",
-        "notionUrl": "https://mohtasimhadi.notion.site/ebd/13610be21a4180189f49d637664029b8"
+        "title": "Review: Vision Transformers Need Registers",
+        "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
+        "authors": [
+            "Mohtasim Hadi Rafi",
+            "Carlos Berrios",
+            "Jonathan Pitts"
+        ],
+        "media": "/imgs/blog/vitnr.png",
+        "keywords": [
+            "Explainable AI",
+            "Computer Vision",
+            "Review"
+        ],
+        "type": "blog",
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4"
+    },
+    {
+        "title": "Classnote: Experimental Statistics",
+        "description": "My classnotes for the course Experimental Statistics.",
+        "authors": [
+            "Mohtasim Hadi Rafi",
+            "Bartrem Zinner"
+        ],
+        "media": "/imgs/blog/vitnr.png",
+        "keywords": [
+            "Explainable AI",
+            "Computer Vision",
+            "Review"
+        ],
+        "type": "blog",
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4"
     }
 ]

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import NewsCard from "@/components/NewsCard";
 import ProjectCard from "@/components/ProjectCard";
-import BlogCard from "@/components/BlogCard";
+import Card from '@/components/Card';
 
 export default function Home() {
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
@@ -48,11 +48,20 @@ export default function Home() {
         <div className="col-span-2">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Blogs</h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {blogs.map((blog) => (
-              <BlogCard key={blog.title} blog={blog} />
-            ))}
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
+        {blogs.map((blog, index) => (
+          <Card
+            key={index}
+            title={blog.title}
+            description={blog.description}
+            authors={blog.authors}
+            media={blog.media}
+            type={blog.type}
+            notion={blog.notion}
+            links={blog.links}
+          />
+        ))}
+      </div>
 
           <a href="/blog" className="block text-blue-600 font-medium mt-2 hover:underline">
             View More Blogs →

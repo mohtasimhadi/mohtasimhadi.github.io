@@ -1,33 +1,52 @@
-// app/blog/page.tsx
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { fetchBlogsData } from "@/utils/fetchBlogs"; // Import the fetch function
-import BlogCard from "@/components/BlogCard";
+import { useEffect, useState } from 'react';
+import Card from '@/components/Card';
+import { FC } from 'react';
 
-const BlogsPage = () => {
-  const [blogs, setBlogs] = useState<any[]>([]);
-  const [blogPath, setBlogPath] = useState<string>("/data/blogs.json"); // Default path
+interface Blog {
+  title: string;
+  description: string;
+  authors?: string[];
+  media: string;
+  type: string;
+  notion: string;
+  links?: { title: string; url: string }[];
+}
+
+const BlogPage: FC = () => {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchBlogsData(blogPath);
-      setBlogs(data);
-    };
-    
-    fetchData();
-  }, [blogPath]); // Depend on blogPath to reload data when path changes
+    // Fetch data from public/data/data.json
+    fetch('/data/blogs.json')
+      .then((res) => res.json())
+      .then((data) => {
+        // Filter the data for blogs only
+        const blogItems = data.filter((item: Blog) => item.type === 'blog');
+        setBlogs(blogItems);
+      })
+      .catch((err) => console.error('Error fetching blog data:', err));
+  }, []);
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-6">Blogs</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {blogs.map((blog) => (
-          <BlogCard key={blog.title} blog={blog} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {blogs.map((blog, index) => (
+          <Card
+            key={index}
+            title={blog.title}
+            description={blog.description}
+            authors={blog.authors}
+            media={blog.media}
+            type={blog.type}
+            notion={blog.notion}
+            links={blog.links}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-export default BlogsPage;
+export default BlogPage;
