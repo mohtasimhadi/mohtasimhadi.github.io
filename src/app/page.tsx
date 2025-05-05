@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import NewsCard from "@/components/NewsCard";
 import ProjectCard from "@/components/ProjectCard";
+import BlogCard from "@/components/BlogCard";
 
 export default function Home() {
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
@@ -46,18 +47,18 @@ export default function Home() {
         {/* Center Column – Blogs */}
         <div className="col-span-2">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Blogs</h3>
-          <div className="p-4 bg-white rounded-lg shadow space-y-4">
-            {blogs.map((blog, index) => (
-              <div key={index} className="border-b pb-2">
-                <h4 className="text-md font-bold">{blog.title}</h4>
-                <p className="text-sm text-gray-600">{blog.description}</p>
-              </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {blogs.map((blog) => (
+              <BlogCard key={blog.title} blog={blog} />
             ))}
-            <a href="/blog" className="block text-blue-600 font-medium mt-2 hover:underline">
-              View More Blogs →
-            </a>
           </div>
+
+          <a href="/blog" className="block text-blue-600 font-medium mt-2 hover:underline">
+            View More Blogs →
+          </a>
         </div>
+
 
         {/* Right Column – News */}
         <div className="col-span-1 border-l-1">
