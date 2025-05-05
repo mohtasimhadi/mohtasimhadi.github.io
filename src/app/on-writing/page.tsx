@@ -169,7 +169,7 @@ export default function OnWriting() {
                   <h2 className="text-2xl font-bold text-[#0C2340] mb-4">
                     {category}
                   </h2>
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <div className="grid md:grid-cols-4 gap-6">
                     {filtered.map((book: any, index: number) => (
                       <BookCard key={index} book={book} />
                     ))}
@@ -257,13 +257,13 @@ function SidebarContent({
 
 function BookCard({ book }: { book: any }) {
   return (
-    <div className="bg-white border-1 rounded p-6 flex flex-col items-center text-center border-gray-900">
+    <div className="bg-white border-1 rounded p-2 flex flex-col items-center text-center border-gray-500">
       <Image
         src={book.cover}
         alt={book.title}
         width={150}
         height={200}
-        className="rounded object-cover mb-4"
+        className="rounded object-cover mb-2"
       />
       <h3 className="text-lg font-semibold">{book.title}</h3>
       <p className="text-sm text-gray-600">{book.details}</p>
