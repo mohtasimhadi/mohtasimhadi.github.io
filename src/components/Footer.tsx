@@ -66,21 +66,26 @@ export default function Footer() {
             <div>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-sm hover:text-gray-200">
-                    About
+                  <Link href="/blogs/poetries" className="text-sm hover:text-gray-200">
+                    Poetries
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/research"
+                    href="/blogs/short-stories"
                     className="text-sm hover:text-gray-200"
                   >
-                    Research
+                    Short Stories
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-sm hover:text-gray-200">
-                    Contact
+                  <Link href="/blogs/articles" className="text-sm hover:text-gray-200">
+                    Articles
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blogs/class-notes" className="text-sm hover:text-gray-200">
+                    Class Notes
                   </Link>
                 </li>
               </ul>
@@ -90,21 +95,21 @@ export default function Footer() {
             <div>
             <ul className="space-y-2">
                 <li>
-                  <Link href="/on-writing" className="text-sm hover:text-gray-200">
-                    Books
+                  <Link href="/research/projects" className="text-sm hover:text-gray-200">
+                    Projects
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/blogs"
+                    href="/research/publications"
                     className="text-sm hover:text-gray-200"
                   >
-                    Blogs
+                    Publications
                   </Link>
                 </li>
                 <li>
-                  <Link href="/projects" className="text-sm hover:text-gray-200">
-                    Projects
+                  <Link href="/research/presentations" className="text-sm hover:text-gray-200">
+                    Presentations
                   </Link>
                 </li>
               </ul>
