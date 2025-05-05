@@ -64,9 +64,9 @@ const Research: FC = () => {
         </div>
 
         <div className="flex justify-end w-full mt-4">
-          <Link href="/patents">
+          <Link href="/research/projects">
             <button className="text-blue-600 hover:underline">
-              See More
+              See All Projects →
             </button>
           </Link>
         </div>
@@ -92,13 +92,6 @@ const Research: FC = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-end w-full mt-4">
-            <Link href="/projects">
-              <button className="text-blue-600 hover:underline">
-                See More
-              </button>
-            </Link>
-          </div>
         </div>
 
         <div className="p-4 border-b-1 border-gray-400">
@@ -121,9 +114,9 @@ const Research: FC = () => {
             ))}
           </div>
           <div className="flex justify-end w-full mt-4">
-            <Link href="/projects">
+            <Link href="/research/publications">
               <button className="text-blue-600 hover:underline">
-                See More
+                See More →
               </button>
             </Link>
           </div>
@@ -149,9 +142,9 @@ const Research: FC = () => {
             ))}
           </div>
           <div className="flex justify-end w-full mt-4">
-            <Link href="/projects">
+            <Link href="/research/presentations">
               <button className="text-blue-600 hover:underline">
-                See More
+                See More →
               </button>
             </Link>
           </div>
@@ -175,7 +168,7 @@ const Research: FC = () => {
         <div className="flex justify-end w-full mt-4">
           <Link href="/projects">
             <button className="text-blue-600 hover:underline">
-              See More
+              See More →
             </button>
           </Link>
         </div>
