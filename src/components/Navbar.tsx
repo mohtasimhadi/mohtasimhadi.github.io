@@ -34,7 +34,6 @@ export default function Navbar() {
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/blog" label="Blog" pathname={pathname} />
           <NavItem href="/research" label="Research" pathname={pathname} />
-          <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/books" label="Books" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
         </ul>
@@ -54,7 +53,6 @@ export default function Navbar() {
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/blog" label="Blog" pathname={pathname} />
           <NavItem href="/research" label="Research" pathname={pathname} />
-          <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/books" label="On Writing" pathname={pathname} />
           <NavItem href="/about" label="About" pathname={pathname} />
         </div>
