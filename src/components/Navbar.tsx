@@ -33,10 +33,10 @@ export default function Navbar() {
         <ul className="hidden md:flex space-x-6 text-lg font-semibold">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/blog" label="Blog" pathname={pathname} />
-          <NavItem href="/about" label="About" pathname={pathname} />
           <NavItem href="/research" label="Research" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
-          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
+          <NavItem href="/books" label="Books" pathname={pathname} />
+          <NavItem href="/about" label="About" pathname={pathname} />
         </ul>
 
         {/* Mobile Menu Button */}
@@ -53,10 +53,10 @@ export default function Navbar() {
         <div className="md:hidden bg-gray-100 text-white text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
           <NavItem href="/" label="Home" pathname={pathname} />
           <NavItem href="/blog" label="Blog" pathname={pathname} />
-          <NavItem href="/about" label="About" pathname={pathname} />
           <NavItem href="/research" label="Research" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
-          <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
+          <NavItem href="/books" label="On Writing" pathname={pathname} />
+          <NavItem href="/about" label="About" pathname={pathname} />
         </div>
       )}
     </nav>
