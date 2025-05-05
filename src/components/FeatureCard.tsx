@@ -24,7 +24,7 @@ const FeatureCard: FC<CardProps> = ({
       {/* Left Column (Image) */}
       <div className="w-full md:w-1/2">
         <img
-          className="w-full h-80 object-cover rounded-md"
+          className="w-full h-80 object-cover"
           src={media}
           alt={title}
         />
