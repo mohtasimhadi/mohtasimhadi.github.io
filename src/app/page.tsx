@@ -18,12 +18,13 @@ export default function Home() {
   return (
     <>
       {/* Main Layout */}
-      <div className="m-42 mt-5 mb-0">
-
+      <div className="m-20 mt-5 mb-0">
         <div className="grid grid-cols-4 gap-6">
           {/* Left Column (1/4 of width) */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Highlights</h3>
+          <div className="col-span-1 border-r-1">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Highlights
+            </h3>
             <div className="p-4 rounded-lg">
               {/* Add content for Highlights */}
               <p>Highlight 1</p>
@@ -45,7 +46,9 @@ export default function Home() {
 
           {/* Right Column (1/4 of width) */}
           <div className="col-span-1 border-l-1">
-            <h2 className="p-2 text-lg font-bold text-gray-900 mb-2">Latest News</h2>
+            <h2 className="p-2 text-lg font-bold text-gray-900 mb-2">
+              Latest News
+            </h2>
 
             {/* News Grid */}
             <div className="grid grid-cols-1 gap-2">
