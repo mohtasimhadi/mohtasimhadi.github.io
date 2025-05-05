@@ -5,7 +5,7 @@ interface NewsProps {
 
 const NewsCard: React.FC<NewsProps> = ({ date, news }) => {
   return (
-    <div className="m-2 pt-2 pb-2 border-gray-300 border-b-1">
+    <div className="m-2 pt-2 pb-2 border-gray-300 border-b-1 w-64 h-48 overflow-auto">
       <p className="text-sm text-gray-500">{date}</p>
       <p
         className="text-lg mt-2 news-content"
