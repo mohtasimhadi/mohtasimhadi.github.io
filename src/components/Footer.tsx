@@ -2,15 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Linkedin,
-  Github,
-  Facebook,
-  Instagram,
-} from "lucide-react";
+import { Linkedin, Github, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   const [data, setData] = useState<any>(null);
@@ -68,56 +60,66 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
         {/* Left Column - Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">
-            Quick Links
-          </h3>
-          <ul className="space-y-2">
-            <li>
-              <Link
-                href="/about"
-                className="text-sm hover:text-gray-200"
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services"
-                className="text-sm hover:text-gray-200"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="text-sm hover:text-gray-200"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/faq"
-                className="text-sm hover:text-gray-200"
-              >
-                FAQ
-              </Link>
-            </li>
-          </ul>
+          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+            {/* Left Column */}
+            <div>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/about" className="text-sm hover:text-gray-200">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/research"
+                    className="text-sm hover:text-gray-200"
+                  >
+                    Research
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-sm hover:text-gray-200">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right Column */}
+            <div>
+            <ul className="space-y-2">
+                <li>
+                  <Link href="/on-writing" className="text-sm hover:text-gray-200">
+                    Books
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blogs"
+                    className="text-sm hover:text-gray-200"
+                  >
+                    Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/projects" className="text-sm hover:text-gray-200">
+                    Projects
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Right Column - Newsletter Sign-up Form */}
-        <div className="border-white border-l-1 p-4">
+        <div className="border-white border-l-1 pl-4">
           <h3 className="text-lg font-semibold mb-4">
             Sign Up for Our Newsletter
           </h3>
           <form>
             <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium"
-              >
+              <label htmlFor="email" className="block text-sm font-medium">
                 Email Address
               </label>
               <input
