@@ -19,10 +19,9 @@ interface Projects {
 const Research: FC = () => {
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
   const [visibleNews, setVisibleNews] = useState(6);
-  const [projects, setProjects] = useState<Projects[]>([]);
   const [currentProjects, setCurrentProjects] = useState<Projects[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<Projects[]>([]);
-  const [maxCards, setMaxCards] = useState(3); // Define the maximum number of cards to show
+  const [maxCards, setMaxCards] = useState(3);
 
   useEffect(() => {
     fetch("/data/news.json")
@@ -35,10 +34,10 @@ const Research: FC = () => {
       .then((data) => {
         const currentProjectItems = data.filter((item: Projects) => item.type === 'current project');
         setCurrentProjects(currentProjectItems);
-        setVisibleProjects(currentProjectItems.slice(0, maxCards)); // Limit visible projects based on maxCards
+        setVisibleProjects(currentProjectItems.slice(0, maxCards));
       })
       .catch((err) => console.error('Error fetching blog data:', err));
-  }, [maxCards]); // Re-fetch when maxCards is updated
+  }, [maxCards]);
 
   return (
     <div className="flex flex-wrap">
