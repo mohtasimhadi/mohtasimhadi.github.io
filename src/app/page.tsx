@@ -7,7 +7,8 @@ import ProjectCard from "@/components/ProjectCard";
 export default function Home() {
   const [news, setNews] = useState<{ date: string; news: string }[]>([]);
   const [visibleNews, setVisibleNews] = useState(6);
-  const [projects, setProjects] = useState<any[]>([]); // For highlights
+  const [projects, setProjects] = useState<any[]>([]);
+  const [blogs, setBlogs] = useState<any[]>([]);
 
   useEffect(() => {
     fetch("/data/news.json")
@@ -17,8 +18,13 @@ export default function Home() {
 
     fetch("/data/projects.json")
       .then((res) => res.json())
-      .then((data) => setProjects(data.slice(0, 3))) // Only first 4
+      .then((data) => setProjects(data.slice(0, 3)))
       .catch((err) => console.error("Error fetching projects:", err));
+
+    fetch("/data/blogs.json")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data.slice(0, 10)))
+      .catch((err) => console.error("Error fetching blogs:", err));
   }, []);
 
   return (
@@ -37,17 +43,23 @@ export default function Home() {
           <a href="/projects" className="font-semibold">View More</a>
         </div>
 
-        {/* Center Column */}
+        {/* Center Column – Blogs */}
         <div className="col-span-2">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Blogs</h3>
-          <div className="p-4 rounded-lg">
-            <p>Blog 1</p>
-            <p>Blog 2</p>
-            <p>Blog 3</p>
+          <div className="p-4 bg-white rounded-lg shadow space-y-4">
+            {blogs.map((blog, index) => (
+              <div key={index} className="border-b pb-2">
+                <h4 className="text-md font-bold">{blog.title}</h4>
+                <p className="text-sm text-gray-600">{blog.description}</p>
+              </div>
+            ))}
+            <a href="/blog" className="block text-blue-600 font-medium mt-2 hover:underline">
+              View More Blogs →
+            </a>
           </div>
         </div>
 
-        {/* Right Column */}
+        {/* Right Column – News */}
         <div className="col-span-1 border-l-1">
           <h2 className="p-2 text-lg font-bold text-gray-900 mb-2">
             Latest News
