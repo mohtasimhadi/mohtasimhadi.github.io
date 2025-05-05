@@ -1,5 +1,6 @@
 'use client';
 
+import NewsCard from "@/components/NewsCard";
 import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
 import { FC } from 'react';
@@ -16,13 +17,19 @@ interface Projects {
 }
 
 const Research: FC = () => {
+  const [news, setNews] = useState<{ date: string; news: string }[]>([]);
+  const [visibleNews, setVisibleNews] = useState(6);
   const [projects, setProjects] = useState<Projects[]>([]);
   const [currentProjects, setCurrentProjects] = useState<Projects[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<Projects[]>([]);
   const [maxCards, setMaxCards] = useState(3); // Define the maximum number of cards to show
 
   useEffect(() => {
-    // Fetch data from public/data/data.json
+    fetch("/data/news.json")
+    .then((res) => res.json())
+    .then((data) => setNews(data.news))
+    .catch((err) => console.error("Error fetching news:", err));
+
     fetch('/data/blogs.json')
       .then((res) => res.json())
       .then((data) => {
@@ -88,8 +95,8 @@ const Research: FC = () => {
 
       {/* Right Column */}
       <div className="w-full sm:w-1/5 p-4 border-l flex flex-col items-start">
-        <h3 className='text-xl font-semibold mb-4 text-left'>Current Projects</h3>
-        <div className="flex flex-col items-center w-full">
+        <h3 className='text-xl font-semibold mb-4 text-left'>Latest News</h3>
+        {/* <div className="flex flex-col items-center w-full">
           {visibleProjects.map((project, index) => (
             <Card
               key={index}
@@ -102,14 +109,24 @@ const Research: FC = () => {
               links={project.links}
             />
           ))}
-        </div>
-        {/* "See More" button redirects to /projects */}
+        </div> */}
+        <div className="grid grid-cols-1 gap-2">
+            {news.length > 0 ? (
+              news.slice(0, visibleNews).map((item, index) => (
+                <NewsCard key={index} date={item.date} news={item.news} />
+              ))
+            ) : (
+              <p>No news found.</p>
+            )}
+          </div>
         <Link href="/projects">
           <button className="mt-4 text-blue-600 hover:underline">
             See More
           </button>
         </Link>
       </div>
+
+      
     </div>
   );
 };

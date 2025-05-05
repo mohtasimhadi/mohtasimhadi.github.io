@@ -1,100 +1,120 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
 import NewsCard from "@/components/NewsCard";
-import ProjectCard from "@/components/ProjectCard";
+import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
+import { FC } from 'react';
+import Link from 'next/link';
 
-export default function Home() {
-  const [news, setNews] = useState<{ date: string; news: string }[]>([]);
-  const [visibleNews, setVisibleNews] = useState(6);
-  const [projects, setProjects] = useState<any[]>([]);
-  const [blogs, setBlogs] = useState<any[]>([]);
+interface Projects {
+  title: string;
+  description: string;
+  authors?: string[];
+  media: string;
+  type: string;
+  notion: string;
+  links?: { title: string; url: string }[];
+}
+
+const Research: FC = () => {
+
+  const [projects, setProjects] = useState<Projects[]>([]);
+  const [currentProjects, setCurrentProjects] = useState<Projects[]>([]);
+  const [visibleProjects, setVisibleProjects] = useState<Projects[]>([]);
+  const [maxCards, setMaxCards] = useState(3); // Define the maximum number of cards to show
 
   useEffect(() => {
-    fetch("/data/news.json")
+    fetch('/data/blogs.json')
       .then((res) => res.json())
-      .then((data) => setNews(data.news))
-      .catch((err) => console.error("Error fetching news:", err));
-
-    fetch("/data/projects.json")
-      .then((res) => res.json())
-      .then((data) => setProjects(data.slice(0, 3)))
-      .catch((err) => console.error("Error fetching projects:", err));
-
-    fetch("/data/blogs.json")
-      .then((res) => res.json())
-      .then((data) => setBlogs(data.slice(0, 10)))
-      .catch((err) => console.error("Error fetching blogs:", err));
-  }, []);
+      .then((data) => {
+        const currentProjectItems = data.filter((item: Projects) => item.type === 'current project');
+        setCurrentProjects(currentProjectItems);
+        setVisibleProjects(currentProjectItems.slice(0, maxCards)); // Limit visible projects based on maxCards
+      })
+      .catch((err) => console.error('Error fetching blog data:', err));
+  }, [maxCards]); // Re-fetch when maxCards is updated
 
   return (
-    <div className="m-20 mt-5 mb-0">
-      <div className="grid grid-cols-4 gap-6">
-        {/* Left Column */}
-        <div className="col-span-1 border-r-1">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Selected Projects
-          </h3>
-          <div className="space-y-4 pr-4">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
-          </div>
-          <a href="/projects" className="font-semibold">View More</a>
+    <div className="flex flex-wrap">
+      {/* Left Column */}
+      <div className="w-full sm:w-1/5 p-4 border-l flex flex-col items-start">
+        <h3 className='text-xl font-semibold mb-4 text-left'>Current Projects</h3>
+        <div className="flex flex-col items-center w-full">
+          {visibleProjects.map((project, index) => (
+            <Card
+              key={index}
+              title={project.title}
+              description={project.description}
+              authors={project.authors}
+              media={project.media}
+              type={project.type}
+              notion={project.notion}
+              links={project.links}
+            />
+          ))}
         </div>
-
-        {/* Center Column – Blogs */}
-        <div className="col-span-2">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Blogs</h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
-        {blogs.map((blog, index) => (
-          <Card
-            key={index}
-            title={blog.title}
-            description={blog.description}
-            authors={blog.authors}
-            media={blog.media}
-            type={blog.type}
-            notion={blog.notion}
-            links={blog.links}
-          />
-        ))}
+        {/* "See More" button redirects to /projects */}
+        <Link href="/projects">
+          <button className="mt-4 text-blue-600 hover:underline">
+            See More
+          </button>
+        </Link>
       </div>
 
-          <a href="/blog" className="block text-blue-600 font-medium mt-2 hover:underline">
-            View More Blogs →
-          </a>
-        </div>
-
-
-        {/* Right Column – News */}
-        <div className="col-span-1 border-l-1">
-          <h2 className="p-2 text-lg font-bold text-gray-900 mb-2">
-            Latest News
-          </h2>
-          <div className="grid grid-cols-1 gap-2">
-            {news.length > 0 ? (
-              news.slice(0, visibleNews).map((item, index) => (
-                <NewsCard key={index} date={item.date} news={item.news} />
-              ))
-            ) : (
-              <p>No news found.</p>
-            )}
-          </div>
-          {visibleNews < news.length && (
-            <div className="mt-6 flex justify-center">
-              <button
-                onClick={() => setVisibleNews(visibleNews + 6)}
-                className="bg-gray-900 text-white px-6 py-3 rounded font-semibold hover:bg-gray-500 transition"
-              >
-                View More News
-              </button>
+      {/* Center Column */}
+      <div className="w-full sm:w-3/5 p-4 border-l flex flex-col items-start">
+        <h3 className='text-xl font-semibold mb-4 text-left'>Current Projects</h3>
+        <div className="flex flex-wrap justify-center w-full">
+          {visibleProjects.map((project, index) => (
+            <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
+              <Card
+                title={project.title}
+                description={project.description}
+                authors={project.authors}
+                media={project.media}
+                type={project.type}
+                notion={project.notion}
+                links={project.links}
+              />
             </div>
-          )}
+          ))}
         </div>
+        {/* "See More" button redirects to /projects */}
+        <Link href="/projects">
+          <button className="mt-4 text-blue-600 hover:underline">
+            See More
+          </button>
+        </Link>
       </div>
+
+      {/* Right Column */}
+      <div className="w-full sm:w-1/5 p-4 border-l flex flex-col items-start">
+        <h3 className='text-xl font-semibold mb-4 text-left'>Latest News</h3>
+        <div className="flex flex-col items-center w-full">
+          {visibleProjects.map((project, index) => (
+            <Card
+              key={index}
+              title={project.title}
+              description={project.description}
+              authors={project.authors}
+              media={project.media}
+              type={project.type}
+              notion={project.notion}
+              links={project.links}
+            />
+          ))}
+        </div>
+
+        <Link href="/projects">
+          <button className="mt-4 text-blue-600 hover:underline">
+            See More
+          </button>
+        </Link>
+      </div>
+
+
     </div>
   );
-}
+};
+
+export default Research;
