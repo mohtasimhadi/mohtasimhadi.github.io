@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 import { FC } from "react";
 import Link from "next/link";
+import FeatureCard from "@/components/FeatureCard";
 
 interface Projects {
   title: string;
@@ -76,11 +77,10 @@ const Research: FC = () => {
       <div className="w-full sm:w-3/5 flex flex-col items-start">
         {/* Patents Section */}
         <div className="p-4 bg-amber-50">
-          <h3 className="text-xl font-semibold mb-4 text-left">Patents</h3>
           <div className="flex flex-wrap justify-center">
-            {currentProjects.slice(0, 3).map((project, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
-                <Card
+            {currentProjects.slice(1, 2).map((project, index) => (
+              <div key={index} className="w-full p-2">
+                <FeatureCard
                   title={project.title}
                   description={project.description}
                   authors={project.authors}
