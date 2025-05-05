@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import ResearchProfiles from "@/components/ResearchProfileCard";
+import PeopleCard from "@/components/PeopleCard";
 import {
   Mail,
   Phone,
@@ -18,6 +19,14 @@ import {
 export default function AboutPage() {
   const [aboutData, setAboutData] = useState<any>(null);
   const [data, setData] = useState<any>(null);
+  const [peopleData, setPeopleData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/data/people.json")
+      .then((res) => res.json())
+      .then((data) => setPeopleData(data))
+      .catch((err) => console.error("Error fetching people data:", err));
+  }, []);
 
   // Fetch profile and contact data
   useEffect(() => {
@@ -38,6 +47,7 @@ export default function AboutPage() {
   if (!aboutData)
     return <p className="text-center mt-10 text-lg">Loading...</p>;
   if (!data) return <p className="text-center mt-10 text-lg">Loading...</p>;
+  if (!peopleData) return <p className="mt-10 text-lg">Loading...</p>;
 
   return (
     <>
@@ -238,6 +248,21 @@ export default function AboutPage() {
         </Section>
       )}
     </div>
+
+    <div className="container mx-auto pt-1 px-6 py-12">
+      {/* Students Section */}
+      <PeopleSection title="Students" data={peopleData.students} />
+      
+      {/* Advisors Section */}
+      <PeopleSection title="Advisors" data={peopleData.advisors} />
+
+      {/* Collaborators Section */}
+      <PeopleSection title="Current Lab" data={peopleData.collaborators} />
+
+      {/* Past Collaborators & Mentors Section */}
+      <PeopleSection title="Past Collaborators & Mentors" data={peopleData.past_collaborators_mentors} />
+    </div>
+    
     </>
   );
 }
@@ -334,5 +359,20 @@ function SocialIcon({ href, Icon }: { href: string; Icon: any }) {
     <Link href={href} target="_blank" rel="noopener noreferrer">
       <Icon className="w-8 h-8 text-gray-900 hover:text-gray-700 transition" />
     </Link>
+  );
+}
+
+function PeopleSection({ title, data }: { title: string; data: any[] }) {
+  if (!data || data.length === 0) return null;
+
+  return (
+    <div className="mb-12">
+      <h2 className="text-2xl font-semibold text-gray-900 mb-6">{title}</h2>
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+        {data.map((person, index) => (
+          <PeopleCard key={index} person={person} />
+        ))}
+      </div>
+    </div>
   );
 }

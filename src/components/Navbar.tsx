@@ -36,7 +36,6 @@ export default function Navbar() {
           <NavItem href="/research" label="Research" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
           <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
-          <NavItem href="/people" label="People" pathname={pathname} />
         </ul>
 
         {/* Mobile Menu Button */}
@@ -60,7 +59,6 @@ export default function Navbar() {
           />
           <NavItem href="/on-writing" label="On Writing" pathname={pathname} />
           <NavItem href="/projects" label="Projects" pathname={pathname} />
-          <NavItem href="/people" label="People" pathname={pathname} />
         </div>
       )}
     </nav>
