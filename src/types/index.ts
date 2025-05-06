@@ -1,3 +1,7 @@
+import { NotionAPI } from "notion-client";
+
+export const notion = new NotionAPI()
+
 export interface Blogs {
   title: string;
   description: string;

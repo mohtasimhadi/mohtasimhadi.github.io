@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   },
   assetPrefix: isProd ? 'mohtasimhadi.github.io' : '',
   basePath: isProd ? '/mohtasimhadi.github.io' : '',
-  output: 'export'
+  output: 'standalone'
 };
 
 export default nextConfig;

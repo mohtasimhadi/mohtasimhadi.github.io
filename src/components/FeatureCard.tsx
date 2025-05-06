@@ -34,7 +34,7 @@ const FeatureCard: FC<CardProps> = ({
       <div className="w-full md:w-2/3">
         <h2 className="text-3xl font-semibold mb-2">
           <a
-            href={notion}
+            href={`/notion/${notion}`}
             className="text-black hover:underline"
             target="_blank"
             rel="noopener noreferrer"

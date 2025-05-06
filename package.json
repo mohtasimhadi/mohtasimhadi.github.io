@@ -19,9 +19,12 @@
     "html-react-parser": "^5.2.2",
     "lucide-react": "^0.483.0",
     "next": "15.2.3",
+    "notion-client": "^7.3.0",
+    "notion-types": "^7.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-notion-x": "^7.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

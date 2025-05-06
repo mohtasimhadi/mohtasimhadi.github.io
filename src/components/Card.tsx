@@ -21,7 +21,7 @@ const Card: FC<Blogs> = ({
         <img className="w-full h-48" src={media} alt={title} />
         <h2 className="text-xl font-semibold mt-2">
           <a
-            href={notion}
+            href={`/notion/${notion}`}
             className="text-black hover:underline"
             target="_blank"
             rel="noopener noreferrer"
