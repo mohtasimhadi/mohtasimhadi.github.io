@@ -45,7 +45,7 @@ const OnWriting: FC = () => {
 
   return (
     <div className="flex flex-wrap">
-      <div className="p-4 bg-amber-50">
+      <div className="p-4 bg-gray-50">
         <div className="flex flex-wrap justify-center">
           {featuredBlog.slice(0, 3).map((featured, index) => (
             <div key={index} className="w-full p-2">
@@ -94,7 +94,7 @@ const OnWriting: FC = () => {
           </div>
         </div>
 
-        <div className="p-4 bg-gray-100 w-full">
+        <div className="p-4 bg-blue-50 w-full">
           <h3 className="text-xl font-semibold mb-4 text-left">theTypist</h3>
           <div className="flex flex-wrap justify-center">
             {theTypist.slice(0, 3).map((publication, index) => (

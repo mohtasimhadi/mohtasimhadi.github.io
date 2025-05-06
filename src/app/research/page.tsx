@@ -88,7 +88,7 @@ const Research: FC = () => {
       {/* Center Column */}
       <div className="w-full sm:w-3/5 flex flex-col items-start">
         {/* Patents Section */}
-        <div className="p-4 bg-amber-50">
+        <div className="p-4 bg-blue-50">
           <div className="flex flex-wrap justify-center">
             {featuredBlog.slice(0, 3).map((featured, index) => (
               <div key={index} className="w-full p-2">

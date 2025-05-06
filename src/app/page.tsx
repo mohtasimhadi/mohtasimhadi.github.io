@@ -44,7 +44,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <div className="p-4 bg-gray-100">
+      <div className="p-4 bg-orange-50">
         {featuredBlog.map((blog, index) => (
           <div key={index} className="w-full p-2">
             <FeatureCard
@@ -88,7 +88,7 @@ const Home: FC = () => {
             </div>
           </div>
 
-          <div className="p-4 w-full bg-gray-100">
+          <div className="p-4 w-full bg-indigo-50">
             <h3 className="text-xl font-semibold mb-4 text-left">Journals</h3>
             <div className="flex flex-wrap justify-center">
               {journals.slice(0, 3).map((journal, index) => (
