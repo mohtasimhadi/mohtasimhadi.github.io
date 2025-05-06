@@ -1,102 +1,127 @@
 [
-    {
-      "title": "Review: Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
-      "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
-      "authors": ["Mohtasim Hadi Rafi", "Calvin Hirschler"],
-      "media": "/imgs/blog/smei.png",
-      "keywords": ["Explainable AI", "LLM", "Review"],
-      "type": "featured",
-      "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-      "links": [
-        {
-          "title": "Article",
-          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
-        },
-        {
-          "title": "Slides",
-          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
-        },
-        {
-          "title": "Features",
-          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
-        },
-        {
-          "title": "Neighborhoods",
-          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
-        }
-      ]
-    },
-    {
-        "title": "Review: Vision Transformers Need Registers",
-        "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
-        "authors": ["Mohtasim Hadi Rafi", "Carlos Berrios", "Jonathan Pitts"],
-        "media": "/imgs/blog/vitnr.png",
-        "keywords": ["Explainable AI", "Computer Vision", "Review"],
-        "type": "note",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "links": [{
-            "title": "paper",
-            "url": "https://arxiv.org/abs/2309.16588"
-        }]
-    },
-    {
-        "title": "Classnote: Experimental Statistics",
-        "description": "My classnotes for the course Experimental Statistics.",
-        "authors": ["Mohtasim Hadi Rafi", "Bartrem Zinner"],
-        "media": "/imgs/blog/ces.png",
-        "keywords": ["Explainable AI", "Computer Vision", "Review"],
-        "type": "note",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4"
-    },
-    {
-        "title": "Classnote: Machine Learning",
-        "description": "My classnotes for the course Machine Learning.",
-        "authors": ["Mohtasim Hadi Rafi", "Bartrem Zinner"],
-        "media": "/imgs/blog/ml.png",
-        "keywords": ["Explainable AI", "Computer Vision", "Review"],
-        "type": "note",
-        "notion": "https://www.notion.so/mohtasimhadi/Machine-Learning-36c2d78115fb47f19bc4c74c7c79fd4f?pvs=4"
-    },
-    {
-        "title": "My Year in Review: 2024",
-        "media": "/imgs/blog/2024.jpg",
-        "keywords": ["Year Review"],
-        "type": "journal",
-        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2024-13610be21a4180189f49d637664029b8?pvs=4"
-    },
-    {
-        "title": "My Year in Review: 2023",
-        "media": "/imgs/blog/2023.jpg",
-        "keywords": ["Year Review"],
-        "type": "journal",
-        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2023-918322e5033f4d31baab140373cc36f0?pvs=4"
-    },
-    {
-        "title": "My Year in Review: 2022",
-        "media": "/imgs/blog/2022.jpg",
-        "keywords": ["Year Review"],
-        "type": "journal",
-        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2022-50b83b48b72d4419ac7ab958c5ec5684?pvs=4"
-    },
-    {
-        "title": "একজন বিবাগী",
-        "media": "/imgs/blog/bibagi.jpg",
-        "keywords": ["memoir"],
-        "type": "theTypist",
-        "notion": "https://www.notion.so/mohtasimhadi/b60ddd8b684e4dea84660414f776ba1c?pvs=4"
-    },
-    {
-      "title": "একজন বিবাগী",
-      "media": "/imgs/blog/bibagi.jpg",
-      "keywords": ["memoir"],
-      "type": "theTypist",
-      "notion": "https://www.notion.so/mohtasimhadi/b60ddd8b684e4dea84660414f776ba1c?pvs=4"
+  {
+    "title": "Review: Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
+    "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Calvin Hirschler"
+    ],
+    "media": "/imgs/blog/smei.png",
+    "keywords": [
+      "Explainable AI",
+      "LLM",
+      "Review"
+    ],
+    "type": "featured",
+    "notion": "https://www.notion.so/mohtasimhadi/Review-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1eb10be21a4180f89a98c831a8ab237a?pvs=4",
+    "links": [
+      {
+        "title": "Article",
+        "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+      },
+      {
+        "title": "Slides",
+        "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+      },
+      {
+        "title": "Features",
+        "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+      },
+      {
+        "title": "Neighborhoods",
+        "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+      }
+    ]
+  },
+  {
+    "title": "Review: Vision Transformers Need Registers",
+    "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Carlos Berrios",
+      "Jonathan Pitts"
+    ],
+    "media": "/imgs/blog/vitnr.png",
+    "keywords": [
+      "Explainable AI",
+      "Computer Vision",
+      "Review"
+    ],
+    "type": "note",
+    "notion": "https://www.notion.so/mohtasimhadi/Review-Vision-Transformers-Need-Registers-1eb10be21a41800794f3f8d20f2907a0?pvs=4",
+    "links": [
+      {
+        "title": "paper",
+        "url": "https://arxiv.org/abs/2309.16588"
+      }
+    ]
+  },
+  {
+    "title": "Classnote: Experimental Statistics",
+    "description": "My classnotes for the course Experimental Statistics.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Bartrem Zinner"
+    ],
+    "media": "/imgs/blog/ces.png",
+    "keywords": [
+      "Explainable AI",
+      "Computer Vision",
+      "Review"
+    ],
+    "type": "note",
+    "notion": "https://www.notion.so/mohtasimhadi/Experimental-Statistics-1-1eb10be21a4180dda81fcd76d580c0de?pvs=4"
+  },
+  {
+    "title": "Classnote: Machine Learning",
+    "description": "My classnotes for the course Machine Learning.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Bartrem Zinner"
+    ],
+    "media": "/imgs/blog/ml.png",
+    "keywords": [
+      "Explainable AI",
+      "Computer Vision",
+      "Review"
+    ],
+    "type": "note",
+    "notion": "https://www.notion.so/mohtasimhadi/Machine-Learning-1eb10be21a418033881ed3383f088243?pvs=4"
+  },
+  {
+    "title": "My Year in Review: 2024",
+    "media": "/imgs/blog/2024.jpg",
+    "keywords": [
+      "Year Review"
+    ],
+    "type": "journal",
+    "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2024-13610be21a4180189f49d637664029b8?pvs=4"
+  },
+  {
+    "title": "My Year in Review: 2023",
+    "media": "/imgs/blog/2023.jpg",
+    "keywords": [
+      "Year Review"
+    ],
+    "type": "journal",
+    "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2023-918322e5033f4d31baab140373cc36f0?pvs=4"
+  },
+  {
+    "title": "My Year in Review: 2022",
+    "media": "/imgs/blog/2022.jpg",
+    "keywords": [
+      "Year Review"
+    ],
+    "type": "journal",
+    "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2022-50b83b48b72d4419ac7ab958c5ec5684?pvs=4"
   },
   {
     "title": "একজন বিবাগী",
     "media": "/imgs/blog/bibagi.jpg",
-    "keywords": ["memoir"],
+    "keywords": [
+      "memoir"
+    ],
     "type": "theTypist",
     "notion": "https://www.notion.so/mohtasimhadi/b60ddd8b684e4dea84660414f776ba1c?pvs=4"
-}
+  }
 ]
