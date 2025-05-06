@@ -46,29 +46,23 @@ const FeatureCard: FC<CardProps> = ({
           <p className="text-gray-500 text-sm mb-4">{authors.join("; ")}</p>
         )}
         <p className="text-gray-700 mb-4">{description}</p>
+
+        {/* Links at the bottom, separated by | */}
         <div className="flex flex-wrap gap-2 mb-4">
           {links && links.length > 0 &&
             links.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.title}
-              </a>
+              <span key={index}>
+                <a
+                  href={link.url}
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.title}
+                </a>
+                {index < links.length - 1 && " | "}
+              </span>
             ))}
-        </div>
-        <div className="mt-4">
-          <a
-            href={notion}
-            className="text-blue-600 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            See More →
-          </a>
         </div>
       </div>
     </div>
