@@ -18,11 +18,9 @@ const BlogPage: FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    // Fetch data from public/data/data.json
     fetch('/data/blogs.json')
       .then((res) => res.json())
       .then((data) => {
-        // Filter the data for blogs only
         const blogItems = data.filter((item: Blog) => item.type === 'blog');
         setBlogs(blogItems);
       })
