@@ -1,9 +1,13 @@
 import { notion } from '@/types';
 import { NextResponse } from 'next/server';
 
+// Notion page IDs are 32 characters long hexadecimal strings
+const isValidNotionPageId = (id: string) => {
+  return /^[0-9a-f]{32}$/.test(id);
+};
+
 export async function GET(request: Request) {
   try {
-    // Extract slug from URL
     const url = new URL(request.url);
     const pathParts = url.pathname.split('/');
     const slug = pathParts[pathParts.length - 1];
@@ -15,12 +19,20 @@ export async function GET(request: Request) {
       );
     }
 
+    // Validate the ID format
+    if (!isValidNotionPageId(slug)) {
+      return NextResponse.json(
+        { error: 'Invalid Notion page ID format' },
+        { status: 400 }
+      );
+    }
+
     const data = await notion.getPage(slug);
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching Notion page:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch Notion page' },
+      { error: 'Failed to fetch Notion page. Please check the page ID and try again.' },
       { status: 500 }
     );
   }
