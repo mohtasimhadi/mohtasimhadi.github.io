@@ -45,7 +45,7 @@ const SubPage: FC<Subpage> = ({
     if (searchTerm) {
       filtered = filtered.filter((blog) =>
         blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        blog.description.toLowerCase().includes(searchTerm.toLowerCase())
+        blog.description?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
