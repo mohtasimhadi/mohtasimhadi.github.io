@@ -17,7 +17,7 @@ const Card: FC<Blogs> = ({
       className="max-w-sm overflow-hidden flex flex-col"
       ref={cardRef}
     >
-      <div className="p-4 flex flex-col flex-grow">
+      <div className="pb-4 pr-4 flex flex-col flex-grow">
         <img className="w-full h-48" src={media} alt={title} />
         <h2 className="text-xl font-semibold mt-2">
           <a

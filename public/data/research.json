@@ -1,31 +1,374 @@
 [
-    {
-        "title": "KBTrack: Long Term Association for Plant Tracking in UGV Captured Videos",
-        "description": "Developing a multi-object tracking (MOT) algorithm to count ornamental plants in nursery efficiently.",
-        "authors": ["Auburn University"],
-        "media": "/imgs/projects/kbtrack.png",
-        "keywords": ["Unmanned Ground Vehicle", "Navigation", "Data Collection", "Nursery", "Deep Learning", "Autonomous"],
-        "type": "featured",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "links": []
-    },
-    {
-        "title": "Burnout Sentinel",
-        "description": "This project incorporates a machine learning model that generates a stress score ranging from 0 to 10. By developing a web-based system enabling users to input their physiological data, it facilitates the monitoring and management of stress levels, providing personalized suggestions. Aimed at addressing student stress in the academic environment, the project offers a comprehensive approach to stress management.",
-        "authors": ["Santa Maria", "Ayesha Afroza Mohsin", "Nafisa Maliat", "Mohtasim Hadi Rafi", "Faisal Hussain"],
-        "media": "/imgs/projects/bs.png",
-        "keywords": ["Stress", "Machine Learning", "Analytics", "Random Forest"],
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "type": "current project",
-        "links": [
-          {
-            "title": "Website",
-            "url": "https://burnout-sentinels.netlify.app/"
-          },
-          {
-            "title": "Code",
-            "url": "https://github.com/iut-swe-20-dp-1/machine-learning-model.git"
-          }
-        ]
+  {
+    "title": "KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management",
+    "description": "Multiple object tracking algorithm for counting plants accurately. Uses long term association to fix trajectories unlike conventional MOT algorithms. Has a cloud enabled dashboard for user centric usage.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "media": "/imgs/research/kbtrack.png",
+    "keywords": ["MOT", "Computer Vision", "Biosystems", "Deep Learning"],
+    "type": "featured",
+    "notion": "",
+    "links": [
+      {
+        "title": "Poster",
+        "url": ""
+      },
+      {
+        "title": "Slides",
+        "url": ""
       }
+    ]
+  },
+  {
+    "title": "[In Preparation] Automated in-field inventory management and quality assessment system using end-to-end deep learning for ornamental nursery crops",
+    "authors": [
+      "Mohammad Waseem",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Mohtasim Hadi Rafi",
+      "Tanzeel Rehman"
+    ],
+    "media": "/imgs/research/on.jpeg",
+    "keywords": [
+      "Generative AI",
+      "Computer Vision",
+      "Biosystems",
+      "Deep Learning"
+    ],
+    "type": "patent",
+    "notion": "",
+    "links": [
+      {
+        "title": "Poster",
+        "url": ""
+      },
+      {
+        "title": "Slides",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": "[In Preparation] Enhancing the Ornamental Inventory and Quality Assessment Across Diverse Growth Stages using Unsupervised Domain Adaptation",
+    "authors": [
+      "Hamid Syed",
+      "Faraz Ahmad",
+      "Mohtasim Hadi Rafi",
+      "Tanzeel Rehman"
+    ],
+    "media": "/imgs/research/oim3.png",
+    "keywords": ["Computer Vision", "Biosystems", "Deep Learning"],
+    "type": "patent",
+    "notion": "",
+    "links": [
+      {
+        "title": "Poster",
+        "url": ""
+      },
+      {
+        "title": "Slides",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": "[Conference] A Critical Analysis of Deep Learning Applications in Crop Pest Classification: Promising Pathways and Limitations",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Mohammad Ratul Mahjabin",
+      "Md Sabbir Ahmed",
+      "Md. Hasanul Kabir",
+      "Sabbir Ahmed"
+    ],
+    "description": " In 2023 26th International Conference on Computer and Information Technology (ICCIT), (pp. 1-6). IEEE. 13 Dec, 2023, Cox’s Bazar, Bangladesh. DOI: 10.1109/ICCIT60459.2023.10441417",
+    "media": "/imgs/research/ip102.gif",
+    "keywords": [
+      "Pest Classification",
+      "Deep Neural Network",
+      "Pretrained Model",
+      "IP102",
+      "Crop Pest Detection"
+    ],
+    "type": "publication",
+    "notion": "https://ieeexplore.ieee.org/document/10441417",
+    "links": [
+      {
+        "title": "Paper",
+        "url": "https://ieeexplore.ieee.org/document/10441417"
+      }
+    ]
+  },
+  {
+    "title": "[In Submission] Autonomous Robotic Navigation in Ornamental Crop Production Using Vision and Sensor Fusion",
+    "authors": [
+      "Faraz Ahmad",
+      "Mohtasim Hadi Rafi",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "description": "In Smart Agricultural Technology.",
+    "media": "/imgs/research/ugv.png",
+    "keywords": [],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991",
+    "links": [
+      {
+        "title": "Poster",
+        "url": "http://103.82.172.44:8080/xmlui/handle/123456789/2051"
+      },
+      {
+        "title": "Slides",
+        "url": "http://103.82.172.44:8080/xmlui/handle/123456789/2051"
+      }
+    ]
+  },
+  {
+    "title": "[In Preparation] Edge-Optimized High-Throughput Phenotyping Lightweight Deep Learning Model for Real-time Plant Tracking, Volume Estimation and Quality Assessment using Stereo Vision.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "description": "In Smart Agricultural Technology.",
+    "media": "/imgs/research/oim4.png",
+    "keywords": [],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991"
+  },
+  {
+    "title": "[In Preparation] A label-free deep learning approach to count and assess ornamental plants",
+    "authors": [
+      "Hamid Syed",
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Tanzeel Rehman"
+    ],
+    "description": "In Smart Agricultural Technology.",
+    "media": "/imgs/research/oim.png",
+    "keywords": [],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991"
+  },
+  {
+    "title": "[In Preparation] Enhancing the Ornamental Inventory and Quality Assessment Across Diverse Growth Stages using Unsupervised Domain Adaptation.",
+    "authors": [
+      "Hamid Syed",
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Tanzeel Rehman"
+    ],
+    "description": "In Smart Agricultural Technology.",
+    "media": "/imgs/research/oim.png",
+    "keywords": [],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991"
+  },
+  {
+    "title": "[In Preparation] Unmanned Systems and Deep Learning for Automation in Ornamental Crop Monitoring.",
+    "authors": [
+      "Hamid Syed",
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Tanzeel Rehman"
+    ],
+    "description": "In Smart Agricultural Technology.",
+    "media": "/imgs/research/oim.png",
+    "keywords": [],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991"
+  },
+  {
+    "title": "[In Preparation] Integrating Hyperspectral Imaging in Pest Detection: A Systematic Review and Meta-Analysis.",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Hamid Syed",
+      "Faraz Ahmad",
+      "Tanzeel Rehman"
+    ],
+    "description": "In Smart Agricultural Technology.",
+    "media": "/imgs/research/oim.png",
+    "keywords": [],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991"
+  },
+  {
+    "title": "[Undergrad Thesis] An Efficient Deep Learning-based Approach for Recognizing Agricultural Pests in the Wild",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Mohammad Ratul Mahjabin",
+      "Md Sabbir Ahmed"
+    ],
+    "description": "Undergraduate thesis for the degree BSc in Software Engineering.",
+    "media": "/imgs/research/ip102.gif",
+    "keywords": [
+      "Pest Classification",
+      "Deep Neural Network",
+      "Pretrained Model",
+      "IP102",
+      "Crop Pest Detection"
+    ],
+    "type": "publication",
+    "notion": "https://arxiv.org/abs/2310.16991",
+    "links": [
+      {
+        "title": "Paper",
+        "url": "http://103.82.172.44:8080/xmlui/handle/123456789/2051"
+      }
+    ]
+  },
+  {
+    "title": "[Oral] KBTrack: Long Term Tracking for Plant Counting with Cloud-Enabled Plant Segmentation Framework for Ornamental Nursery Inventory Management",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "description": "In 2025 American Society for Horticultural Science Conference, Jul 28 - Aug 01, Hyatt Regency, New Orleans, LA, USA.",
+    "media": "/imgs/research/kbtrack.png",
+    "keywords": [],
+    "type": "presentation",
+    "notion": "",
+    "links": [
+      {
+        "title": "Slides",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": "[Oral] Cloud-Enabled Plant Segmentation and Tracking Framework for Ornamental Nursery Inventory Management",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "description": "In 2025 Annual International Meeting of American Society of Agricultural and Biological Engineers, Jul 13 - Jul 16, Sheraton Centre Toronto Hotel, Toronto, Ontario, Canada.",
+    "media": "/imgs/research/oim.gif",
+    "keywords": [],
+    "type": "presentation",
+    "notion": "",
+    "links": [
+      {
+        "title": "Slides",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": "[Oral] Cloud-Enabled Plant Segmentation and Tracking Framework for Ornamental Nursery Inventory Management",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "description": "In AI in Agriculture and Natural Resources Conference, March 31 - April 02, The Mill, Starkville, MS, USA.",
+    "media": "/imgs/research/oim.gif",
+    "keywords": [],
+    "type": "presentation",
+    "notion": "",
+    "links": [
+      {
+        "title": "Slides",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": "Stereo Camera Based Volume Estimation & Spatial Mapping in Ornamental Plant Nurseries",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Tanzeel Rehman"
+    ],
+    "media": "/imgs/research/on.jpeg",
+    "keywords": [],
+    "type": "project",
+    "notion": ""
+  },
+  {
+    "title": "Florabot/NurseryBot",
+    "authors": [
+      "Mohtasim Hadi Rafi",
+      "Faraz Ahmad",
+      "Hamid Syed",
+      "Mesbahul Maruf",
+      "Carter Freeman",
+      "Tanzeel Rehman"
+    ],
+    "media": "/imgs/research/fb.png",
+    "keywords": [],
+    "type": "project",
+    "notion": "https://florabot-smart-systems-au.github.io/"
+  },
+  {
+    "title": "Biponon Retail AI",
+    "authors": [
+      "Intelligent Machines Limited"
+    ],
+    "media": "/imgs/research/biponon.png",
+    "keywords": [],
+    "type": "project",
+    "notion": "https://softexpo.com.bd/exhibitor/details/10016/intelligent-machines-limited",
+    "links": [
+      {
+        "title": "YouTube",
+        "url": "https://youtu.be/2tPye14hDwQ?si=t5bPKRIwuFGmjf6T"
+      }
+    ]
+  },
+  {
+    "title": " Dharapat Bank Statement & CIB Analyzer with Credit Scoring",
+    "authors": [
+      "Intelligent Machines Limited"
+    ],
+    "media": "/imgs/research/dharapat.png",
+    "keywords": [],
+    "type": "project",
+    "notion": "https://youtu.be/bdB-_Qo69QY?si=yCeWInpdc40eoyDe",
+    "links": [
+      {
+        "title": "YouTube",
+        "url": "https://youtu.be/bdB-_Qo69QY?si=yCeWInpdc40eoyDe"
+      }
+    ]
+  },
+  {
+    "title": "Burnout Sentinel",
+    "authors": [
+      "Shanta Maria",
+      "Ayesha Afroza Mohsin",
+      "Nafisa Maliat",
+      "Mohtasim Hadi Rafi",
+      "Faisal Hussain"
+    ],
+    "media": "/imgs/research/bs.png",
+    "keywords": [],
+    "type": "project",
+    "notion": "https://burnout-sentinels.netlify.app/",
+    "links": [
+      {
+        "title": "code",
+        "url": "https://github.com/iut-swe-20-dp-1/machine-learning-model"
+      }
+    ]
+  },
+  {
+    "title": "Jontro - Predictive Maintenance",
+    "authors": [
+      "Intelligent Machines Limited"
+    ],
+    "media": "/imgs/research/dharapat.png",
+    "keywords": [],
+    "type": "project",
+    "notion": "https://youtu.be/bdB-_Qo69QY?si=yCeWInpdc40eoyDe"
+  }
 ]
