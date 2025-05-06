@@ -106,7 +106,7 @@ const Home: FC = () => {
               ))}
             </div>
             <div className="flex justify-end w-full mt-4">
-              <Link href="/research/presentations">
+              <Link href="/blog/journals">
                 <button className="text-blue-600 hover:underline">
                   See More →
                 </button>
@@ -132,7 +132,7 @@ const Home: FC = () => {
               ))}
             </div>
             <div className="flex justify-end w-full mt-4">
-              <Link href="/research/presentations">
+              <Link href="/blog/theTypist">
                 <button className="text-blue-600 hover:underline">
                   See More →
                 </button>
