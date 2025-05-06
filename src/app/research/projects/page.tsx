@@ -28,7 +28,16 @@ const Presentation: FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-2">
+      <p className="text-sm p-4 pt-0 pb-2">
+        <a href="/research" className="hover:underline">
+          Research
+        </a>
+        &nbsp;&gt;&gt;&nbsp;
+        <a href="/research/projects" className="hover:underline">
+          Projects
+        </a>
+      </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {blogs.map((blog, index) => (
           <Card

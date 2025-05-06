@@ -11,6 +11,7 @@ const Home: FC = () => {
   const [featuredBlog, setFeaturedBlog] = useState<Blogs[]>([]);
   const [notes, setNotes] = useState<Blogs[]>([]);
   const [journals, setJournals] = useState<Blogs[]>([]);
+  const [theTypist, setTheTypist] = useState<Blogs[]>([]);
 
   const [currentProjects, setCurrentProjects] = useState<Blogs[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<Blogs[]>([]);
@@ -26,14 +27,16 @@ const Home: FC = () => {
         setNotes(noteItems);
         const journalItems = data.filter((item: Blogs) => item.type === "journal");
         setJournals(journalItems);
+        const blogItems = data.filter((item: Blogs) => item.type === "memoir");
+        setTheTypist(blogItems);
       })
       .catch((err) => console.error("Error fetching blog data:", err));
 
-    fetch("/data/blogs.json")
+    fetch("/data/research.json")
       .then((res) => res.json())
       .then((data) => {
         const currentProjectItems = data.filter(
-          (item: Blogs) => item.type === "current project"
+          (item: Blogs) => item.type === "project"
         );
         setCurrentProjects(currentProjectItems);
         setVisibleProjects(currentProjectItems.slice(0, maxCards));
@@ -112,19 +115,20 @@ const Home: FC = () => {
               </Link>
             </div>
           </div>
+
           <div className="p-4">
-            <h3 className="text-xl font-semibold mb-4 text-left">Journals</h3>
+            <h3 className="text-xl font-semibold mb-4 text-left">The Typist</h3>
             <div className="flex flex-wrap justify-center">
-              {journals.slice(0, 3).map((journal, index) => (
+              {theTypist.slice(0, 3).map((blog, index) => (
                 <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
                   <Card
-                    title={journal.title}
-                    description={journal.description}
-                    authors={journal.authors}
-                    media={journal.media}
-                    type={journal.type}
-                    notion={journal.notion}
-                    links={journal.links}
+                    title={blog.title}
+                    description={blog.description}
+                    authors={blog.authors}
+                    media={blog.media}
+                    type={blog.type}
+                    notion={blog.notion}
+                    links={blog.links}
                   />
                 </div>
               ))}

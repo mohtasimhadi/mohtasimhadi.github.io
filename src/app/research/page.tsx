@@ -30,7 +30,7 @@ const Research: FC = () => {
       .then((data) => setNews(data.news))
       .catch((err) => console.error("Error fetching news:", err));
 
-    fetch("/data/blogs.json")
+    fetch("/data/research.json")
       .then((res) => res.json())
       .then((data) => {
         const currentProjectItems = data.filter(
