@@ -73,6 +73,11 @@ const SubPage: FC<Subpage> = ({
     <div className="container mx-auto p-2 flex">
       {/* Sidebar */}
       <div className="w-1/4 p-4 bg-gray-100">
+      <p className="text-sm p-5 pl-0 pt-0">
+            {page}
+          &nbsp;&gt;&gt;&nbsp;
+            {subpage}
+        </p>
         <div className="mb-4">
           <input
             type="text"
@@ -106,16 +111,6 @@ const SubPage: FC<Subpage> = ({
 
       {/* Main Content */}
       <div className="w-3/4 p-4">
-        <p className="text-sm p-4 pt-0 pb-2">
-          <a href={parentLink} className="hover:underline">
-            {page}
-          </a>
-          &nbsp;&gt;&gt;&nbsp;
-          <a href={link} className="hover:underline">
-            {subpage}
-          </a>
-        </p>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredBlogs.map((blog, index) => (
             <Card
