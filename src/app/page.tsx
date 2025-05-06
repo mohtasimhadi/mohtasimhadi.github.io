@@ -10,6 +10,7 @@ import { Blogs } from "@/types/indes";
 const Home: FC = () => {
   const [featuredBlog, setFeaturedBlog] = useState<Blogs[]>([]);
   const [notes, setNotes] = useState<Blogs[]>([]);
+  const [journals, setJournals] = useState<Blogs[]>([]);
 
   const [currentProjects, setCurrentProjects] = useState<Blogs[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<Blogs[]>([]);
@@ -21,8 +22,10 @@ const Home: FC = () => {
       .then((data) => {
         const featuredItem = data.filter((item: Blogs) => item.type === "featured");
         setFeaturedBlog(featuredItem);
-        const noteItems = data.filter((item: Blogs) => item.type === "notes");
+        const noteItems = data.filter((item: Blogs) => item.type === "note");
         setNotes(noteItems);
+        const journalItems = data.filter((item: Blogs) => item.type === "journal");
+        setJournals(journalItems);
       })
       .catch((err) => console.error("Error fetching blog data:", err));
 
@@ -41,16 +44,16 @@ const Home: FC = () => {
   return (
     <>
       <div className="p-4 bg-gray-100">
-        {featuredBlog.map((project, index) => (
+        {featuredBlog.map((blog, index) => (
           <div key={index} className="w-full p-2">
             <FeatureCard
-              title={project.title}
-              description={project.description}
-              authors={project.authors}
-              media={project.media}
-              type={project.type}
-              notion={project.notion}
-              links={project.links}
+              title={blog.title}
+              description={blog.description}
+              authors={blog.authors}
+              media={blog.media}
+              type={blog.type}
+              notion={blog.notion}
+              links={blog.links}
             />
           </div>
         ))}
@@ -61,16 +64,16 @@ const Home: FC = () => {
           <div className="p-4 border-b-1 border-gray-400">
             <h3 className="text-xl font-semibold mb-4 text-left">Notes</h3>
             <div className="flex flex-wrap justify-center">
-              {notes.slice(0, 3).map((project, index) => (
+              {notes.slice(0, 3).map((note, index) => (
                 <div key={index} className="w-1/3">
                   <Card
-                    title={project.title}
-                    description={project.description}
-                    authors={project.authors}
-                    media={project.media}
-                    type={project.type}
-                    notion={project.notion}
-                    links={project.links}
+                    title={note.title}
+                    description={note.description}
+                    authors={note.authors}
+                    media={note.media}
+                    type={note.type}
+                    notion={note.notion}
+                    links={note.links}
                   />
                 </div>
               ))}
@@ -87,16 +90,16 @@ const Home: FC = () => {
           <div className="p-4">
             <h3 className="text-xl font-semibold mb-4 text-left">Journals</h3>
             <div className="flex flex-wrap justify-center">
-              {currentProjects.slice(0, 3).map((project, index) => (
+              {journals.slice(0, 3).map((journal, index) => (
                 <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
                   <Card
-                    title={project.title}
-                    description={project.description}
-                    authors={project.authors}
-                    media={project.media}
-                    type={project.type}
-                    notion={project.notion}
-                    links={project.links}
+                    title={journal.title}
+                    description={journal.description}
+                    authors={journal.authors}
+                    media={journal.media}
+                    type={journal.type}
+                    notion={journal.notion}
+                    links={journal.links}
                   />
                 </div>
               ))}
@@ -112,16 +115,16 @@ const Home: FC = () => {
           <div className="p-4">
             <h3 className="text-xl font-semibold mb-4 text-left">Journals</h3>
             <div className="flex flex-wrap justify-center">
-              {currentProjects.slice(0, 3).map((project, index) => (
+              {journals.slice(0, 3).map((journal, index) => (
                 <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
                   <Card
-                    title={project.title}
-                    description={project.description}
-                    authors={project.authors}
-                    media={project.media}
-                    type={project.type}
-                    notion={project.notion}
-                    links={project.links}
+                    title={journal.title}
+                    description={journal.description}
+                    authors={journal.authors}
+                    media={journal.media}
+                    type={journal.type}
+                    notion={journal.notion}
+                    links={journal.links}
                   />
                 </div>
               ))}
