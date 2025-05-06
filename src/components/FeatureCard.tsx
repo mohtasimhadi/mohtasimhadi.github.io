@@ -36,7 +36,6 @@ const FeatureCard: FC<CardProps> = ({
           <a
             href={`/notion/${notion}`}
             className="text-black hover:underline"
-            target="_blank"
             rel="noopener noreferrer"
           >
             {title}

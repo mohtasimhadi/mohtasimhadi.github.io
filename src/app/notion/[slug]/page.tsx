@@ -14,7 +14,6 @@ export default async function Notion() {
 
   return (
     <div>
-      <p>Hello</p>
       <NotionPage recordMap={data} rootPageId={slug as string} />
     </div>
   );

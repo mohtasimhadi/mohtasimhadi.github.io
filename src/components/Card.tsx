@@ -23,7 +23,6 @@ const Card: FC<Blogs> = ({
           <a
             href={`/notion/${notion}`}
             className="text-black hover:underline"
-            target="_blank"
             rel="noopener noreferrer"
           >
             {title}
