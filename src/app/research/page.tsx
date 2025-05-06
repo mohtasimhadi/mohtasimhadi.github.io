@@ -62,7 +62,7 @@ const Research: FC = () => {
           Projects
         </h3>
         <div className="flex flex-col items-center w-full">
-          {projects.slice(0, 4).map((project, index) => (
+          {projects.slice(0, 6).map((project, index) => (
             <Card
               key={index}
               title={project.title}
