@@ -59,23 +59,44 @@
     },
     {
         "title": "My Year in Review: 2024",
-        "media": "/imgs/blog/ml.png",
+        "media": "/imgs/blog/2024.jpg",
         "keywords": ["Year Review"],
         "type": "journal",
         "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2024-13610be21a4180189f49d637664029b8?pvs=4"
     },
     {
         "title": "My Year in Review: 2023",
-        "media": "/imgs/blog/ml.png",
+        "media": "/imgs/blog/2023.jpg",
         "keywords": ["Year Review"],
         "type": "journal",
-        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2024-13610be21a4180189f49d637664029b8?pvs=4"
+        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2023-918322e5033f4d31baab140373cc36f0?pvs=4"
     },
     {
         "title": "My Year in Review: 2022",
-        "media": "/imgs/blog/ml.png",
+        "media": "/imgs/blog/2022.jpg",
         "keywords": ["Year Review"],
         "type": "journal",
-        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2024-13610be21a4180189f49d637664029b8?pvs=4"
-    }
+        "notion": "https://www.notion.so/mohtasimhadi/My-Year-In-Review-2022-50b83b48b72d4419ac7ab958c5ec5684?pvs=4"
+    },
+    {
+        "title": "একজন বিবাগী",
+        "media": "/imgs/blog/bibagi.jpg",
+        "keywords": ["memoir"],
+        "type": "theTypist",
+        "notion": "https://www.notion.so/mohtasimhadi/b60ddd8b684e4dea84660414f776ba1c?pvs=4"
+    },
+    {
+      "title": "একজন বিবাগী",
+      "media": "/imgs/blog/bibagi.jpg",
+      "keywords": ["memoir"],
+      "type": "theTypist",
+      "notion": "https://www.notion.so/mohtasimhadi/b60ddd8b684e4dea84660414f776ba1c?pvs=4"
+  },
+  {
+    "title": "একজন বিবাগী",
+    "media": "/imgs/blog/bibagi.jpg",
+    "keywords": ["memoir"],
+    "type": "theTypist",
+    "notion": "https://www.notion.so/mohtasimhadi/b60ddd8b684e4dea84660414f776ba1c?pvs=4"
+}
 ]

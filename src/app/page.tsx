@@ -13,9 +13,8 @@ const Home: FC = () => {
   const [journals, setJournals] = useState<Blogs[]>([]);
   const [theTypist, setTheTypist] = useState<Blogs[]>([]);
 
-  const [currentProjects, setCurrentProjects] = useState<Blogs[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<Blogs[]>([]);
-  const [maxCards, setMaxCards] = useState(4);
+  const [maxCards, setMaxCards] = useState(3);
 
   useEffect(() => {
     fetch("data/blogs.json")
@@ -27,8 +26,8 @@ const Home: FC = () => {
         setNotes(noteItems);
         const journalItems = data.filter((item: Blogs) => item.type === "journal");
         setJournals(journalItems);
-        const blogItems = data.filter((item: Blogs) => item.type === "memoir");
-        setTheTypist(blogItems);
+        const theTypist = data.filter((item: Blogs) => item.type === "theTypist");
+        setTheTypist(theTypist);
       })
       .catch((err) => console.error("Error fetching blog data:", err));
 
@@ -38,7 +37,6 @@ const Home: FC = () => {
         const currentProjectItems = data.filter(
           (item: Blogs) => item.type === "project"
         );
-        setCurrentProjects(currentProjectItems);
         setVisibleProjects(currentProjectItems.slice(0, maxCards));
       })
       .catch((err) => console.error("Error fetching blog data:", err));
@@ -63,8 +61,8 @@ const Home: FC = () => {
       </div>
 
       <div className="flex flex-wrap">
-        <div className="w-full sm:w-3/4 flex flex-col items-start">
-          <div className="p-4 border-b-1 border-gray-400">
+        <div className="w-full border-r-1 border-gray-300 sm:w-3/4 flex flex-col items-start">
+          <div className="p-4 w-full">
             <h3 className="text-xl font-semibold mb-4 text-left">Notes</h3>
             <div className="flex flex-wrap justify-center">
               {notes.slice(0, 3).map((note, index) => (
@@ -90,7 +88,7 @@ const Home: FC = () => {
             </div>
           </div>
 
-          <div className="p-4">
+          <div className="p-4 w-full bg-gray-100">
             <h3 className="text-xl font-semibold mb-4 text-left">Journals</h3>
             <div className="flex flex-wrap justify-center">
               {journals.slice(0, 3).map((journal, index) => (
@@ -116,7 +114,7 @@ const Home: FC = () => {
             </div>
           </div>
 
-          <div className="p-4">
+          <div className="p-4 w-full">
             <h3 className="text-xl font-semibold mb-4 text-left">The Typist</h3>
             <div className="flex flex-wrap justify-center">
               {theTypist.slice(0, 3).map((blog, index) => (
@@ -145,7 +143,7 @@ const Home: FC = () => {
 
         <div className="w-full sm:w-1/4 p-4 flex flex-col items-start">
           <h3 className="text-xl font-semibold mb-4 text-left">
-            Current Projects
+            Featured Projects
           </h3>
           <div className="flex flex-col items-center w-full">
             {visibleProjects.map((project, index) => (

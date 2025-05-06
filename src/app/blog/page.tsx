@@ -65,11 +65,14 @@ const OnWriting: FC = () => {
       
       
       <div className="w-full sm:w-4/5 flex flex-col items-start">
-        <div className="p-4">
-          <h3 className="text-xl font-semibold mb-4 text-left">Journals</h3>
+        
+        <div className="p-4 w-full">
+          <h3 className="text-xl font-semibold mb-4 text-left">
+            Journals
+          </h3>
           <div className="flex flex-wrap justify-center">
-            {journals.slice(0, 3).map((journal, index) => (
-              <div key={index} className="w-full sm:w-1/2 md:w-1/2 p-2">
+            {journals.slice(0, 4).map((journal, index) => (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
                 <Card
                   title={journal.title}
                   description={journal.description}
@@ -83,7 +86,7 @@ const OnWriting: FC = () => {
             ))}
           </div>
           <div className="flex justify-end w-full mt-4">
-            <Link href="/blogs/journals">
+            <Link href="/blogs/notes">
               <button className="text-blue-600 hover:underline">
                 See More →
               </button>
@@ -91,7 +94,7 @@ const OnWriting: FC = () => {
           </div>
         </div>
 
-        <div className="p-4 bg-gray-100">
+        <div className="p-4 bg-gray-100 w-full">
           <h3 className="text-xl font-semibold mb-4 text-left">theTypist</h3>
           <div className="flex flex-wrap justify-center">
             {theTypist.slice(0, 3).map((publication, index) => (
@@ -117,7 +120,7 @@ const OnWriting: FC = () => {
           </div>
         </div>
 
-        <div className="p-4">
+        <div className="p-4 w-full">
           <h3 className="text-xl font-semibold mb-4 text-left">
             Notes
           </h3>
