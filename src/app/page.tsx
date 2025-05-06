@@ -9,16 +9,20 @@ import { Blogs } from "@/types/indes";
 
 const Home: FC = () => {
   const [featuredBlog, setFeaturedBlog] = useState<Blogs[]>([]);
+  const [notes, setNotes] = useState<Blogs[]>([]);
+
   const [currentProjects, setCurrentProjects] = useState<Blogs[]>([]);
   const [visibleProjects, setVisibleProjects] = useState<Blogs[]>([]);
-  const [notes, setNotes] = useState<Blogs[]>([]);
   const [maxCards, setMaxCards] = useState(4);
 
   useEffect(() => {
-    fetch("data/blogs/featured.json")
+    fetch("data/blogs.json")
       .then((res) => res.json())
       .then((data) => {
-        setFeaturedBlog(data);
+        const featuredItem = data.filter((item: Blogs) => item.type === "featured");
+        setFeaturedBlog(featuredItem);
+        const noteItems = data.filter((item: Blogs) => item.type === "notes");
+        setNotes(noteItems);
       })
       .catch((err) => console.error("Error fetching blog data:", err));
 
@@ -28,8 +32,6 @@ const Home: FC = () => {
         const currentProjectItems = data.filter(
           (item: Blogs) => item.type === "current project"
         );
-        const noteItems = data.filter((item: Blogs) => item.type === "blog");
-        setNotes(noteItems);
         setCurrentProjects(currentProjectItems);
         setVisibleProjects(currentProjectItems.slice(0, maxCards));
       })
@@ -60,7 +62,7 @@ const Home: FC = () => {
             <h3 className="text-xl font-semibold mb-4 text-left">Notes</h3>
             <div className="flex flex-wrap justify-center">
               {notes.slice(0, 3).map((project, index) => (
-                <div key={index} className="w-full sm:w-1/2 md:w-1/3 p-2">
+                <div key={index} className="w-1/3">
                   <Card
                     title={project.title}
                     description={project.description}
@@ -74,7 +76,7 @@ const Home: FC = () => {
               ))}
             </div>
             <div className="flex justify-end w-full mt-4">
-              <Link href="/research/publications">
+              <Link href="/blog/notes">
                 <button className="text-blue-600 hover:underline">
                   See More →
                 </button>

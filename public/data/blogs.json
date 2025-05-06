@@ -1,16 +1,30 @@
 [
     {
-        "title": "Review: Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
-        "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
-        "authors": ["Mohtasim Hadi Rafi", "Calvin Hirschler"],
-        "media": "/imgs/blog/smei.png",
-        "keywords": ["Explainable AI", "LLM", "Review"],
-        "type": "blog",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "links": [{
-            "title": "article",
-            "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
-        }]
+      "title": "Review: Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
+      "description": "We reviewd the paper along with a presentation for our Explainable AI course.",
+      "authors": ["Mohtasim Hadi Rafi", "Calvin Hirschler"],
+      "media": "/imgs/blog/smei.png",
+      "keywords": ["Explainable AI", "LLM", "Review"],
+      "type": "featured",
+      "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
+      "links": [
+        {
+          "title": "Article",
+          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+        },
+        {
+          "title": "Slides",
+          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+        },
+        {
+          "title": "Features",
+          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+        },
+        {
+          "title": "Neighborhoods",
+          "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+        }
+      ]
     },
     {
         "title": "Review: Vision Transformers Need Registers",
@@ -18,7 +32,7 @@
         "authors": ["Mohtasim Hadi Rafi", "Carlos Berrios", "Jonathan Pitts"],
         "media": "/imgs/blog/vitnr.png",
         "keywords": ["Explainable AI", "Computer Vision", "Review"],
-        "type": "blog",
+        "type": "notes",
         "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
         "links": [{
             "title": "paper",
@@ -29,59 +43,18 @@
         "title": "Classnote: Experimental Statistics",
         "description": "My classnotes for the course Experimental Statistics.",
         "authors": ["Mohtasim Hadi Rafi", "Bartrem Zinner"],
-        "media": "/imgs/blog/vitnr.png",
+        "media": "/imgs/blog/ces.png",
         "keywords": ["Explainable AI", "Computer Vision", "Review"],
-        "type": "conference proceedings",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "links": [{
-            "title": "patent",
-            "url": "https://arxiv.org/abs/2309.16588"
-        }]
+        "type": "notes",
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4"
     },
     {
-        "title": "Florabot/NurseryBot",
-        "description": "Autonomous navigation capable unmanned ground vehicle for ornamental nursery inventory management.",
-        "authors": ["Auburn University"],
-        "media": "/imgs/projects/fb.png",
-        "keywords": ["Unmanned Ground Vehicle", "Navigation", "Data Collection", "Nursery", "Deep Learning", "Autonomous"],
-        "type": "current project",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "links": [{
-            "title": "Website",
-            "url": "https://florabot-smart-systems-au.github.io/"
-        },
-        {
-            "title": "Website",
-            "url": "https://florabot-smart-systems-au.github.io/"
-        }]
-    },
-    {
-        "title": "KBTrack: Long Term Association for Plant Tracking in UGV Captured Videos",
-        "description": "Developing a multi-object tracking (MOT) algorithm to count ornamental plants in nursery efficiently.",
-        "authors": ["Auburn University"],
-        "media": "/imgs/projects/oim.gif",
-        "keywords": ["Unmanned Ground Vehicle", "Navigation", "Data Collection", "Nursery", "Deep Learning", "Autonomous"],
-        "type": "current project",
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "links": []
-    },
-    {
-        "title": "Burnout Sentinel",
-        "description": "This project incorporates a machine learning model that generates a stress score ranging from 0 to 10. By developing a web-based system enabling users to input their physiological data, it facilitates the monitoring and management of stress levels, providing personalized suggestions. Aimed at addressing student stress in the academic environment, the project offers a comprehensive approach to stress management.",
-        "authors": ["Santa Maria", "Ayesha Afroza Mohsin", "Nafisa Maliat", "Mohtasim Hadi Rafi", "Faisal Hussain"],
-        "media": "/imgs/projects/bs.png",
-        "keywords": ["Stress", "Machine Learning", "Analytics", "Random Forest"],
-        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
-        "type": "current project",
-        "links": [
-          {
-            "title": "Website",
-            "url": "https://burnout-sentinels.netlify.app/"
-          },
-          {
-            "title": "Code",
-            "url": "https://github.com/iut-swe-20-dp-1/machine-learning-model.git"
-          }
-        ]
-      }
+        "title": "Classnote: Machine Learning",
+        "description": "My classnotes for the course Machine Learning.",
+        "authors": ["Mohtasim Hadi Rafi", "Bartrem Zinner"],
+        "media": "/imgs/blog/ml.png",
+        "keywords": ["Explainable AI", "Computer Vision", "Review"],
+        "type": "notes",
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4"
+    }
 ]

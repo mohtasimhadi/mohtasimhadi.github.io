@@ -1,0 +1,31 @@
+[
+    {
+        "title": "KBTrack: Long Term Association for Plant Tracking in UGV Captured Videos",
+        "description": "Developing a multi-object tracking (MOT) algorithm to count ornamental plants in nursery efficiently.",
+        "authors": ["Auburn University"],
+        "media": "/imgs/projects/kbtrack.png",
+        "keywords": ["Unmanned Ground Vehicle", "Navigation", "Data Collection", "Nursery", "Deep Learning", "Autonomous"],
+        "type": "featured",
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
+        "links": []
+    },
+    {
+        "title": "Burnout Sentinel",
+        "description": "This project incorporates a machine learning model that generates a stress score ranging from 0 to 10. By developing a web-based system enabling users to input their physiological data, it facilitates the monitoring and management of stress levels, providing personalized suggestions. Aimed at addressing student stress in the academic environment, the project offers a comprehensive approach to stress management.",
+        "authors": ["Santa Maria", "Ayesha Afroza Mohsin", "Nafisa Maliat", "Mohtasim Hadi Rafi", "Faisal Hussain"],
+        "media": "/imgs/projects/bs.png",
+        "keywords": ["Stress", "Machine Learning", "Analytics", "Random Forest"],
+        "notion": "https://www.notion.so/mohtasimhadi/Explainable-AI-Scaling-Monosemanticity-Extracting-Interpretable-Features-from-Claude-3-Sonnet-1ea10be21a4180808365daa179b31f10?pvs=4",
+        "type": "current project",
+        "links": [
+          {
+            "title": "Website",
+            "url": "https://burnout-sentinels.netlify.app/"
+          },
+          {
+            "title": "Code",
+            "url": "https://github.com/iut-swe-20-dp-1/machine-learning-model.git"
+          }
+        ]
+      }
+]
