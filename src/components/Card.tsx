@@ -1,18 +1,10 @@
-import { FC, useState, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
+import { Blogs } from "@/types/indes";
 
-interface CardProps {
-  title: string;
-  description: string;
-  authors?: string[];
-  media: string;
-  type: string;
-  notion: string;
-  links?: { title: string; url: string }[];
-}
-
-const Card: FC<CardProps> = ({
+const Card: FC<Blogs> = ({
   title,
   authors,
+  date,
   media,
   type,
   notion,
@@ -25,8 +17,8 @@ const Card: FC<CardProps> = ({
       className="max-w-sm overflow-hidden flex flex-col"
       ref={cardRef}
     >
-      <div className="p-4 flex flex-col flex-grow justify-between">
-        <img className="w-full h-48 object-cover" src={media} alt={title} />
+      <div className="p-4 flex flex-col flex-grow">
+        <img className="w-full h-48" src={media} alt={title} />
         <h2 className="text-xl font-semibold mt-2">
           <a
             href={notion}
@@ -39,6 +31,9 @@ const Card: FC<CardProps> = ({
         </h2>
         {authors && authors.length > 0 && (
           <p className="text-gray-500 text-sm mt-1">{authors.join("; ")}</p>
+        )}
+        {date && (
+          <p className="text-gray-500 text-sm mt-1">{date}</p>
         )}
         {type !== "blog" && links && links.length > 0 && (
           <div className="mt-3">

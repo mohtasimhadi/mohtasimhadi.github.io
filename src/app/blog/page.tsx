@@ -21,8 +21,7 @@ const BlogPage: FC = () => {
     fetch('/data/blogs.json')
       .then((res) => res.json())
       .then((data) => {
-        const blogItems = data.filter((item: Blog) => item.type === 'blog');
-        setBlogs(blogItems);
+        setBlogs(data);
       })
       .catch((err) => console.error('Error fetching blog data:', err));
   }, []);
