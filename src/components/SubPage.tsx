@@ -29,8 +29,9 @@ const SubPage: FC<Subpage> = ({
         // Extract unique keywords from blogs
         const allKeywords = new Set<string>();
         publicationItems.forEach((item: Blogs) => {
-          item.keywords.forEach((keyword: string) => allKeywords.add(keyword));
+          item.keywords?.forEach((keyword: string) => allKeywords.add(keyword));
         });
+
         setKeywords(Array.from(allKeywords));
         setFilteredBlogs(publicationItems);
       })
@@ -51,8 +52,8 @@ const SubPage: FC<Subpage> = ({
     // Filter by selected keywords
     if (selectedKeywords.size > 0) {
       filtered = filtered.filter((blog) =>
-        blog.keywords.some((keyword: string) => selectedKeywords.has(keyword))
-      );
+        blog.keywords?.some((keyword: string) => selectedKeywords.has(keyword))
+      );      
     }
 
     setFilteredBlogs(filtered);
