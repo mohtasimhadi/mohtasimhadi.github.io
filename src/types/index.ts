@@ -11,8 +11,6 @@ export interface Blogs {
 }
 
 export interface Subpage {
-  link: string;
-  parentLink: string;
   page: string;
   subpage: string;
   dataType: string;

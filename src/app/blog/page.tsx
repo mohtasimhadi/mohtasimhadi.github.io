@@ -86,7 +86,7 @@ const OnWriting: FC = () => {
             ))}
           </div>
           <div className="flex justify-end w-full mt-4">
-            <Link href="/blogs/notes">
+            <Link href="/blog/journals">
               <button className="text-blue-600 hover:underline">
                 See More →
               </button>
@@ -112,7 +112,7 @@ const OnWriting: FC = () => {
             ))}
           </div>
           <div className="flex justify-end w-full mt-4">
-            <Link href="/blogs/theTypist">
+            <Link href="/blog/theTypist">
               <button className="text-blue-600 hover:underline">
                 See More →
               </button>
@@ -140,7 +140,7 @@ const OnWriting: FC = () => {
             ))}
           </div>
           <div className="flex justify-end w-full mt-4">
-            <Link href="/blogs/notes">
+            <Link href="/blog/notes">
               <button className="text-blue-600 hover:underline">
                 See More →
               </button>
@@ -163,7 +163,7 @@ const OnWriting: FC = () => {
           ))}
         </div>
         <div className="flex justify-end w-full mt-4">
-          <Link href="/blogs/poetries">
+          <Link href="/blog/poetries">
             <button className="text-blue-600 hover:underline">
               See More →
             </button>

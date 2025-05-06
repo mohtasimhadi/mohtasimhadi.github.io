@@ -6,8 +6,6 @@ import { FC } from "react";
 const Patents: FC = () => {
   return (
     <SubPage
-      link="/research/patents"
-      parentLink="research"
       page="Research"
       subpage="Patents"
       dataType="patent"

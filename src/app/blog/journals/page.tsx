@@ -6,10 +6,10 @@ import { FC } from "react";
 const Publications: FC = () => {
   return (
     <SubPage
-      page="Research"
-      subpage="Publications"
-      dataType="publication"
-      json="/data/research.json"
+      page="Blogs"
+      subpage="Journals"
+      dataType="journal"
+      json="/data/blogs.json"
     />
   );
 };

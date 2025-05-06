@@ -6,8 +6,6 @@ import { FC } from 'react';
 import { Subpage, Blogs } from '@/types';
 
 const SubPage: FC<Subpage> = ({
-    link,
-    parentLink,
     page,
     subpage,
     dataType,
