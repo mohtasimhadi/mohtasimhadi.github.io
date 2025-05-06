@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 import { FC } from "react";
 import Link from "next/link";
 import FeatureCard from "@/components/FeatureCard";
-import { Blogs } from "@/types/indes";
+import { Blogs } from "@/types";
 
 const Home: FC = () => {
   const [featuredBlog, setFeaturedBlog] = useState<Blogs[]>([]);

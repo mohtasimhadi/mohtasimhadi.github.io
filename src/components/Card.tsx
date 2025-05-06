@@ -1,5 +1,5 @@
 import { FC, useRef } from "react";
-import { Blogs } from "@/types/indes";
+import { Blogs } from "@/types";
 
 const Card: FC<Blogs> = ({
   title,
