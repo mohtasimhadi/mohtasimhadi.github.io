@@ -14,7 +14,6 @@ const Home: FC = () => {
   const [theTypist, setTheTypist] = useState<Blogs[]>([]);
 
   const [visibleProjects, setVisibleProjects] = useState<Blogs[]>([]);
-  const [maxCards, setMaxCards] = useState(3);
 
   useEffect(() => {
     fetch("data/blogs.json")
@@ -37,10 +36,10 @@ const Home: FC = () => {
         const currentProjectItems = data.filter(
           (item: Blogs) => item.type === "project"
         );
-        setVisibleProjects(currentProjectItems.slice(0, maxCards));
+        setVisibleProjects(currentProjectItems.slice(0, 3));
       })
       .catch((err) => console.error("Error fetching blog data:", err));
-  }, [maxCards]);
+  }, [3]);
 
   return (
     <>
