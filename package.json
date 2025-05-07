@@ -14,6 +14,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
+    "@notion-render/bookmark-plugin": "^0.0.2",
+    "@notion-render/client": "^0.0.2",
+    "@notion-render/hljs-plugin": "^0.0.2",
+    "@notionhq/client": "^3.0.0",
     "firebase": "^10.14.1",
     "firebaseui": "^6.1.0",
     "html-react-parser": "^5.2.2",
