@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import { NotionAPI } from "notion-client";
-
-export const notion = new NotionAPI()
+import { notionapi } from '@/lib/notion';
 
 // Notion page IDs are 32 characters long hexadecimal strings
 const isValidNotionPageId = (id: string) => {
@@ -29,7 +27,7 @@ export async function GET(request: Request) {
       );
     }
 
-    const data = await notion.getPage(slug);
+    const data = await notionapi.getPage(slug);
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching Notion page:', error);
