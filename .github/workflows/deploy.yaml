@@ -75,7 +75,6 @@ jobs:
       
       - name: Verify out directory
         run: mkdir -p ./out
-        run: ls -la ./out
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
