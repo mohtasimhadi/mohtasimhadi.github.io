@@ -14,8 +14,9 @@ export async function GET() {
       new Date(b.date).getTime() - new Date(a.date).getTime()
     );
 
-    return NextResponse.json(blogs);
+return NextResponse.json(blogs);
   } catch (error) {
+    console.log("Error:", error)
     return NextResponse.error();
   }
 }

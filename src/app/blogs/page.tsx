@@ -2,6 +2,7 @@
 
 import BlogCard from "../components/BlogCard";
 import { BlogPost } from "@/types/blogs";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Blogs() {
@@ -67,9 +68,9 @@ export default function Blogs() {
             ))}
           </div>
           <div className="flex justify-end mt-4">
-            <a href="/blogs/journals" className="text-blue-500 hover:underline">
-              See more →
-            </a>
+            <Link href="/blogs/journals" className="text-blue-500 hover:underline">
+            See more →
+            </Link>
           </div>
         </div>
       </div>

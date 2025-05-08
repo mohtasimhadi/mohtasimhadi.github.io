@@ -16,6 +16,7 @@ export async function GET() {
 
     return NextResponse.json(blogs);
   } catch (error) {
+    console.log("Error:", error)
     return NextResponse.error();
   }
 }
