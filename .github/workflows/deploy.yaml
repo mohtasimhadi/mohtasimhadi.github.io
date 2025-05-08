@@ -14,6 +14,19 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+  NOTION_TYPIST_DB_ID: ${{ secrets.NOTION_TYPIST_DB_ID }}
+  NOTION_JOURNALS_DB_ID: ${{ secrets.NOTION_JOURNALS_DB_ID }}
+  NOTION_POETRIES_DB_ID: ${{ secrets.NOTION_POETRIES_DB_ID }}
+  NOTION_NOTES_DB_ID: ${{ secrets.NOTION_NOTES_DB_ID }}
+  NOTION_PRESENTATIONS_DB_ID: ${{ secrets.NOTION_PRESENTATIONS_DB_ID }}
+  NOTION_PUBLICATIONS_DB_ID: ${{ secrets.NOTION_PUBLICATIONS_DB_ID }}
+  NOTION_PATENTS_DB_ID: ${{ secrets.NOTION_PATENTS_DB_ID }}
+  NOTION_NEWS_DB_ID: ${{ secrets.NOTION_NEWS_DB_ID }}
+  NOTION_PROJECTS_DB_ID: ${{ secrets.NOTION_PROJECTS_DB_ID }}
+  NOTION_FEATURED_DB_ID: ${{ secrets.NOTION_FEATURED_DB_ID }}
+
 jobs:
   # Build job
   build:

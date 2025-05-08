@@ -1,5 +1,7 @@
-import { notion } from '@/types';
 import { NextResponse } from 'next/server';
+import { NotionAPI } from "notion-client";
+
+export const notion = new NotionAPI()
 
 // Notion page IDs are 32 characters long hexadecimal strings
 const isValidNotionPageId = (id: string) => {
