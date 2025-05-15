@@ -1,4 +1,6 @@
-import { CardProps } from "@/types/props"
+import Image from 'next/image'
+import { Calendar, User, Tag } from 'lucide-react'
+import { CardProps } from '@/types/props'
 
 export default function Card({
   variant,
@@ -9,25 +11,33 @@ export default function Card({
   keywords,
 }: CardProps) {
   const formattedDate = date ? new Date(date).toLocaleDateString() : null
+
   if (variant === 'large') {
     return (
-      <div className="flex gap-6 p-4 border rounded-2xl shadow bg-white">
+      <div className="flex gap-6 p-4 bg-white">
         {cover && (
-          <img
-            src={cover}
-            alt={title}
-            className="w-48 h-48 object-cover rounded-xl flex-shrink-0"
-          />
+          <div className="flex-shrink-0 relative w-48 h-48  overflow-hidden">
+            <Image src={cover} alt={title} fill style={{ objectFit: 'cover' }} />
+          </div>
         )}
         <div className="flex flex-col justify-center gap-2 flex-1">
           <h2 className="text-2xl font-semibold">{title}</h2>
-          {date && <p className="text-gray-500 text-sm">📅 {formattedDate}</p>}
+          {date && (
+            <p className="text-gray-900 text-sm flex items-center gap-1">
+              <Calendar size={16} />
+              {formattedDate}
+            </p>
+          )}
           {authors && authors.length > 0 && (
-            <p className="text-sm text-gray-600">✍️ {authors.join(', ')}</p>
+            <p className="text-sm text-gray-700 flex items-center gap-1">
+              <User size={16} />
+              {authors.join(', ')}
+            </p>
           )}
           {keywords && keywords.length > 0 && (
-            <p className="text-sm text-gray-500 mt-2">
-              🏷️ {keywords.join(', ')}
+            <p className="text-sm text-gray-700 mt-2 flex items-center gap-1">
+              <Tag size={16} />
+              {keywords.join(', ')}
             </p>
           )}
         </div>
@@ -37,26 +47,35 @@ export default function Card({
 
   const content = (
     <>
-      {date && <p className="text-gray-500 text-sm">{formattedDate}</p>}
+      {date && (
+        <p className="text-gray-900 text-sm flex items-center gap-1">
+          <Calendar size={16} />
+          {formattedDate}
+        </p>
+      )}
       <h2 className="text-xl font-semibold">{title}</h2>
       {authors && authors.length > 0 && (
-        <p className="text-sm text-gray-600">✍️ {authors.join(', ')}</p>
+        <p className="text-sm text-gray-700 flex items-center gap-1">
+          <User size={16} />
+          {authors.join(', ')}
+        </p>
       )}
       {keywords && keywords.length > 0 && (
-        <p className="text-sm text-gray-500 mt-1">🏷️ {keywords.join(', ')}</p>
+        <p className="text-sm text-gray-700 mt-1 flex items-center gap-1">
+          <Tag size={16} />
+          {keywords.join(', ')}
+        </p>
       )}
     </>
   )
 
   if (variant === 'normal') {
     return (
-      <div className="border rounded-2xl shadow p-4 bg-white flex flex-col gap-3">
+      <div className="p-4 bg-white flex flex-col gap-3">
         {cover && (
-          <img
-            src={cover}
-            alt={title}
-            className="w-full h-48 object-cover rounded-xl"
-          />
+          <div className="relative w-full h-48  overflow-hidden">
+            <Image src={cover} alt={title} fill style={{ objectFit: 'cover' }} />
+          </div>
         )}
         {content}
       </div>
@@ -65,14 +84,12 @@ export default function Card({
 
   if (variant === 'long') {
     return (
-      <div className="border rounded-2xl shadow p-4 bg-white flex items-center gap-4">
+      <div className="p-4 bg-white flex items-center gap-4">
         <div className="flex-1">{content}</div>
         {cover && (
-          <img
-            src={cover}
-            alt={title}
-            className="w-32 h-32 object-cover rounded-xl flex-shrink-0"
-          />
+          <div className="relative w-32 h-32  overflow-hidden flex-shrink-0">
+            <Image src={cover} alt={title} fill style={{ objectFit: 'cover' }} />
+          </div>
         )}
       </div>
     )

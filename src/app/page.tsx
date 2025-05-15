@@ -37,7 +37,7 @@ export default function HomePage() {
         {pages.map((page) => (
           <Card
             key={page.id}
-            variant="large"
+            variant="normal"
             title={page.title}
             cover={page.cover}
             date={page.date}
