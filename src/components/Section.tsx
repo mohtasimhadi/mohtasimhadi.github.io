@@ -48,11 +48,13 @@ export default function Section({ type }: { type: string }) {
           <Card
             key={page.id}
             variant="normal"
+            id={page.id}
             title={page.title}
             cover={page.cover}
             date={page.date}
             authors={page.authors}
             keywords={page.tags}
+            type={type.toLocaleLowerCase()}
           />
         ))}
       </div>

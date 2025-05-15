@@ -1,17 +1,20 @@
 import Image from 'next/image'
 import { Calendar, User, Tag } from 'lucide-react'
 import { CardProps } from '@/types/props'
+import Link from 'next/link'
 
 export default function Card({
   variant,
+  id,
   title,
   cover,
   date,
   authors,
   keywords,
+  type,
 }: CardProps) {
   const formattedDate = date ? new Date(date).toLocaleDateString() : null
-
+  console.log("ID", id)
   if (variant === 'large') {
     return (
       <div className="flex gap-6 p-4 bg-white">
@@ -21,7 +24,7 @@ export default function Card({
           </div>
         )}
         <div className="flex flex-col justify-center gap-2 flex-1">
-          <h2 className="text-2xl font-semibold">{title}</h2>
+          <Link href={`/${type}/${id}`}><h2 className="text-2xl font-semibold">{title}</h2></Link>
           {date && (
             <p className="text-gray-900 text-sm flex items-center gap-1">
               <Calendar size={16} />
@@ -53,7 +56,7 @@ export default function Card({
           {formattedDate}
         </p>
       )}
-      <h2 className="text-xl font-semibold">{title}</h2>
+      <Link href={`/${type}/${id}`}><h2 className="text-xl font-semibold">{title}</h2></Link>
       {authors && authors.length > 0 && (
         <p className="text-sm text-gray-700 flex items-center gap-1">
           <User size={16} />
