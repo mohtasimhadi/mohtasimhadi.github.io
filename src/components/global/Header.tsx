@@ -10,8 +10,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white text-gray-900 w-full h-[120px] flex items-center shadow-md z-[1000]">
-      <div className="container mx-auto flex justify-between items-center px-6 py-2">
+    <nav className="relative bg-white text-gray-900 w-full flex items-center shadow-md z-[1000]">
+      <div className="container mx-auto flex justify-between items-center px-6 py-3">
         <Link
           href="/"
           className="flex items-center gap-2 text-2xl font-bold tracking-wide"
@@ -39,15 +39,17 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 rounded bg-gray/20 hover:bg-gray/30 transition"
+          className="md:hidden p-2 transition"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-gray-100 text-black text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
+        <div className="flex md:hidden bg-white-100 text-black text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full">
           <NavItem href="/" label="HOME" pathname={pathname} />
           <NavItem href="/blogs" label="BLOGS" pathname={pathname} />
           <NavItem href="/research" label="RESEARCH" pathname={pathname} />
@@ -74,9 +76,9 @@ function NavItem({
     <li>
       <Link
         href={href}
-        className={`relative px-4 py-2 transition duration-300 ${
-          isActive ? "text-stone-500" : "text-gray-500"
-        } hover:text-gray-500`}
+        className={`relative block px-4 py-2 transition duration-300 ${
+          isActive ? "text-stone-500 font-semibold" : "text-gray-700"
+        } hover:text-gray-900`}
       >
         {label}
       </Link>
