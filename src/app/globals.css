@@ -37,151 +37,104 @@ body {
   color: #929292;
 }
 
-
 .markdown-content {
-  font-family: 'Noto Serif Bengali';
-  line-height: 1.6;
-  color: #333;
-  max-width: 100%;
-  word-wrap: break-word;
+  @apply text-gray-800 w-full break-words;
 }
 
 .markdown-content h1 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
+  @apply text-3xl font-bold mb-3;
 }
 
 .markdown-content h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
+  @apply text-2xl font-bold mb-3;
 }
 
 .markdown-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
+  @apply text-xl font-semibold mb-3;
 }
 
 .markdown-content h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
+  @apply text-lg font-semibold mb-3;
 }
 
 .markdown-content h5 {
-  font-size: 1.125rem;
-  margin-bottom: 0.75rem;
-  font-weight: 500;
+  @apply text-base font-medium mb-3;
 }
 
 .markdown-content h6 {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-  font-weight: 500;
+  @apply text-sm font-medium mb-3;
 }
 
 .markdown-content p {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  @apply text-xl mb-4;
 }
 
 .markdown-content a {
-  color: #ffffff;
-  padding: .2rem;
-  background-color: #35abff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
+  @apply text-white bg-blue-500 py-1 px-2 rounded-lg no-underline transition-all duration-300;
 }
 
 .markdown-content a:hover {
-  background-color: #1e8fd6;
-  transform: scale(1.05);
+  @apply bg-blue-700 transform scale-105;
 }
 
 .markdown-content ul,
 .markdown-content ol {
-  padding-left: 20px;
-  margin-bottom: 1rem;
+  @apply pl-5 border-1 p-2;
 }
 
 .markdown-content li {
-  margin-bottom: 0.5rem;
+  @apply mb-2;
 }
 
 .markdown-content pre {
-  background-color: #f8f8f8;
-  padding: 1rem;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  margin-bottom: 1rem;
+  @apply bg-gray-100 p-4 rounded-md font-mono whitespace-pre-wrap break-words mb-4;
 }
 
 .markdown-content code {
-  font-family: 'Courier New', monospace;
-  background-color: #e4e4e4;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+  @apply font-mono bg-gray-200 py-1 px-2 rounded;
 }
 
 .markdown-content blockquote {
-  background-color: #e5e5e5;
-  padding: 1rem;
-  color: #000000;
-  margin-top: 1rem;
+  @apply bg-sky-50 p-4 text-black mt-4;
 }
 
 .markdown-content img {
-  max-width: 100%;
-  width: 500px;
-  display: flex;
-  margin: 1rem auto;
+  @apply max-w-[80%] max-h-[600px] mx-auto my-4;
 }
 
 .markdown-content hr {
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 1rem 0;
+  @apply border-0 border-t border-gray-300 my-4;
 }
 
 .markdown-content strong {
-  font-weight: bold;
+  @apply font-bold;
 }
 
 .markdown-content em {
-  font-style: italic;
+  @apply italic;
 }
 
 .markdown-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
+  @apply w-full border-collapse my-4;
 }
 
 .markdown-content th,
 .markdown-content td {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
+  @apply p-2 border border-gray-300;
 }
 
 .markdown-content th {
-  background-color: #f9fafb;
-  text-align: left;
+  @apply bg-gray-100 text-left;
 }
 
 .markdown-content input[type="checkbox"] {
-  margin-right: 8px;
+  @apply mr-2;
 }
 
 .markdown-content label {
-  display: inline-block;
-  margin-left: 8px;
+  @apply inline-block ml-2;
 }
 
 .markdown-content > * {
-  margin-bottom: 1rem;
+  @apply mb-4;
 }
