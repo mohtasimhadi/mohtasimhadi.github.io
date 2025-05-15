@@ -43,7 +43,7 @@ export default function NavPages() {
   ];
 
   const currentPage =
-    links.find((link) => link.href === currentPath) || { label: "HOME" };
+    links.find((link) => link.href === currentPath) || { label: "-" };
 
   return (
     <>

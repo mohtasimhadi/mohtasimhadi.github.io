@@ -24,6 +24,7 @@ export default function Page() {
             const res = await axios.post('/api/page', { page_id })
             setMeta(res.data.meta)
             setData(res.data.data)
+            document.title = meta?.title? meta.title : '' ;
         } catch (err) {
             console.error(err)
         }
