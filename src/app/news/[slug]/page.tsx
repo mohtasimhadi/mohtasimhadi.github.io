@@ -39,13 +39,6 @@ export default function Page() {
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-2">{meta?.title}</h1>
             {loading && <Loading />}
-            {meta?.cover && (
-                <img
-                    src={meta.cover}
-                    alt={meta.title}
-                    className="mb-4 max-w-full h-auto"
-                />
-            )}
             <div className='text-justify markdown-content'><Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown></div>
         </div>
     )

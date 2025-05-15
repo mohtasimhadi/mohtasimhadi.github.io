@@ -32,11 +32,11 @@ export async function POST(req: Request) {
       },
     })
 
-    const pages: ParsedPage[] = res.data.results.map((page) => {
-      const props = page.properties
+const pages: ParsedPage[] = res.data.results.map((page) => {
+      const props = page.properties ?? {}
 
       return {
-        id: page.id,
+        id: page.id!,  // <-- non-null assertion here
         title: props.Name?.title?.[0]?.text?.content || '',
         cover: page.cover?.external?.url || page.cover?.file?.url || null,
         affiliation: props.Affiliation?.rich_text?.[0]?.plain_text || '',

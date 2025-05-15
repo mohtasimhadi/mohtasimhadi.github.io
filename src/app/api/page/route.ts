@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     const res = await notionClient.get<NotionPage>(`pages/${body.page_id}`);
 
     // Extract properties safely from res.properties (Notion API structure)
-    const props = res.data.properties;
+    const props = res.data.properties ?? {}
 
     const meta = {
       title: Array.isArray(props.Name?.title) ? props.Name.title[0]?.text?.content || '' : '',
