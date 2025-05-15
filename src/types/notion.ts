@@ -31,8 +31,8 @@ export interface NotionRequestBody {
 }
 
 export interface NotionPage {
-  id: string
-  properties: {
+  id?: string
+  properties?: {
     Name?: {
       title: Array<{
         text: {
