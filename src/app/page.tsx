@@ -2,9 +2,10 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '@/components/Card'
+import { ParsedPage } from '@/types/notion'
 
 export default function HomePage() {
-  const [pages, setPages] = useState<any[]>([])
+  const [pages, setPages] = useState<ParsedPage[]>([])
   const [cursor, setCursor] = useState<string | null>(null)
   const [hasMore, setHasMore] = useState(true)
   const [loading, setLoading] = useState(false)

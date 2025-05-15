@@ -1,4 +1,5 @@
 import { Coffee } from "lucide-react";
+import Link from "next/link";
 
 export default function NotFound() {
     return (
@@ -11,12 +12,9 @@ export default function NotFound() {
             <p className="max-w-md mx-auto text-gray-700 mb-6">
                 Maybe it got distracted by some fresh blog posts.<br />Try heading back home to find some better reads!
             </p>
-            <a
-                href="/"
-                className="inline-block border text-yellow-900 border-yellow-900 font-bold px-6 py-3 rounded-lg hover:underline transition"
-            >
+            <Link href="/" className="inline-block border text-yellow-900 border-yellow-900 font-bold px-6 py-3 rounded-lg hover:underline transition">
                 Take me home
-            </a>
+            </Link>
         </main>
     );
 }
