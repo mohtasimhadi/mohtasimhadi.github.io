@@ -6,5 +6,5 @@ export type CardProps = {
   date?: string
   authors?: string[]
   keywords?: string[]
-  type?: string
+  type: string
 }

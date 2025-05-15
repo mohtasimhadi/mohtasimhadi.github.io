@@ -59,7 +59,6 @@ export default function Section({ type }: { type: string }) {
         ))}
       </div>
       {hasMore && (
-
         <>
           {!loading && (
             <div className="mt-6 text-center">

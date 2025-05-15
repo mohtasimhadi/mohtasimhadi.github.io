@@ -3,6 +3,18 @@ import { Calendar, User, Tag } from 'lucide-react'
 import { CardProps } from '@/types/props'
 import Link from 'next/link'
 
+const typeMap: Record<string, string> = {
+  news: 'news',
+  article: 'articles',
+  journal: 'journals',
+  typist: 'typist',
+  poetry: 'poetries',
+  patent: 'patents',
+  publication: 'publications',
+  presentation: 'presentations',
+  project: 'projects'
+}
+
 export default function Card({
   variant,
   id,
@@ -14,7 +26,8 @@ export default function Card({
   type,
 }: CardProps) {
   const formattedDate = date ? new Date(date).toLocaleDateString() : null
-  console.log("ID", id)
+  type = typeMap[type] || type
+
   if (variant === 'large') {
     return (
       <div className="flex gap-6 p-4 bg-white">
