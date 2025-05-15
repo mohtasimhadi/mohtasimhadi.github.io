@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
+import Loading from './Loading'
 
 export default function Section({ type }: { type: string }) {
   const [pages, setPages] = useState<ParsedPage[]>([])
@@ -56,15 +57,22 @@ export default function Section({ type }: { type: string }) {
         ))}
       </div>
       {hasMore && (
-        <div className="mt-6 text-center">
-          <button
-            onClick={() => fetchPages(cursor)}
-            className="py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition disabled:opacity-50"
-            disabled={loading}
-          >
-            {loading ? 'Loading...' : 'Load More'}
-          </button>
-        </div>
+
+        <>
+          {!loading && (
+            <div className="mt-6 text-center">
+              <button
+                onClick={() => fetchPages(cursor)}
+                className="p-4 text-black rounded-lg hover:underline transition disabled:opacity-50"
+                disabled={loading}
+              >
+                Load More
+              </button>
+            </div>
+          )}
+
+          {loading && <Loading />}
+        </>
       )}
     </main>
   )
