@@ -45,6 +45,7 @@ export async function POST(req: Request) {
         status: props?.Status?.select?.name || '',
         tags: props?.Tags?.multi_select?.map((t: any) => t.name) || [],
         type: props?.Type?.select?.name || '',
+        featured: props.Featured?.checkbox || false,
       }
     })
 

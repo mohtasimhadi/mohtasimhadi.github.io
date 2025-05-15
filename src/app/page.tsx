@@ -14,8 +14,24 @@ export default function HomePage() {
     try {
       const res = await axios.post('/api/notion', {
         cursor,
-        filters: null,
+        filters: {
+          and: [
+            {
+              property: "Type",
+              select: {
+                equals: "Typist"
+              }
+            },
+            {
+              property: "Featured",
+              checkbox: {
+                equals: false
+              }
+            }
+          ]
+        }
       })
+
 
       setPages((prev) => [...prev, ...res.data.results])
       setCursor(res.data.next_cursor)
@@ -31,8 +47,7 @@ export default function HomePage() {
   }, [])
 
   return (
-    <main className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Notion Pages</h1>
+    <main className="max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {pages.map((page) => (
           <Card
@@ -50,7 +65,7 @@ export default function HomePage() {
         <div className="mt-6 text-center">
           <button
             onClick={() => fetchPages(cursor)}
-            className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition disabled:opacity-50"
+            className="py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition disabled:opacity-50"
             disabled={loading}
           >
             {loading ? 'Loading...' : 'Load More'}
