@@ -1,5 +1,7 @@
+import Section from "@/components/Section";
+
 export default function News() {
   return (
-    <div>Hello World!</div>
+    <Section type="News"/>
   );
 }
