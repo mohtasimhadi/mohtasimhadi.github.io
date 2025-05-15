@@ -10,8 +10,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white text-gray-900 fixed top-0 left-0 w-full z-50 h-[120px] flex items-center">
-      <div className="container mx-auto flex justify-between items-center px-6">
+    <nav className="bg-white text-gray-900 w-full h-[120px] flex items-center shadow-md z-[1000]">
+      <div className="container mx-auto flex justify-between items-center px-6 py-2">
         <Link
           href="/"
           className="flex items-center gap-2 text-2xl font-bold tracking-wide"
@@ -47,8 +47,8 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-gray-100 text-white text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
-          <NavItem href="/" label="HOME" pathname={pathname}/>
+        <div className="md:hidden bg-gray-100 text-black text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full absolute top-full left-0">
+          <NavItem href="/" label="HOME" pathname={pathname} />
           <NavItem href="/blogs" label="BLOGS" pathname={pathname} />
           <NavItem href="/research" label="RESEARCH" pathname={pathname} />
           <NavItem href="/books" label="BOOKS" pathname={pathname} />
@@ -74,9 +74,9 @@ function NavItem({
     <li>
       <Link
         href={href}
-        className={`relative px-4 py-2 transition duration-300 text-gray-900 hover:text-gray-500 ${
+        className={`relative px-4 py-2 transition duration-300 ${
           isActive ? "text-stone-500" : "text-gray-500"
-        }`}
+        } hover:text-gray-500`}
       >
         {label}
       </Link>
