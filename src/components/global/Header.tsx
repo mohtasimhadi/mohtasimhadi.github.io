@@ -10,14 +10,14 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <nav className="relative bg-white text-gray-900 w-full flex items-center shadow-md z-[1000]">
+    <nav className="relative bg-white text-gray-900 w-full flex items-center z-[1000]">
       <div className="container mx-auto flex justify-between items-center px-6 py-3">
         <Link
           href="/"
           className="flex items-center gap-2 text-2xl font-bold tracking-wide"
         >
           <span
-            className="text-4xl p-1 border-r-2 text-right leading-tight"
+            className="text-3xl p-1 border-r-2 text-right leading-tight"
             style={{ fontFamily: "'Special Elite', cursive" }}
           >
             The<br />Moho Blog
@@ -29,7 +29,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-6 text-lg">
+        <ul className="hidden md:flex space-x-6 text-base">
           <NavItem href="/" label="HOME" pathname={pathname} />
           <NavItem href="/blogs" label="BLOGS" pathname={pathname} />
           <NavItem href="/research" label="RESEARCH" pathname={pathname} />
