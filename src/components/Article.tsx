@@ -75,7 +75,7 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                     </div>
                 )}
 
-                <div className="text-justify markdown-content">
+                <div className="text-justify markdown-content border-t mt-5 border-gray-300 pt-5">
                     <Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown>
                 </div>
             </div>
