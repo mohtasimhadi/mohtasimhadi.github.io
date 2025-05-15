@@ -5,15 +5,22 @@ const NOTION_API_URL = `https://api.notion.com/v1/databases/${process.env.NOTION
 const NOTION_API_KEY = process.env.NOTION_API_KEY
 const NOTION_VERSION = '2022-06-28'
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
   try {
-    const { searchParams } = new URL(req.url)
-    const start_cursor = searchParams.get('cursor')
+    const body = await req.json()
+    const { cursor = null, filters = null } = body
 
     const notionRequestBody: any = {
       page_size: 10,
     }
-    if (start_cursor) notionRequestBody.start_cursor = start_cursor
+
+    if (cursor) {
+      notionRequestBody.start_cursor = cursor
+    }
+
+    if (filters) {
+      notionRequestBody.filter = filters
+    }
 
     const res = await axios.post(NOTION_API_URL, notionRequestBody, {
       headers: {
@@ -25,9 +32,10 @@ export async function GET(req: Request) {
 
     const pages = res.data.results.map((page: any) => {
       const props = page.properties
+
       return {
         id: page.id,
-        title: props?.Title?.title?.[0]?.plain_text || '',
+        title: props.Name?.title[0]?.text?.content || '',
         cover: page.cover?.external?.url || page.cover?.file?.url || null,
         affiliation: props?.Affiliation?.rich_text?.[0]?.plain_text || '',
         authors: props?.Authors?.multi_select?.map((a: any) => a.name) || [],
