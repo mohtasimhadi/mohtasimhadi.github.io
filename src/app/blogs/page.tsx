@@ -82,8 +82,6 @@ export default function Blogs() {
                         title={page.title}
                         cover={page.cover}
                         date={page.date}
-                        authors={page.authors}
-                        keywords={page.tags}
                         type={page.type}
                     />
                 ))}

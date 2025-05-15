@@ -4,7 +4,5 @@ export type CardProps = {
   title: string
   cover?: string | null
   date?: string
-  authors?: string[]
-  keywords?: string[]
   type: string
 }

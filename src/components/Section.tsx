@@ -52,8 +52,6 @@ export default function Section({ type }: { type: string }) {
             title={page.title}
             cover={page.cover}
             date={page.date}
-            authors={page.authors}
-            keywords={page.tags}
             type={type.toLocaleLowerCase()}
           />
         ))}

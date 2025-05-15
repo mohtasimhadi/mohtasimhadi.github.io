@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Calendar, User, Tag } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { CardProps } from '@/types/props'
 import Link from 'next/link'
 
@@ -21,8 +21,6 @@ export default function Card({
   title,
   cover,
   date,
-  authors,
-  keywords,
   type,
 }: CardProps) {
   const formattedDate = date ? new Date(date).toLocaleDateString() : null
@@ -37,18 +35,6 @@ export default function Card({
         </p>
       )}
       <h2 className="text-xl font-semibold">{title}</h2>
-      {authors && authors.length > 0 && (
-        <p className="text-sm text-gray-700 flex items-center gap-1">
-          <User size={16} />
-          {authors.join(', ')}
-        </p>
-      )}
-      {keywords && keywords.length > 0 && (
-        <p className="text-sm text-gray-700 mt-1 flex items-center gap-1">
-          <Tag size={16} />
-          {keywords.join(', ')}
-        </p>
-      )}
     </>
   )
 

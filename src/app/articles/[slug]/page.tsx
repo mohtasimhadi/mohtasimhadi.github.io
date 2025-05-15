@@ -4,9 +4,8 @@ import { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
 import { ParsedPage } from '@/types/notion'
 import { useParams } from 'next/navigation'
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import Loading from '@/components/Loading'
+import Article from '@/components/Article'
 
 
 export default function Page() {
@@ -37,9 +36,8 @@ export default function Page() {
 
     return (
         <div className="p-4">
-            <h1 className="text-2xl font-bold mb-2">{meta?.title}</h1>
+            {meta && (<Article page={meta} data={data} />)}
             {loading && <Loading />}
-            <div className='text-justify markdown-content'><Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown></div>
         </div>
     )
 }
