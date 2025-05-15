@@ -2,15 +2,15 @@
 
 export default function NavPages() {
   const links = [
-    { href: "/research/news", label: "NEWS" },
-    { href: "/blogs/journals", label: "JOURNALS" },
-    { href: "/blogs/typist", label: "THE TYPIST" },
-    { href: "/blogs/notes", label: "NOTES" },
-    { href: "/blogs/poetries", label: "POETRIES" },
-    { href: "/research/patents", label: "PATENTS" },
-    { href: "/research/publications", label: "PUBLICATIONS" },
-    { href: "/research/presentations", label: "PRESENTATIONS" },
-    { href: "/research/projects", label: "PROJECTS" },
+    { href: "/news", label: "NEWS" },
+    { href: "/journals", label: "JOURNALS" },
+    { href: "/typist", label: "THE TYPIST" },
+    { href: "/notes", label: "NOTES" },
+    { href: "/poetries", label: "POETRIES" },
+    { href: "/patents", label: "PATENTS" },
+    { href: "/publications", label: "PUBLICATIONS" },
+    { href: "/presentations", label: "PRESENTATIONS" },
+    { href: "/projects", label: "PROJECTS" },
   ];
 
   return (
