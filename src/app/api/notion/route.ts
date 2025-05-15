@@ -5,24 +5,26 @@ const NOTION_API_URL = `https://api.notion.com/v1/databases/${process.env.NOTION
 const NOTION_API_KEY = process.env.NOTION_API_KEY
 const NOTION_VERSION = '2022-06-28'
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const res = await axios.post(
-      NOTION_API_URL,
-      {},
-      {
-        headers: {
-          'Authorization': `Bearer ${NOTION_API_KEY}`,
-          'Notion-Version': NOTION_VERSION,
-          'Content-Type': 'application/json',
-        },
-      }
-    )
+    const { searchParams } = new URL(req.url)
+    const start_cursor = searchParams.get('cursor')
+
+    const notionRequestBody: any = {
+      page_size: 10,
+    }
+    if (start_cursor) notionRequestBody.start_cursor = start_cursor
+
+    const res = await axios.post(NOTION_API_URL, notionRequestBody, {
+      headers: {
+        Authorization: `Bearer ${NOTION_API_KEY}`,
+        'Notion-Version': NOTION_VERSION,
+        'Content-Type': 'application/json',
+      },
+    })
 
     const pages = res.data.results.map((page: any) => {
       const props = page.properties
-      console.log(props)
-
       return {
         id: page.id,
         title: props?.Title?.title?.[0]?.plain_text || '',
@@ -37,8 +39,12 @@ export async function GET() {
         type: props?.Type?.select?.name || '',
       }
     })
-    console.log(pages)
-    return NextResponse.json(pages)
+
+    return NextResponse.json({
+      results: pages,
+      next_cursor: res.data.next_cursor,
+      has_more: res.data.has_more,
+    })
   } catch (error: any) {
     console.error('[Notion API Error]', error?.response?.data || error.message)
     return NextResponse.json({ error: 'Failed to fetch Notion pages' }, { status: 500 })
