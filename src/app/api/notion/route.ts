@@ -14,6 +14,12 @@ export async function POST(req: Request) {
 
     const notionRequestBody: NotionRequestBody = {
       page_size: 10,
+      sorts: [
+        {
+          property: "Date",
+          direction: "descending"
+        }
+      ]
     }
 
     if (cursor) {
@@ -32,7 +38,7 @@ export async function POST(req: Request) {
       },
     })
 
-const pages: ParsedPage[] = res.data.results.map((page) => {
+    const pages: ParsedPage[] = res.data.results.map((page) => {
       const props = page.properties ?? {}
 
       return {

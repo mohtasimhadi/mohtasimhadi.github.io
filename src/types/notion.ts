@@ -28,6 +28,10 @@ export interface NotionRequestBody {
   page_size: number
   start_cursor?: string
   filter?: NotionFilter
+  sorts: Array<{
+    property: string,
+    direction: string
+  }>
 }
 
 export interface NotionPage {
