@@ -1,4 +1,6 @@
-import React from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
 import { ParsedPage } from "@/types/notion";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -33,14 +35,22 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
     const shareText = encodeURIComponent(title || "Untitled");
     const encodedUrl = encodeURIComponent(url);
 
+    const [copied, setCopied] = useState(false);
+
     const handleCopyLink = () => {
         navigator.clipboard.writeText(url);
-        alert("Link copied to clipboard");
+        setCopied(true);
     };
+
+    useEffect(() => {
+        if (copied) {
+            const timeout = setTimeout(() => setCopied(false), 2000);
+            return () => clearTimeout(timeout);
+        }
+    }, [copied]);
 
     return (
         <div className="relative max-w-6xl mx-auto border-l border-r border-gray-400">
-
             {/* Cover Image */}
             <div className="relative">
                 {cover && (
@@ -63,42 +73,50 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                     <div className="text-sm text-gray-500">
                         {formattedDate || ""}
                     </div>
-                    <div className="flex gap-3 text-blue-700">
-                        <a
-                            href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Share on Facebook"
-                            className="hover:text-blue-800"
-                        >
-                            <Facebook size={18} />
-                        </a>
-                        <a
-                            href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${shareText}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Share on LinkedIn"
-                            className="hover:text-blue-800"
-                        >
-                            <Linkedin size={18} />
-                        </a>
-                        <a
-                            href={`https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="Share on X"
-                            className="hover:text-blue-800"
-                        >
-                            <Twitter size={18} />
-                        </a>
-                        <button
-                            onClick={handleCopyLink}
-                            title="Copy Link"
-                            className="hover:text-blue-800"
-                        >
-                            <LinkIcon size={18} />
-                        </button>
+                    <div className="flex flex-col items-end gap-1 text-blue-700">
+                        <div className="flex gap-3">
+                            <a
+                                href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Share on Facebook"
+                                className="hover:text-blue-800"
+                            >
+                                <Facebook size={18} />
+                            </a>
+                            <a
+                                href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${shareText}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Share on LinkedIn"
+                                className="hover:text-blue-800"
+                            >
+                                <Linkedin size={18} />
+                            </a>
+                            <a
+                                href={`https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Share on X"
+                                className="hover:text-blue-800"
+                            >
+                                <Twitter size={18} />
+                            </a>
+                            <button
+                                onClick={handleCopyLink}
+                                title="Copy Link"
+                                className="hover:text-blue-800"
+                            >
+                                <LinkIcon size={18} />
+                            </button>
+                        </div>
+                        {copied && (
+                            <span className="text-xs text-gray-600">
+                                Link copied!
+                            </span>
+                        )}
                     </div>
+
                 </div>
 
                 <h1 className="text-3xl font-semibold text-gray-800 mb-4">
