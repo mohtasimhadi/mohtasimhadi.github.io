@@ -2,6 +2,12 @@ import React from "react";
 import { ParsedPage } from "@/types/notion";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {
+    Facebook,
+    Linkedin,
+    Twitter,
+    Link as LinkIcon,
+} from "lucide-react";
 
 interface ArticleProps {
     page: ParsedPage;
@@ -22,30 +28,93 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
     } = page;
 
     const formattedDate = date ? new Date(date).toLocaleDateString() : null;
+    const url = typeof window !== "undefined" ? window.location.href : "";
+
+    const shareText = encodeURIComponent(title || "Untitled");
+    const encodedUrl = encodeURIComponent(url);
+
+    const handleCopyLink = () => {
+        navigator.clipboard.writeText(url);
+        alert("Link copied to clipboard");
+    };
 
     return (
-        <div className="max-w-6xl mx-auto my-0 overflow-hidden border-l-1 border-r-1 border-gray-400 p-4 pt-0">
-            {cover && (
-                <img
-                    src={cover}
-                    alt={title}
-                    className="w-full h-72 object-cover"
-                />
-            )}
+        <div className="relative max-w-6xl mx-auto border-l border-r border-gray-400">
+
+            {/* Cover Image */}
+            <div className="relative">
+                {cover && (
+                    <img
+                        src={cover}
+                        alt={title}
+                        className="w-full h-72 object-cover"
+                    />
+                )}
+
+                {featured && (
+                    <div className="absolute top-4 left-4 bg-blue-600 text-white text-sm px-4 py-1">
+                        Featured
+                    </div>
+                )}
+            </div>
 
             <div className="p-6">
-                <h1 className="text-3xl font-semibold text-gray-800 mb-4">{title || "Untitled"}</h1>
+                <div className="flex items-center justify-between mb-2">
+                    <div className="text-sm text-gray-500">
+                        {formattedDate || ""}
+                    </div>
+                    <div className="flex gap-3 text-blue-700">
+                        <a
+                            href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Share on Facebook"
+                            className="hover:text-blue-800"
+                        >
+                            <Facebook size={18} />
+                        </a>
+                        <a
+                            href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${shareText}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Share on LinkedIn"
+                            className="hover:text-blue-800"
+                        >
+                            <Linkedin size={18} />
+                        </a>
+                        <a
+                            href={`https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Share on X"
+                            className="hover:text-blue-800"
+                        >
+                            <Twitter size={18} />
+                        </a>
+                        <button
+                            onClick={handleCopyLink}
+                            title="Copy Link"
+                            className="hover:text-blue-800"
+                        >
+                            <LinkIcon size={18} />
+                        </button>
+                    </div>
+                </div>
+
+                <h1 className="text-3xl font-semibold text-gray-800 mb-4">
+                    {title || "Untitled"}
+                </h1>
 
                 {affiliation && (
-                    <p className="italic text-lg text-gray-600 mb-2">{affiliation}</p>
+                    <p className="italic text-lg text-gray-600 mb-2">
+                        {affiliation}
+                    </p>
                 )}
 
                 {authors && authors.length > 0 && (
-                    <p className="text-lg text-gray-800 mb-2">{authors.join(", ")}</p>
-                )}
-
-                {formattedDate && (
-                    <p className="text-sm text-gray-500 mb-2">{formattedDate}</p>
+                    <p className="text-lg text-gray-800 mb-2">
+                        {authors.join(", ")}
+                    </p>
                 )}
 
                 {publisher && (
@@ -56,18 +125,12 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                     <p className="text-sm text-gray-600 mb-2">{status}</p>
                 )}
 
-                {featured && (
-                    <div className="bg-blue-500 text-white text-sm rounded-full px-4 py-1 mb-4 inline-block">
-                        Featured
-                    </div>
-                )}
-
                 {tags && tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-4">
                         {tags.map((tag, i) => (
                             <span
                                 key={i}
-                                className="bg-gray-200 text-gray-800 text-xs font-medium rounded-full py-1 px-3"
+                                className="bg-gray-300 text-gray-800 text-xs font-medium py-1 px-3"
                             >
                                 {tag}
                             </span>
@@ -75,7 +138,7 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                     </div>
                 )}
 
-                <div className="text-justify markdown-content">
+                <div className="text-justify leading-relaxed text-gray-900 mt-6 markdown-content">
                     <Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown>
                 </div>
             </div>
