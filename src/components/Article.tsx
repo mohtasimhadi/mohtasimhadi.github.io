@@ -50,7 +50,7 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
     }, [copied]);
 
     return (
-        <div className="relative max-w-6xl mx-auto border-l border-r border-gray-400">
+        <div className="relative max-w-6xl mx-auto border-gray-400">
             {/* Cover Image */}
             <div className="relative">
                 {cover && (
@@ -156,8 +156,8 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                     </div>
                 )}
 
-                <div className="text-justify leading-relaxed text-gray-900 mt-6 markdown-content">
-                    <Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown>
+                <div className="border-t-1 border-gray-400 text-justify leading-relaxed text-gray-900 mt-6 markdown-content">
+                    <div className="pt-5"><Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown></div>
                 </div>
             </div>
         </div>
