@@ -5,7 +5,7 @@ import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
 import Loading from './Loading'
 
-export default function Section({ type, vertical=false }: { type: string, vertical?: boolean }) {
+export default function Section({ type, vertical=false, card_variant='normal' }: { type: string, vertical?: boolean, card_variant?: 'large' | 'normal' | 'long' }) {
   const [pages, setPages] = useState<ParsedPage[]>([])
   const [cursor, setCursor] = useState<string | null>(null)
   const [hasMore, setHasMore] = useState(true)
@@ -47,7 +47,7 @@ export default function Section({ type, vertical=false }: { type: string, vertic
         {pages.map((page) => (
           <Card
             key={page.id}
-            variant="normal"
+            variant={card_variant}
             id={page.id}
             title={page.title}
             cover={page.cover}
