@@ -70,11 +70,23 @@ body {
 }
 
 .markdown-content a {
-  @apply text-white bg-blue-500 py-1 px-2 rounded-lg no-underline transition-all duration-300;
+  @apply text-gray-500 py-1 px-2 rounded-lg no-underline transition-all duration-300;
 }
 
 .markdown-content a:hover {
-  @apply bg-blue-700 transform scale-105;
+  @apply underline;
+}
+
+.markdown-content a::before {
+  content: ' 🔗';
+  margin-right: 0.25rem;
+  font-size: 0.9em;
+  transition: opacity 0.3s;
+  opacity: 0.6;
+}
+
+.markdown-content a:hover::before {
+  opacity: 1;
 }
 
 .markdown-content ul,
@@ -97,6 +109,15 @@ body {
 .markdown-content blockquote {
   @apply bg-sky-50 p-4 text-black mt-4;
 }
+
+.markdown-content blockquote {
+  @apply bg-sky-50 p-4 text-black mt-4;
+}
+
+.markdown-content blockquote p {
+  @apply indent-0;
+}
+
 
 .markdown-content img {
   @apply max-w-[80%] max-h-[600px] mx-auto my-4;

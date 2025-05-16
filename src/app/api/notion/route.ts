@@ -39,11 +39,11 @@ const pages: ParsedPage[] = res.data.results.map((page) => {
         id: page.id!,  // <-- non-null assertion here
         title: props.Name?.title?.[0]?.text?.content || '',
         cover: page.cover?.external?.url || page.cover?.file?.url || null,
-        affiliation: props.Affiliation?.rich_text?.[0]?.plain_text || '',
+        affiliation: Array.isArray(props.Affiliation?.multi_select) ? props.Affiliation.multi_select.map(a => a.name) : [],
         authors: props.Authors?.multi_select?.map((a) => a.name) || [],
         date: props.Date?.date?.start || '',
         link: props.Link?.url || '',
-        publisher: props.Publisher?.select?.name || '',
+        publisher: props.Publisher?.rich_text[0]?.plain_text || '',
         status: props.Status?.select?.name || '',
         tags: props.Tags?.multi_select?.map((t) => t.name) || [],
         type: props.Type?.select?.name || '',

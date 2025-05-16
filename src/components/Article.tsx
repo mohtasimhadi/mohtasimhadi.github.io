@@ -62,7 +62,7 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                 )}
 
                 {featured && (
-                    <div className="absolute top-4 left-4 bg-blue-600 text-white text-sm px-4 py-1">
+                    <div className="absolute top-0 left-0 bg-blue-600 text-white text-lg px-4 py-1">
                         Featured
                     </div>
                 )}
@@ -119,15 +119,15 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
 
                 </div>
 
+                {affiliation && affiliation.length > 0 && (
+                    <p className="text-sm text-gray-600 mb-2">
+                        {affiliation.join(", ")}
+                    </p>
+                )}
+
                 <h1 className="text-3xl font-semibold text-gray-800 mb-4">
                     {title || "Untitled"}
                 </h1>
-
-                {affiliation && (
-                    <p className="italic text-lg text-gray-600 mb-2">
-                        {affiliation}
-                    </p>
-                )}
 
                 {authors && authors.length > 0 && (
                     <p className="text-lg text-gray-800 mb-2">
@@ -139,22 +139,32 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                     <p className="text-sm text-gray-800 mb-2">{publisher}</p>
                 )}
 
-                {status && (
-                    <p className="text-sm text-gray-600 mb-2">{status}</p>
-                )}
+                <div className="flex items-center gap-4 mb-4">
+                    {status && (
+                        <p
+                            className={`text-sm ${status === 'Done' || status === 'Published'
+                                ? 'text-green-600'
+                                : 'text-yellow-600'
+                                }`}
+                        >
+                            {status}
+                        </p>
+                    )}
 
-                {tags && tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-4">
-                        {tags.map((tag, i) => (
-                            <span
-                                key={i}
-                                className="bg-gray-300 text-gray-800 text-xs font-medium py-1 px-3"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
+                    {tags && tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                            {tags.map((tag, i) => (
+                                <span
+                                    key={i}
+                                    className="bg-gray-300 text-gray-800 text-xs font-medium py-1 px-3"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
 
                 <div className="border-t-1 border-gray-400 text-justify leading-relaxed text-gray-900 mt-6 markdown-content">
                     <div className="pt-5"><Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown></div>
