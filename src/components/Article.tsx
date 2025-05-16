@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect } from "react";
 import { ParsedPage } from "@/types/notion";
@@ -10,7 +10,6 @@ import {
     Link as LinkIcon,
 } from "lucide-react";
 import { SiX } from "react-icons/si";
-import Image from "next/image";
 
 interface ArticleProps {
     page: ParsedPage;
@@ -31,18 +30,12 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
     } = page;
 
     const formattedDate = date ? new Date(date).toLocaleDateString() : null;
-
-    const [url, setUrl] = useState("");
-    const [copied, setCopied] = useState(false);
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            setUrl(window.location.href);
-        }
-    }, []);
+    const url = typeof window !== "undefined" ? window.location.href : "";
 
     const shareText = encodeURIComponent(title || "Untitled");
     const encodedUrl = encodeURIComponent(url);
+
+    const [copied, setCopied] = useState(false);
 
     const handleCopyLink = () => {
         navigator.clipboard.writeText(url);
@@ -58,18 +51,14 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
 
     return (
         <div className="relative max-w-6xl mx-auto border-l border-r border-gray-400">
+            {/* Cover Image */}
             <div className="relative">
                 {cover && (
-                    <Image
+                    <img
                         src={cover}
-                        alt={title || "Cover Image"}
-                        width={1200}
-                        height={288}
+                        alt={title}
                         className="w-full h-72 object-cover"
-                        style={{ objectFit: "cover" }}
-                        priority
                     />
-
                 )}
 
                 {featured && (
@@ -127,6 +116,7 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                             </span>
                         )}
                     </div>
+
                 </div>
 
                 <h1 className="text-3xl font-semibold text-gray-800 mb-4">
