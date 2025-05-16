@@ -7,9 +7,9 @@ import remarkGfm from "remark-gfm";
 import {
     Facebook,
     Linkedin,
-    Twitter,
     Link as LinkIcon,
 } from "lucide-react";
+import { SiX } from "react-icons/si";
 
 interface ArticleProps {
     page: ParsedPage;
@@ -100,7 +100,7 @@ const Article: React.FC<ArticleProps> = ({ page, data }) => {
                                 title="Share on X"
                                 className="hover:text-blue-800"
                             >
-                                <Twitter size={18} />
+                                <SiX size={18} />
                             </a>
                             <button
                                 onClick={handleCopyLink}
