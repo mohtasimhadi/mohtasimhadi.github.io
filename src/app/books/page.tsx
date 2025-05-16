@@ -5,8 +5,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Define the interfaces
-
 interface Book {
   title: string;
   synopsis?: string;
@@ -112,7 +110,7 @@ export default function OnWriting() {
       <div className="md:hidden text-right mt-4">
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="px-4 py-2 rounded bg-gray-900 text-white font-medium"
+          className="px-4 py-2 bg-black text-white font-medium"
         >
           Open Navigation
         </button>
@@ -120,7 +118,7 @@ export default function OnWriting() {
 
       <div className="flex flex-col md:flex-row gap-6 mt-6">
         {/* Sidebar (Desktop) */}
-        <aside className="hidden md:block w-72 bg-white border border-gray-200 rounded p-5 border-1 sticky top-6 h-fit">
+        <aside className="hidden md:block w-72 bg-white p-5 sticky top-6 h-fit">
           <SidebarContent
             data={writingData}
             searchTerm={searchTerm}
@@ -161,7 +159,7 @@ export default function OnWriting() {
                 leaveFrom="translate-y-0 opacity-100"
                 leaveTo="translate-y-10 opacity-0"
               >
-                <Dialog.Panel className="w-full max-w-sm bg-white p-6 rounded border-1">
+                <Dialog.Panel className="w-full max-w-sm bg-white p-6">
                   <div className="flex justify-between items-center mb-4">
                     <Dialog.Title className="text-lg font-bold">
                       Jump to Section
@@ -201,7 +199,7 @@ export default function OnWriting() {
                   id={category.replace(/\s+/g, "-")}
                   className="blog-section mb-12"
                 >
-                  <h2 className="text-2xl font-bold text-[#0C2340] mb-4">
+                  <h2 className="text-2xl font-bold text-black mb-4">
                     {category}
                   </h2>
                   <div className="grid md:grid-cols-4 gap-6">
@@ -235,7 +233,7 @@ function SidebarContent({
         placeholder="Search by title..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full mb-6 px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
+        className="w-full mb-6 px-3 py-2 border-b border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
       />
 
       <ul className="space-y-2 mb-6">
@@ -243,10 +241,10 @@ function SidebarContent({
           <li key={subCategory}>
             <a
               href={`#${subCategory.replace(/\s+/g, "-")}`}
-              className={`block px-3 py-2 rounded text-base font-bold ${
+              className={`block px-3 py-2 text-base font-bold ${
                 activeSection === subCategory.replace(/\s+/g, "-")
-                  ? "bg-gray-900 text-white"
-                  : "hover:bg-gray-300"
+                  ? "bg-black text-white"
+                  : "hover:bg-gray-100"
               }`}
             >
               {subCategory}
@@ -261,10 +259,10 @@ function SidebarContent({
           {allTags.map((tag, idx) => (
             <label
               key={idx}
-              className={`px-3 py-1 border rounded text-sm cursor-pointer transition ${
+              className={`px-3 py-1 text-sm cursor-pointer select-none ${
                 selectedTags.includes(tag)
-                  ? "bg-orange-100 border-orange-400 text-orange-700"
-                  : "bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200"
+                  ? "bg-orange-200 text-orange-800 font-medium"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
               <input
@@ -284,25 +282,29 @@ function SidebarContent({
 
 function BookCard({ book }: BookCardProps) {
   return (
-    <div className="bg-white border-1 rounded p-2 flex flex-col items-center text-center border-gray-500">
+    <div className="bg-gray-50 p-3 flex flex-col items-start text-left space-y-1">
       <Image
         src={book.cover}
         alt={book.title}
-        width={150}
-        height={200}
-        className="rounded object-cover mb-2"
+        width={160}
+        height={220}
+        className="object-cover mb-2"
       />
-      <h3 className="text-lg font-semibold">{book.title}</h3>
-      <p className="text-sm text-gray-600">{book.details}</p>
-      <p className="text-sm text-gray-500">📅 Published: {book.year}</p>
-      <p className="text-sm text-gray-500">🏢 Publisher: {book.publisher}</p>
+      <h3 className="text-lg font-semibold text-black">{book.title}</h3>
+      {book.details && (
+        <p className="text-sm text-gray-600">{book.details}</p>
+      )}
+      <p className="text-xs text-gray-500">
+        📅 {book.year} — {book.publisher}
+      </p>
       {book.goodreads && (
         <Link
           href={book.goodreads}
           target="_blank"
-          className="mt-3 text-[#0C2340] font-semibold hover:underline"
+          className="text-sm text-blue-700 font-medium hover:underline"
+          rel="noopener noreferrer"
         >
-          📖 View on Goodreads
+          View on Goodreads ↗
         </Link>
       )}
     </div>
