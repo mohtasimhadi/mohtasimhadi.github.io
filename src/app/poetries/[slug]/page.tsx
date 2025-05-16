@@ -36,16 +36,15 @@ export default function Page() {
     }, [fetchPage])
 
     return (
-        <div className="flex flex-col md:flex-row">
+<div className="flex flex-col md:flex-row">
             <div className="md:w-3/4 overflow-scroll">
                 {meta && (<Article page={meta} data={data} />)}
                 {loading && <Loading />}
             </div>
             <div className="md:w-1/4 mt-4 md:mt-0 md:ml-4 border-gray-200 md:border-l">
                 <h2 className='font-semibold text-xl p-4 pt-0'>Explore Similar</h2>
-                <Section vertical={true} type="Article" />
+                <Section vertical={true} type="Poetry" />
             </div>
         </div>
-
     )
 }
