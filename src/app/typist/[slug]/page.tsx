@@ -43,7 +43,7 @@ export default function Page() {
             </div>
             <div className="md:w-1/4 mt-4 md:mt-0 md:ml-4 border-gray-200 md:border-l">
                 <h2 className='font-semibold text-xl p-4 pt-0'>Explore Similar</h2>
-                <Section vertical={true} type="Article" />
+                <Section vertical={true} type="Typist" />
             </div>
         </div>
     )
