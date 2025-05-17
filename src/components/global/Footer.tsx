@@ -8,7 +8,7 @@ import { UserData } from "@/types/about";
 export default function Footer() {
   const [data, setData] = useState<UserData | null>(null);
   useEffect(() => {
-    fetch("/data/home.json")
+    fetch("/data/contact.json")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error("Error fetching home data:", err));
