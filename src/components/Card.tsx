@@ -38,7 +38,7 @@ export default function Card({
   const content = (
     <>
       {date && (
-        <p className="text-gray-900 text-sm flex items-center gap-1">
+        <p className="text-sm flex items-center gap-1">
           <Calendar size={16} />
           {formattedDate}
         </p>
@@ -50,7 +50,7 @@ export default function Card({
   if (variant === 'normal') {
     return (
       <Link href={`/${type}/${id}`} className='hover:underline'>
-        <div className="p-4 bg-white flex flex-col gap-3">
+        <div className="p-4 flex flex-col gap-3">
           {cover && (
             <div className="relative w-full h-48  overflow-hidden">
               <Image src={cover} alt={title} fill style={{ objectFit: 'cover' }} />
@@ -65,7 +65,7 @@ export default function Card({
   if (variant === 'long') {
     return (
       <Link href={`/${type}/${id}`} className='hover:underline'>
-        <div className="p-4 bg-white flex items-center gap-4">
+        <div className="p-4 flex items-center gap-4">
           <div className="flex-1">{content}</div>
           {cover && (
             <div className="relative w-32 h-32  overflow-hidden flex-shrink-0">

@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     const { cursor = null, filters = null }: { cursor?: string | null; filters?: NotionFilter | null } = body
 
     const notionRequestBody: NotionRequestBody = {
-      page_size: 10,
+      page_size: 12,
       sorts: [
         {
           property: "Date",
