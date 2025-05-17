@@ -87,3 +87,42 @@ export interface NotionResponse {
   next_cursor: string | null
   has_more: boolean
 }
+
+
+// Define comprehensive types for Notion data
+
+export interface Author {
+  name: string
+  url?: string
+}
+
+
+
+export interface ArticleMetadata {
+  title: string
+  description: string
+  openGraph: {
+    title: string
+    description: string
+    url: string
+    type: string
+    article: {
+      publishedTime?: string
+      modifiedTime?: string
+      authors: string[]
+      tags: string[]
+    }
+    images: {
+      url: string
+      width: number
+      height: number
+      alt: string
+    }[]
+  }
+  twitter: {
+    card: string
+    title: string
+    description: string
+    images: string[]
+  }
+}
