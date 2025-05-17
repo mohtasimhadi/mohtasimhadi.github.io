@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Search } from "lucide-react";
 
 export default function NavPages() {
   const [currentPath, setCurrentPath] = useState("");
   const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     setCurrentPath(pathname);
