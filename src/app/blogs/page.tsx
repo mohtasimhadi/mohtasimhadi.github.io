@@ -4,6 +4,7 @@ import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
 import Loading from '@/components/Loading'
+import Link from 'next/link'
 
 export default function Blogs() {
     const [loading, setLoading] = useState(false)
@@ -60,7 +61,7 @@ export default function Blogs() {
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
                     <div className="text-right mt-4">
-                        <a href='/articles' className="text-sm text-emerald-700 hover:underline">See more →</a>
+                        <Link href='/articles' className="text-sm text-emerald-700 hover:underline">See more →</Link>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -68,24 +69,24 @@ export default function Blogs() {
                         <p className='text-2xl font-semibold mb-4'>My Journals</p>
                         {loading && <Loading/>}
                         {journals.map((page) => (
-                            <div className='border-b border-amber-200'>
-                            <Card key={page.id} variant="normal" {...page} />
+                            <div key={page.id} className='border-b border-amber-200'>
+                            <Card variant="normal" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
-                            <a href='/journals' className="text-sm text-amber-700 hover:underline">See more →</a>
+                            <Link href='/journals' className="text-sm text-amber-700 hover:underline">See more →</Link>
                         </div>
                     </div>
                     <div className="bg-pink-50 p-4">
                         <p className='text-2xl font-semibold mb-4'>Assorted Words I Call Poetry</p>
 
                         {poetries.map((page) => (
-                            <div className='border-b border-pink-200'>
-                                <Card key={page.id} variant="normal" {...page} />
+                            <div key={page.id} className='border-b border-pink-200'>
+                                <Card variant="normal" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
-                            <a href='/poetries' className="text-sm text-pink-700 hover:underline">See more →</a>
+                            <Link href='/poetries' className="text-sm text-pink-700 hover:underline">See more →</Link>
                         </div>
                     </div>
                 </div>
@@ -107,12 +108,12 @@ export default function Blogs() {
                     <p className='text-2xl font-semibold mb-4'>Sometimes, I just keep punching my keyboard!</p>
                     {loading && <Loading/>}
                     {typists.map((page) => (
-                        <div className='border-b border-indigo-200'>
-                        <Card key={page.id} variant="normal" {...page} />
+                        <div key={page.id} className='border-b border-indigo-200'>
+                        <Card variant="normal" {...page} />
                         </div>
                     ))}
                     <div className="text-right mt-4">
-                        <a href='/typist' className="text-sm text-indigo-700 hover:underline">See more →</a>
+                        <Link href='/typist' className="text-sm text-indigo-700 hover:underline">See more →</Link>
                     </div>
                 </div>
             </div>

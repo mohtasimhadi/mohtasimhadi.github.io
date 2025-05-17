@@ -5,6 +5,7 @@ import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
 import Loading from '@/components/Loading'
+import Link from 'next/link'
 
 export default function Research() {
     const [loading, setLoading] = useState(false)
@@ -12,12 +13,11 @@ export default function Research() {
     const [publications, setPublications] = useState<ParsedPage[]>([])
     const [presentations, setPresentations] = useState<ParsedPage[]>([])
     const [projects, setProjects] = useState<ParsedPage[]>([])
-    const [newsItems, setNewsItems] = useState<ParsedPage[]>([])
 
     const fetchPages = async (cursor: string | null = null) => {
         setLoading(true)
         try {
-            const [featuredRes, newsRes] = await Promise.all([
+            const [featuredRes] = await Promise.all([
                 axios.post('/api/notion', {
                     cursor,
                     filters: {
@@ -37,23 +37,14 @@ export default function Research() {
                         ]
                     }
                 }),
-                axios.post('/api/notion', {
-                    cursor,
-                    filters: {
-                        property: 'Type',
-                        select: { equals: 'News' }
-                    }
-                })
             ])
 
             const featuredPages: ParsedPage[] = featuredRes.data.results
-            const newsPages: ParsedPage[] = newsRes.data.results
 
             setPatents(prev => [...prev, ...featuredPages.filter(p => p.type === 'Patent')])
             setPublications(prev => [...prev, ...featuredPages.filter(p => p.type === 'Publication')])
             setPresentations(prev => [...prev, ...featuredPages.filter(p => p.type === 'Presentation')])
             setProjects(prev => [...prev, ...featuredPages.filter(p => p.type === 'Project')])
-            setNewsItems(prev => [...prev, ...newsPages.filter(p => p.type === 'News')])
         } catch (err) {
             console.error(err)
         }
@@ -78,7 +69,7 @@ export default function Research() {
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
                     <div className="text-right mt-4">
-                        <a href='/patents' className="text-sm text-emerald-700 hover:underline">See more →</a>
+                        <Link href='/patents' className="text-sm text-emerald-700 hover:underline">See more →</Link>
                     </div>
                 </div>
 
@@ -92,7 +83,7 @@ export default function Research() {
                             </div>
                         ))}
                         <div className="text-right mt-4">
-                            <a href='/publications' className="text-sm text-pink-700 hover:underline">See more →</a>
+                            <Link href='/publications' className="text-sm text-pink-700 hover:underline">See more →</Link>
                         </div>
                     </div>
 
@@ -103,7 +94,7 @@ export default function Research() {
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
                         <div className="text-right mt-4">
-                            <a href='/presentations' className="text-sm text-amber-700 hover:underline">See more →</a>
+                            <Link href='/presentations' className="text-sm text-amber-700 hover:underline">See more →</Link>
                         </div>
                     </div>
                 </div>
@@ -118,14 +109,14 @@ export default function Research() {
                             className="w-12 h-12 mb-4"
                         />
                         <h3 className="text-lg font-semibold text-indigo-800 mb-2">Google Scholar</h3>
-                        <a
+                        <Link
                             href="https://scholar.google.com/citations?user=YOUR_ID"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
                         >
                             Visit Profile →
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="flex flex-col items-center text-center p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
@@ -135,26 +126,27 @@ export default function Research() {
                             className="w-12 h-12 mb-4"
                         />
                         <h3 className="text-lg font-semibold text-emerald-800 mb-2">ResearchGate</h3>
-                        <a
+                        <Link
                             href="https://www.researchgate.net/profile/YOUR_NAME"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition"
                         >
                             Visit Profile →
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
                 <div className="bg-slate-100">
                     <p className='text-2xl font-semibold m-4'>Featured Projects</p>
+                    {loading && <Loading />}
                     {projects.map((page) => (
                         <div key={page.id} className='border-b border-slate-200'>
                             <Card variant="normal" {...page} />
                         </div>
                     ))}
                     <div className="text-right m-4">
-                            <a href='/projects' className="text-sm text-slate-700 mb-4 hover:underline">See more →</a>
+                            <Link href='/projects' className="text-sm text-slate-700 mb-4 hover:underline">See more →</Link>
                         </div>
                 </div>
             </div>
