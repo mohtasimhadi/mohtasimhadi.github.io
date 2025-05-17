@@ -1,6 +1,6 @@
-'use client'
+import React from 'react'
 
-export default function Loading() {
+export default function SkeletonCard() {
       return (
             <div className="border border-gray-200 rounded-lg p-4 animate-pulse">
                   <div className="flex items-start gap-3">

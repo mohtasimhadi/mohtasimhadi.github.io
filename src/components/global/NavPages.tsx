@@ -1,65 +1,113 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { Search } from "lucide-react";
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
+import { Search, Menu, X } from "lucide-react"
+import Link from "next/link"
 
 export default function NavPages() {
-  const [currentPath, setCurrentPath] = useState("");
-  const pathname = usePathname();
+      const [isMenuOpen, setIsMenuOpen] = useState(false)
+      const [isSearchOpen, setIsSearchOpen] = useState(false)
+      const pathname = usePathname()
 
-  useEffect(() => {
-    setCurrentPath(pathname);
-  }, [pathname]);
+      useEffect(() => {
+            setIsMenuOpen(false)
+      }, [pathname])
 
-  const links = [
-    { href: "/news", label: "NEWS" },
-    { href: "/articles", label: "ARTICLES" },
-    { href: "/journals", label: "JOURNALS" },
-    { href: "/typist", label: "THE TYPIST" },
-    { href: "/poetries", label: "POETRIES" },
-    { href: "/patents", label: "PATENTS" },
-    { href: "/publications", label: "PUBLICATIONS" },
-    { href: "/presentations", label: "PRESENTATIONS" },
-    { href: "/projects", label: "PROJECTS" },
-  ];
+      const links = [
+            { href: "/news", label: "NEWS" },
+            { href: "/articles", label: "ARTICLES" },
+            { href: "/journals", label: "JOURNALS" },
+            { href: "/typist", label: "THE TYPIST" },
+            { href: "/poetries", label: "POETRIES" },
+            { href: "/patents", label: "PATENTS" },
+            { href: "/publications", label: "PUBLICATIONS" },
+            { href: "/presentations", label: "PRESENTATIONS" },
+            { href: "/projects", label: "PROJECTS" },
+      ]
 
-  const currentPage =
-    links.find((link) => link.href === currentPath) || { label: "-" };
+      const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+      const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
 
-  return (
-    <>
-      <div className="sticky top-0 h-5px z-[10000] bg-white py-1 text-xl font-semibold text-gray-700 m-2 mr-5 border-b border-gray-300">
-        {currentPage.label}
-      </div>
-      <nav className="mr-4 ml-4 bg-white border-b border-gray-900 sticky top-[35px] z-[9999]">
-        <div className="container mx-auto flex flex-wrap items-center text-xs text-gray-800">
-          <div className="flex flex-wrap gap-4 items-center flex-grow">
-            {links.map((link, index) => (
-              <span key={link.href} className="flex items-center gap-1">
-                <a
-                  href={link.href}
-                  className="block hover:text-gray-600 transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-                {index < links.length - 1 && (
-                  <span className="text-gray-400">|</span>
-                )}
-              </span>
-            ))}
-          </div>
+      const firstSegment = pathname.split("/")[1];
+      const label = firstSegment ? firstSegment.charAt(0).toUpperCase() + firstSegment.slice(1) : '';
 
-          <div className="ml-auto flex items-center">
-            <a
-              href='/search'
-              className="block hover:text-gray-600 transition-colors duration-200"
-            >
-              <Search className="w-5 h-5 pb-2" />
-            </a>
-          </div>
-        </div>
-      </nav>
-    </>
-  );
+
+
+      return (
+            <>
+                  <div className="sticky top-0 z-[9999] bg-white">
+
+                        {label.length ? <div className="container mx-auto border-b pb-2 pt-2">
+                              <p className="flex items-center gap-2 text-xl  uppercase tracking-wide">
+                                    {label}
+                              </p>
+                        </div> : ''}
+
+                        <nav className="container mx-auto px-4 border-b-2">
+                              {/* Mobile navigation */}
+                              <div className="md:hidden flex items-center justify-between py-3">
+                                    <button
+                                          onClick={toggleMenu}
+                                          className="text-gray-800 focus:outline-none"
+                                          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                                    >
+                                          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                                    </button>
+
+                                    <button onClick={toggleSearch} className="text-gray-800 focus:outline-none" aria-label="Search">
+                                          <Search className="w-5 h-5" />
+                                    </button>
+                              </div>
+
+                              {/* Mobile menu */}
+                              {isMenuOpen && (
+                                    <div className="md:hidden py-2 space-y-3 border-t border-gray-200 animate-in slide-in-from-top duration-300">
+                                          {links.map((link) => (
+                                                <Link
+                                                      key={link.href}
+                                                      href={link.href}
+                                                      className={`block py-2 text-xs text-gray-600 hover:text-gray-900 transition-colors duration-200`}
+                                                >
+                                                      {link.label}
+                                                </Link>
+                                          ))}
+                                    </div>
+                              )}
+
+                              {/* Desktop navigation */}
+                              <div className="hidden md:flex items-center py-1 text-sm">
+                                    <div className="flex flex-wrap gap-1 items-center">
+                                          {links.map((link, index) => (
+                                                <span key={link.href} className="flex items-center">
+                                                      <Link
+                                                            href={link.href}
+                                                            className={`px-2 py-1 rounded-md transition-all duration-200 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50`}
+                                                      >
+                                                            {link.label}
+                                                      </Link>
+                                                      {index < links.length - 1 && <span className="text-gray-300 mx-1">|</span>}
+                                                </span>
+                                          ))}
+                                    </div>
+
+                                    <div className="ml-auto flex items-center">
+                                          <Link
+                                                href='/search'
+                                                className=""
+                                                aria-label="Search"
+                                          >
+                                                <Search className="w-5 h-5 text-gray-700" />
+                                          </Link>
+                                    </div>
+                              </div>
+                        </nav>
+
+
+                  </div>
+
+                  {/* Spacer for content below the sticky nav */}
+                  <div className="h-2"></div>
+            </>
+      )
 }
