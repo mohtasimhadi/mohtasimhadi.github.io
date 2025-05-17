@@ -85,37 +85,43 @@ export default function BooksPage() {
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-10">
-      <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-8 gap-8">
 
-        <div className="sm:col-span-1 lg:col-span-1 bg-stone-100 p-4">
+        <div className="sm:col-span-1 lg:col-span-2">
           <div className="space-y-6 mb-10">
-            <TagFilterGroup
-              label="Tag"
-              options={filterOptions.tags}
-              selected={filters.tag}
-              onChange={(value) => setFilters((prev) => ({ ...prev, tag: value }))}
-            />
-            <TagFilterGroup
-              label="Author"
-              options={filterOptions.authors}
-              selected={filters.author}
-              onChange={(value) => setFilters((prev) => ({ ...prev, author: value }))}
-            />
+            <div className='bg-indigo-50 border border-indigo-100 p-4'>
             <TagFilterGroup
               label="Publisher"
               options={filterOptions.publishers}
               selected={filters.publisher}
               onChange={(value) => setFilters((prev) => ({ ...prev, publisher: value }))}
             />
+            </div>
+            <div className='bg-indigo-50 border border-indigo-100 p-4'>
+            <TagFilterGroup
+              label="Author"
+              options={filterOptions.authors}
+              selected={filters.author}
+              onChange={(value) => setFilters((prev) => ({ ...prev, author: value }))}
+            />
+            </div>
+            <div className='bg-indigo-50 border border-indigo-100 p-4'>
+            <TagFilterGroup
+              label="Tag"
+              options={filterOptions.tags}
+              selected={filters.tag}
+              onChange={(value) => setFilters((prev) => ({ ...prev, tag: value }))}
+            />
+            </div>
           </div>
         </div>
 
-        <div className="sm:col-span-3 lg:col-span-3">
+        <div className="sm:col-span-3 lg:col-span-4">
           {Object.entries(groupedBooks).map(([type, books]) =>
             books.length > 0 ? (
               <section
                 key={type}
-                className={`mb-12 px-4 py-6 -mx-4 border-gray-100 bg-gray-50 border`}
+                className={`mb-12 px-4 py-2 -mx-4 border-gray-200 border`}
               >
                 <h2 className="text-2xl font-medium mb-6">{type}</h2>
                 <div className="flex flex-col space-y-6">
@@ -139,8 +145,33 @@ export default function BooksPage() {
             </div>
           )}
         </div>
-
-
+        <div className="sm:col-span-1 lg:col-span-2 p-4 pt-0">
+          <section className="w-full flex flex-col items-center justify-center gap-4 p-6 bg-red-100">
+            <blockquote className="text-center max-w-2xl text-gray-700 italic text-lg">
+              “You write so beautifully. The inside of your mind must be a terrible place.”
+              <br />
+              <span className="block mt-2 text-sm text-gray-600">― Unknown</span>
+            </blockquote>
+          </section>
+          <div className="w-full max-w-xl mx-auto flex flex-col gap-6 mt-4">
+            <div className="flex flex-col items-center text-center p-6 bg-stone-50">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Goodreads_%27g%27_logo.svg"
+                alt="Goodreads"
+                className="w-18 h-18 mb-4"
+              />
+              <h3 className="text-lg font-semibold text-stone-800 mb-2">Goodreads</h3>
+              <Link
+                href="https://www.goodreads.com/author/show/17736617.Mohtasim_Hadi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm px-4 py-2 bg-stone-600 text-white rounded hover:bg-stone-700 transition"
+              >
+                Visit Profile →
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   )
@@ -194,7 +225,7 @@ function TagButton({
       onClick={onClick}
       className={`px-3 py-1 text-sm border transition ${active
         ? 'bg-gray-800 text-white border-gray-800'
-        : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'
+        : 'bg-indigo-50 text-gray-700 border-gray-300 hover:bg-gray-100'
         }`}
     >
       {label}
@@ -206,7 +237,7 @@ function TagButton({
 
 function BookCard({ book }: { book: ParsedBook }) {
   return (
-    <div className="border border-gray-300 p-4 flex flex-col sm:flex-row gap-6 text-sm text-gray-800 h-[300px] sm:h-[300px]">
+    <div className="bg-teal-50 border border-teal-200 p-4 flex flex-col sm:flex-row gap-6 text-sm text-gray-800 h-[300px] sm:h-[300px]">
       {book.cover ? (
         <div className="w-full sm:w-40 aspect-[2/3] relative flex-shrink-0">
           <Image
@@ -254,12 +285,12 @@ function BookCard({ book }: { book: ParsedBook }) {
           )}
         </div>
 
-        <div className="flex justify-between items-center text-xs text-gray-500 pt-2">
+        <div className="flex justify-end items-center text-xs text-gray-500 pt-2">
           {book.goodreads && (
             <Link
               href={book.goodreads}
               target="_blank"
-              className="text-blue-600 hover:underline"
+              className="text-teal-600 hover:underline"
             >
               Goodreads →
             </Link>
