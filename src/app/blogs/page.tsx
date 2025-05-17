@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
-import Loading from '@/components/Loading'
 import Link from 'next/link'
+import SkeletonCard from '@/components/ui/SkeletonCard'
 
 export default function Blogs() {
     const [loading, setLoading] = useState(false)
@@ -56,7 +56,7 @@ export default function Blogs() {
             <div className="lg:col-span-2 space-y-8">
                 <div className="p-4 bg-emerald-50">
                     <p className='text-2xl font-semibold mb-4'>Featured Article</p>
-                    {loading && <Loading/>}
+                    {loading && <SkeletonCard/>}
                     {articles.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
@@ -67,7 +67,7 @@ export default function Blogs() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="md:col-span-2 p-4 bg-amber-50">
                         <p className='text-2xl font-semibold mb-4'>My Journals</p>
-                        {loading && <Loading/>}
+                        {loading && <SkeletonCard/>}
                         {journals.map((page) => (
                             <div key={page.id} className='border-b border-amber-200'>
                             <Card variant="normal" {...page} />
@@ -79,7 +79,7 @@ export default function Blogs() {
                     </div>
                     <div className="bg-pink-50 p-4">
                         <p className='text-2xl font-semibold mb-4'>Assorted Words I Call Poetry</p>
-
+                        {loading && <SkeletonCard/>}
                         {poetries.map((page) => (
                             <div key={page.id} className='border-b border-pink-200'>
                                 <Card variant="normal" {...page} />
@@ -106,7 +106,7 @@ export default function Blogs() {
                 </section>
                 <div className="bg-indigo-50 p-4">
                     <p className='text-2xl font-semibold mb-4'>Sometimes, I just keep punching my keyboard!</p>
-                    {loading && <Loading/>}
+                    {loading && <SkeletonCard/>}
                     {typists.map((page) => (
                         <div key={page.id} className='border-b border-indigo-200'>
                         <Card variant="normal" {...page} />

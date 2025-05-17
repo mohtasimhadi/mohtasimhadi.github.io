@@ -12,7 +12,7 @@ import ContactItem from "./ContactItem"
 import SocialIcon from "./SocialIcons"
 import { useEffect, useState } from "react";
 import { UserData } from "@/types/about";
-import Loading from "../Loading";
+import SkeletonCard from '@/components/ui/SkeletonCard'
 import ResearchProfiles from "./ResearchProfileCard";
 
 export default function AboutDesctiption() {
@@ -24,7 +24,7 @@ export default function AboutDesctiption() {
             .then((data) => setData(data))
             .catch((err) => console.error("Error fetching home data:", err));
     }, []);
-    if (!data) return <Loading />;
+    if (!data) return <SkeletonCard />;
 
     return (
         <div className="relative w-full bg-slate-200 overflow-hidden pt-0 mt-0">

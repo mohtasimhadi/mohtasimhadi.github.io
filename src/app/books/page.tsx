@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Loading from '@/components/Loading'
+import SkeletonCard from '@/components/ui/SkeletonCard'
 
 interface ParsedBook {
   id: string
@@ -117,7 +117,7 @@ export default function BooksPage() {
         </div>
 
         <div className="sm:col-span-3 lg:col-span-4">
-          {loading && (<Loading />)}
+          {loading && (<SkeletonCard />)}
           {Object.entries(groupedBooks).map(([type, books]) =>
             books.length > 0 ? (
               <section
@@ -141,7 +141,7 @@ export default function BooksPage() {
                 className="px-6 py-2 border border-gray-800 text-gray-800 hover:bg-gray-100 transition"
                 disabled={loading}
               >
-                {loading ? <Loading /> : 'Load More'}
+                {loading ? <SkeletonCard /> : 'Load More'}
               </button>
             </div>
           )}

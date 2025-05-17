@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
-import Loading from '@/components/Loading'
+import SkeletonCard from '@/components/ui/SkeletonCard'
 import Link from 'next/link'
 
 export default function Research() {
@@ -64,7 +64,7 @@ export default function Research() {
 
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-green-100 p-4">
                     <p className='text-2xl font-semibold mb-4'>Working on a patent!</p>
-                    {loading && <Loading />}
+                    {loading && <SkeletonCard />}
                     {patents.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
@@ -76,7 +76,7 @@ export default function Research() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8 ">
                     <div className="flex flex-col gap-4 col-span-2 bg-pink-100 p-4">
                         <p className='text-2xl font-semibold mb-4'>My Publications</p>
-                        {loading && <Loading />}
+                        {loading && <SkeletonCard />}
                         {publications.map((page) => (
                             <div key={page.id} className='border-b border-pink-200'>
                                 <Card variant="normal" {...page} />
@@ -89,7 +89,7 @@ export default function Research() {
 
                     <div className="flex flex-col gap-4 bg-amber-100 p-2">
                         <p className='text-2xl font-semibold mb-4 p-2 pb-0'>Presentations</p>
-                        {loading && <Loading />}
+                        {loading && <SkeletonCard />}
                         {presentations.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -102,23 +102,6 @@ export default function Research() {
 
             <div className="flex flex-col gap-4 lg:border-l border-gray-300 lg:pl-6">
                 <div className="w-full max-w-xl mx-auto flex flex-col gap-6">
-                    <div className="flex flex-col items-center text-center p-6 bg-indigo-50 border border-indigo-200">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1200px-Google_Scholar_logo.svg.png"
-                            alt="Google Scholar"
-                            className="w-12 h-12 mb-4"
-                        />
-                        <h3 className="text-lg font-semibold text-indigo-800 mb-2">Google Scholar</h3>
-                        <Link
-                            href="https://scholar.google.com/citations?user=YOUR_ID"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
-                        >
-                            Visit Profile →
-                        </Link>
-                    </div>
-
                     <div className="flex flex-col items-center text-center p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg"
@@ -135,11 +118,27 @@ export default function Research() {
                             Visit Profile →
                         </Link>
                     </div>
+                    <div className="flex flex-col items-center text-center p-6 bg-indigo-50 border border-indigo-200">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1200px-Google_Scholar_logo.svg.png"
+                            alt="Google Scholar"
+                            className="w-12 h-12 mb-4"
+                        />
+                        <h3 className="text-lg font-semibold text-indigo-800 mb-2">Google Scholar</h3>
+                        <Link
+                            href="https://scholar.google.com/citations?user=ih7NQy8AAAAJ&hl=en"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+                        >
+                            Visit Profile →
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="bg-slate-100">
                     <p className='text-2xl font-semibold m-4'>Featured Projects</p>
-                    {loading && <Loading />}
+                    {loading && <SkeletonCard />}
                     {projects.map((page) => (
                         <div key={page.id} className='border-b border-slate-200'>
                             <Card variant="normal" {...page} />
