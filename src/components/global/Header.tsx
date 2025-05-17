@@ -49,7 +49,7 @@ export default function Header() {
 
                   {/* Mobile Menu */}
                   {menuOpen && (
-                        <div className="md:hidden bg-white-100 text-black text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full">
+                        <div className="flex md:hidden bg-white-100 text-black text-lg flex flex-col items-start px-6 space-y-4 py-4 w-full">
                               <NavItem href="/" label="HOME" pathname={pathname} />
                               <NavItem href="/blogs" label="BLOGS" pathname={pathname} />
                               <NavItem href="/research" label="RESEARCH" pathname={pathname} />
@@ -76,7 +76,7 @@ function NavItem({
             <li>
                   <Link
                         href={href}
-                        className={`relative block px-4 py-2 transition duration-300 ${isActive ? "text-stone-500  underline underline-offset-4 font-semibold" : "text-gray-700"
+                        className={`relative block px-4 py-2 transition duration-300 ${isActive ? "text-stone-500 font-semibold" : "text-gray-700"
                               } hover:text-gray-900`}
                   >
                         {label}

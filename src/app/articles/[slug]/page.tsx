@@ -38,7 +38,7 @@ export default function Page() {
       console.log(data)
 
       return (
-            <div className="flex flex-col md:flex-row">
+            <div className="flex container mx-auto px-6 flex-col md:flex-row">
                   <div className="md:w-3/4 overflow-scroll">
                         {meta && (<Article page={meta} data={data} />)}
                         {loading && <SkeletonCard />}

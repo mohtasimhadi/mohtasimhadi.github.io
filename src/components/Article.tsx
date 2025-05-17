@@ -190,7 +190,7 @@ const Article: React.FC<{ page: ParsedPage; data: string }> = ({ page, data }) =
                         {featured && <div className="absolute top-0 left-0 bg-blue-600 text-white text-lg px-4 py-1">Featured</div>}
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-6 ">
                         <div className="flex items-center justify-between mb-2">
                               <div className="text-sm text-gray-500">
                                     {formattedDate && date && <time dateTime={new Date(date).toISOString()}>{formattedDate}</time>}

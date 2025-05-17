@@ -30,10 +30,22 @@ export default function NavPages() {
 
       const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
       const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
+      const location = window.location
+      const firstSegment = location.pathname.split('/')[1]; // Get 'news' from '/news/123'
+
+      // Capitalize first letter
+      const label = firstSegment ? firstSegment.charAt(0).toUpperCase() + firstSegment.slice(1) : '';
+
 
       return (
             <>
                   <div className="sticky top-0 z-[9999] bg-white shadow-sm">
+
+                        {label.length ? <div className="container mx-auto px-6">
+                              <p className="flex items-center gap-2 text-xl  uppercase tracking-wide">
+                                    {label}
+                              </p>
+                        </div> : ''}
 
                         <nav className="container mx-auto px-4">
                               {/* Mobile navigation */}
@@ -62,8 +74,7 @@ export default function NavPages() {
                                                 <Link
                                                       key={link.href}
                                                       href={link.href}
-                                                      className={`block py-2 text-sm ${currentPath === link.href ? "font-semibold text-gray-900" : "text-gray-600"
-                                                            } hover:text-gray-900 transition-colors duration-200`}
+                                                      className={`block py-2 text-xs text-gray-600 hover:text-gray-900 transition-colors duration-200`}
                                                 >
                                                       {link.label}
                                                 </Link>
@@ -78,10 +89,7 @@ export default function NavPages() {
                                                 <span key={link.href} className="flex items-center">
                                                       <Link
                                                             href={link.href}
-                                                            className={`px-2 py-1 rounded-md transition-all duration-200 ${currentPath === link.href
-                                                                  ? "font-semibold text-gray-900 bg-gray-100"
-                                                                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                                                                  }`}
+                                                            className={`px-2 py-1 rounded-md transition-all duration-200 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50`}
                                                       >
                                                             {link.label}
                                                       </Link>
@@ -90,35 +98,19 @@ export default function NavPages() {
                                           ))}
                                     </div>
 
-                                    <div className="ml-auto">
-                                          <button
-                                                onClick={toggleSearch}
-                                                className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                                    <div className="ml-auto flex items-center">
+                                          <Link
+                                                href='/search'
+                                                className=""
                                                 aria-label="Search"
                                           >
                                                 <Search className="w-5 h-5 text-gray-700" />
-                                          </button>
+                                          </Link>
                                     </div>
                               </div>
                         </nav>
 
-                        {/* Search bar */}
-                        {isSearchOpen && (
-                              <div className="border-t border-gray-200 py-3 px-4 animate-in slide-in-from-top duration-300">
-                                    <div className="relative max-w-2xl mx-auto">
-                                          <input
-                                                type="text"
-                                                placeholder="Search..."
-                                                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
-                                                autoFocus
-                                          />
-                                          <Search className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" />
-                                          <button onClick={toggleSearch} className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
-                                                <X className="w-5 h-5" />
-                                          </button>
-                                    </div>
-                              </div>
-                        )}
+
                   </div>
 
                   {/* Spacer for content below the sticky nav */}
