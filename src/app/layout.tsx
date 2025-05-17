@@ -9,7 +9,6 @@ import "./globals.css";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
       return (
             <html lang="en">
-
                   <title>the Moho Blog</title>
                   <meta name="description" content="Journal of Mohtasim Hadi Rafi" />
                   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <body className="bg-white text-gray-900">
                         <Header />
                         <NavPages />
-                        <main className="m-4">{children}</main>
+                        <main>{children}</main>
                         <Footer />
                   </body>
             </html>

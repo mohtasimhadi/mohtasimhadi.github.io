@@ -12,7 +12,7 @@ import ContactItem from "./ContactItem"
 import SocialIcon from "./SocialIcons"
 import { useEffect, useState } from "react";
 import { UserData } from "@/types/about";
-import Loading from "../Loading";
+import SkeletonCard from '@/components/ui/SkeletonCard'
 import ResearchProfiles from "./ResearchProfileCard";
 
 export default function AboutDesctiption() {

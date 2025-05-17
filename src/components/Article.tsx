@@ -53,32 +53,32 @@ const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({ h
 // Custom components for heading levels to ensure proper heading hierarchy
 const CustomHeadings = {
       h1: ({ children, ...props }: React.ComponentPropsWithoutRef<"h2">) => (
-            <h2 className="text-2xl font-semibold mt-6 mb-4" {...props}>
+            <h2 className="text-3xl font-semibold mt-6 mb-4" {...props}>
                   {children}
             </h2>
       ),
       h2: ({ children, ...props }: React.ComponentPropsWithoutRef<"h3">) => (
-            <h3 className="text-xl font-semibold mt-5 mb-3" {...props}>
+            <h3 className="text-2xl font-semibold mt-5 mb-3" {...props}>
                   {children}
             </h3>
       ),
       h3: ({ children, ...props }: React.ComponentPropsWithoutRef<"h4">) => (
-            <h4 className="text-lg font-semibold mt-4 mb-2" {...props}>
+            <h4 className="text-xl font-semibold mt-4 mb-2" {...props}>
                   {children}
             </h4>
       ),
       h4: ({ children, ...props }: React.ComponentPropsWithoutRef<"h5">) => (
-            <h5 className="text-base font-semibold mt-3 mb-2" {...props}>
+            <h5 className="text-lg font-semibold mt-3 mb-2" {...props}>
                   {children}
             </h5>
       ),
       h5: ({ children, ...props }: React.ComponentPropsWithoutRef<"h6">) => (
-            <h6 className="text-sm font-semibold mt-3 mb-2" {...props}>
+            <h6 className="text-base font-semibold mt-3 mb-2" {...props}>
                   {children}
             </h6>
       ),
       h6: ({ children, ...props }: React.ComponentPropsWithoutRef<"h6">) => (
-            <h6 className="text-xs font-semibold mt-3 mb-2" {...props}>
+            <h6 className="text-sm font-semibold mt-3 mb-2" {...props}>
                   {children}
             </h6>
       ),

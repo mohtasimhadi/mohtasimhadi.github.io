@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Loading from '@/components/Loading'
 import SkeletonCard from '@/components/ui/SkeletonCard'
 
 interface ParsedBook {
