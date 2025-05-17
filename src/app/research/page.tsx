@@ -102,23 +102,6 @@ export default function Research() {
 
             <div className="flex flex-col gap-4 lg:border-l border-gray-300 lg:pl-6">
                 <div className="w-full max-w-xl mx-auto flex flex-col gap-6">
-                    <div className="flex flex-col items-center text-center p-6 bg-indigo-50 border border-indigo-200">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1200px-Google_Scholar_logo.svg.png"
-                            alt="Google Scholar"
-                            className="w-12 h-12 mb-4"
-                        />
-                        <h3 className="text-lg font-semibold text-indigo-800 mb-2">Google Scholar</h3>
-                        <Link
-                            href="https://scholar.google.com/citations?user=YOUR_ID"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
-                        >
-                            Visit Profile →
-                        </Link>
-                    </div>
-
                     <div className="flex flex-col items-center text-center p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg"
@@ -131,6 +114,22 @@ export default function Research() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition"
+                        >
+                            Visit Profile →
+                        </Link>
+                    </div>
+                    <div className="flex flex-col items-center text-center p-6 bg-indigo-50 border border-indigo-200">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/1200px-Google_Scholar_logo.svg.png"
+                            alt="Google Scholar"
+                            className="w-12 h-12 mb-4"
+                        />
+                        <h3 className="text-lg font-semibold text-indigo-800 mb-2">Google Scholar</h3>
+                        <Link
+                            href="https://scholar.google.com/citations?user=ih7NQy8AAAAJ&hl=en"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
                         >
                             Visit Profile →
                         </Link>

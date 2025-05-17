@@ -6,10 +6,16 @@ import { ParsedPage } from '@/types/notion'
 import SkeletonCard from './ui/SkeletonCard'
 
 export default function Section({ type, vertical = false, card_variant = 'normal' }: { type: string, vertical?: boolean, card_variant?: 'large' | 'normal' | 'long' }) {
+
       const [pages, setPages] = useState<ParsedPage[]>([])
       const [cursor, setCursor] = useState<string | null>(null)
       const [hasMore, setHasMore] = useState(true)
       const [loading, setLoading] = useState(false)
+      const [isClient, setIsClient] = useState(false);
+
+      useEffect(() => {
+      setIsClient(true);
+      }, []);
 
       const fetchPages = useCallback(async (cursor: string | null = null) => {
             setLoading(true)
@@ -35,15 +41,18 @@ export default function Section({ type, vertical = false, card_variant = 'normal
                   console.error(err)
             }
             setLoading(false)
-      }, [type]) // type is used inside fetchPages, so add it as dependency
+      }, [type])
 
       useEffect(() => {
             fetchPages()
       }, [fetchPages])
 
+      if (!isClient) return null;
+
+
       return (
             <main className="container mx-auto px-4">
-                  <div className={`${vertical ? 'flex flex-col gap-6' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'}`}>
+                  <div className={`${vertical ? 'flex flex-col gap-6' : 'grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'}`}>
                         {pages.map((page) => (
                               <Card
                                     key={page.id}

@@ -17,7 +17,7 @@ export default function Header() {
                               className="flex items-center gap-2 text-2xl font-bold tracking-wide"
                         >
                               <span
-                                    className="text-3xl p-1 border-r-2 text-right leading-tight"
+                                    className="text-3xl p-1 border-r-2 border-black text-right leading-tight"
                                     style={{ fontFamily: "'Special Elite', cursive" }}
                               >
                                     The<br />Moho Blog
