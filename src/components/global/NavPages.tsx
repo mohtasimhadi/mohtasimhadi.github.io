@@ -1,34 +1,17 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { Search } from "lucide-react";
 
 export default function NavPages() {
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
   const [currentPath, setCurrentPath] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
   const router = useRouter();
 
   useEffect(() => {
     setCurrentPath(pathname);
   }, [pathname]);
-
-  useEffect(() => {
-    if (searchOpen && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [searchOpen]);
-
-  const handleSearch = () => {
-    if (inputValue.trim() !== "") {
-      router.push(`/search/${encodeURIComponent(inputValue.trim())}`);
-      setSearchOpen(false);
-      setInputValue("");
-    }
-  };
 
   const links = [
     { href: "/news", label: "NEWS" },
@@ -69,49 +52,12 @@ export default function NavPages() {
           </div>
 
           <div className="ml-auto flex items-center">
-            {!searchOpen && (
-              <button
-                aria-label="Open search"
-                onClick={() => setSearchOpen(true)}
-                className="p-1 hover:text-gray-600 transition"
-              >
-                <Search className="w-5 h-5" />
-              </button>
-            )}
-
-            {searchOpen && (
-              <div
-                className="flex items-center border border-gray-300 rounded overflow-hidden
-                transition-all duration-300 ease-in-out
-                max-w-[300px] w-full"
-              >
-                <input
-                  ref={inputRef}
-                  type="text"
-                  placeholder="Search..."
-                  className="flex-grow px-3 py-1 text-sm outline-none"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleSearch();
-                  }}
-                />
-                <button
-                  aria-label="Search"
-                  onClick={handleSearch}
-                  className="p-1 hover:text-gray-600 transition"
-                >
-                  <Search className="w-5 h-5" />
-                </button>
-                <button
-                  aria-label="Close search"
-                  onClick={() => setSearchOpen(false)}
-                  className="p-1 hover:text-gray-600 transition"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-            )}
+            <a
+              href='/search'
+              className="block hover:text-gray-600 transition-colors duration-200"
+            >
+              <Search className="w-5 h-5 pb-2" />
+            </a>
           </div>
         </div>
       </nav>
