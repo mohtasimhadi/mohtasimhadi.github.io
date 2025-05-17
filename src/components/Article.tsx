@@ -7,26 +7,17 @@ import remarkGfm from "remark-gfm"
 import { Facebook, Linkedin, LinkIcon } from "lucide-react"
 import { SiX } from "react-icons/si"
 import Image from "next/image"
-import { ParsedPage } from "@/types/notion"
-
-
-
-
+import type { ParsedPage } from "@/types/notion"
 
 // Custom component to render links and detect YouTube URLs
-const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
-      href,
-      children,
-      ...props
-}) => {
-      if (!href) return <>{children}</>;
+const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, children, ...props }) => {
+      if (!href) return <>{children}</>
 
-      const youtubeRegex =
-            /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/i;
-      const match = href.match(youtubeRegex);
+      const youtubeRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/i
+      const match = href.match(youtubeRegex)
 
       if (match && match[1]) {
-            const videoId = match[1];
+            const videoId = match[1]
             return (
                   <div className="my-6">
                         <iframe
@@ -41,10 +32,10 @@ const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
                               loading="lazy"
                         ></iframe>
                   </div>
-            );
+            )
       }
 
-      const isInternal = href.startsWith("/") || href.startsWith("#");
+      const isInternal = href.startsWith("/") || href.startsWith("#")
 
       return (
             <a
@@ -56,74 +47,45 @@ const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({
             >
                   {children}
             </a>
-      );
-};
-
+      )
+}
 
 // Custom components for heading levels to ensure proper heading hierarchy
 const CustomHeadings = {
-      h1: ({ children }: { children: React.ReactNode }) => <h2 className="text-2xl font-semibold mt-6 mb-4">{children}</h2>,
-      h2: ({ children }: { children: React.ReactNode }) => <h3 className="text-xl font-semibold mt-5 mb-3">{children}</h3>,
-      h3: ({ children }: { children: React.ReactNode }) => <h4 className="text-lg font-semibold mt-4 mb-2">{children}</h4>,
-      h4: ({ children }: { children: React.ReactNode }) => (
-            <h5 className="text-base font-semibold mt-3 mb-2">{children}</h5>
+      h1: ({ children, ...props }: React.ComponentPropsWithoutRef<"h2">) => (
+            <h2 className="text-2xl font-semibold mt-6 mb-4" {...props}>
+                  {children}
+            </h2>
       ),
-      h5: ({ children }: { children: React.ReactNode }) => <h6 className="text-sm font-semibold mt-3 mb-2">{children}</h6>,
-      h6: ({ children }: { children: React.ReactNode }) => <h6 className="text-xs font-semibold mt-3 mb-2">{children}</h6>,
-      img: ({
-            src,
-            alt,
-      }: {
-            src?: string
-            alt?: string
-      }) => {
-            if (!src) return null
-
-            // Handle external images or placeholder
-            if (src.startsWith("http") || src.startsWith("/placeholder")) {
-                  return (
-                        <div className="relative my-4 w-full min-h-[300px] h-auto">
-                              <Image
-                                    src={src || "/placeholder.svg"}
-                                    alt={alt || "Article image"}
-                                    className="rounded-lg"
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    style={{ objectFit: "contain" }}
-                                    priority={false}
-                              />
-                        </div>
-                  )
-            }
-
-            // Handle local images
-            return (
-                  <div className="relative my-4 w-full min-h-[300px] h-auto border border-black">
-                        <Image
-                              src={src || "/placeholder.svg"}
-                              alt={alt || "Article image"}
-                              className="rounded-lg"
-                              fill
-                              style={{ objectFit: "contain" }}
-                              priority={false}
-                        />
-                  </div>
-            )
-      },
+      h2: ({ children, ...props }: React.ComponentPropsWithoutRef<"h3">) => (
+            <h3 className="text-xl font-semibold mt-5 mb-3" {...props}>
+                  {children}
+            </h3>
+      ),
+      h3: ({ children, ...props }: React.ComponentPropsWithoutRef<"h4">) => (
+            <h4 className="text-lg font-semibold mt-4 mb-2" {...props}>
+                  {children}
+            </h4>
+      ),
+      h4: ({ children, ...props }: React.ComponentPropsWithoutRef<"h5">) => (
+            <h5 className="text-base font-semibold mt-3 mb-2" {...props}>
+                  {children}
+            </h5>
+      ),
+      h5: ({ children, ...props }: React.ComponentPropsWithoutRef<"h6">) => (
+            <h6 className="text-sm font-semibold mt-3 mb-2" {...props}>
+                  {children}
+            </h6>
+      ),
+      h6: ({ children, ...props }: React.ComponentPropsWithoutRef<"h6">) => (
+            <h6 className="text-xs font-semibold mt-3 mb-2" {...props}>
+                  {children}
+            </h6>
+      ),
 }
 
-const Article: React.FC<{ page: ParsedPage, data: string }> = ({ page, data }) => {
-      const {
-            title,
-            cover,
-            affiliation,
-            authors,
-            date,
-            publisher,
-            status,
-            tags,
-            featured,
-      } = page
+const Article: React.FC<{ page: ParsedPage; data: string }> = ({ page, data }) => {
+      const { title, cover, affiliation, authors, date, publisher, status, tags, featured } = page
 
       console.log(page)
 
@@ -157,7 +119,6 @@ const Article: React.FC<{ page: ParsedPage, data: string }> = ({ page, data }) =
 
       // SEO metadata generation
       const generateSeoMetadata = () => {
-
             const publishedTime = date ? new Date(date).toISOString() : undefined
 
             return {
