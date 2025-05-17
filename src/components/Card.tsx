@@ -12,7 +12,16 @@ const typeMap: Record<string, string> = {
   patent: 'patents',
   publication: 'publications',
   presentation: 'presentations',
-  project: 'projects'
+  project: 'projects',
+  News: 'news',
+  Article: 'articles',
+  Journal: 'journals',
+  Typist: 'typist',
+  Poetry: 'poetries',
+  Patent: 'patents',
+  Publication: 'publications',
+  Presentation: 'presentations',
+  Project: 'projects'
 }
 
 export default function Card({

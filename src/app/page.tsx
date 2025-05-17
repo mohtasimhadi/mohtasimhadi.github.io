@@ -98,6 +98,9 @@ export default function HomePage() {
                 <section className="pb-8 border-b border-gray-300">
                     <h2 className="text-xl font-semibold mb-2">Patents</h2>
                     <div className="grid grid-cols-1 gap-4">
+                        {loading && (
+                            <Loading/>
+                        )}
                         {patents.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -108,12 +111,18 @@ export default function HomePage() {
                 <section className="py-8 border-b border-gray-300 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex flex-col gap-4 col-span-2">
                         <h2 className="text-xl font-semibold">Projects</h2>
+                        {loading && (
+                            <Loading/>
+                        )}
                         {projects.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
                     </div>
                     <div className="flex flex-col gap-4 border-l border-gray-300 pl-4">
                         <h2 className="text-xl font-semibold">Publications</h2>
+                        {loading && (
+                            <Loading/>
+                        )}
                         {publications.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -124,6 +133,9 @@ export default function HomePage() {
                 <section className="pt-8 border-b border-gray-300">
                     <h2 className="text-xl font-semibold mb-2">Presentations</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {loading && (
+                            <Loading/>
+                        )}
                         {presentations.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -134,6 +146,9 @@ export default function HomePage() {
                 <section className="pt-8 border-b border-gray-300">
                     <h2 className="text-xl font-semibold mb-2">Articles</h2>
                     <div className="grid grid-cols-1 gap-4">
+                        {loading && (
+                            <Loading/>
+                        )}
                         {articles.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -144,12 +159,18 @@ export default function HomePage() {
                 <section className="py-8 border-b border-gray-300 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex flex-col gap-4 col-span-2">
                         <h2 className="text-xl font-semibold">Journals</h2>
+                        {loading && (
+                            <Loading/>
+                        )}
                         {journals.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
                     </div>
                     <div className="flex flex-col gap-4 border-l border-gray-300 pl-4">
                         <h2 className="text-xl font-semibold">Poetries</h2>
+                        {loading && (
+                            <Loading/>
+                        )}
                         {poetries.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -161,6 +182,9 @@ export default function HomePage() {
             <div className="flex flex-col gap-4 lg:border-l border-gray-300 lg:pl-6">
                 <section>
                     <h2 className="text-xl font-semibold mb-2">News</h2>
+                    {loading && (
+                            <Loading/>
+                        )}
                     {newsItems.slice(0, 5).map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
@@ -168,6 +192,9 @@ export default function HomePage() {
 
                 <section className="mt-8">
                     <h2 className="text-xl font-semibold mb-2">Typists</h2>
+                    {loading && (
+                            <Loading/>
+                        )}
                     {typists.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}

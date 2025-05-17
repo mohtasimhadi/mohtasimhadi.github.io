@@ -2,7 +2,7 @@ export interface ParsedPage {
   id: string
   title: string
   cover: string | null
-  affiliation: string
+  affiliation: string[]
   authors: string[]
   date: string
   link: string
@@ -28,6 +28,10 @@ export interface NotionRequestBody {
   page_size: number
   start_cursor?: string
   filter?: NotionFilter
+  sorts: Array<{
+    property: string,
+    direction: string
+  }>
 }
 
 export interface NotionPage {
@@ -45,9 +49,7 @@ export interface NotionPage {
       file?: { url: string }
     }
     Affiliation?: {
-      rich_text: Array<{
-        plain_text: string
-      }>
+      multi_select: Array<{ name: string }>
     }
     Authors?: {
       multi_select: Array<{ name: string }>
@@ -59,7 +61,7 @@ export interface NotionPage {
       url: string
     }
     Publisher?: {
-      select: { name: string }
+      rich_text: [{ plain_text: string }]
     }
     Status?: {
       select: { name: string }

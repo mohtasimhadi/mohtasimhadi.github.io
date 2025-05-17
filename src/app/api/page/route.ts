@@ -27,32 +27,27 @@ const notionClient = axios.create({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-
-    // Fetch page data from Notion API
     const res = await notionClient.get<NotionPage>(`pages/${body.page_id}`);
 
-    // Extract properties safely from res.properties (Notion API structure)
     const props = res.data.properties ?? {}
 
     const meta = {
       title: Array.isArray(props.Name?.title) ? props.Name.title[0]?.text?.content || '' : '',
       cover: res.data.cover?.external?.url || res.data.cover?.file?.url || null,
-      affiliation: Array.isArray(props.Affiliation?.rich_text) ? props.Affiliation.rich_text[0]?.plain_text || '' : '',
+      affiliation: Array.isArray(props.Affiliation?.multi_select) ? props.Affiliation.multi_select.map(a => a.name) : [],
       authors: Array.isArray(props.Authors?.multi_select) ? props.Authors.multi_select.map(a => a.name) : [],
       date: props.Date?.date?.start || '',
       link: props.Link?.url || '',
-      publisher: props.Publisher?.select?.name || '',
+      publisher: props.Publisher?.rich_text[0]?.plain_text || '',
       status: props.Status?.select?.name || '',
       tags: Array.isArray(props.Tags?.multi_select) ? props.Tags.multi_select.map(t => t.name) : [],
       type: props.Type?.select?.name || '',
       featured: Boolean(props.Featured?.checkbox),
     };
 
-    // Get markdown content of the page
     const mdblocks = await n2m.pageToMarkdown(body.page_id);
     const fullData = n2m.toMarkdownString(mdblocks);
     const data = fullData.parent
-
     return NextResponse.json({ meta, data });
   } catch (error: unknown) {
     const err = error as AxiosError;

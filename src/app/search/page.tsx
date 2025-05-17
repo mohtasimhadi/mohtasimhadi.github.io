@@ -113,7 +113,7 @@ export default function SearchPage() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-          placeholder="Search by title, author, affiliation, publisher, tag..."
+          placeholder="Search by title..."
           className="w-full border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-black"
         />
         <button
