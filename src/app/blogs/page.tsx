@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
-import Loading from '@/components/Loading'
 import Link from 'next/link'
 import SkeletonCard from '@/components/ui/SkeletonCard'
 

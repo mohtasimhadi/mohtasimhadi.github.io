@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
-import Loading from '@/components/Loading'
+import SkeletonCard from '@/components/ui/SkeletonCard'
 import Link from 'next/link'
 
 export default function Research() {
@@ -64,7 +64,7 @@ export default function Research() {
 
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-green-100 p-4">
                     <p className='text-2xl font-semibold mb-4'>Working on a patent!</p>
-                    {loading && <Loading />}
+                    {loading && <SkeletonCard />}
                     {patents.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
@@ -76,7 +76,7 @@ export default function Research() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8 ">
                     <div className="flex flex-col gap-4 col-span-2 bg-pink-100 p-4">
                         <p className='text-2xl font-semibold mb-4'>My Publications</p>
-                        {loading && <Loading />}
+                        {loading && <SkeletonCard />}
                         {publications.map((page) => (
                             <div key={page.id} className='border-b border-pink-200'>
                                 <Card variant="normal" {...page} />
@@ -89,7 +89,7 @@ export default function Research() {
 
                     <div className="flex flex-col gap-4 bg-amber-100 p-2">
                         <p className='text-2xl font-semibold mb-4 p-2 pb-0'>Presentations</p>
-                        {loading && <Loading />}
+                        {loading && <SkeletonCard />}
                         {presentations.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
@@ -138,7 +138,7 @@ export default function Research() {
 
                 <div className="bg-slate-100">
                     <p className='text-2xl font-semibold m-4'>Featured Projects</p>
-                    {loading && <Loading />}
+                    {loading && <SkeletonCard />}
                     {projects.map((page) => (
                         <div key={page.id} className='border-b border-slate-200'>
                             <Card variant="normal" {...page} />
