@@ -6,13 +6,11 @@ import { Search, Menu, X } from "lucide-react"
 import Link from "next/link"
 
 export default function NavPages() {
-      const [currentPath, setCurrentPath] = useState("")
       const [isMenuOpen, setIsMenuOpen] = useState(false)
       const [isSearchOpen, setIsSearchOpen] = useState(false)
       const pathname = usePathname()
 
       useEffect(() => {
-            setCurrentPath(pathname)
             setIsMenuOpen(false)
       }, [pathname])
 
@@ -30,24 +28,23 @@ export default function NavPages() {
 
       const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
       const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
-      const location = window.location
-      const firstSegment = location.pathname.split('/')[1]; // Get 'news' from '/news/123'
 
-      // Capitalize first letter
+      const firstSegment = pathname.split("/")[1];
       const label = firstSegment ? firstSegment.charAt(0).toUpperCase() + firstSegment.slice(1) : '';
+
 
 
       return (
             <>
-                  <div className="sticky top-0 z-[9999] bg-white shadow-sm">
+                  <div className="sticky top-0 z-[9999] bg-white">
 
-                        {label.length ? <div className="container mx-auto px-6">
+                        {label.length ? <div className="container mx-auto border-b pb-2 pt-2">
                               <p className="flex items-center gap-2 text-xl  uppercase tracking-wide">
                                     {label}
                               </p>
                         </div> : ''}
 
-                        <nav className="container mx-auto px-4">
+                        <nav className="container mx-auto px-4 border-b-2">
                               {/* Mobile navigation */}
                               <div className="md:hidden flex items-center justify-between py-3">
                                     <button
@@ -57,10 +54,6 @@ export default function NavPages() {
                                     >
                                           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                                     </button>
-
-                                    <div className="text-sm font-semibold text-gray-800">
-                                          {links.find((link) => link.href === currentPath)?.label || "HOME"}
-                                    </div>
 
                                     <button onClick={toggleSearch} className="text-gray-800 focus:outline-none" aria-label="Search">
                                           <Search className="w-5 h-5" />
@@ -83,7 +76,7 @@ export default function NavPages() {
                               )}
 
                               {/* Desktop navigation */}
-                              <div className="hidden md:flex items-center py-3 text-sm">
+                              <div className="hidden md:flex items-center py-1 text-sm">
                                     <div className="flex flex-wrap gap-1 items-center">
                                           {links.map((link, index) => (
                                                 <span key={link.href} className="flex items-center">

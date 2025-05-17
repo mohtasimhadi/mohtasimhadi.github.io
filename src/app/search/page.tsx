@@ -480,7 +480,7 @@ export default function SearchPage() {
                                           <div className="space-y-2">
                                                 <h3 className="text-xl font-medium">No results found</h3>
                                                 <p className="text-gray-500 max-w-md mx-auto">
-                                                      We couldn't find any matches for your search. Try adjusting your search terms or filters.
+                                                      We couldn&apos;t find any matches for your search. Try adjusting your search terms or filters.
                                                 </p>
                                           </div>
                                           <Button variant="outline" onClick={resetFilters} className="mt-4">
