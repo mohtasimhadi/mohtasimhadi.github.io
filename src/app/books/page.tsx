@@ -117,6 +117,7 @@ export default function BooksPage() {
         </div>
 
         <div className="sm:col-span-3 lg:col-span-4">
+          {loading && (<Loading />)}
           {Object.entries(groupedBooks).map(([type, books]) =>
             books.length > 0 ? (
               <section

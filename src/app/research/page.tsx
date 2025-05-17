@@ -127,7 +127,7 @@ export default function Research() {
                         />
                         <h3 className="text-lg font-semibold text-emerald-800 mb-2">ResearchGate</h3>
                         <Link
-                            href="https://www.researchgate.net/profile/YOUR_NAME"
+                            href="https://www.researchgate.net/profile/Mohtasim-Rafi"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition"
