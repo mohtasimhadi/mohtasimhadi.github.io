@@ -6,6 +6,7 @@ import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
 import SkeletonCard from '@/components/ui/SkeletonCard'
 import Link from 'next/link'
+import { Microscope, ScanSearch } from 'lucide-react'
 
 export default function Research() {
     const [loading, setLoading] = useState(false)
@@ -58,20 +59,21 @@ export default function Research() {
     return (
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
             <div className="lg:col-span-2">
-                <p className='bg-indigo-50 p-10 mb-10'>
-                    My research interests lie at the intersection of <strong>AI</strong> and <strong>Cloud Technologies</strong> with a strong focus on applications in <strong>Biosystems</strong>, <strong>Quantum Computing</strong>, and <strong>Quantum Sensing</strong>. I am particularly passionate about developing <strong>Explainable and Trustworthy AI systems</strong> that not only perform effectively but also provide <strong>transparency</strong> and <strong>reliability</strong>, especially in high-stakes domains. With a specialization in <strong>Computer Vision</strong>, I enjoy translating theoretical advancements into real-world implementations that can impact diverse sectors, from <strong>healthcare</strong> and <strong>agriculture</strong> to <strong>quantum-enhanced sensing</strong>. My work aims to bridge the gap between <strong>cutting-edge research</strong> and <strong>practical solutions</strong> that are <strong>scalable</strong>, <strong>interpretable</strong>, and <strong>impactful</strong>.
-                </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-stone-100 p-4">
-                    <p className='text-2xl font-semibold mb-4'>Working on a patent!</p>
-                    {loading && <SkeletonCard />}
-                    {patents.map((page) => (
-                        <Card key={page.id} variant="normal" {...page} />
-                    ))}
-                    <div className="text-right mt-4">
-                        <Link href='/patents' className="text-sm text-blue-700 hover:underline">See more →</Link>
+                <div className="bg-indigo-50 p-10 mb-10 grid grid-cols-7 gap-6">
+                    <div className="col-span-1">
+                        <ScanSearch className='w-16 h-16'/>
+                    </div>
+                    <div className="col-span-6">
+                        <p>
+                            My research interests lie at the intersection of <strong>AI</strong> and <strong>Cloud Technologies</strong> with a strong focus on applications in <strong>Biosystems</strong>, <strong>Quantum Computing</strong>, and <strong>Quantum Sensing</strong>. I am particularly passionate about developing <strong>Explainable and Trustworthy AI systems</strong> that not only perform effectively but also provide <strong>transparency</strong> and <strong>reliability</strong>, especially in high-stakes domains.
+                        </p>
+                        <p className="mt-4">
+                            With a specialization in <strong>Computer Vision</strong>, I enjoy translating theoretical advancements into real-world implementations that can impact diverse sectors, from <strong>healthcare</strong> and <strong>agriculture</strong> to <strong>quantum-enhanced sensing</strong>. My work aims to bridge the gap between <strong>cutting-edge research</strong> and <strong>practical solutions</strong> that are <strong>scalable</strong>, <strong>interpretable</strong>, and <strong>impactful</strong>.
+                        </p>
                     </div>
                 </div>
+
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8 ">
                     <div className="flex flex-col gap-4 col-span-2 bg-stone-100 p-4">
@@ -145,8 +147,8 @@ export default function Research() {
                         </div>
                     ))}
                     <div className="text-right m-4">
-                            <Link href='/projects' className="text-sm text-blue-700 mb-4 hover:underline">See more →</Link>
-                        </div>
+                        <Link href='/projects' className="text-sm text-blue-700 mb-4 hover:underline">See more →</Link>
+                    </div>
                 </div>
             </div>
         </main>
