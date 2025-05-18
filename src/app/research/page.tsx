@@ -6,7 +6,7 @@ import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
 import SkeletonCard from '@/components/ui/SkeletonCard'
 import Link from 'next/link'
-import { Microscope, ScanSearch } from 'lucide-react'
+import { ScanSearch } from 'lucide-react'
 
 export default function Research() {
     const [loading, setLoading] = useState(false)
@@ -62,7 +62,7 @@ export default function Research() {
 
                 <div className="bg-indigo-50 p-10 mb-10 grid grid-cols-7 gap-6">
                     <div className="col-span-1">
-                        <ScanSearch className='w-16 h-16'/>
+                        <ScanSearch className='w-16 h-16' />
                     </div>
                     <div className="col-span-6">
                         <p>
