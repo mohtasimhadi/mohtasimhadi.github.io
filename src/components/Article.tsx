@@ -8,6 +8,7 @@ import { Facebook, Linkedin, LinkIcon } from "lucide-react"
 import { SiX } from "react-icons/si"
 import Image from "next/image"
 import type { ParsedPage } from "@/types/notion"
+import Head from "next/head"
 
 // Custom component to render links and detect YouTube URLs
 const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, children, ...props }) => {
@@ -160,18 +161,20 @@ const Article: React.FC<{ page: ParsedPage; data: string }> = ({ page, data }) =
 
       return (
             <article className="relative max-w-6xl mx-auto border-gray-400">
-                  <title>{seoMetadata.title}</title>
-                  <meta name="description" content={seoMetadata.description} />
-                  <meta property="og:title" content={seoMetadata.title} />
-                  <meta property="og:description" content={seoMetadata.description} />
-                  <meta property="og:type" content="article" />
-                  <meta property="og:url" content={url} />
-                  <meta property="og:image" content={cover || "/placeholder.svg"} />
-                  <meta property="og:site_name" content="the Moho Blog" />
-                  <meta property="og:locale" content="en_US" />
-                  <meta property="og:article:section" content={tags?.join(", ") || "General"} />
-                  <meta property="og:article:author" content={authors?.join(", ") || "Unknown"} />
-                  <meta property="og:article:tag" content={tags?.join(", ") || "General"} />
+                  <Head>
+                        <title>{seoMetadata.title}</title>
+                        <meta name="description" content={seoMetadata.description} />
+                        <meta property="og:title" content={seoMetadata.title} />
+                        <meta property="og:description" content={seoMetadata.description} />
+                        <meta property="og:type" content="article" />
+                        <meta property="og:url" content={url} />
+                        <meta property="og:image" content={cover || "/placeholder.svg"} />
+                        <meta property="og:site_name" content="the Moho Blog" />
+                        <meta property="og:locale" content="en_US" />
+                        <meta property="og:article:section" content={tags?.join(", ") || "General"} />
+                        <meta property="og:article:author" content={authors?.join(", ") || "Unknown"} />
+                        <meta property="og:article:tag" content={tags?.join(", ") || "General"} />
+                  </Head>
                   {/* Cover Image */}
                   <div className="relative">
                         {cover && (
