@@ -62,45 +62,45 @@ export default function Research() {
                     My research interests lie at the intersection of <strong>AI</strong> and <strong>Cloud Technologies</strong> with a strong focus on applications in <strong>Biosystems</strong>, <strong>Quantum Computing</strong>, and <strong>Quantum Sensing</strong>. I am particularly passionate about developing <strong>Explainable and Trustworthy AI systems</strong> that not only perform effectively but also provide <strong>transparency</strong> and <strong>reliability</strong>, especially in high-stakes domains. With a specialization in <strong>Computer Vision</strong>, I enjoy translating theoretical advancements into real-world implementations that can impact diverse sectors, from <strong>healthcare</strong> and <strong>agriculture</strong> to <strong>quantum-enhanced sensing</strong>. My work aims to bridge the gap between <strong>cutting-edge research</strong> and <strong>practical solutions</strong> that are <strong>scalable</strong>, <strong>interpretable</strong>, and <strong>impactful</strong>.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-green-100 p-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-stone-100 p-4">
                     <p className='text-2xl font-semibold mb-4'>Working on a patent!</p>
                     {loading && <SkeletonCard />}
                     {patents.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
                     <div className="text-right mt-4">
-                        <Link href='/patents' className="text-sm text-emerald-700 hover:underline">See more →</Link>
+                        <Link href='/patents' className="text-sm text-blue-700 hover:underline">See more →</Link>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8 ">
-                    <div className="flex flex-col gap-4 col-span-2 bg-pink-100 p-4">
+                    <div className="flex flex-col gap-4 col-span-2 bg-stone-100 p-4">
                         <p className='text-2xl font-semibold mb-4'>My Publications</p>
                         {loading && <SkeletonCard />}
                         {publications.map((page) => (
-                            <div key={page.id} className='border-b border-pink-200'>
+                            <div key={page.id} className='border-b border-stone-200'>
                                 <Card variant="normal" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
-                            <Link href='/publications' className="text-sm text-pink-700 hover:underline">See more →</Link>
+                            <Link href='/publications' className="text-sm text-blue-700 hover:underline">See more →</Link>
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 bg-amber-100 p-2">
+                    <div className="flex flex-col gap-4 bg-stone-100 p-2">
                         <p className='text-2xl font-semibold mb-4 p-2 pb-0'>Presentations</p>
                         {loading && <SkeletonCard />}
                         {presentations.map((page) => (
                             <Card key={page.id} variant="normal" {...page} />
                         ))}
                         <div className="text-right mt-4">
-                            <Link href='/presentations' className="text-sm text-amber-700 hover:underline">See more →</Link>
+                            <Link href='/presentations' className="text-sm text-blue-700 hover:underline">See more →</Link>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-col gap-4 lg:border-l border-gray-300 lg:pl-6">
+            <div className="flex flex-col gap-4 lg:border-l border-stone-300 lg:pl-6">
                 <div className="w-full max-w-xl mx-auto flex flex-col gap-6">
                     <div className="flex flex-col items-center text-center p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
                         <img
@@ -136,16 +136,16 @@ export default function Research() {
                     </div>
                 </div>
 
-                <div className="bg-slate-100">
+                <div className="bg-stone-100">
                     <p className='text-2xl font-semibold m-4'>Featured Projects</p>
                     {loading && <SkeletonCard />}
                     {projects.map((page) => (
-                        <div key={page.id} className='border-b border-slate-200'>
+                        <div key={page.id} className='border-b border-stone-200'>
                             <Card variant="normal" {...page} />
                         </div>
                     ))}
                     <div className="text-right m-4">
-                            <Link href='/projects' className="text-sm text-slate-700 mb-4 hover:underline">See more →</Link>
+                            <Link href='/projects' className="text-sm text-blue-700 mb-4 hover:underline">See more →</Link>
                         </div>
                 </div>
             </div>
