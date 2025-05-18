@@ -54,45 +54,45 @@ export default function Blogs() {
     return (
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 min-h-screen">
             <div className="lg:col-span-2 space-y-8">
-                <div className="p-4 bg-emerald-50">
-                    <p className='text-2xl font-semibold mb-4'>Featured Article</p>
+                <div className="bg-gray-100">
+                    <p className='text-2xl font-semibold mb-4 p-2'>Featured Article</p>
                     {loading && <SkeletonCard/>}
                     {articles.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
                     <div className="text-right mt-4">
-                        <Link href='/articles' className="text-sm text-emerald-700 hover:underline">See more →</Link>
+                        <Link href='/articles' className="text-sm text-blue-700 hover:underline">See more →</Link>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="md:col-span-2 p-4 bg-amber-50">
+                    <div className="md:col-span-2 p-4 bg-gray-100">
                         <p className='text-2xl font-semibold mb-4'>My Journals</p>
                         {loading && <SkeletonCard/>}
                         {journals.map((page) => (
-                            <div key={page.id} className='border-b border-amber-200'>
+                            <div key={page.id} className='border-b border-gray-200'>
                             <Card variant="normal" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
-                            <Link href='/journals' className="text-sm text-amber-700 hover:underline">See more →</Link>
+                            <Link href='/journals' className="text-sm text-blue-700 hover:underline">See more →</Link>
                         </div>
                     </div>
-                    <div className="bg-pink-50 p-4">
+                    <div className="bg-gray-100 p-4">
                         <p className='text-2xl font-semibold mb-4'>Assorted Words I Call Poetry</p>
                         {loading && <SkeletonCard/>}
                         {poetries.map((page) => (
-                            <div key={page.id} className='border-b border-pink-200'>
+                            <div key={page.id} className='border-b border-gray-200'>
                                 <Card variant="normal" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
-                            <Link href='/poetries' className="text-sm text-pink-700 hover:underline">See more →</Link>
+                            <Link href='/poetries' className="text-sm text-blue-700 hover:underline">See more →</Link>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="flex flex-col gap-6 lg:border-l border-gray-200 lg:pl-6">
-                <section className="w-full flex flex-col items-center justify-center gap-4 p-6 bg-stone-100">
+                <section className="w-full flex flex-col items-center justify-center gap-4 p-6 bg-amber-50">
                     <img
                         src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1651636647i/16014._UY200_CR26,0,200,200_.jpg"
                         alt="Andrei Tarkovsky"
@@ -104,16 +104,16 @@ export default function Blogs() {
                         <span className="block mt-2 text-sm text-gray-600">― Andrei Tarkovsky</span>
                     </blockquote>
                 </section>
-                <div className="bg-indigo-50 p-4">
+                <div className="bg-gray-100 p-4">
                     <p className='text-2xl font-semibold mb-4'>Sometimes, I just keep punching my keyboard!</p>
                     {loading && <SkeletonCard/>}
                     {typists.map((page) => (
-                        <div key={page.id} className='border-b border-indigo-200'>
+                        <div key={page.id} className='border-b border-gray-200'>
                         <Card variant="normal" {...page} />
                         </div>
                     ))}
                     <div className="text-right mt-4">
-                        <Link href='/typist' className="text-sm text-indigo-700 hover:underline">See more →</Link>
+                        <Link href='/typist' className="text-sm text-blue-700 hover:underline">See more →</Link>
                     </div>
                 </div>
             </div>

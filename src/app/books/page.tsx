@@ -89,29 +89,32 @@ export default function BooksPage() {
 
         <div className="sm:col-span-1 lg:col-span-2">
           <div className="space-y-6 mb-10">
-            <div className='bg-indigo-50 border border-indigo-100 p-4'>
-            <TagFilterGroup
-              label="Publisher"
-              options={filterOptions.publishers}
-              selected={filters.publisher}
-              onChange={(value) => setFilters((prev) => ({ ...prev, publisher: value }))}
-            />
+            <div className='bg-gray-50 border border-gray-100 p-4'>
+              {loading && (<SkeletonCard />)}
+              <TagFilterGroup
+                label="Publisher"
+                options={filterOptions.publishers}
+                selected={filters.publisher}
+                onChange={(value) => setFilters((prev) => ({ ...prev, publisher: value }))}
+              />
             </div>
-            <div className='bg-indigo-50 border border-indigo-100 p-4'>
-            <TagFilterGroup
-              label="Author"
-              options={filterOptions.authors}
-              selected={filters.author}
-              onChange={(value) => setFilters((prev) => ({ ...prev, author: value }))}
-            />
+            <div className='bg-gray-50 border border-gray-100 p-4'>
+              {loading && (<SkeletonCard />)}
+              <TagFilterGroup
+                label="Author"
+                options={filterOptions.authors}
+                selected={filters.author}
+                onChange={(value) => setFilters((prev) => ({ ...prev, author: value }))}
+              />
             </div>
-            <div className='bg-indigo-50 border border-indigo-100 p-4'>
-            <TagFilterGroup
-              label="Tag"
-              options={filterOptions.tags}
-              selected={filters.tag}
-              onChange={(value) => setFilters((prev) => ({ ...prev, tag: value }))}
-            />
+            <div className='bg-gray-50 border border-gray-100 p-4'>
+              {loading && (<SkeletonCard />)}
+              <TagFilterGroup
+                label="Tag"
+                options={filterOptions.tags}
+                selected={filters.tag}
+                onChange={(value) => setFilters((prev) => ({ ...prev, tag: value }))}
+              />
             </div>
           </div>
         </div>
@@ -226,7 +229,7 @@ function TagButton({
       onClick={onClick}
       className={`px-3 py-1 text-sm border transition ${active
         ? 'bg-gray-800 text-white border-gray-800'
-        : 'bg-indigo-50 text-gray-700 border-gray-300 hover:bg-gray-100'
+        : 'bg-gray-50 text-gray-700 border-gray-300 hover:bg-gray-100'
         }`}
     >
       {label}
@@ -238,7 +241,7 @@ function TagButton({
 
 function BookCard({ book }: { book: ParsedBook }) {
   return (
-    <div className="bg-teal-50 border border-teal-200 p-4 flex flex-col sm:flex-row gap-6 text-sm text-gray-800 h-[300px] sm:h-[300px]">
+    <div className="bg-gray-50 border border-gray-200 p-4 flex flex-col sm:flex-row gap-6 text-sm text-gray-800 h-[300px] sm:h-[300px]">
       {book.cover ? (
         <div className="w-full sm:w-40 aspect-[2/3] relative flex-shrink-0">
           <Image
@@ -258,16 +261,15 @@ function BookCard({ book }: { book: ParsedBook }) {
       <div className="flex flex-col justify-between overflow-hidden">
         <div className="space-y-1 overflow-hidden">
           <p className='text-gray-500'>{book.date}</p>
-          <h3 className="text-lg font-semibold leading-snug">{book.title}</h3>
-          <p className="text-gray-600">{book.authors.join(', ')}</p>
-          <p className="text-xs text-gray-500 italic"><strong>Publisher: </strong>{book.publisher}</p>
+          <h3 className="text-lg font-semibold leading-snug">
+            {book.title}
+            {book.series && (
+              <span className='text-gray-700 text-sm font-light'>{'  '}#{book.series}</span>
+            )}
+          </h3>
 
-          {book.series && (
-            <p>
-              <span className="font-medium text-gray-700">Series:</span>{' '}
-              {book.series}
-            </p>
-          )}
+          <p className="text-gray-600">{book.authors.join(', ')}</p>
+          <p className="text-xs text-gray-500 italic">{book.publisher}</p>
 
           {book.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 text-xs text-gray-600 mt-1">
@@ -291,7 +293,7 @@ function BookCard({ book }: { book: ParsedBook }) {
             <Link
               href={book.goodreads}
               target="_blank"
-              className="text-teal-600 hover:underline"
+              className="text-gray-600 hover:underline"
             >
               Goodreads →
             </Link>
