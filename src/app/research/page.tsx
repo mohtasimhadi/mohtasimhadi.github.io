@@ -6,7 +6,7 @@ import Card from '@/components/Card'
 import { ParsedPage } from '@/types/notion'
 import SkeletonCard from '@/components/ui/SkeletonCard'
 import Link from 'next/link'
-import { ScanSearch } from 'lucide-react'
+import { Microscope } from 'lucide-react'
 
 export default function Research() {
     const [loading, setLoading] = useState(false)
@@ -59,10 +59,9 @@ export default function Research() {
     return (
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
             <div className="lg:col-span-2">
-
                 <div className="bg-indigo-50 p-10 mb-10 grid grid-cols-7 gap-6">
                     <div className="col-span-1">
-                        <ScanSearch className='w-16 h-16' />
+                        <Microscope className='w-12 h-12'/>
                     </div>
                     <div className="col-span-6">
                         <p>
@@ -74,6 +73,17 @@ export default function Research() {
                     </div>
                 </div>
 
+
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-stone-100 p-4">
+                    <p className='text-2xl font-semibold mb-4'>Working on a patent!</p>
+                    {loading && <SkeletonCard />}
+                    {patents.map((page) => (
+                        <Card key={page.id} variant="normal" {...page} />
+                    ))}
+                    <div className="text-right mt-4">
+                        <Link href='/patents' className="text-sm text-blue-700 hover:underline">See more →</Link>
+                    </div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8 ">
                     <div className="flex flex-col gap-4 col-span-2 bg-stone-100 p-4">
