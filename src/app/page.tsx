@@ -5,6 +5,7 @@ import axios from "axios"
 import Card from "@/components/Card"
 import type { ParsedPage } from "@/types/notion"
 import SkeletonCard from "@/components/ui/SkeletonCard"
+import AboutDesctiption from "@/components/About/Description"
 
 
 export default function HomePage() {
@@ -105,6 +106,7 @@ export default function HomePage() {
 
       return (
             <>
+            <AboutDesctiption/>
                   <main className="container px-6 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
                         <div className="lg:col-span-2">
                               {/* Research: Patents */}
