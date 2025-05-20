@@ -74,7 +74,7 @@ export default function Research() {
                 </div>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 bg-stone-100 p-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 pb-8 border p-4">
                     <p className='text-2xl font-semibold mb-4'>Working on a patent!</p>
                     {loading && <SkeletonCard />}
                     {patents.map((page) => (
@@ -86,12 +86,12 @@ export default function Research() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8 ">
-                    <div className="flex flex-col gap-4 col-span-2 bg-stone-100 p-4">
+                    <div className="flex flex-col gap-4 col-span-2 border p-4">
                         <p className='text-2xl font-semibold mb-4'>My Publications</p>
                         {loading && <SkeletonCard />}
                         {publications.map((page) => (
                             <div key={page.id} className='border-b border-stone-200'>
-                                <Card variant="normal" {...page} />
+                                <Card variant="long" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
@@ -99,7 +99,7 @@ export default function Research() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 bg-stone-100 p-2">
+                    <div className="flex flex-col gap-4 border p-2">
                         <p className='text-2xl font-semibold mb-4 p-2 pb-0'>Presentations</p>
                         {loading && <SkeletonCard />}
                         {presentations.map((page) => (
@@ -148,7 +148,7 @@ export default function Research() {
                     </div>
                 </div>
 
-                <div className="bg-stone-100">
+                <div className="border">
                     <p className='text-2xl font-semibold m-4'>Featured Projects</p>
                     {loading && <SkeletonCard />}
                     {projects.map((page) => (

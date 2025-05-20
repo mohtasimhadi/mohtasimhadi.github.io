@@ -5,4 +5,8 @@ export type CardProps = {
   cover?: string | null
   date?: string
   type: string
+  affiliation: string[]
+  authors: string[]
+  publisher: string
+  tags: string[]
 }

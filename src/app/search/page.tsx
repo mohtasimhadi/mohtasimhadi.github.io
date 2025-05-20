@@ -496,11 +496,7 @@ export default function SearchPage() {
                                                 <Card
                                                       key={item.id}
                                                       variant="normal"
-                                                      id={item.id}
-                                                      title={item.title}
-                                                      cover={item.cover}
-                                                      date={item.date}
-                                                      type={item.type}
+                                                      {...item}
                                                 />
                                           ))}
                                     </div>

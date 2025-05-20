@@ -3,6 +3,6 @@ export const dynamic = 'force-dynamic'
 
 export default function Publications() {
   return (
-    <Section type="Publication"/>
+    <Section type="Publication" card_variant="long"/>
   );
 }

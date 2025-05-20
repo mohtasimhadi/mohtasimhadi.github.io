@@ -54,7 +54,7 @@ export default function Blogs() {
     return (
         <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 min-h-screen">
             <div className="lg:col-span-2 space-y-8">
-                <div className="bg-gray-100">
+                <div className="border pb-2">
                     <p className='text-2xl font-semibold mb-4 p-2'>Featured Article</p>
                     {loading && <SkeletonCard/>}
                     {articles.map((page) => (
@@ -65,7 +65,7 @@ export default function Blogs() {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="md:col-span-2 p-4 bg-gray-100">
+                    <div className="md:col-span-2 p-4 border-1">
                         <p className='text-2xl font-semibold mb-4'>My Journals</p>
                         {loading && <SkeletonCard/>}
                         {journals.map((page) => (
@@ -77,13 +77,11 @@ export default function Blogs() {
                             <Link href='/journals' className="text-sm text-blue-700 hover:underline">See more →</Link>
                         </div>
                     </div>
-                    <div className="bg-gray-100 p-4">
+                    <div className="border-1 p-4">
                         <p className='text-2xl font-semibold mb-4'>Assorted Words I Call Poetry</p>
                         {loading && <SkeletonCard/>}
                         {poetries.map((page) => (
-                            <div key={page.id} className='border-b border-gray-200'>
-                                <Card variant="normal" {...page} />
-                            </div>
+                                <Card key={page.id} variant="normal" {...page} />
                         ))}
                         <div className="text-right mt-4">
                             <Link href='/poetries' className="text-sm text-blue-700 hover:underline">See more →</Link>
@@ -104,7 +102,7 @@ export default function Blogs() {
                         <span className="block mt-2 text-sm text-gray-600">― Andrei Tarkovsky</span>
                     </blockquote>
                 </section>
-                <div className="bg-gray-100 p-4">
+                <div className="border p-4">
                     <p className='text-2xl font-semibold mb-4'>Sometimes, I just keep punching my keyboard!</p>
                     {loading && <SkeletonCard/>}
                     {typists.map((page) => (
