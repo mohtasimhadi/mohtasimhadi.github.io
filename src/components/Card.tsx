@@ -66,17 +66,6 @@ export default function Card({
           {publisher}
         </p>
       )}
-
-      {tags && tags.length > 0 && (
-        <div className="flex flex-wrap gap-1 mt-1">
-          {tags.slice(0, 3).map((tag, index) => (
-            <span key={index} className="text-xs bg-gray-600 text-white px-2 py-1 rounded flex items-center gap-1">
-              <Tag size={12} />
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
     </>
   )
 
@@ -111,7 +100,18 @@ export default function Card({
               {formattedDate}
             </p>
           )}
-          <div className="flex-1 flex flex-col gap-2">{content}</div>
+          <div className="flex-1 flex flex-col gap-2">{content}
+            {tags && tags.length > 0 && (
+              <div className="flex flex-wrap gap-1 mt-1">
+                {tags.slice(0, 3).map((tag, index) => (
+                  <span key={index} className="text-xs bg-gray-600 text-white px-2 py-1 rounded flex items-center gap-1">
+                    <Tag size={12} />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
           {cover && (
             <div className="relative w-32 h-32 overflow-hidden flex-shrink-0">
               <Image src={cover || "/placeholder.svg"} alt={title} fill style={{ objectFit: "cover" }} />

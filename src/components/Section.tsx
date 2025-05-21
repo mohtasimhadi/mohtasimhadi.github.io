@@ -51,7 +51,7 @@ export default function Section({ type, vertical = false, card_variant = 'normal
 
 
       return (
-            <main className="container mx-auto px-4">
+            <main className="container mx-auto px-4 py-4">
                   <div
                         className={
                               vertical
