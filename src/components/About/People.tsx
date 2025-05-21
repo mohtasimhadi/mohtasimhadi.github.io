@@ -36,7 +36,7 @@ export default function PeopleSection() {
   if (!data) return <p className="text-center mt-10">Loading...</p>
 
   return (
-    <div className="space-y-16 py-10 px-6 max-w-6xl mx-auto">
+    <div className="space-y-8 pb-10 mx-auto">
       <PeopleGroup title="Advisors" people={data.advisors} />
       <PeopleGroup title="Current Lab" people={data.collaborators} />
       <PeopleGroup title="Students" people={data.students} isStudent />

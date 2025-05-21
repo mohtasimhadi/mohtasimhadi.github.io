@@ -72,7 +72,7 @@ export default function AboutDetails() {
   if (!data) return <p className="text-center mt-10">Loading...</p>
 
   return (
-    <div className="space-y-16 py-10 px-6 max-w-6xl mx-auto">
+    <div className="space-y-8 pb-10 mx-auto">
       {/* CV */}
       <section className="border border-gray-300 p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
