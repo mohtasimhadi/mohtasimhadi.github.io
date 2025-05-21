@@ -62,8 +62,8 @@ export default function Section({ type, vertical = false, card_variant = 'normal
                         }
                   >
                         {pages.map((page) => (
-                              <div className='border-t-1'>
-                                    <Card key={page.id} variant={card_variant} {...page} />
+                              <div key={page.id} className='border-t-1'>
+                                    <Card variant={card_variant} {...page} />
                               </div>
                         ))}
                   </div>
