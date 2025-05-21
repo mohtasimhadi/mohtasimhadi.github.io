@@ -8,7 +8,7 @@ import { Facebook, Linkedin, LinkIcon } from "lucide-react"
 import { SiX } from "react-icons/si"
 import Image from "next/image"
 import type { ParsedPage } from "@/types/notion"
-import Head from "next/head"
+
 
 // Custom component to render links and detect YouTube URLs
 const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, children, ...props }) => {
