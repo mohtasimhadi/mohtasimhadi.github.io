@@ -1,5 +1,5 @@
 export type CardProps = {
-  variant: 'large' | 'normal' | 'long'
+  variant: 'featured' | 'normal' | 'long'
   id: string
   title: string
   cover?: string | null
