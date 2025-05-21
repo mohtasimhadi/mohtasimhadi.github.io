@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Calendar, Building, Users, Tag} from "lucide-react"
+import { Calendar, Building, Users, Tag } from "lucide-react"
 import type { CardProps } from "@/types/props"
 import Link from "next/link"
 
@@ -41,12 +41,6 @@ export default function Card({
 
   const content = (
     <>
-      {date && (
-        <p className="text-sm flex items-center gap-1 text-gray-600">
-          <Calendar size={16} />
-          {formattedDate}
-        </p>
-      )}
       <h2 className="text-large font-semibold">{title}</h2>
 
       {authors && authors.length > 0 && (
@@ -95,6 +89,12 @@ export default function Card({
               <Image src={cover || "/placeholder.svg"} alt={title} fill style={{ objectFit: "cover" }} />
             </div>
           )}
+          {date && (
+            <p className="text-sm flex items-center gap-1 text-gray-600">
+              <Calendar size={16} />
+              {formattedDate}
+            </p>
+          )}
           <div className="flex flex-col gap-2">{content}</div>
         </div>
       </Link>
@@ -105,6 +105,12 @@ export default function Card({
     return (
       <Link href={`/${type}/${id}`} className="hover:underline">
         <div className="p-4 flex items-start gap-4 h-full">
+          {date && (
+            <p className="text-sm flex items-center gap-1 text-gray-600">
+              <Calendar size={16} />
+              {formattedDate}
+            </p>
+          )}
           <div className="flex-1 flex flex-col gap-2">{content}</div>
           {cover && (
             <div className="relative w-32 h-32 overflow-hidden flex-shrink-0">
