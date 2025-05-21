@@ -102,12 +102,7 @@ export default function NavPages() {
                                     </div>
                               </div>
                         </nav>
-
-
                   </div>
-
-                  {/* Spacer for content below the sticky nav */}
-                  <div className="h-2"></div>
             </>
       )
 }
