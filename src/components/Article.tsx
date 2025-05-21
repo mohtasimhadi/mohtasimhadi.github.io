@@ -161,20 +161,20 @@ const Article: React.FC<{ page: ParsedPage; data: string }> = ({ page, data }) =
 
       return (
             <article className="relative max-w-6xl mx-auto border-gray-400">
-                  <Head>
-                        <title>{seoMetadata.title}</title>
-                        <meta name="description" content={seoMetadata.description} />
-                        <meta property="og:title" content={seoMetadata.title} />
-                        <meta property="og:description" content={seoMetadata.description} />
-                        <meta property="og:type" content="article" />
-                        <meta property="og:url" content={url} />
-                        <meta property="og:image" content={cover || "/placeholder.svg"} />
-                        <meta property="og:site_name" content="the Moho Blog" />
-                        <meta property="og:locale" content="en_US" />
-                        <meta property="og:article:section" content={tags?.join(", ") || "General"} />
-                        <meta property="og:article:author" content={authors?.join(", ") || "Unknown"} />
-                        <meta property="og:article:tag" content={tags?.join(", ") || "General"} />
-                  </Head>
+
+                  <title>{seoMetadata.title}</title>
+                  <meta name="description" content={seoMetadata.description} />
+                  <meta property="og:title" content={seoMetadata.title} />
+                  <meta property="og:description" content={seoMetadata.description} />
+                  <meta property="og:type" content="article" />
+                  <meta property="og:url" content={url} />
+                  <meta property="og:image" content={cover || "/placeholder.svg"} />
+                  <meta property="og:site_name" content="the Moho Blog" />
+                  <meta property="og:locale" content="en_US" />
+                  <meta property="og:article:section" content={tags?.join(", ") || "General"} />
+                  <meta property="og:article:author" content={authors?.join(", ") || "Unknown"} />
+                  <meta property="og:article:tag" content={tags?.join(", ") || "General"} />
+
                   {/* Cover Image */}
                   <div className="relative">
                         {cover && (
