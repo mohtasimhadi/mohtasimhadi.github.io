@@ -37,9 +37,9 @@ export default function PeopleSection() {
 
   return (
     <div className="space-y-8 pb-10 mx-auto">
+      <PeopleGroup title="Students" people={data.students} isStudent />
       <PeopleGroup title="Advisors" people={data.advisors} />
       <PeopleGroup title="Current Lab" people={data.collaborators} />
-      <PeopleGroup title="Students" people={data.students} isStudent />
       <PeopleGroup title="Past Collaborators & Mentors" people={data.past_collaborators_mentors} />
     </div>
   )
