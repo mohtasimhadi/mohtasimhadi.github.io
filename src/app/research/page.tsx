@@ -61,11 +61,11 @@ export default function Research() {
             <div className="lg:col-span-2">
                 <div className="bg-indigo-50 p-10 mb-10 grid grid-cols-7 gap-6">
                     <div className="col-span-1">
-                        <Microscope className='w-12 h-12'/>
+                        <Microscope className='w-12 h-12' />
                     </div>
                     <div className="col-span-6">
                         <p>
-                            My research interests lie at the intersection of <strong>AI</strong> and <strong>Cloud Technologies</strong> with a strong focus on applications in <strong>Biosystems</strong>, <strong>Quantum Computing</strong>, and <strong>Quantum Sensing</strong>. I am particularly passionate about developing <strong>Explainable and Trustworthy AI systems</strong> that not only perform effectively but also provide <strong>transparency</strong> and <strong>reliability</strong>, especially in high-stakes domains.
+                            My research interests lie at the intersection of <strong>AI</strong> and <strong>Cloud Technologies</strong> with a strong focus on applications in <strong>Biosystems</strong>, and <strong>Quantum Sensing</strong>. I am particularly passionate about developing <strong>Explainable and Trustworthy AI systems</strong> that not only perform effectively but also provide <strong>transparency</strong> and <strong>reliability</strong>, especially in high-stakes domains.
                         </p>
                         <p className="mt-4">
                             With a specialization in <strong>Computer Vision</strong>, I enjoy translating theoretical advancements into real-world implementations that can impact diverse sectors, from <strong>healthcare</strong> and <strong>agriculture</strong> to <strong>quantum-enhanced sensing</strong>. My work aims to bridge the gap between <strong>cutting-edge research</strong> and <strong>practical solutions</strong> that are <strong>scalable</strong>, <strong>interpretable</strong>, and <strong>impactful</strong>.
@@ -102,8 +102,10 @@ export default function Research() {
                     <div className="flex flex-col gap-4 border p-2">
                         <p className='text-2xl font-semibold mb-4 p-2 pb-0'>Presentations</p>
                         {loading && <SkeletonCard />}
-                        {presentations.map((page) => (
-                            <Card key={page.id} variant="normal" {...page} />
+                        {projects.map((page) => (
+                            <div key={page.id} className='border-b border-stone-200'>
+                                <Card variant="normal" {...page} />
+                            </div>
                         ))}
                         <div className="text-right mt-4">
                             <Link href='/presentations' className="text-sm text-blue-700 hover:underline">See more →</Link>
@@ -151,10 +153,8 @@ export default function Research() {
                 <div className="border">
                     <p className='text-2xl font-semibold m-4'>Featured Projects</p>
                     {loading && <SkeletonCard />}
-                    {projects.map((page) => (
-                        <div key={page.id} className='border-b border-stone-200'>
-                            <Card variant="normal" {...page} />
-                        </div>
+                    {presentations.map((page) => (
+                        <Card key={page.id} variant="normal" {...page} />
                     ))}
                     <div className="text-right m-4">
                         <Link href='/projects' className="text-sm text-blue-700 mb-4 hover:underline">See more →</Link>
