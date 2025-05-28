@@ -30,11 +30,18 @@ export default function HomePage() {
                                                 ],
                                           },
                                           { property: "Featured", checkbox: { equals: true } },
+                                          { property: "Archived", checkbox: { equals: false } },
                                     ],
                               },
                         }),
                         axios.post("/api/notion", {
-                              filters: { property: "Type", select: { equals: "News" } },
+                              filters: {
+                                    and: [
+                                          { property: "Type", select: { equals: "News" } },
+                                          { property: "Archived", checkbox: { equals: false } }
+                                    ],
+                              },
+
                         }),
                   ])
 

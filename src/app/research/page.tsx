@@ -34,7 +34,8 @@ export default function Research() {
                             {
                                 property: 'Featured',
                                 checkbox: { equals: true }
-                            }
+                            },
+                            { property: "Archived", checkbox: { equals: false } }
                         ]
                     }
                 }),
