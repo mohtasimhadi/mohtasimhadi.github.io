@@ -34,6 +34,7 @@ export default function Section({
                                                       equals: type,
                                                 },
                                           },
+                                          { property: "Archived", checkbox: { equals: false } }
                                     ],
                               },
                         })

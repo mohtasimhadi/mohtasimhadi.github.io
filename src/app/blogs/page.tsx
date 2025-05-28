@@ -31,6 +31,9 @@ export default function Blogs() {
                         {
                             property: 'Featured',
                             checkbox: { equals: true }
+                        },
+                        {
+                            property: "Archived", checkbox: { equals: false }
                         }
                     ]
                 }
@@ -56,7 +59,7 @@ export default function Blogs() {
             <div className="lg:col-span-2 space-y-8">
                 <div className="border pb-2">
                     <p className='text-2xl font-semibold mb-4 p-2'>Featured Article</p>
-                    {loading && <SkeletonCard/>}
+                    {loading && <SkeletonCard />}
                     {articles.map((page) => (
                         <Card key={page.id} variant="normal" {...page} />
                     ))}
@@ -67,10 +70,10 @@ export default function Blogs() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="md:col-span-2 p-4 border-1">
                         <p className='text-2xl font-semibold mb-4'>My Journals</p>
-                        {loading && <SkeletonCard/>}
+                        {loading && <SkeletonCard />}
                         {journals.map((page) => (
                             <div key={page.id} className='border-b border-gray-200'>
-                            <Card variant="normal" {...page} />
+                                <Card variant="normal" {...page} />
                             </div>
                         ))}
                         <div className="text-right mt-4">
@@ -79,9 +82,9 @@ export default function Blogs() {
                     </div>
                     <div className="border-1 p-4">
                         <p className='text-2xl font-semibold mb-4'>Assorted Words I Call Poetry</p>
-                        {loading && <SkeletonCard/>}
+                        {loading && <SkeletonCard />}
                         {poetries.map((page) => (
-                                <Card key={page.id} variant="normal" {...page} />
+                            <Card key={page.id} variant="normal" {...page} />
                         ))}
                         <div className="text-right mt-4">
                             <Link href='/poetries' className="text-sm text-blue-700 hover:underline">See more →</Link>
@@ -104,10 +107,10 @@ export default function Blogs() {
                 </section>
                 <div className="border p-4">
                     <p className='text-2xl font-semibold mb-4'>Sometimes, I just keep punching my keyboard!</p>
-                    {loading && <SkeletonCard/>}
+                    {loading && <SkeletonCard />}
                     {typists.map((page) => (
                         <div key={page.id} className='border-b border-gray-200'>
-                        <Card variant="normal" {...page} />
+                            <Card variant="normal" {...page} />
                         </div>
                     ))}
                     <div className="text-right mt-4">
