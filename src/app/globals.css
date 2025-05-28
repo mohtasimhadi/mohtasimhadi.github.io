@@ -113,19 +113,25 @@ body {
 
 .markdown-content ul,
 .markdown-content ol {
-  @apply pl-5 border-1 p-2;
+  @apply pl-5 p-2;
 }
 
 .markdown-content li {
   @apply mb-2;
 }
 
+.markdown-content li::before {
+  content: ' ➤';
+  margin-right: 0.25rem;
+  font-size: 1.2em;
+}
+
 .markdown-content pre {
-  @apply bg-gray-100 p-4 rounded-md font-mono whitespace-pre-wrap break-words mb-4;
+  @apply bg-gray-100 p-4 font-mono whitespace-pre-wrap break-words mb-4;
 }
 
 .markdown-content code {
-  @apply font-mono bg-gray-200 py-1 px-2 rounded;
+  @apply font-mono py-1 px-2;
 }
 
 .markdown-content blockquote {
