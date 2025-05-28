@@ -6,7 +6,7 @@ import { ParsedPage } from '@/types/notion'
 import { useParams } from 'next/navigation'
 import Article from '@/components/Article'
 import Section from '@/components/Section'
-import SkeletonCard from '@/components/ui/SkeletonCard'
+import SkeletonArticle from '@/components/ui/SkeletonArticle'
 
 
 export default function Page() {
@@ -39,7 +39,7 @@ export default function Page() {
             <div className="flex container mx-auto px-6 flex-col md:flex-row">
                   <div className="md:w-3/4 overflow-scroll">
                         {meta && (<Article page={meta} data={data} />)}
-                        {loading && <SkeletonCard />}
+                        {loading && <SkeletonArticle />}
                   </div>
                   <div className="md:w-1/4 mt-4 md:mt-0 md:ml-4 border-gray-200 md:border-l">
                         <h2 className='font-semibold text-xl p-4 pt-0'>Explore Similar</h2>
